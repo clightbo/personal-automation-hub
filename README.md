@@ -1,6 +1,6 @@
 # Stock-Updates-SMS
 
-A fully automated daily market summary, pushed to your phone via Telegram every weekday morning. Runs in the cloud for free on GitHub Actions — no laptop required, and the only cost is ~1 cent/day of Claude API usage.
+A fully automated daily market summary, pushed to your phone via Telegram every weekday morning. **100% free** — it runs on GitHub Actions and uses GitHub Models for the AI summary, so there are no API bills, no credit card, and no laptop required.
 
 ## How it works
 
@@ -11,9 +11,11 @@ GitHub Actions (cron, weekdays 7:30 AM ET)
 market_summary.py
   1. Pulls SPY + watchlist prices via yfinance
   2. Pulls macro headlines from financial RSS feeds (CNBC, MarketWatch, Yahoo)
-  3. Sends the raw data to Claude, which condenses it into one clean message
+  3. Sends the raw data to an LLM (GitHub Models, free) to condense into one clean message
   4. Telegram bot pushes it to your phone
 ```
+
+The AI step uses [GitHub Models](https://docs.github.com/en/github-models), GitHub's free inference API. The workflow's built-in token gets access automatically via the `models: read` permission — no key to create. If the model call ever fails (e.g. rate limit), the script sends the raw price/headline briefing instead, so you always get your message.
 
 ## Setup
 
@@ -30,25 +32,22 @@ market_summary.py
 
    Find `"chat":{"id":123456789,...}` in the response — that number is your chat id.
 
-### 2. Get a Claude API key
+### 2. Add repository secrets
 
-Create a key at [console.anthropic.com](https://console.anthropic.com/settings/keys) and add a small credit balance ($5 lasts over a year — each daily summary costs roughly a cent).
-
-### 3. Add repository secrets
-
-In this repo: **Settings → Secrets and variables → Actions → New repository secret**. Add all three:
+In this repo: **Settings → Secrets and variables → Actions → New repository secret**. Add both:
 
 | Secret | Value |
 |---|---|
-| `ANTHROPIC_API_KEY` | Your Anthropic API key |
 | `TELEGRAM_BOT_TOKEN` | The token from BotFather |
 | `TELEGRAM_CHAT_ID` | Your chat id from step 1.4 |
 
-### 4. (Optional) Customize the watchlist
+That's it — the AI summary needs no key at all.
+
+### 3. (Optional) Customize the watchlist
 
 Default is `SPY, QQQ, DIA, AAPL, NVDA, MSFT`. To change it, go to **Settings → Secrets and variables → Actions → Variables tab → New repository variable**, name it `WATCHLIST`, and set it to a comma-separated list like `SPY,QQQ,TSLA,AMD`.
 
-### 5. Test it
+### 4. Test it
 
 Go to the **Actions** tab → **Daily market summary** → **Run workflow**. Check the *dry run* box to print the summary in the logs without sending anything, or leave it unchecked for a real end-to-end test — you should get a Telegram message within a minute.
 
@@ -58,12 +57,14 @@ After that, it runs automatically every weekday at 7:30 AM ET — nothing else t
 
 ```bash
 pip install -r requirements.txt
-DRY_RUN=1 python market_summary.py            # no keys needed, prints raw briefing
-DRY_RUN=1 ANTHROPIC_API_KEY=sk-... python market_summary.py   # prints Claude's summary
+DRY_RUN=1 python market_summary.py   # prints the raw briefing, no keys needed
 ```
+
+To test the AI step locally, set `GITHUB_TOKEN` to a fine-grained personal access token with the `models: read` permission.
 
 ## Tweaking
 
 - **Schedule** — edit the `cron` line in `.github/workflows/daily-summary.yml` (times are UTC; 11:30 UTC = 7:30 AM ET in summer).
+- **Model** — set an `LLM_MODEL` repository variable (same Variables tab as the watchlist). Any id from the [GitHub Models catalog](https://github.com/marketplace/models) works, e.g. `openai/gpt-4o` or `meta/llama-3.3-70b-instruct`. Default is `openai/gpt-4o-mini`.
 - **News sources / keyword filter** — edit `RSS_FEEDS` and `MACRO_KEYWORDS` at the top of `market_summary.py`.
-- **Summary style / length** — edit the system prompt in `summarize_with_claude()`.
+- **Summary style / length** — edit the system prompt in `summarize_with_llm()`.
