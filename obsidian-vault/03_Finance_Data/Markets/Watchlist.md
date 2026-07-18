@@ -6,7 +6,7 @@ tags:
 
 # Watchlist
 
-_Updated 2026-07-18 20:14 UTC._
+_Updated 2026-07-18 21:19 UTC._
 
 Tickers from `WATCHLIST` (or defaults):
 
@@ -19,5 +19,5 @@ Tickers from `WATCHLIST` (or defaults):
 
 Add your own research notes under each ticker as needed.
 
-See also [[Markets/Calendar]] for upcoming earnings on these names.
+See also [[03_Finance_Data/Markets/Calendar]] for upcoming earnings on these names.
 

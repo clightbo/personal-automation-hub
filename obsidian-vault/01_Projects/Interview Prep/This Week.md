@@ -6,7 +6,7 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-07-18 20:14 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-07-18 21:19 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
@@ -17,11 +17,11 @@ MACRO HEDGE: LONG TLT / duration if Fed pivot (or short if sticky inflation): 10
 - [ ] One-sentence thesis
 - [ ] Catalyst (what changes the stock)
 - [ ] Key risk
-- [ ] Tie to something in [[Markets/Calendar]] or today's tape
+- [ ] Tie to something in [[03_Finance_Data/Markets/Calendar]] or today's tape
 
 ## Related
 
-- [[Markets/Calendar]]
-- [[Markets/Watchlist]]
-- [[Daily/Latest Briefing]]
+- [[03_Finance_Data/Markets/Calendar]]
+- [[03_Finance_Data/Markets/Watchlist]]
+- [[00_Inbox/Latest Briefing]]
 

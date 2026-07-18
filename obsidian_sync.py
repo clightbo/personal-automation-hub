@@ -1,9 +1,9 @@
-"""Sync markets + interview notes into the local Obsidian vault (markdown).
+"""Sync markets + interview notes into the Finance Command Center vault.
 
 Writes:
-  obsidian-vault/Markets/Calendar.md
-  obsidian-vault/Interview/This Week.md
-  obsidian-vault/Markets/Watchlist.md
+  obsidian-vault/03_Finance_Data/Markets/Calendar.md
+  obsidian-vault/03_Finance_Data/Markets/Watchlist.md
+  obsidian-vault/01_Projects/Interview Prep/This Week.md
 
 Run via GitHub Actions (see .github/workflows/obsidian-vault-sync.yml) or locally:
   python obsidian_sync.py
@@ -11,7 +11,6 @@ Run via GitHub Actions (see .github/workflows/obsidian-vault-sync.yml) or locall
 
 from __future__ import annotations
 
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -24,6 +23,9 @@ from interview_ideas import weekly_interview_idea
 
 VAULT = Path(__file__).resolve().parent / "obsidian-vault"
 ET_LABEL = "ET"
+
+MARKETS = VAULT / "03_Finance_Data" / "Markets"
+INTERVIEW = VAULT / "01_Projects" / "Interview Prep"
 
 
 def _now_stamp() -> str:
@@ -49,7 +51,6 @@ def write_calendar() -> int:
     ]
     for ev in events:
         start = ev["start"]
-        # 2026-07-29T14:00-04:00 → readable
         when = start.replace("T", " ")[:16]
         if len(start) > 16 and (start.endswith("-04:00") or start.endswith("-05:00")):
             when = f"{when} {ET_LABEL}"
@@ -76,7 +77,7 @@ def write_calendar() -> int:
             lines.append(f"- **{when}** — {title}")
         lines.append("")
 
-    path = VAULT / "Markets" / "Calendar.md"
+    path = MARKETS / "Calendar.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {path} ({len(events)} events).")
@@ -105,16 +106,16 @@ def write_interview() -> None:
         "- [ ] One-sentence thesis",
         "- [ ] Catalyst (what changes the stock)",
         "- [ ] Key risk",
-        "- [ ] Tie to something in [[Markets/Calendar]] or today's tape",
+        "- [ ] Tie to something in [[03_Finance_Data/Markets/Calendar]] or today's tape",
         "",
         "## Related",
         "",
-        "- [[Markets/Calendar]]",
-        "- [[Markets/Watchlist]]",
-        "- [[Daily/Latest Briefing]]",
+        "- [[03_Finance_Data/Markets/Calendar]]",
+        "- [[03_Finance_Data/Markets/Watchlist]]",
+        "- [[00_Inbox/Latest Briefing]]",
         "",
     ]
-    path = VAULT / "Interview" / "This Week.md"
+    path = INTERVIEW / "This Week.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {path}.")
@@ -142,10 +143,10 @@ def write_watchlist() -> None:
         "",
         "Add your own research notes under each ticker as needed.",
         "",
-        "See also [[Markets/Calendar]] for upcoming earnings on these names.",
+        "See also [[03_Finance_Data/Markets/Calendar]] for upcoming earnings on these names.",
         "",
     ])
-    path = VAULT / "Markets" / "Watchlist.md"
+    path = MARKETS / "Watchlist.md"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {path}.")
@@ -153,7 +154,9 @@ def write_watchlist() -> None:
 
 def main() -> None:
     VAULT.mkdir(parents=True, exist_ok=True)
-    print(f"Syncing Obsidian vault at {VAULT} ...")
+    MARKETS.mkdir(parents=True, exist_ok=True)
+    INTERVIEW.mkdir(parents=True, exist_ok=True)
+    print(f"Syncing Finance Command Center at {VAULT} ...")
     n = write_calendar()
     write_interview()
     write_watchlist()
