@@ -6,7 +6,7 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-07-18 21:19 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-07-19 22:08 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
@@ -24,8 +24,4 @@ MACRO HEDGE: LONG TLT / duration if Fed pivot (or short if sticky inflation): 10
 - [[03_Finance_Data/Markets/Calendar]]
 - [[03_Finance_Data/Markets/Watchlist]]
 - [[00_Inbox/Latest Briefing]]
-- [[00_Inbox/Ai-resume]]
-- [[00_Inbox/Ai-carrerpathways]]
-- [[00_Inbox/Ai-internshipplanning]]
-- [[Home]]
 
