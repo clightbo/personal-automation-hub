@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-07-19 22:08 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-07-20 13:53 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-MACRO HEDGE: LONG TLT / duration if Fed pivot (or short if sticky inflation): 10Y near 4.5%+ prices in higher-for-longer; either inflation cools and bonds rally, or growth surprises and equities win. Catalyst: CPI/PCE/Fed speak. Risk: fiscal deficits keeping term premium elevated.
+LONG GLD (geopolitical + debasement hedge): Wars, sanctions, and central-bank buying support gold when real yields stall or dollar weakens. Catalyst: escalation headlines, Fed pause. Risk: strong dollar + rising real yields.
 
 ## Rehearsal checklist
 

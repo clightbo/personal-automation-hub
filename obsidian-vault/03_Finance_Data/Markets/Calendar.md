@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-07-19 22:08 UTC. Auto-generated from Stock-Updates-SMS._
+_Updated 2026-07-20 13:53 UTC. Auto-generated from Stock-Updates-SMS._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -15,7 +15,7 @@ _Updated 2026-07-19 22:08 UTC. Auto-generated from Stock-Updates-SMS._
 | 2026-07-29 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.23972 |
 | 2026-07-29 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-07-30 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.89396 |
-| 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.09439 |
+| 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.08175 |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
