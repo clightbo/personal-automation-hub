@@ -7,16 +7,15 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-07-22 13:27 UTC. Auto-generated from Stock-Updates-SMS._
+_Updated 2026-07-22 22:15 UTC. Auto-generated from Stock-Updates-SMS._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-07-22 15:00 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-07-23 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 211K, prev 208K |
 | 2026-07-29 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.23972 |
 | 2026-07-29 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-07-30 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.89396 |
-| 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.08175 |
+| 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.08225 |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
@@ -54,6 +53,5 @@ _Updated 2026-07-22 13:27 UTC. Auto-generated from Stock-Updates-SMS._
 
 ### Macro
 
-- **2026-07-22 15:00** — President Trump Speaks
 - **2026-07-23 08:30** — Unemployment Claims
 
