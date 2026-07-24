@@ -1,15 +1,16 @@
 name: Claude Brief Relay
 
-# Relays a plain-text brief written by Claude/Cowork to Telegram.
-# Triggered by a push that touches outbox/claude-brief.txt (Claude pushes
-# via a Personal Access Token from its scheduled task — no api.github.com
-# call needed, just plain git push).
+# Relays a brief written by Claude/Cowork to Telegram — plain text and/or a
+# rendered PDF. Triggered by a push that touches outbox/claude-brief.txt or
+# outbox/claude-brief.html (Claude pushes via a PAT from its scheduled task —
+# no api.github.com call needed, just plain git push).
 
 on:
   push:
     branches: [main]
     paths:
       - 'outbox/claude-brief.txt'
+      - 'outbox/claude-brief.html'
 
 permissions:
   contents: read
@@ -17,7 +18,7 @@ permissions:
 jobs:
   relay:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -25,10 +26,26 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests
+      - name: Install system deps for PDF rendering
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
+            libffi-dev libcairo2 shared-mime-info
 
-      - name: Send Claude brief to Telegram
+      - name: Install python deps
+        run: pip install requests weasyprint
+
+      - name: Send text brief to Telegram
+        if: ${{ hashFiles('outbox/claude-brief.txt') != '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python send_claude_brief.py
+
+      - name: Send PDF brief to Telegram
+        if: ${{ hashFiles('outbox/claude-brief.html') != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python send_claude_brief_pdf.py

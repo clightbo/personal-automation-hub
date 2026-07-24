@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Market Brief</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0b0e14;
+  color: #d7dce5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  padding: 22px 20px 40px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+.hdr { border-bottom: 1px solid #1e2634; padding-bottom: 14px; margin-bottom: 22px; }
+.hdr h1 { font-size: 22px; color: #fff; letter-spacing: -0.3px; font-weight: 700; }
+.hdr .sub { color: #7d8797; font-size: 12.5px; margin-top: 4px; }
+.tape { color: #f0b429; font-weight: 600; }
+section { margin-bottom: 26px; }
+h2 {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.4px;
+  color: #5aa9e6; font-weight: 700; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+h2::before { content: ""; width: 4px; height: 14px; background: #5aa9e6; border-radius: 2px; }
+table.snap { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.snap td { padding: 6px 8px; border-bottom: 1px solid #161c27; }
+table.snap tr:last-child td { border-bottom: none; }
+table.snap td.name { color: #aeb6c2; width: 42%; }
+table.snap td.val { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; width: 30%; }
+table.snap td.chg { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.up { color: #34c759; } .down { color: #ff453a; } .flat { color: #9aa4b2; }
+.story { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid #232c3b; }
+.story .t { color: #fff; font-weight: 600; font-size: 14px; }
+.story .w { color: #9aa4b2; font-size: 13px; margin-top: 3px; }
+.story .w b { color: #d7dce5; }
+.cal { font-size: 13px; }
+.cal .row { padding: 7px 0; border-bottom: 1px solid #161c27; display: flex; gap: 12px; }
+.cal .row:last-child { border-bottom: none; }
+.cal .tag { color: #f0b429; font-weight: 700; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 66px; padding-top: 2px; }
+.cal .c { color: #c3cad4; }
+.cal .c b { color: #fff; }
+.cal .beat { color: #34c759; font-weight: 600; }
+.smart {
+  background: linear-gradient(135deg, #10161f, #131c28);
+  border: 1px solid #223047; border-radius: 10px; padding: 16px 18px; font-size: 13.5px;
+}
+.smart .lead { color: #fff; font-weight: 600; margin-bottom: 6px; }
+.smart p { color: #b6bfcc; margin-bottom: 8px; }
+.smart .src { color: #6b7686; font-size: 11.5px; }
+.nugget { font-size: 13px; color: #b6bfcc; background: #10141c; border-radius: 8px; padding: 13px 15px; border-left: 3px solid #f0b429; }
+.nugget b { color: #fff; }
+.foot { margin-top: 30px; padding-top: 14px; border-top: 1px solid #1e2634; font-size: 11px; color: #6b7686; }
+.foot a { color: #5aa9e6; text-decoration: none; }
+.foot a:hover { text-decoration: underline; }
+.srclist { margin-top: 8px; line-height: 1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hdr">
+    <h1>Daily Market Brief</h1>
+    <div class="sub">Friday, July 24, 2026 · pre-market · <span class="tape">RISK-OFF: AI capex jitters + oil shock</span></div>
+  </div>
+
+  <section>
+    <h2>Market Snapshot</h2>
+    <table class="snap">
+      <tr><td class="name">S&amp;P 500</td><td class="val">7,408.30</td><td class="chg down">-1.21%</td></tr>
+      <tr><td class="name">Nasdaq Composite</td><td class="val">25,137.69</td><td class="chg down">-2.15%</td></tr>
+      <tr><td class="name">Dow Jones</td><td class="val">51,711.65</td><td class="chg down">-0.97%</td></tr>
+      <tr><td class="name">10-Yr Treasury</td><td class="val">4.71%</td><td class="chg flat">18-mo high, easing Fri</td></tr>
+      <tr><td class="name">Brent Crude</td><td class="val">$97.04</td><td class="chg up">topped $100 Thu</td></tr>
+      <tr><td class="name">Gold (spot)</td><td class="val">$4,057</td><td class="chg up">near record</td></tr>
+      <tr><td class="name">Bitcoin</td><td class="val">$65,030</td><td class="chg down">-0.95%</td></tr>
+      <tr><td class="name">Nikkei 225</td><td class="val">64,611</td><td class="chg down">-2.73%</td></tr>
+      <tr><td class="name">Hang Seng</td><td class="val">24,963</td><td class="chg down">-0.98%</td></tr>
+      <tr><td class="name">FTSE 100</td><td class="val">10,703.85</td><td class="chg up">+0.61%</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Top 3 Things That Matter Today</h2>
+    <div class="story">
+      <div class="t">1. The AI-capex "show me the payback" trade has arrived</div>
+      <div class="w">Alphabet (-7%) and Tesla (-14%) both <b>beat</b> on earnings but sold off hard after Alphabet lifted 2026 capex guidance to as much as <b>$205B</b> and Tesla's capex jumped 142% YoY. <b>Why it matters:</b> the market has flipped from rewarding AI spend to demanding returns on it — a regime change that puts every mega-cap capex line under the microscope into next week's Microsoft/Meta/Amazon prints.</div>
+    </div>
+    <div class="story">
+      <div class="t">2. Oil shock is quietly repricing the Fed</div>
+      <div class="w">Brent topped <b>$100</b> on the escalating Iran conflict before easing to ~$97. <b>Why it matters:</b> traders have sharply raised bets on a <b>rate hike later in 2026</b> (the June dot plot already had 9 of 18 officials penciling in a hike). Energy-driven inflation is the one thing that can turn the Fed hawkish into a slowing economy.</div>
+    </div>
+    <div class="story">
+      <div class="t">3. US data keeps coming in "too strong to cut"</div>
+      <div class="w">Jobless claims fell to <b>187K</b> (vs 212K expected) and June new-home sales beat at <b>628K</b>. <b>Why it matters:</b> resilient labor + housing removes the Fed's cover to ease, reinforcing the "higher-for-longer / maybe-higher" narrative pushing the 10-yr toward January-2025 highs.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>On the Calendar Today</h2>
+    <div class="cal">
+      <div class="row"><span class="tag">Data 10a</span><span class="c"><b>New Home Sales (Jun)</b> — released at <span class="beat">628K vs 610K consensus</span> (+1.6% m/m); a beat, but -5.6% y/y.</span></div>
+      <div class="row"><span class="tag">Earnings AM</span><span class="c"><b>American Express</b> (est. $4.40 EPS) · <b>Verizon</b> ($1.27) · <b>Charter</b> ($10.19) · <b>HCA Healthcare</b> · <b>SLB</b> ($0.52) · <b>NextEra</b> · <b>Canadian National</b></span></div>
+      <div class="row"><span class="tag">Watch</span><span class="c">FOMC meeting <b>next week (Jul 28–29)</b> — hold is base case; watch the statement's language on energy/inflation. Durable goods (Jun) lands Jul 27.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>One Thing To Sound Smart About</h2>
+    <div class="smart">
+      <div class="lead">The real AI risk isn't capex — it's the depreciation wave nobody's expensing yet.</div>
+      <p>The big five hyperscalers spent ~$412B on capex in 2025 and are on track for ~$760B in 2026, yet plan to recognize only ~$211B of depreciation this year — leaving <b>~$549B of spending parked on balance sheets</b>, not yet hitting the income statement. As those assets "go live" in 2026–2028, depreciation explodes: Alphabet's alone is modeled to climb from ~$21B (2025) to ~$78B (2029).</p>
+      <p>The twist: the capex mix has shifted to short-lived compute (~60% of spend, up from ~43% in 2022). If GPUs really last 3–4 years, not the 5–6 assumed, reported margins are being <i>flattered today</i> and will get squeezed exactly as the capex bill peaks. Debt is already filling the gap — up from 9% of capex (FY24) to 32% (LTM).</p>
+      <p class="src">Sources: FactSet Insight, Epoch AI, Bank of England July FSR, Silicon Analysts.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Learning Nugget</h2>
+    <div class="nugget"><b>Depreciation lag:</b> capex is cash out the door today, but it hits earnings gradually over an asset's useful life. That timing gap is why a company can post record profits while its <b>free cash flow (operating cash flow minus capex)</b> turns negative — exactly what's spooking investors about Alphabet and Tesla right now.</div>
+  </section>
+
+  <div class="foot">
+    Generated Fri, Jul 24, 2026, pre-market ET. Index levels reflect Thursday's US close; commodities, yields and crypto are as of the search time this morning and move continuously.
+    <div class="srclist">
+      <a href="https://www.cnbc.com/2026/07/23/tesla-tsla-alphabet-googl-stock-today.html">CNBC – Tesla/Alphabet post-earnings plunge</a> ·
+      <a href="https://finance.yahoo.com/technology/ai/articles/tesla-drops-12-alphabet-falls-165357769.html">Yahoo – AI spending worries</a> ·
+      <a href="https://www.cnbc.com/2026/07/24/treasury-yields-bonds-us-debt.html">CNBC – Treasury yields</a> ·
+      <a href="https://fortune.com/article/price-of-oil-07-24-2026/">Fortune – Oil price</a> ·
+      <a href="https://fortune.com/article/current-price-of-gold-07-24-2026/">Fortune – Gold price</a> ·
+      <a href="https://www.coindesk.com/markets/2026/07/24/bitcoin-settles-near-usd65-000-as-oil-s-march-toward-usd100-fails-to-spook-the-market">CoinDesk – Bitcoin</a> ·
+      <a href="https://calculatedrisk.substack.com/p/new-home-sales-increase-to-628000">Calculated Risk – New home sales</a> ·
+      <a href="https://www.benzinga.com/news/earnings/26/07/60662798/earnings-scheduled-july-24-2026">Benzinga – Earnings calendar</a> ·
+      <a href="https://insight.factset.com/hyperscalers-tap-external-financing-as-ai-capex-outruns-cash-flow">FactSet – Hyperscaler financing</a> ·
+      <a href="https://epoch.ai/data-insights/hyperscaler-capex-vs-cash-flow">Epoch AI – Capex vs cash flow</a> ·
+      <a href="https://www.chase.com/personal/investments/learning-and-insights/article/kevin-warsh-prices-are-too-high-what-to-expect-july-2026-federal-reserve-meeting">Chase – July FOMC preview</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
