@@ -1,0 +1,34 @@
+name: Claude Brief Relay
+
+# Relays a plain-text brief written by Claude/Cowork to Telegram.
+# Triggered by a push that touches outbox/claude-brief.txt (Claude pushes
+# via a Personal Access Token from its scheduled task — no api.github.com
+# call needed, just plain git push).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'outbox/claude-brief.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Send Claude brief to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python send_claude_brief.py

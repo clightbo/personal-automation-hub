@@ -1,0 +1,24 @@
+CLAUDE MARKET BRIEF — Fri Jul 24, 2026 (pre-market)
+
+SNAPSHOT
+S&P 500 7,408.30 (-1.21%) | Nasdaq 25,137.69 (-2.15%) | Dow 51,711.65 (-0.97%)
+10Y 4.71% (18-mo high) | Brent $97.04 (topped $100 Thu) | Gold $4,057 | BTC $65,030 (-0.95%)
+Nikkei -2.73% | Hang Seng -0.98% | FTSE +0.61%
+
+TOP 3
+1. AI-capex "show me the payback" trade has arrived — Alphabet (-7%) and Tesla (-14%) both BEAT but sold off after Alphabet raised 2026 capex to $205B and Tesla's capex jumped 142% YoY. Market now demands ROI on AI spend, not just growth.
+2. Oil shock repricing the Fed — Brent > $100 on Iran conflict. Traders raising bets on a HIKE later in 2026 (June dot plot: 9 of 18 officials penciled a hike).
+3. Data too strong to cut — jobless claims 187K (vs 212K exp), June new home sales 628K (vs 610K exp). Removes Fed's cover to ease.
+
+CALENDAR TODAY
+New home sales (Jun): 628K vs 610K consensus — beat, but -5.6% y/y.
+Earnings AM: Amex ($4.40e), Verizon ($1.27e), Charter ($10.19e), HCA, SLB ($0.52e), NextEra, CN Rail.
+Watch: FOMC meets next week (Jul 28-29), hold expected. Durable goods (Jun) Jul 27.
+
+SOUND SMART
+Hyperscalers spent ~$412B capex in 2025, ~$760B pace in 2026, but only plan ~$211B depreciation this year — ~$549B parked off the income statement. As short-lived compute assets (60% of spend) go live 2026-28, depreciation explodes (Alphabet: ~$21B in 2025 -> ~$78B by 2029). Today's margins may be flattered right before the bill comes due. (Sources: FactSet, Epoch AI, BoE July FSR)
+
+NUGGET
+Depreciation lag: capex is cash out today, but hits earnings gradually. That gap is why a company can post record profits while free cash flow (op cash flow minus capex) turns negative — exactly what's spooking Alphabet/Tesla investors now.
+
+— Sent via Claude (Cowork)
