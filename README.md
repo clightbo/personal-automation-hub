@@ -2,7 +2,7 @@
 
 Personal automation pipelines that run free in the cloud on GitHub Actions and message your phone via Telegram:
 
-1. **Daily market summary** — watchlist prices + AI-condensed macro news, weekday mornings ([setup](#market-summary))
+1. **Daily market brief** — indices, yields, commodities, watchlist, and a learning nugget, weekday mornings ([setup](#market-summary))
 2. **Daily AI agenda** — an AI chief of staff that reads your Outlook inbox and calendar and messages you a morning plan ([setup](#daily-ai-agenda))
 3. **Notion planner sync** — an AI scheduling bot that turns your email and calendar into an organized planner board in Notion ([setup](#notion-planner))
 4. **Finance Command Center** — Obsidian vault (`obsidian-vault/`) with Inbox / Projects / Resources / Finance Data layout, Fed calendar, and weekly interview pitch ([setup](#obsidian-vault))
@@ -10,32 +10,31 @@ Personal automation pipelines that run free in the cloud on GitHub Actions and m
 
 <a name="market-summary"></a>
 
-## Daily market summary
+## Daily market brief
 
-A fully automated daily market summary, pushed to your phone via Telegram every weekday morning. **100% free** — it runs on GitHub Actions and uses GitHub Models for the AI summary, so there are no API bills, no credit card, and no laptop required.
+A fully automated morning market brief, pushed to your phone via Telegram every weekday. **100% free** — it runs on GitHub Actions, pulls prices from Yahoo Finance (Stooq fallback), and needs no API key or LLM.
 
 ## How it works
 
 ```
-GitHub Actions (cron, weekdays 7:30 AM ET)
+GitHub Actions (cron, weekdays ~7:00 AM ET)
         │
         ▼
-market_summary.py
-  1. Pulls SPY + watchlist prices via yfinance
-  2. Pulls macro headlines from financial RSS feeds (CNBC, MarketWatch, Yahoo)
-  3. Sends the raw data to an LLM (GitHub Models, free) to condense into one clean message
-  4. Telegram bot pushes it to your phone
-  5. (optional) Saves the day's briefing to a **Market Daily** database in Notion
+market_brief.py
+  1. Pulls S&P / Nasdaq / Dow, 10-yr yield, oil, gold, Bitcoin
+  2. Pulls your watchlist prices
+  3. Builds a short "what stands out" note + rotating learning nugget
+  4. Telegram bot pushes the HTML brief to your phone
 ```
 
-The AI step uses [GitHub Models](https://docs.github.com/en/github-models), GitHub's free inference API. The workflow's built-in token gets access automatically via the `models: read` permission — no key to create. If the model call ever fails (e.g. rate limit), the script sends the raw price/headline briefing instead, so you always get your message.
+No AI call — the insight is deterministic from the live numbers.
 
 ## Setup
 
 ### 1. Create your Telegram bot (free, ~5 minutes)
 
 1. Install Telegram on your phone if you don't have it.
-2. Message [@BotFather](https://t.me/botfather), send `/newbot`, and follow the prompts (pick any name, e.g. "Market Summary"). BotFather replies with a **bot token** like `123456789:AAF...` — save it.
+2. Message [@BotFather](https://t.me/botfather), send `/newbot`, and follow the prompts (pick any name, e.g. "Market Brief"). BotFather replies with a **bot token** like `123456789:AAF...` — save it.
 3. Open a chat with your new bot (BotFather gives you a link to it) and send it any message, e.g. "hi". This is required so the bot is allowed to message you.
 4. Get your **chat id**: visit this URL in a browser, with your token filled in:
 
@@ -54,47 +53,28 @@ In this repo: **Settings → Secrets and variables → Actions → New repositor
 | `TELEGRAM_BOT_TOKEN` | The token from BotFather |
 | `TELEGRAM_CHAT_ID` | Your chat id from step 1.4 |
 
-That's it — the AI summary needs no key at all.
-
 ### 3. (Optional) Customize the watchlist
 
-Default is `SPY, QQQ, DIA, AAPL, NVDA, MSFT`. To change it, go to **Settings → Secrets and variables → Actions → Variables tab → New repository variable**, name it `WATCHLIST`, and set it to a comma-separated list like `SPY,QQQ,TSLA,AMD`.
+Default is `AAPL, NVDA, MSFT`. To change it, go to **Settings → Secrets and variables → Actions → Variables tab → New repository variable**, name it `WATCHLIST`, and set it to a comma-separated list like `AAPL,NVDA,TSLA,AMD`.
 
 ### 4. Test it
 
-Go to the **Actions** tab → **Daily market summary** → **Run workflow**. Check the *dry run* box to print the summary in the logs without sending anything, or leave it unchecked for a real end-to-end test — you should get a Telegram message within a minute.
+Go to the **Actions** tab → **Daily Market Brief to Telegram** → **Run workflow**. You should get a Telegram message within a minute.
 
-After that, it runs automatically every weekday at 7:30 AM ET — nothing else to do.
-
-### Notion finance log (optional)
-
-If you already set up Notion for the [planner sync](#notion-planner), the market summary reuses the same `NOTION_TOKEN` and `NOTION_PARENT_PAGE_ID` secrets. Each weekday run adds one row to a **Market Daily** database (created automatically on first run) with the date, AI summary, and watchlist snapshot. Re-runs on the same day are skipped so you never get duplicates.
-
-On your Notion hub page, you'll end up with two databases side by side:
-
-| Database | What it holds |
-|---|---|
-| **AI Planner** | Tasks, deadlines, and calendar events from email |
-| **Market Daily** | Daily watchlist prices + AI market briefing |
-
-Share your hub page with the integration (**••• → Connections → your integration**) and add the two secrets if you haven't already. Then run **Daily market summary** once to see the first row appear.
+After that, it runs automatically every weekday at ~7:00 AM ET — nothing else to do.
 
 ## Running locally
 
 ```bash
-pip install -r requirements.txt
-DRY_RUN=1 python market_summary.py   # prints the raw briefing, no keys needed
+pip install requests
+TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... python market_brief.py
 ```
-
-To test the AI step locally, set `GITHUB_TOKEN` to a fine-grained personal access token with the `models: read` permission.
 
 ## Tweaking
 
-- **Schedule** — edit the `cron` line in `.github/workflows/daily-summary.yml` (times are UTC; 11:30 UTC = 7:30 AM ET in summer).
-- **Model** — set an `LLM_MODEL` repository variable (same Variables tab as the watchlist). Any id from the [GitHub Models catalog](https://github.com/marketplace/models) works, e.g. `openai/gpt-4o` or `meta/llama-3.3-70b-instruct`. Default is `openai/gpt-4o-mini`.
-- **News sources / keyword filter** — edit `RSS_FEEDS` and `MACRO_KEYWORDS` at the top of `market_summary.py`.
-- **Summary style / length** — edit the system prompt in `summarize_with_llm()`.
-- **Interview pitch** — rotates weekly from a curated list in `INTERVIEW_IDEAS` at the top of `market_summary.py`. Edit or add ideas there; the AI ties it to today's headlines when it can.
+- **Schedule** — edit the `cron` line in `.github/workflows/market-brief.yml` (times are UTC; `0 11 * * 1-5` ≈ 7:00 AM ET in summer).
+- **Watchlist** — set the `WATCHLIST` repository variable, or edit the default in `market_brief.py`.
+- **Learning nuggets** — edit the `NUGGETS` list at the top of `market_brief.py`.
 
 <a name="daily-ai-agenda"></a>
 
@@ -112,9 +92,9 @@ daily_agenda.py
   3. Telegram bot pushes it to your phone
 ```
 
-### Setup (builds on the market summary setup)
+### Setup (builds on the market brief setup)
 
-You already have the Telegram bot and secrets from the market summary. Two additions:
+You already have the Telegram bot and secrets from the market brief. Two additions:
 
 **1. Add a `GH_PAT` secret.** This lets the pipeline keep your Microsoft sign-in fresh automatically (Microsoft rotates tokens; this stores the new one each run).
 
@@ -355,12 +335,11 @@ Set these as repository **variables** (Settings → Secrets and variables → Ac
 
 On first run the bot creates an **Internship Tracker** database under your Notion hub page with Firm, Division, Location, Class Year, Program Type, Status (New → Applied → OA → Interview → Offer), URL, and Notes. Re-runs never duplicate — each row has a hidden dedupe key.
 
-Your hub page can hold three databases side by side:
+Your hub page can hold databases side by side:
 
 | Database | What it holds |
 |---|---|
 | **AI Planner** | Tasks, deadlines, and calendar events from email |
-| **Market Daily** | Daily watchlist prices + AI market briefing |
 | **Internship Tracker** | Finance internship and discovery program postings |
 
 ### Notes

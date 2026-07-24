@@ -1,0 +1,31 @@
+name: Daily Market Brief to Telegram
+
+on:
+  schedule:
+    # 11:00 UTC ≈ 7:00 AM US Eastern (EDT). Runs Mon–Fri.
+    # Adjust the hour if you want a different time (GitHub cron is always UTC).
+    - cron: "0 11 * * 1-5"
+  workflow_dispatch: {}   # lets you run it manually from the Actions tab to test
+
+jobs:
+  send-brief:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Send the brief
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Falls back to AAPL,NVDA,MSFT inside market_brief.py if unset
+          WATCHLIST: ${{ vars.WATCHLIST || 'AAPL,NVDA,MSFT' }}
+        run: python market_brief.py
