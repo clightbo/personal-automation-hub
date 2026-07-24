@@ -245,6 +245,39 @@ Markdown vault at `obsidian-vault/` — a flat **Finance Command Center** for ma
 
 **Actions → Obsidian vault sync → Run workflow** (also runs on a weekday schedule). It regenerates the calendar + interview notes and commits them back to the repo. On your laptop, use the **Obsidian Git** plugin (or `git pull`) to refresh — details in `obsidian-vault/SETUP.md`.
 
+<a name="send-telegram"></a>
+
+## Send Telegram from Claude / GitHub
+
+Claude (Claude Code, Cursor, etc.) can message your phone by triggering a GitHub Action — **no Telegram token in the chat**.
+
+### 1. Give Claude GitHub access
+
+**Claude Code (terminal):**
+```bash
+gh auth login
+# follow prompts → GitHub.com → HTTPS → login in browser
+gh auth status
+```
+
+**Claude.ai (web):** Settings → Connectors → connect **GitHub** → allow `clightbo/Stock-Updates-SMS`.
+
+**Cursor:** you’re already linked if this cloud agent can push PRs to your repo.
+
+### 2. Ask Claude to send a message
+
+After [this workflow](#send-telegram) is on `main`, Claude can run:
+
+```bash
+gh workflow run "Send Telegram message" \
+  --repo clightbo/Stock-Updates-SMS \
+  -f message="Your note here"
+```
+
+Or you run it manually: **Actions → Send Telegram message → Run workflow**.
+
+Uses your existing `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` secrets. Optional checkbox sends via **Campus Coach** instead.
+
 <a name="internship-tracker"></a>
 
 ## Internship tracker

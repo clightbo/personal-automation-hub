@@ -1,0 +1,53 @@
+name: Send Telegram message
+
+# Let Claude (or you) push a custom note to your phone via Telegram.
+# Example (after `gh auth login`):
+#   gh workflow run "Send Telegram message" \
+#     --repo clightbo/Stock-Updates-SMS \
+#     -f message="Hey Clark — markets note from Claude"
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Text to send to your Telegram"
+        type: string
+        required: true
+      use_campus_coach:
+        description: "Send via Campus Coach bot instead of market bot"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Send via Campus Coach
+        if: ${{ inputs.use_campus_coach }}
+        env:
+          NETWORKING_TELEGRAM_BOT_TOKEN: ${{ secrets.NETWORKING_TELEGRAM_BOT_TOKEN }}
+          NETWORKING_TELEGRAM_CHAT_ID: ${{ secrets.NETWORKING_TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST_MESSAGE: ${{ inputs.message }}
+        run: python send_telegram_test.py
+
+      - name: Send via market bot
+        if: ${{ !inputs.use_campus_coach }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MESSAGE: ${{ inputs.message }}
+        run: python send_telegram_message.py
