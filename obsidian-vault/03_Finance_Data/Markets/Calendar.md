@@ -7,10 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-07-24 13:23 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-07-24 22:17 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
+| 2026-07-24 20:55 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-07-29 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.23972 |
 | 2026-07-29 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-07-30 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.89396 |
@@ -49,4 +50,8 @@ _Updated 2026-07-24 13:23 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
+
+### Macro
+
+- **2026-07-24 20:55** — President Trump Speaks
 
