@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
 """
-Daily market brief -> Telegram.
+Daily Market Brief -> Telegram, modeled on the "daily-market-brief" PDF layout:
 
-Numbers (markets + watchlist) are fetched and formatted in code so they are
-always accurate; the analysis sections (what stands out, trading watch, M&A,
-world, macro) are written by an LLM via GitHub Models from live headlines and
-the day's economic calendar, with a deterministic fallback if the LLM is
-unavailable.
+    Daily Market Brief — <date> · pre-market · <RISK-ON/OFF regime line>
+    MARKET SNAPSHOT       (US + international indices, 10Y, Brent, gold, BTC)
+    TOP 3 THINGS THAT MATTER TODAY   (each with a "Why it matters:")
+    ON THE CALENDAR TODAY (DATA / EARNINGS / WATCH)
+    ONE THING TO SOUND SMART ABOUT   (mini deep-dive)
+    LEARNING NUGGET       (tied to today's news)
+
+Numbers, econ calendar, and earnings come from live feeds (Yahoo, ForexFactory,
+Nasdaq); the narrative sections are written by an LLM via GitHub Models from
+~40 fresh headlines. Deterministic fallback keeps the brief arriving if the
+LLM is unavailable.
 
 Secrets: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
-Env (optional): WATCHLIST, LLM_MODEL, GITHUB_TOKEN (enables AI sections),
-DRY_RUN=1 (print instead of send).
+Env (optional): WATCHLIST, LLM_MODEL, GITHUB_TOKEN, DRY_RUN=1.
 """
 
 import html
 import os
+import re
 import sys
 import time
 import datetime
@@ -28,76 +34,87 @@ LLM_MODEL = os.environ.get("LLM_MODEL") or "openai/gpt-4o"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MarketBrief/1.0)"}
 
+# (symbol, label, is_dollar)
+MARKETS = [
+    ("^GSPC", "S&P 500", False),
+    ("^IXIC", "Nasdaq", False),
+    ("^DJI", "Dow Jones", False),
+    ("^TNX", "10-Yr Treasury", False),
+    ("BZ=F", "Brent Crude", True),
+    ("GC=F", "Gold", True),
+    ("BTC-USD", "Bitcoin", True),
+    ("^N225", "Nikkei 225", False),
+    ("^HSI", "Hang Seng", False),
+    ("^FTSE", "FTSE 100", False),
+]
+
 ECON_CALENDAR_URL = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+EARNINGS_URL = "https://api.nasdaq.com/api/calendar/earnings"
 
 RSS_FEEDS = {
     "CNBC Markets": "https://www.cnbc.com/id/20910258/device/rss/rss.html",
     "CNBC World": "https://www.cnbc.com/id/100727362/device/rss/rss.html",
     "CNBC Deals": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
     "MarketWatch": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "Yahoo Finance": "https://finance.yahoo.com/news/rssindex",
 }
-MAX_HEADLINES = 30
+MAX_HEADLINES = 40
 
-NUGGETS = [
-    ("Duration", "How sensitive a price is to interest-rate moves. Long bonds and high-growth tech fall hardest when yields rise."),
-    ("Free cash flow", "Cash left after a company funds operations and capital spending. It's what actually pays dividends and buybacks."),
-    ("P/E ratio", "Price divided by earnings per share — what you pay for $1 of profit. A high P/E means the market expects fast growth."),
-    ("Yield curve", "The gap between long and short Treasury yields. When it inverts (short > long), a recession has often followed."),
-    ("ROIC", "Return on invested capital — profit per dollar of capital. Above the cost of capital = real value creation."),
-    ("Beta", "How much a stock moves relative to the market. Beta > 1 means it swings harder than the index, both ways."),
-    ("Gross margin", "Revenue minus cost of goods, as a %. Higher margins signal pricing power and a stronger moat."),
-    ("The Fed's dual mandate", "The Fed targets both stable prices (~2% inflation) and maximum employment — the two can conflict."),
-    ("Multiple expansion", "When a stock rises because investors pay a higher P/E, not because earnings grew. Sentiment, not fundamentals."),
-    ("Short interest", "The % of shares sold short. Very high short interest can fuel a 'short squeeze' if the stock rallies."),
+FALLBACK_NUGGETS = [
+    "Duration: how sensitive a price is to interest-rate moves. Long bonds and high-growth tech fall hardest when yields rise.",
+    "Free cash flow: cash left after operations and capex. It's what actually pays dividends and buybacks.",
+    "The yield curve: when short Treasury yields exceed long ones (inversion), a recession has often followed.",
+    "Beta: how much a stock moves relative to the market. Beta > 1 swings harder than the index, both ways.",
+    "Multiple expansion: a stock rising because investors pay a higher P/E, not because earnings grew.",
 ]
 
 
 # ------------------------------------------------------------------ quotes
 
-def yahoo_quote(symbol):
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range=5d&interval=1d"
-    r = requests.get(url, headers=HEADERS, timeout=15)
+def fetch_quote(symbol):
+    """Return (price, day_pct, range_flag) using 1y of daily closes."""
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range=1y&interval=1d"
+    r = requests.get(url, headers=HEADERS, timeout=20)
     r.raise_for_status()
     res = r.json()["chart"]["result"][0]
     closes = [c for c in res["indicators"]["quote"][0]["close"] if c is not None]
     if len(closes) < 2:
         raise ValueError("not enough data")
     price, prev = closes[-1], closes[-2]
-    return price, (price - prev) / prev * 100
-
-
-def stooq_quote(symbol):
-    smap = {"^GSPC": "^spx", "^IXIC": "^ndq", "^DJI": "^dji", "CL=F": "cl.f", "GC=F": "gc.f"}
-    s = smap.get(symbol, symbol.lower() + ".us")
-    url = f"https://stooq.com/q/l/?s={s}&f=sd2t2ohlcv&h&e=csv"
-    r = requests.get(url, headers=HEADERS, timeout=15)
-    vals = r.text.strip().splitlines()[1].split(",")
-    return float(vals[6]), None
+    pct = (price - prev) / prev * 100
+    hi, lo = max(closes), min(closes)
+    flag = ""
+    if price >= hi * 0.995:
+        flag = "near 52-wk high"
+    elif price <= lo * 1.005:
+        flag = "near 52-wk low"
+    return price, pct, flag
 
 
 def get(symbol):
-    for fn in (yahoo_quote, stooq_quote):
-        try:
-            return fn(symbol)
-        except Exception:
-            continue
-    return None, None
+    try:
+        return fetch_quote(symbol)
+    except Exception as exc:
+        print(f"warning: quote failed for {symbol}: {exc}", file=sys.stderr)
+        return None, None, ""
 
 
-def fmt(price, pct, money=True):
+def snapshot_line(label, symbol, price, pct, flag, dollar):
     if price is None:
-        return "n/a"
-    p = f"${price:,.2f}" if money else f"{price:,.2f}"
-    if pct is None:
-        return p
-    arrow = "\U0001F7E2" if pct >= 0 else "\U0001F534"
-    return f"{p} {arrow} {pct:+.1f}%"
+        return f"{label}: n/a"
+    if symbol == "^TNX":
+        val = price / 10.0 if price > 20 else price
+        base = f"{label}: {val:.2f}%"
+    else:
+        p = f"${price:,.2f}" if dollar else f"{price:,.2f}"
+        dot = "\U0001F7E2" if (pct or 0) >= 0 else "\U0001F534"
+        base = f"{label}: {p} {dot} {pct:+.2f}%"
+    return f"{base} — {flag}" if flag else base
 
 
-# ------------------------------------------------------------ news + calendar
+# --------------------------------------------------------- calendar feeds
 
 def fetch_econ_calendar():
-    """Today's high/medium-impact + Fed-related US events, with ET times."""
     try:
         events = requests.get(ECON_CALENDAR_URL, headers=HEADERS, timeout=30).json()
     except Exception as exc:
@@ -113,16 +130,44 @@ def fetch_econ_calendar():
         fed_related = "fed" in title.lower() or "fomc" in title.lower()
         if impact not in ("High", "Medium") and not fed_related:
             continue
-        details = f" (forecast {ev['forecast']}, prev {ev.get('previous', '?')})" if ev.get("forecast") else ""
+        details = f" (consensus {ev['forecast']}, prev {ev.get('previous', '?')})" if ev.get("forecast") else ""
         lines.append(f"{ev['date'][11:16]} ET [{impact}] {title}{details}")
     return lines
+
+
+def fetch_earnings():
+    """Today's notable earnings from Nasdaq's calendar (biggest by market cap)."""
+    today = datetime.datetime.now(
+        datetime.timezone(datetime.timedelta(hours=-4))).strftime("%Y-%m-%d")
+    try:
+        r = requests.get(
+            EARNINGS_URL, params={"date": today},
+            headers={**HEADERS, "Accept": "application/json"}, timeout=30,
+        )
+        rows = (r.json().get("data") or {}).get("rows") or []
+    except Exception as exc:
+        print(f"warning: earnings calendar failed: {exc}", file=sys.stderr)
+        return []
+
+    def cap(row):
+        digits = re.sub(r"[^\d]", "", row.get("marketCap") or "")
+        return int(digits) if digits else 0
+
+    rows.sort(key=cap, reverse=True)
+    out = []
+    for row in rows[:8]:
+        sym = row.get("symbol", "?")
+        eps = row.get("epsForecast") or ""
+        when = {"time-pre-market": "AM", "time-after-hours": "PM"}.get(row.get("time", ""), "")
+        piece = sym + (f" (est {eps})" if eps else "") + (f" {when}" if when else "")
+        out.append(piece)
+    return out
 
 
 def fetch_headlines():
     try:
         import feedparser
     except ImportError:
-        print("warning: feedparser not installed; skipping headlines", file=sys.stderr)
         return []
     cutoff = time.time() - 24 * 3600
     headlines, seen = [], set()
@@ -143,41 +188,43 @@ def fetch_headlines():
     return headlines[:MAX_HEADLINES]
 
 
-# ---------------------------------------------------------------- AI section
+# ---------------------------------------------------------------- the LLM
 
-AI_HEADERS = {
-    "What stands out:": "\U0001F50D <b>What stands out</b>",
-    "Trading watch:": "\U0001F4C5 <b>Trading watch</b>",
-    "Deals:": "\U0001F91D <b>Deals</b>",
-    "World:": "\U0001F30D <b>World</b>",
-    "Macro:": "\U0001F4F0 <b>Macro</b>",
-}
+MARKERS = ["REGIME", "TOP3", "WATCH", "SOUNDSMART", "NUGGET"]
 
 
-def ai_sections(quotes_text, econ_events, headlines):
-    """LLM-written analysis. Returns HTML-safe text, or None on any failure."""
+def llm_narrative(snapshot_text, econ_lines, earnings, headlines, watchlist_text):
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
         return None
     briefing = (
-        f"Market data:\n{quotes_text}\n\n"
+        f"Market snapshot:\n{snapshot_text}\n\n"
+        f"Owner's watchlist moves:\n{watchlist_text}\n\n"
         "Today's US economic calendar:\n"
-        + ("\n".join(econ_events) if econ_events else "(nothing scheduled)")
+        + ("\n".join(econ_lines) if econ_lines else "(nothing scheduled)")
+        + "\n\nToday's notable earnings:\n"
+        + (", ".join(earnings) if earnings else "(none found)")
         + "\n\nHeadlines from the last 24 hours:\n"
         + ("\n".join(headlines) if headlines else "(none)")
     )
     system_prompt = (
-        "You write the analysis part of a pre-market Telegram brief for a "
-        "young day trader. Plain text only, no markdown, max 1800 characters "
-        "total. Output these sections, each starting with its exact header "
-        "on its own line, omitting any section with nothing notable:\n"
-        "What stands out: 2-3 sentences tying today's price moves to the news.\n"
-        "Trading watch: today's econ calendar items that can move SPY, with "
-        "ET times; flag Fed events and high-impact releases clearly.\n"
-        "Deals: M&A/buyouts from the headlines with companies and amounts.\n"
-        "World: geopolitical events that matter for markets.\n"
-        "Macro: 1-2 sentences on other market-moving news.\n"
-        "Terse, specific, no filler, no greetings."
+        "You write the narrative for a pre-market briefing aimed at a young "
+        "day trader. Plain text only, no markdown. Output EXACTLY these five "
+        "blocks, each starting with its marker on its own line:\n"
+        "REGIME: one line, 'RISK-ON:' or 'RISK-OFF:' or 'MIXED:' plus a "
+        "3-8 word reason (e.g. 'RISK-OFF: AI capex jitters + oil shock').\n"
+        "TOP3: the three things that matter most today, numbered 1. 2. 3. — "
+        "each a bold-worthy one-line title, then 1-2 sentences, then "
+        "'Why it matters:' and 1-2 sentences connecting it to positioning. "
+        "Reference specific tickers, numbers, and moves from the data.\n"
+        "WATCH: 1-2 lines on what's coming (next Fed meeting, key data or "
+        "earnings in the days ahead) inferred from the calendar and headlines.\n"
+        "SOUNDSMART: a mini deep-dive (4-6 sentences) on ONE theme from "
+        "today's news that makes the reader sound smart — start with a "
+        "punchy one-line thesis, then explain with specific numbers.\n"
+        "NUGGET: one finance concept (2-3 sentences) explained simply and "
+        "explicitly tied to something in today's news.\n"
+        "Total under 2400 characters. Terse, specific, no filler."
     )
     try:
         response = requests.post(
@@ -185,13 +232,13 @@ def ai_sections(quotes_text, econ_events, headlines):
             headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
             json={
                 "model": LLM_MODEL,
-                "max_tokens": 800,
+                "max_tokens": 1100,
                 "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": briefing},
                 ],
             },
-            timeout=60,
+            timeout=90,
         )
         response.raise_for_status()
         text = response.json()["choices"][0]["message"]["content"].strip()
@@ -199,96 +246,107 @@ def ai_sections(quotes_text, econ_events, headlines):
         print(f"warning: LLM failed: {exc}", file=sys.stderr)
         return None
 
-    safe = html.escape(text, quote=False)
-    for plain, rich in AI_HEADERS.items():
-        safe = safe.replace(plain, rich + "\n")
-    return safe.replace("\n\n\n", "\n\n")
-
-
-def fallback_insight(data, econ_events):
-    """Deterministic analysis when the LLM is unavailable."""
-    bits = []
-    spx = data.get("^GSPC", (None, None))[1]
-    if spx is not None:
-        bits.append("Risk-on — the S&P is climbing." if spx > 0.3
-                    else "Risk-off — the S&P is under pressure." if spx < -0.3
-                    else "Markets are mixed and roughly flat.")
-    movers = [(s, data[s][1]) for s in WATCHLIST if data.get(s, (None, None))[1] is not None]
-    if movers:
-        s, p = max(movers, key=lambda x: abs(x[1]))
-        bits.append(f"{s} is your biggest mover ({p:+.1f}%).")
-    ten = data.get("^TNX", (None, None))[0]
-    if ten:
-        ten = ten / 10.0 if ten > 20 else ten
-        if ten > 4.5:
-            bits.append(f"10-yr yield elevated at {ten:.2f}% — headwind for tech.")
-    oil_pct = data.get("CL=F", (None, None))[1]
-    if oil_pct is not None and abs(oil_pct) > 2:
-        bits.append(f"Oil is {'jumping' if oil_pct > 0 else 'sliding'} ({oil_pct:+.1f}%).")
-
-    out = ["\U0001F50D <b>What stands out</b>", " ".join(bits)]
-    if econ_events:
-        out += ["", "\U0001F4C5 <b>Trading watch</b>"] + [html.escape(e, quote=False) for e in econ_events]
-    return "\n".join(out)
+    sections = {}
+    current = None
+    for line in text.splitlines():
+        match = re.match(r"^\s*(REGIME|TOP3|WATCH|SOUNDSMART|NUGGET)\s*:?\s*(.*)", line)
+        if match:
+            current = match.group(1)
+            sections[current] = [match.group(2)] if match.group(2) else []
+        elif current:
+            sections[current].append(line)
+    parsed = {k: "\n".join(v).strip() for k, v in sections.items() if v}
+    return parsed if "TOP3" in parsed else None
 
 
 # -------------------------------------------------------------------- main
 
+def esc(text):
+    return html.escape(text, quote=False)
+
+
 def main():
     dry_run = os.environ.get("DRY_RUN") == "1"
     if not dry_run and (not BOT_TOKEN or not CHAT_ID):
-        print("ERROR: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set.", file=sys.stderr)
-        sys.exit(1)
+        sys.exit("ERROR: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set.")
 
     today = datetime.date.today()
-    symbols = ["^GSPC", "^IXIC", "^DJI", "^TNX", "CL=F", "GC=F", "BTC-USD"] + WATCHLIST
-    print(f"Fetching {len(symbols)} quotes...")
-    data = {sym: get(sym) for sym in symbols}
 
-    print("Fetching econ calendar and headlines...")
-    econ_events = fetch_econ_calendar()
+    print("Fetching market snapshot...")
+    quotes = {sym: get(sym) for sym, _, _ in MARKETS}
+    watch_quotes = {sym: get(sym) for sym in WATCHLIST}
+
+    print("Fetching calendars and headlines...")
+    econ_lines = fetch_econ_calendar()
+    earnings = fetch_earnings()
     headlines = fetch_headlines()
-    print(f"Got {len(econ_events)} econ events, {len(headlines)} headlines.")
+    print(f"Got {len(econ_lines)} econ events, {len(earnings)} earnings, "
+          f"{len(headlines)} headlines.")
 
-    L = ["<b>\U0001F4C8 Morning Market Brief</b>", f"<i>{today.strftime('%A, %B %d, %Y')}</i>", ""]
-
-    L.append("<b>Markets</b>")
-    L.append(f"S&P 500: {fmt(*data['^GSPC'], money=False)}")
-    L.append(f"Nasdaq: {fmt(*data['^IXIC'], money=False)}")
-    L.append(f"Dow: {fmt(*data['^DJI'], money=False)}")
-    ten = data["^TNX"][0]
-    ten = (ten / 10.0 if ten and ten > 20 else ten)
-    L.append(f"10-Yr yield: {ten:.2f}%" if ten else "10-Yr yield: n/a")
-    L.append(f"Oil (WTI): {fmt(*data['CL=F'])}")
-    L.append(f"Gold: {fmt(*data['GC=F'])}")
-    L.append(f"Bitcoin: {fmt(*data['BTC-USD'])}")
-    L.append("")
-
-    L.append("<b>Your watchlist</b>")
-    for sym in WATCHLIST:
-        L.append(f"{sym}: {fmt(*data[sym])}")
-    L.append("")
-
-    quotes_text = "\n".join(
-        f"{sym}: {data[sym][0]} ({data[sym][1]:+.2f}%)" if data[sym][0] is not None and data[sym][1] is not None
-        else f"{sym}: n/a"
-        for sym in symbols
+    snapshot_lines = [
+        snapshot_line(label, sym, *quotes[sym], dollar)
+        for sym, label, dollar in MARKETS
+    ]
+    watchlist_text = "\n".join(
+        f"{sym}: {q[0]:,.2f} ({q[1]:+.2f}%)" if q[0] is not None else f"{sym}: n/a"
+        for sym, q in watch_quotes.items()
     )
-    print(f"Building AI analysis with {LLM_MODEL}...")
-    analysis = ai_sections(quotes_text, econ_events, headlines)
-    if analysis is None:
-        print("Using deterministic fallback analysis.")
-        analysis = fallback_insight(data, econ_events)
-    L.append(analysis)
+
+    print(f"Writing narrative with {LLM_MODEL}...")
+    ai = llm_narrative("\n".join(snapshot_lines), econ_lines, earnings,
+                       headlines, watchlist_text)
+
+    L = []
+    regime = esc(ai["REGIME"]) if ai and ai.get("REGIME") else ""
+    L.append("\U0001F4CA <b>Daily Market Brief</b>")
+    L.append(f"<i>{today.strftime('%A, %B %d, %Y')} · pre-market"
+             + (f" · {regime}" if regime else "") + "</i>")
     L.append("")
 
-    title, body = NUGGETS[today.timetuple().tm_yday % len(NUGGETS)]
-    L.append(f"\U0001F4A1 <b>Learning nugget — {html.escape(title, quote=False)}</b>")
-    L.append(html.escape(body, quote=False))
+    L.append("<b>MARKET SNAPSHOT</b>")
+    L.extend(esc(line) for line in snapshot_lines)
+    L.append("")
+
+    if ai:
+        L.append("\U0001F525 <b>TOP 3 THINGS THAT MATTER TODAY</b>")
+        L.append(esc(ai["TOP3"]))
+        L.append("")
+        L.append("\U0001F4C5 <b>ON THE CALENDAR TODAY</b>")
+        if econ_lines:
+            L.append("DATA: " + esc(" · ".join(econ_lines)))
+        if earnings:
+            L.append("EARNINGS: " + esc(" · ".join(earnings)))
+        if ai.get("WATCH"):
+            L.append("WATCH: " + esc(ai["WATCH"]))
+        if not (econ_lines or earnings or ai.get("WATCH")):
+            L.append("Quiet calendar today.")
+        L.append("")
+        if ai.get("SOUNDSMART"):
+            L.append("\U0001F9E0 <b>ONE THING TO SOUND SMART ABOUT</b>")
+            L.append(esc(ai["SOUNDSMART"]))
+            L.append("")
+        nugget = ai.get("NUGGET") or FALLBACK_NUGGETS[today.toordinal() % len(FALLBACK_NUGGETS)]
+        L.append("\U0001F4A1 <b>LEARNING NUGGET</b>")
+        L.append(esc(nugget))
+    else:
+        # LLM unavailable: numbers-only brief so the message still arrives.
+        print("Using deterministic fallback.")
+        L.append("\U0001F4C5 <b>ON THE CALENDAR TODAY</b>")
+        for line in (econ_lines or ["Quiet calendar today."]):
+            L.append(esc(line))
+        if earnings:
+            L.append("EARNINGS: " + esc(" · ".join(earnings)))
+        L.append("")
+        L.append("\U0001F4A1 <b>LEARNING NUGGET</b>")
+        L.append(esc(FALLBACK_NUGGETS[today.toordinal() % len(FALLBACK_NUGGETS)]))
+
+    L.append("")
+    L.append("<i>Index levels reflect the last close; yields, commodities and "
+             "crypto move continuously. Data: Yahoo Finance, ForexFactory, Nasdaq.</i>")
 
     text = "\n".join(L)
-    if len(text) > 3900:  # Telegram caps messages at 4096 chars
-        text = text[:3897] + "..."
+    if len(text) > 4050:  # Telegram hard cap is 4096
+        text = text[:4047] + "..."
 
     if dry_run:
         print("\n----- brief -----")
@@ -299,7 +357,8 @@ def main():
 
     resp = requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-        data={"chat_id": CHAT_ID, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True},
+        data={"chat_id": CHAT_ID, "text": text, "parse_mode": "HTML",
+              "disable_web_page_preview": True},
         timeout=20,
     )
     print("Telegram status:", resp.status_code, resp.text[:200])
