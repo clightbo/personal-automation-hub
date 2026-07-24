@@ -1,5 +1,7 @@
 """Render outbox/claude-brief.html to PDF and send it to Telegram as a
-document (sendDocument), using the same market bot as the text relay.
+document (sendDocument), using Claude's own dedicated bot
+(@Anthopicdailynewsbot) — separate from the market bot used elsewhere in
+this repo.
 """
 
 from __future__ import annotations
@@ -19,12 +21,12 @@ def main() -> None:
     if not os.path.exists(HTML_PATH):
         sys.exit(f"error: {HTML_PATH} not found")
 
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    token = os.environ.get("CLAUDE_TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("CLAUDE_TELEGRAM_CHAT_ID", "").strip()
     if not token:
-        sys.exit("error: TELEGRAM_BOT_TOKEN is not set (repo secret).")
+        sys.exit("error: CLAUDE_TELEGRAM_BOT_TOKEN is not set (repo secret).")
     if not chat_id:
-        sys.exit("error: TELEGRAM_CHAT_ID is not set (repo secret).")
+        sys.exit("error: CLAUDE_TELEGRAM_CHAT_ID is not set (repo secret).")
 
     print("Rendering PDF from HTML brief...")
     HTML(filename=HTML_PATH).write_pdf(PDF_PATH)

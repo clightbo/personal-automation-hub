@@ -1,9 +1,10 @@
 name: Claude Brief Relay
 
-# Relays the brief Claude/Cowork writes to Telegram as a PDF only.
-# Triggered by a push that touches outbox/claude-brief.html (Claude pushes
-# via a PAT from its scheduled task — no api.github.com call needed, just
-# plain git push).
+# Relays the brief Claude/Cowork writes to Telegram as a PDF, via Claude's
+# own dedicated bot (@Anthopicdailynewsbot) — separate from the market bot
+# used by market_brief.py / Cursor. Triggered by a push that touches
+# outbox/claude-brief.html (Claude pushes via a PAT from its scheduled
+# task — no api.github.com call needed, just plain git push).
 
 on:
   push:
@@ -35,8 +36,8 @@ jobs:
       - name: Install python deps
         run: pip install requests weasyprint
 
-      - name: Send PDF brief to Telegram
+      - name: Send PDF brief to Telegram (Claude bot)
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CLAUDE_TELEGRAM_BOT_TOKEN: ${{ secrets.CLAUDE_TELEGRAM_BOT_TOKEN }}
+          CLAUDE_TELEGRAM_CHAT_ID: ${{ secrets.CLAUDE_TELEGRAM_CHAT_ID }}
         run: python send_claude_brief_pdf.py
