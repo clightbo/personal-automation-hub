@@ -7,6 +7,12 @@ on:
     - cron: "0 11 * * 1-5"
   workflow_dispatch: {}   # lets you run it manually from the Actions tab to test
 
+# `models: read` lets the built-in GITHUB_TOKEN call GitHub Models (free LLM)
+# for the AI-written analysis sections.
+permissions:
+  contents: read
+  models: read
+
 jobs:
   send-brief:
     runs-on: ubuntu-latest
@@ -20,12 +26,14 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests feedparser
 
       - name: Send the brief
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           # Falls back to AAPL,NVDA,MSFT inside market_brief.py if unset
           WATCHLIST: ${{ vars.WATCHLIST || 'AAPL,NVDA,MSFT' }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
         run: python market_brief.py
