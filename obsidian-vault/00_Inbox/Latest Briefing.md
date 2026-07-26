@@ -7,56 +7,58 @@ tags:
 
 # Latest Market Briefing
 
-_Last synced: 2026-07-25 12:09 UTC._
+_Last synced: 2026-07-26 12:09 UTC._
 
-> [!info] Weekend edition. Prices reflect Friday 7/24 close. Markets are closed today; the week ahead brings the Fed decision and Big Tech earnings.
+Sunday, July 26, 2026 · U.S. markets closed · ~3 min read
 
-## Market Snapshot (Fri 7/24 close)
+## Market Snapshot
 
-| Instrument | Level | Move |
+| Instrument | Level | Move (Fri 7/24) |
 |---|---|---|
-| S&P 500 | 7,412 | +0.05% |
-| Nasdaq Composite | 24,976 | −0.64% |
-| Dow Jones | 51,947 | +0.46% |
-| 10Y Treasury | 4.69% | elevated |
-| WTI Crude | $89.31 | −3.0% (+8% wk) |
-| Brent Crude | $96.78 | −3.9% (+10% wk) |
-| Gold | ~$4,052 | +0.1% |
-| Bitcoin | ~$64,300 | −1.6% |
+| S&P 500 | 7,411.98 | +0.05% |
+| Nasdaq Composite | 24,975.82 | −0.64% |
+| Dow Jones | 51,947.25 | +0.46% |
+| 10Y Treasury | 4.67% | eased Fri |
+| WTI Crude | ~$69 | −4% Fri |
+| Gold (spot) | ~$4,055 | below $4,100 |
+| Bitcoin | ~$64,000 | gave up gains |
 
-Wall Street closed a losing week: the Dow held up while the Nasdaq took a second chip-led hit. The tape was driven by a Middle East oil shock (Strait of Hormuz escalation) and an AI-capex-driven tech de-rating. Crypto leaked lower on ~$225M of spot-BTC ETF outflows as 4.69% yields pulled money out of risk.
+Split tape Friday: Dow +0.5% on a 3.5% Apple pop while the Nasdaq slid on a fresh chip sell-off (SanDisk −11%). Oil **plunged ~4%** as the Iran / Strait-of-Hormuz risk premium unwound, pulling the 10Y back from its mid-week high (its highest since Jan 2025). Asia/Europe were mixed and quiet into the weekend and the Fed.
 
 ## Your Watchlist
 
-- **SPY** — tracks S&P 500, **+0.05%**. Flat finish; index closed the week lower after Thursday's megacap rout.
-- **QQQ** — tracks Nasdaq-100, **≈ −0.6%**. Dragged by a second straight session of semiconductor selling.
-- **DIA** — tracks Dow, **+0.46%**. Value/industrials cushioned the index as oil retreated intraday.
-- **AAPL** — **$333.02 (+3.5%)**. Friday's standout; bid into earnings **Thu 7/30 after close** (est EPS ~$1.89).
-- **NVDA** — **$206.66 (−1.0%)**. Still in the chip-selloff crosshairs; reports **8/26**.
-- **MSFT** — **$381.70 (~flat)**. The key print this week: earnings **Wed 7/29 after close** (est EPS ~$4.24).
+- **SPY** — tracks S&P, +0.05%. Index basically pinned; breadth carried by Dow names.
+- **QQQ** — tracks Nasdaq, ~−0.6%. Dragged by semis; AI-capex jitters ahead of earnings.
+- **DIA** — tracks Dow, +0.46%. Best of the three; Apple did the heavy lifting.
+- **AAPL** — $333.02, +3.5%. Led blue chips; reports **Thu 7/30** after close.
+- **NVDA** — $206.66, −1.0%. Caught in the chip sell-off; does *not* report this week.
+- **MSFT** — $381.70, ~flat. Reports **Wed 7/29** after close; stock ~−25% y/y.
 
-## Top 3 Things That Matter
+## Top 3 Things That Matter Today
 
-- **Fed decision, Wed 2pm ET.** A hold at 3.50–3.75% with no dot plot is priced in — so Chair Warsh's press-conference tone is the whole event. With oil spiking and yields at 4.69%, any hawkish lean removes the rate-cut cushion the rally leans on.
-- **Big Tech earnings gauntlet.** MSFT + Meta land Wed after close, AAPL + Amazon Thu. After weak Alphabet/Tesla reactions erased ~$797B of Mag7 value Thursday, these prints decide whether the AI-capex narrative holds or the correction deepens.
-- **Hormuz oil shock vs. diplomacy.** Brent ran +10% on the week on Middle East escalation, then fell ~4% Friday on Pakistan/China-brokered US–Iran talks. Oil is now the swing factor for both inflation (yields) and risk appetite; a weekend re-escalation gaps everything Monday.
+1. **Fed decision Wednesday (2pm ET) + Chair Warsh presser.** Why it matters: it's the discount rate under everything, and last week's oil-driven inflation scare raises the odds of a more hawkish tone than the soft data alone would justify.
+2. **Big Tech earnings blitz into the Fed.** Why it matters: MSFT + META (Wed) and AAPL + AMZN (Thu) are a huge slice of the S&P's cap; any AI-spend disappointment could crack the narrow leadership holding the index up.
+3. **Oil's round-trip on Iran de-escalation.** Why it matters: the Strait of Hormuz reopening removed an inflation tail-risk into the Fed, but the IEA's projected 3.7–4.0 mb/d surplus is now the more durable story for energy equities and credit.
 
 ## On the Calendar
 
-- **Today (Sat 7/25):** No scheduled US data — weekend. Watch Strait of Hormuz headlines.
-- **Wed 7/29:** FOMC rate decision 2:00pm ET (consensus: hold 3.50–3.75%), presser ~2:30pm · **MSFT** & Meta earnings after close.
-- **Thu 7/30:** **AAPL** & Amazon earnings after close.
-- **Later:** **NVDA** earnings 8/26. Next SEP/dot-plot meeting is September.
+Today (Sun 7/26): U.S. markets closed. The week ahead is front-loaded with the Fed and Big Tech:
+
+- **Mon 7/27:** June durable goods orders.
+- **Tue 7/28:** Case-Shiller home prices; Conference Board consumer confidence; FOMC meeting begins.
+- **Wed 7/29:** **FOMC decision 2pm** + Warsh presser 2:30pm; ⭐ **MSFT** + META after close.
+- **Thu 7/30:** Q2 GDP (advance); jobless claims; ⭐ **AAPL** + AMZN after close.
+- **Fri 7/31:** June PCE price index (Fed's preferred gauge) + employment cost index.
 
 ## One Thing To Sound Smart About
 
-The "Mag7 as one trade" is over. Average pairwise correlation inside the group has collapsed from **0.78 (mid-2025) to 0.27** on a 3-month basis — dispersion, not beta, now drives returns, and the seven have lagged the S&P by 7%+ YTD. The real tell: hyperscaler AI capex keeps climbing while aggregate **free cash flow is turning negative** for the first time. With 61% of fund managers expecting *zero* capex cuts in 2026, the consensus is one-way — exactly the setup contrarians target into this week's MSFT / Meta / AAPL / Amazon prints. (Source: BofA "Flow Show" / State Street.)
+Last week's "rates scare" — the 10Y hitting its highest since Jan 2025 — **wasn't a growth or Fed story; it was breakeven inflation wearing a bond-market costume.** Nominal yields spiked while real (TIPS) yields barely budged, meaning the move was almost entirely a rise in inflation *expectations* driven by the Iran oil spike. The tell: the moment the Strait of Hormuz risk faded, both oil and the 10Y reversed together.
 
-## Learning Nugget — Pairwise Correlation
+The contrarian read: with the IEA flagging a ~4 mb/d surplus, the more durable trade may be **fading energy strength**, not chasing yields. Watch real yields, not headline nominal, to gauge whether Wednesday's Fed is actually the driver. (CNBC / EIA / IEA)
 
-When stocks in a basket move together, correlation nears 1.0 and the group trades as a single "factor"; when it falls, individual fundamentals (dispersion) take over and stock-picking beats owning the basket. That's why index-level volatility can stay calm even as single names swing violently — the moves cancel out at the index level.
+## Learning Nugget
 
----
+**Breakeven inflation** = a nominal Treasury yield minus the real (TIPS) yield of the same maturity; it's the market's implied average inflation rate over that horizon. When nominal yields climb but real yields don't, the move is inflation-expectation driven — usually a commodity/energy shock — rather than a repricing of growth or Fed policy.
 
 ## Quick links
 
@@ -64,14 +66,17 @@ When stocks in a basket move together, correlation nears 1.0 and the group trade
 - [[03_Finance_Data/Markets/Watchlist]]
 - [[01_Projects/Interview Prep/This Week]]
 
-## Sources
+---
 
-- [Yahoo Finance — Market close 7/24](https://finance.yahoo.com/markets/live/stock-market-today-friday-july-24-dow-sp-500-nasdaq-081854465.html)
-- [ETF Trends — Treasury yields](https://www.etftrends.com/fixed-income-content-hub/treasury-yields-snapshot-july-24-2026/)
-- [CNBC — Oil / US–Iran talks](https://www.cnbc.com/2026/07/24/oil-price-trump-hormuz-red-sea-iran-war.html)
-- [Yahoo — Gold](https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-july-24-2026-gold-price-remains-below-4100-ahead-of-next-weeks-rate-decision-152726975.html)
-- [Yahoo — Bitcoin](https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-july-24-2026-crypto-prices-retreat-on-higher-us-treasury-yields-152200068.html)
-- [CappNotes — AAPL/MSFT/NVDA](https://cappnotes.substack.com/p/closing-look-72426)
-- [CME — FOMC 7/28–29](https://www.cmelitegroup.com/knowledge-hub/fomc-meeting-fed-decision-day/)
-- [State Street — Mag7 correlation](https://www.ssga.com/us/en/institutional/insights/mind-on-the-market-20-july-2026)
-- [Investing.com — Hartnett Flow](https://www.investing.com/analysis/hartnett-flow-the-mag7-surprise-that-could-break-the-markets-last-line-of-defenc-200684227)
+### Sources
+
+- [Yahoo Finance — Fri 7/24 close](https://finance.yahoo.com/markets/live/stock-market-today-friday-july-24-dow-sp-500-nasdaq-081854465.html)
+- [CNBC — yields & oil](https://www.cnbc.com/2026/07/23/treasury-yields-oil-prices-jobless-claims.html)
+- [Motley Fool — blue chips rebound](https://www.fool.com/coverage/stock-market-today/2026/07/24/stock-market-midday-july-24-blue-chip-stocks-rebound-as-oil-prices-plunge/)
+- [Yahoo — gold](https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-july-24-2026-gold-price-remains-below-4100-ahead-of-next-weeks-rate-decision-152726975.html)
+- [CoinDesk — bitcoin](https://www.coindesk.com/tech/2026/07/24/live-updates-dogecoin-and-ether-lead-pullback-as-investors-digest-tech-earnings)
+- [CNBC — week ahead](https://www.cnbc.com/2026/07/24/stock-market-next-week-outlook-for-july-27-31-2026.html)
+- [Schaeffer's — Fed + earnings week](https://www.schaeffersresearch.com/content/news/2026/07/23/the-week-ahead-fed-decision-accompanies-a-big-tech-earnings-blitz)
+- [Intellectia — oil / Iran](https://intellectia.ai/blog/crude-oil-price-forecast-july-2026)
+
+_Not investment advice._
