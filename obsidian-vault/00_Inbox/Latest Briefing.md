@@ -7,60 +7,56 @@ tags:
 
 # Latest Market Briefing
 
-_Last synced: 2026-07-26 12:09 UTC._
-
-Sunday, July 26, 2026 · U.S. markets closed · ~3 min read
+_Last synced: 2026-07-27 07:10 ET._
 
 ## Market Snapshot
 
-| Instrument | Level | Move (Fri 7/24) |
+| Asset | Level | Move |
 |---|---|---|
-| S&P 500 | 7,411.98 | +0.05% |
-| Nasdaq Composite | 24,975.82 | −0.64% |
-| Dow Jones | 51,947.25 | +0.46% |
-| 10Y Treasury | 4.67% | eased Fri |
-| WTI Crude | ~$69 | −4% Fri |
-| Gold (spot) | ~$4,055 | below $4,100 |
-| Bitcoin | ~$64,000 | gave up gains |
+| S&P 500 (Fri close) | 7,412 | +0.05% |
+| Nasdaq Comp (Fri) | 24,976 | −0.64% |
+| Dow (Fri) | 51,947 | +0.46% |
+| US futures (Mon) | — | SPX +0.7% / NDX +1.2% / Dow +500 |
+| 10Y Treasury | 4.67% | off Fri's ~4.71% (highest since Jan 2025) |
+| Brent crude | ~$88 | −7% at open |
+| Gold (spot) | $4,110 | +1% |
+| Bitcoin | ~$66k | steadying |
+| Asia (MSCI AP) | — | +0.5% (KR/JP lead) |
+| Europe (Stoxx 50 fut) | — | +0.6% |
 
-Split tape Friday: Dow +0.5% on a 3.5% Apple pop while the Nasdaq slid on a fresh chip sell-off (SanDisk −11%). Oil **plunged ~4%** as the Iran / Strait-of-Hormuz risk premium unwound, pulling the 10Y back from its mid-week high (its highest since Jan 2025). Asia/Europe were mixed and quiet into the weekend and the Fed.
+Overnight driver: **US–Iran strikes paused** → oil gaps lower, yields ease, risk-on into a heavy central-bank + earnings week.
 
 ## Your Watchlist
 
-- **SPY** — tracks S&P, +0.05%. Index basically pinned; breadth carried by Dow names.
-- **QQQ** — tracks Nasdaq, ~−0.6%. Dragged by semis; AI-capex jitters ahead of earnings.
-- **DIA** — tracks Dow, +0.46%. Best of the three; Apple did the heavy lifting.
-- **AAPL** — $333.02, +3.5%. Led blue chips; reports **Thu 7/30** after close.
-- **NVDA** — $206.66, −1.0%. Caught in the chip sell-off; does *not* report this week.
-- **MSFT** — $381.70, ~flat. Reports **Wed 7/29** after close; stock ~−25% y/y.
+- **SPY** — Tracks S&P 7,412 (+0.05% Fri); futures +0.7% pre-market on the Iran truce. Index ~1% below its late-May peak.
+- **QQQ** — Nasdaq 100 futures +1.2% after Comp fell −0.64% Fri; the laggard on tech-capex angst but leading today's bounce.
+- **DIA** — Dow +0.46% Fri, futures +500 pts — cyclicals/value catching a bid as oil drops and breadth broadens.
+- **AAPL** — Top-performing megacap of the month and the only Mag 7 name at fresh highs; reports **Thursday** after close.
+- **NVDA** — −2.3% post the Alphabet/Tesla capex scare; SOX fell −4.25% Fri. The AI-"enabler" the rotation favors.
+- **MSFT** — Reports **Wednesday** after close; analysts flag FY26 capex could surprise to the upside — judged on cash flow, not just EPS.
 
 ## Top 3 Things That Matter Today
 
-1. **Fed decision Wednesday (2pm ET) + Chair Warsh presser.** Why it matters: it's the discount rate under everything, and last week's oil-driven inflation scare raises the odds of a more hawkish tone than the soft data alone would justify.
-2. **Big Tech earnings blitz into the Fed.** Why it matters: MSFT + META (Wed) and AAPL + AMZN (Thu) are a huge slice of the S&P's cap; any AI-spend disappointment could crack the narrow leadership holding the index up.
-3. **Oil's round-trip on Iran de-escalation.** Why it matters: the Strait of Hormuz reopening removed an inflation tail-risk into the Fed, but the IEA's projected 3.7–4.0 mb/d surplus is now the more durable story for energy equities and credit.
+1. **US–Iran attack pause** — Brent gapped down ~7% (below $90), futures rallied. _Why it matters:_ removes the tail risk that pushed yields to 2025 highs, but Hormuz isn't normalized, so the relief is conditional.
+2. **FOMC starts (decision Wed)** — Chair Warsh expected to hold; ~36% hike odds spiked with oil. _Why it matters:_ the presser, not the hold, decides whether the yield back-up continues.
+3. **Mega-cap earnings gauntlet** — MSFT/META Wed, AAPL/AMZN Thu, into Q2 GDP + PCE. _Why it matters:_ after Alphabet/Tesla, guidance on AI capex ROI — not headline EPS — moves the tape.
 
-## On the Calendar
+## On the Calendar Today
 
-Today (Sun 7/26): U.S. markets closed. The week ahead is front-loaded with the Fed and Big Tech:
-
-- **Mon 7/27:** June durable goods orders.
-- **Tue 7/28:** Case-Shiller home prices; Conference Board consumer confidence; FOMC meeting begins.
-- **Wed 7/29:** **FOMC decision 2pm** + Warsh presser 2:30pm; ⭐ **MSFT** + META after close.
-- **Thu 7/30:** Q2 GDP (advance); jobless claims; ⭐ **AAPL** + AMZN after close.
-- **Fri 7/31:** June PCE price index (Fed's preferred gauge) + employment cost index.
+- **Durable goods (Jun):** headline +1.6% (vs May −4.5%); core capex orders +1.4% vs +1.3% expected — business investment resilient.
+- **FOMC:** meeting day 1 (decision Wed 2pm ET).
+- **Earnings:** warm-up ahead of the mega-cap week; no watchlist names today (MSFT Wed, AAPL Thu).
 
 ## One Thing To Sound Smart About
 
-Last week's "rates scare" — the 10Y hitting its highest since Jan 2025 — **wasn't a growth or Fed story; it was breakeven inflation wearing a bond-market costume.** Nominal yields spiked while real (TIPS) yields barely budged, meaning the move was almost entirely a rise in inflation *expectations* driven by the Iran oil spike. The tell: the moment the Strait of Hormuz risk faded, both oil and the 10Y reversed together.
-
-The contrarian read: with the IEA flagging a ~4 mb/d surplus, the more durable trade may be **fading energy strength**, not chasing yields. Watch real yields, not headline nominal, to gauge whether Wednesday's Fed is actually the driver. (CNBC / EIA / IEA)
+The Mag 7 selloff wasn't about earnings — it was the market **switching its scorecard from EPS to free cash flow**. Alphabet (capex guide up to ~$205B) and Tesla now run *negative* FCF because of AI spend, and "no one knows the ROI." The tell: Mag 7's valuation premium to the S&P has compressed toward ~10% from 30%+, the cheapest in over a decade. The cheap-vs-history crowd and the FCF crowd are now looking at the same names and disagreeing — which is why AAPL (positive FCF, at highs) is decoupling from the capex-heavy platforms.
+_(Source: WSJ / Bloomberg Mag 7 index, via Spokesman & Forbes/Shefrin, Jul 23–27, 2026.)_
 
 ## Learning Nugget
 
-**Breakeven inflation** = a nominal Treasury yield minus the real (TIPS) yield of the same maturity; it's the market's implied average inflation rate over that horizon. When nominal yields climb but real yields don't, the move is inflation-expectation driven — usually a commodity/energy shock — rather than a repricing of growth or Fed policy.
+**Free cash flow (FCF) = operating cash flow − capex.** A company can post rising GAAP earnings while FCF turns negative if it plows cash into buildings and chips faster than the business generates it — exactly the AI-capex trap investors just started pricing in.
 
-## Quick links
+## Quick Links
 
 - [[03_Finance_Data/Markets/Calendar]]
 - [[03_Finance_Data/Markets/Watchlist]]
@@ -70,13 +66,12 @@ The contrarian read: with the IEA flagging a ~4 mb/d surplus, the more durable t
 
 ### Sources
 
-- [Yahoo Finance — Fri 7/24 close](https://finance.yahoo.com/markets/live/stock-market-today-friday-july-24-dow-sp-500-nasdaq-081854465.html)
-- [CNBC — yields & oil](https://www.cnbc.com/2026/07/23/treasury-yields-oil-prices-jobless-claims.html)
-- [Motley Fool — blue chips rebound](https://www.fool.com/coverage/stock-market-today/2026/07/24/stock-market-midday-july-24-blue-chip-stocks-rebound-as-oil-prices-plunge/)
-- [Yahoo — gold](https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-july-24-2026-gold-price-remains-below-4100-ahead-of-next-weeks-rate-decision-152726975.html)
-- [CoinDesk — bitcoin](https://www.coindesk.com/tech/2026/07/24/live-updates-dogecoin-and-ether-lead-pullback-as-investors-digest-tech-earnings)
-- [CNBC — week ahead](https://www.cnbc.com/2026/07/24/stock-market-next-week-outlook-for-july-27-31-2026.html)
-- [Schaeffer's — Fed + earnings week](https://www.schaeffersresearch.com/content/news/2026/07/23/the-week-ahead-fed-decision-accompanies-a-big-tech-earnings-blitz)
-- [Intellectia — oil / Iran](https://intellectia.ai/blog/crude-oil-price-forecast-july-2026)
+- [TheStreet — Jul 24](https://www.thestreet.com/stock-market-today/stock-market-today-july-24-2026-dow-futures-rebound-as-oil-retreats-after-market-sell-off)
+- [CNBC — Jul 26/27](https://www.cnbc.com/2026/07/26/stock-market-today-live-updates.html)
+- [Saxo — Market Quick Take Jul 27](https://www.home.saxo/content/articles/macro/market-quick-take---oil-gaps-lower-as-us-iran-strikes-pause-fed-in-focus---27-july-2026-27072026)
+- [Tickmill — Daily Outlook Jul 27](https://www.tickmill.com/blog/daily-market-outlook-july-27-2026)
+- [Spokesman — Mag 7](https://www.spokesman.com/stories/2026/jul/23/magnificent-7-lose-767-billion-as-ai-skeptics-dump/)
+- [Forbes/Shefrin — AI capex turning point](https://www.forbes.com/sites/hershshefrin/2026/07/27/market-experiences-an-ai-capex-turning-point-with-tipping-point-to-follow/)
+- [LiteFinance — Week ahead](https://www.litefinance.org/blog/analysts-opinions/weekly-economic-calendar-for-27072026-02082026/)
 
-_Not investment advice._
+_Generated automatically. Not investment advice._
