@@ -7,15 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-07-29 13:53 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-07-29 22:11 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
 | 2026-07-29 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.23939 |
-| 2026-07-29 14:00 ET | High | Macro | **Federal Funds Rate** — High impact; forecast 3.75%, prev 3.75% |
-| 2026-07-29 14:00 ET | High | Fed | **FOMC Statement** — High impact |
-| 2026-07-29 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-07-29 14:30 ET | High | Fed | **FOMC Press Conference** — High impact |
 | 2026-07-30 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.89138 |
 | 2026-07-30 08:30 ET | High | Macro | **Advance GDP q/q** — High impact; forecast 2.1%, prev 2.0% |
 | 2026-07-30 08:30 ET | High | Macro | **Core PCE Price Index m/m** — High impact; forecast 0.2%, prev 0.3% |
@@ -47,9 +43,6 @@ _Updated 2026-07-29 13:53 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-07-29 14:00** — FOMC Statement
-- **2026-07-29 14:00** — FOMC rate decision
-- **2026-07-29 14:30** — FOMC Press Conference
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
@@ -64,7 +57,6 @@ _Updated 2026-07-29 13:53 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-07-29 14:00** — Federal Funds Rate
 - **2026-07-30 08:30** — Advance GDP q/q
 - **2026-07-30 08:30** — Core PCE Price Index m/m
 - **2026-07-30 08:30** — Advance GDP Price Index q/q
