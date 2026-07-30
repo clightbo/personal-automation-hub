@@ -1,0 +1,517 @@
+From 17e072991effbd924e9d95e424eba43f37cc9e7c Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Thu, 30 Jul 2026 23:54:08 +0000
+Subject: [PATCH] Wire Deal Terms to client bid sensitivity and harden deal
+ normalization
+
+Add a client-side bid-math engine so Re-run sensitivity recomputes the
+ladder and max supportable price from Deal Terms inputs, and fix
+normalizeDeal/narrative handling for swapped or packed name/address
+fields and object-shaped memo bullets.
+---
+ src/components/deal/DealTerms.tsx         |  49 +++++--
+ src/components/deal/InvestmentSummary.tsx |  25 +++-
+ src/lib/bid-math.ts                       | 170 ++++++++++++++++++++++
+ src/lib/screening-result.ts               | 111 ++++++++++++--
+ src/routes/deal.$dealId.tsx               |   9 +-
+ 5 files changed, 333 insertions(+), 31 deletions(-)
+ create mode 100644 src/lib/bid-math.ts
+
+diff --git a/src/components/deal/DealTerms.tsx b/src/components/deal/DealTerms.tsx
+index 8ed1be9..4da3b12 100644
+--- a/src/components/deal/DealTerms.tsx
++++ b/src/components/deal/DealTerms.tsx
+@@ -1,17 +1,28 @@
+ import { useState } from "react";
++import { toast } from "sonner";
+ import { Button } from "@/components/ui/button";
+ import { Input } from "@/components/ui/input";
+ import { Label } from "@/components/ui/label";
+-import { SectionHeading } from "./primitives";
++import { applyBidAssumptions, parseAssumptions } from "@/lib/bid-math";
+ import type { Deal } from "@/lib/deal-types";
++import { SectionHeading } from "./primitives";
+ 
+-export function DealTerms({ deal }: { deal: Deal }) {
++export function DealTerms({
++  deal,
++  onDealUpdate,
++}: {
++  deal: Deal;
++  onDealUpdate?: (deal: Deal) => void;
++}) {
+   const priced = deal.deal_terms.stated_price !== null;
+   const [terms, setTerms] = useState({
+     bid: priced
+       ? String(deal.deal_terms.stated_price)
+-      : String(deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)].bid_price),
+-    ltv: "60",
++      : String(
++          deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]
++            ?.bid_price ?? "",
++        ),
++    ltv: String(deal.metrics.ltv.value ?? 60),
+     rate: "6.5",
+     amort: "30",
+     minDscr: "1.25",
+@@ -20,6 +31,24 @@ export function DealTerms({ deal }: { deal: Deal }) {
+   const set = (k: keyof typeof terms) => (e: React.ChangeEvent<HTMLInputElement>) =>
+     setTerms((t) => ({ ...t, [k]: e.target.value }));
+ 
++  const rerun = () => {
++    const assumptions = parseAssumptions(terms);
++    if (!assumptions) {
++      toast.error("Enter valid numbers for bid, LTV, rate, and underwriting floors.");
++      return;
++    }
++    if (deal.metrics.noi.value == null) {
++      toast.error("NOI is missing — sensitivity cannot be recomputed.");
++      return;
++    }
++    const updated = applyBidAssumptions(deal, assumptions);
++    onDealUpdate?.(updated);
++    document
++      .getElementById("bid-sensitivity")
++      ?.scrollIntoView({ behavior: "smooth" });
++    toast.success("Bid sensitivity updated.");
++  };
++
+   return (
+     <section id="deal-terms">
+       <SectionHeading title="Deal terms" description={deal.deal_terms.offering_type} />
+@@ -50,15 +79,7 @@ export function DealTerms({ deal }: { deal: Deal }) {
+           <Field id="minDy" label="Min debt yield (%)" value={terms.minDy} onChange={set("minDy")} />
+         </div>
+         <div className="mt-5 flex justify-end">
+-          <Button
+-            onClick={() =>
+-              document
+-                .getElementById("bid-sensitivity")
+-                ?.scrollIntoView({ behavior: "smooth" })
+-            }
+-          >
+-            Re-run sensitivity
+-          </Button>
++          <Button onClick={rerun}>Re-run sensitivity</Button>
+         </div>
+       </div>
+     </section>
+@@ -87,4 +108,4 @@ function Field({
+       {hint ? <p className="text-[11px] text-muted-foreground">{hint}</p> : null}
+     </div>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/deal/InvestmentSummary.tsx b/src/components/deal/InvestmentSummary.tsx
+index 63e26bf..554af5d 100644
+--- a/src/components/deal/InvestmentSummary.tsx
++++ b/src/components/deal/InvestmentSummary.tsx
+@@ -3,15 +3,28 @@ import { Button } from "@/components/ui/button";
+ import { SectionHeading } from "./primitives";
+ import type { Deal } from "@/lib/deal-types";
+ 
+-function List({ title, items }: { title: string; items: string[] }) {
++function asText(item: unknown): string {
++  if (typeof item === "string") return item;
++  if (typeof item === "number" || typeof item === "boolean") return String(item);
++  if (item && typeof item === "object") {
++    const o = item as Record<string, unknown>;
++    const nested =
++      o.text ?? o.content ?? o.summary ?? o.title ?? o.label ?? o.item ?? o.description;
++    if (typeof nested === "string") return nested;
++  }
++  return "";
++}
++
++function List({ title, items }: { title: string; items: unknown[] }) {
++  const lines = items.map(asText).filter(Boolean);
+   return (
+     <div>
+       <p className="text-xs tracking-wide text-muted-foreground uppercase">{title}</p>
+       <ul className="mt-2 space-y-2 text-sm leading-relaxed">
+-        {items.map((i) => (
+-          <li key={i} className="flex gap-2">
++        {lines.map((line, idx) => (
++          <li key={`${idx}-${line.slice(0, 24)}`} className="flex gap-2">
+             <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+-            <span>{i}</span>
++            <span>{line}</span>
+           </li>
+         ))}
+       </ul>
+@@ -34,10 +47,10 @@ export function InvestmentSummary({ deal }: { deal: Deal }) {
+       <div className="card-surface space-y-6 p-6">
+         <div>
+           <h3 className="text-xl font-semibold tracking-tight">
+-            {deal.narrative.headline}
++            {asText(deal.narrative.headline)}
+           </h3>
+           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+-            {deal.narrative.executive_summary}
++            {asText(deal.narrative.executive_summary)}
+           </p>
+         </div>
+         <div className="grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+diff --git a/src/lib/bid-math.ts b/src/lib/bid-math.ts
+new file mode 100644
+index 0000000..8d20b80
+--- /dev/null
++++ b/src/lib/bid-math.ts
+@@ -0,0 +1,170 @@
++import type { BidRow, Deal } from "./deal-types";
++
++/** Inputs from the Deal Terms form (percent fields are 0–100, not decimals). */
++export type BidAssumptions = {
++  bid: number;
++  ltv: number;
++  rate: number;
++  amort: number;
++  minDscr: number;
++  minDy: number;
++};
++
++/** Annual debt service for a fully amortizing loan. */
++export function annualDebtService(
++  loan: number,
++  ratePct: number,
++  amortYears: number,
++): number {
++  if (!(loan > 0) || !(amortYears > 0)) return 0;
++  const monthlyRate = ratePct / 100 / 12;
++  const n = Math.round(amortYears * 12);
++  if (monthlyRate === 0) return loan / amortYears;
++  const payment =
++    (loan * monthlyRate * Math.pow(1 + monthlyRate, n)) /
++    (Math.pow(1 + monthlyRate, n) - 1);
++  return payment * 12;
++}
++
++function round(n: number, d: number) {
++  const f = 10 ** d;
++  return Math.round(n * f) / f;
++}
++
++/** Evaluate a single bid rung against in-place NOI. */
++export function evaluateBid(
++  noi: number,
++  units: number,
++  bidPrice: number,
++  a: Pick<BidAssumptions, "ltv" | "rate" | "amort" | "minDscr" | "minDy">,
++  note?: string,
++): BidRow {
++  const ltv = a.ltv / 100;
++  const loan = bidPrice * ltv;
++  const capRate = bidPrice > 0 && noi > 0 ? (noi / bidPrice) * 100 : null;
++  const debtYield = loan > 0 && noi > 0 ? (noi / loan) * 100 : null;
++  const ads = annualDebtService(loan, a.rate, a.amort);
++  const dscr = ads > 0 && noi > 0 ? noi / ads : null;
++  const financeable =
++    dscr !== null &&
++    debtYield !== null &&
++    dscr >= a.minDscr &&
++    debtYield >= a.minDy;
++  const negativeLeverage = capRate !== null && capRate < a.rate;
++
++  return {
++    bid_price: bidPrice,
++    price_per_unit: units > 0 ? Math.round(bidPrice / units) : 0,
++    cap_rate: capRate === null ? null : round(capRate, 2),
++    dscr: dscr === null ? null : round(dscr, 2),
++    debt_yield: debtYield === null ? null : round(debtYield, 1),
++    financeable,
++    negative_leverage: negativeLeverage,
++    note,
++  };
++}
++
++/**
++ * Highest bid that still clears min DSCR and min debt yield at the assumed
++ * leverage / rate / amortization.
++ */
++export function maxSupportablePrice(
++  noi: number,
++  a: Pick<BidAssumptions, "ltv" | "rate" | "amort" | "minDscr" | "minDy">,
++): number {
++  if (!(noi > 0) || !(a.ltv > 0)) return 0;
++  const ltv = a.ltv / 100;
++  const byDy = noi / ((a.minDy / 100) * ltv);
++  const factor = annualDebtService(1, a.rate, a.amort);
++  const byDscr = factor > 0 ? noi / (a.minDscr * ltv * factor) : Infinity;
++  const max = Math.min(byDy, byDscr);
++  if (!Number.isFinite(max) || max <= 0) return 0;
++  // Round down to nearest $100k so the rung is still financeable after rounding.
++  return Math.floor(max / 100_000) * 100_000;
++}
++
++/** Build a 7-rung ladder around the entered bid, always including any OM price. */
++export function buildBidLadder(
++  noi: number,
++  units: number,
++  a: BidAssumptions,
++  statedPrice: number | null = null,
++): BidRow[] {
++  const center = a.bid > 0 ? a.bid : (statedPrice ?? 0);
++  if (!(center > 0)) return [];
++
++  const spreads = [-0.09, -0.05, 0, 0.044, 0.107, 0.17, 0.237];
++  const prices = new Set<number>();
++  for (const s of spreads) {
++    prices.add(Math.round((center * (1 + s)) / 100_000) * 100_000);
++  }
++  prices.add(Math.round(center / 1000) * 1000);
++  if (statedPrice && statedPrice > 0) prices.add(statedPrice);
++
++  const sorted = [...prices].filter((p) => p > 0).sort((x, y) => x - y);
++  let taggedNeg = false;
++
++  return sorted.map((bidPrice) => {
++    const row = evaluateBid(noi, units, bidPrice, a);
++    const notes: string[] = [];
++    if (statedPrice && bidPrice === statedPrice) notes.push("OM guidance");
++    if (row.negative_leverage && !taggedNeg) {
++      notes.push(`cost of debt ${a.rate.toFixed(2)}%`);
++      taggedNeg = true;
++    }
++    return notes.length ? { ...row, note: notes.join(" · ") } : row;
++  });
++}
++
++/** Recompute bid sensitivity + leverage metrics on a deal from Deal Terms inputs. */
++export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
++  const noi = deal.metrics.noi.value;
++  if (noi == null || !(noi > 0) || !(a.bid > 0)) {
++    return deal;
++  }
++
++  const units = deal.property.units || 1;
++  const ladder = buildBidLadder(noi, units, a, deal.deal_terms.stated_price);
++  const atBid =
++    ladder.find((r) => r.bid_price === a.bid) ??
++    evaluateBid(noi, units, a.bid, a);
++  const maxPrice = maxSupportablePrice(noi, a);
++
++  return {
++    ...deal,
++    metrics: {
++      ...deal.metrics,
++      cap_rate: { ...deal.metrics.cap_rate, value: atBid.cap_rate },
++      dscr: { ...deal.metrics.dscr, value: atBid.dscr },
++      debt_yield: { ...deal.metrics.debt_yield, value: atBid.debt_yield },
++      ltv: { ...deal.metrics.ltv, value: a.ltv },
++      price_per_unit: {
++        ...deal.metrics.price_per_unit,
++        value: atBid.price_per_unit,
++      },
++    },
++    bid_sensitivity: ladder,
++    max_supportable_price: maxPrice,
++  };
++}
++
++export function parseAssumptions(raw: {
++  bid: string;
++  ltv: string;
++  rate: string;
++  amort: string;
++  minDscr: string;
++  minDy: string;
++}): BidAssumptions | null {
++  const bid = Number(String(raw.bid).replace(/[$,\s]/g, ""));
++  const ltv = Number(raw.ltv);
++  const rate = Number(raw.rate);
++  const amort = Number(raw.amort);
++  const minDscr = Number(raw.minDscr);
++  const minDy = Number(raw.minDy);
++  if (![bid, ltv, rate, amort, minDscr, minDy].every((n) => Number.isFinite(n))) {
++    return null;
++  }
++  if (!(bid > 0) || !(ltv > 0) || !(amort > 0)) return null;
++  return { bid, ltv, rate, amort, minDscr, minDy };
++}
+diff --git a/src/lib/screening-result.ts b/src/lib/screening-result.ts
+index 75b393b..6a709b8 100644
+--- a/src/lib/screening-result.ts
++++ b/src/lib/screening-result.ts
+@@ -29,14 +29,82 @@ const metric = (v: unknown): Metric => {
+   return { value: num(v) };
+ };
+ 
+-const str = (v: unknown, fallback = ""): string =>
+-  typeof v === "string" ? v : v == null ? fallback : String(v);
++/** Coerce webhook values to display strings without emitting "[object Object]". */
++const str = (v: unknown, fallback = ""): string => {
++  if (typeof v === "string") return v;
++  if (typeof v === "number" || typeof v === "boolean") return String(v);
++  if (v == null) return fallback;
++  if (Array.isArray(v)) {
++    const parts = v.map((item) => str(item)).filter(Boolean);
++    return parts.length ? parts.join("; ") : fallback;
++  }
++  if (typeof v === "object") {
++    const o = v as Record<string, unknown>;
++    const nested =
++      o.text ??
++      o.value ??
++      o.content ??
++      o.summary ??
++      o.title ??
++      o.label ??
++      o.item ??
++      o.name ??
++      o.description ??
++      o.reason ??
++      o.detail;
++    if (nested != null && nested !== v) return str(nested, fallback);
++    return fallback;
++  }
++  return fallback;
++};
+ 
+ const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
+ 
+ const obj = (v: unknown): Record<string, unknown> =>
+   v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
+ 
++const looksLikeAddress = (s: string) => /^\d+\s+\S+/.test(s.trim());
++
++/**
++ * n8n sometimes returns property as a bare string, swaps name/address, or packs
++ * both into one field ("Name — 123 Main St"). Normalize to a clean pair.
++ */
++function parseNameAddress(
++  nameRaw: string,
++  addressRaw: string,
++): { name: string; address: string } {
++  let name = nameRaw.trim();
++  let address = addressRaw.trim();
++
++  if (looksLikeAddress(name) && address && !looksLikeAddress(address)) {
++    [name, address] = [address, name];
++  }
++
++  if (!address) {
++    const splitEm =
++      name.match(/^(.*?)\s+[—–]\s+(.+)$/) ||
++      name.match(/^(.*?)\s+\|\s+(.+)$/) ||
++      name.match(/^([^,\n]+),\s+(\d+\s+.+)$/) ||
++      name.match(/^([^\n]+)\n+(.+)$/);
++    if (splitEm) {
++      const left = splitEm[1].trim();
++      const right = splitEm[2].trim();
++      if (looksLikeAddress(right) && !looksLikeAddress(left)) {
++        name = left;
++        address = right;
++      } else if (looksLikeAddress(left) && !looksLikeAddress(right)) {
++        name = right;
++        address = left;
++      }
++    }
++  }
++
++  return {
++    name: name || "Screened Deal",
++    address: address || "Address not stated in OM",
++  };
++}
++
+ /** source_pages may be a number, an array of page refs, or an object map. */
+ const countPages = (v: unknown): number => {
+   if (Array.isArray(v)) return v.length;
+@@ -124,7 +192,8 @@ function unwrap(raw: unknown): Record<string, unknown> {
+ /** Normalize an arbitrary webhook payload into the Deal shape the dashboard renders. */
+ export function normalizeDeal(raw: unknown): Deal {
+   const r = unwrap(raw);
+-  const p = obj(r.property ?? r.subject_property ?? r.asset);
++  const propertyRaw = r.property ?? r.subject_property ?? r.asset;
++  const p = typeof propertyRaw === "string" ? {} : obj(propertyRaw);
+   const mRaw = obj(r.metrics ?? r.financials ?? r.key_metrics);
+   const s = obj(r.summary ?? r.risk_summary);
+   const t = obj(r.deal_terms ?? r.terms);
+@@ -132,7 +201,23 @@ export function normalizeDeal(raw: unknown): Deal {
+   const n = obj(r.narrative ?? r.investment_summary ?? r.memo);
+   const meta = obj(r.extraction_meta ?? r.extraction);
+ 
+-  const name = str(p.name ?? p.property_name ?? r.property_name, "Screened Deal");
++  const { name, address } = parseNameAddress(
++    str(
++      (typeof propertyRaw === "string" ? propertyRaw : null) ??
++        p.name ??
++        p.property_name ??
++        r.property_name ??
++        r.name,
++      "Screened Deal",
++    ),
++    str(
++      p.address ??
++        p.property_address ??
++        p.street_address ??
++        r.property_address ??
++        r.address,
++    ),
++  );
+ 
+   const metrics: DealMetrics = {
+     noi: metric(mRaw.noi),
+@@ -163,7 +248,7 @@ export function normalizeDeal(raw: unknown): Deal {
+     id: slugify(name),
+     property: {
+       name,
+-      address: str(p.address, "Address not stated in OM"),
++      address,
+       units: num(p.units) ?? num(mRaw.units) ?? metric(mRaw.units).value ?? 0,
+       year_built: num(p.year_built) ?? num(mRaw.year_built) ?? metric(mRaw.year_built).value,
+       submarket: str(p.submarket ?? p.market, "—"),
+@@ -216,10 +301,18 @@ export function normalizeDeal(raw: unknown): Deal {
+     narrative: {
+       headline: str(n.headline, `${name} screening result`),
+       executive_summary: str(n.executive_summary ?? n.summary),
+-      key_strengths: arr<unknown>(n.key_strengths ?? n.strengths).map((v) => str(v)),
+-      key_concerns: arr<unknown>(n.key_concerns ?? n.concerns).map((v) => str(v)),
+-      critical_questions: arr<unknown>(n.critical_questions ?? n.questions).map((v) => str(v)),
+-      recommended_next_steps: arr<unknown>(n.recommended_next_steps ?? n.next_steps).map((v) => str(v)),
++      key_strengths: arr<unknown>(n.key_strengths ?? n.strengths)
++        .map((v) => str(v))
++        .filter(Boolean),
++      key_concerns: arr<unknown>(n.key_concerns ?? n.concerns)
++        .map((v) => str(v))
++        .filter(Boolean),
++      critical_questions: arr<unknown>(n.critical_questions ?? n.questions)
++        .map((v) => str(v))
++        .filter(Boolean),
++      recommended_next_steps: arr<unknown>(n.recommended_next_steps ?? n.next_steps)
++        .map((v) => str(v))
++        .filter(Boolean),
+     },
+     extraction_meta: {
+       source_pages: countPages(meta.source_pages),
+diff --git a/src/routes/deal.$dealId.tsx b/src/routes/deal.$dealId.tsx
+index 771b018..60c8903 100644
+--- a/src/routes/deal.$dealId.tsx
++++ b/src/routes/deal.$dealId.tsx
+@@ -11,7 +11,7 @@ import { InvestmentSummary } from "@/components/deal/InvestmentSummary";
+ import { RecommendationBadge, SectionHeading } from "@/components/deal/primitives";
+ import { getDeal } from "@/lib/mock-deals";
+ import { fmtMoney } from "@/lib/deal-types";
+-import { getScreeningResult } from "@/lib/screening-result";
++import { getScreeningResult, saveScreeningResult } from "@/lib/screening-result";
+ 
+ export const Route = createFileRoute("/deal/$dealId")({
+   loader: ({ params }) => getDeal(params.dealId) ?? null,
+@@ -108,7 +108,12 @@ function DealDashboard() {
+           </div>
+         </section>
+ 
+-        <DealTerms deal={deal} />
++        <DealTerms
++          deal={deal}
++          onDealUpdate={(next) => {
++            setDeal(saveScreeningResult(next));
++          }}
++        />
+         <BidSensitivity deal={deal} />
+         <RiskPanel deal={deal} />
+         <MarketResearch deal={deal} />
+-- 
+2.43.0
+
