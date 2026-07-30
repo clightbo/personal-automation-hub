@@ -3,116 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre-Market Brief — Jul 29, 2026</title>
+<title>Daily Market Brief — Jul 30, 2026</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#0b0f14; color:#e6edf3;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5; padding:20px; max-width:780px; margin:0 auto;
-    font-size:17px; -webkit-text-size-adjust:100%;
-  }
-  .head { border-bottom:2px solid #1f2937; padding-bottom:14px; margin-bottom:22px; }
-  .kicker { color:#3b82f6; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
-  h1 { font-size:26px; margin:6px 0 4px; color:#fff; }
-  .sub { color:#8b98a5; font-size:14px; }
-  h2 {
-    font-size:15px; text-transform:uppercase; letter-spacing:1px; color:#60a5fa;
-    margin:28px 0 12px; padding-bottom:6px; border-bottom:1px solid #1f2937;
-  }
-  table { width:100%; border-collapse:collapse; margin:6px 0 4px; font-size:15.5px; }
-  th, td { text-align:left; padding:9px 8px; border-bottom:1px solid #161b22; }
-  th { color:#8b98a5; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
-  td.r, th.r { text-align:right; font-variant-numeric:tabular-nums; }
-  .up { color:#3fb950; font-weight:600; }
-  .dn { color:#f85149; font-weight:600; }
-  .flat { color:#8b98a5; font-weight:600; }
-  .tick { font-weight:700; color:#fff; }
-  ul { list-style:none; margin:6px 0; }
-  li { padding:9px 0 9px 20px; position:relative; border-bottom:1px solid #12171e; }
-  li:before { content:"▸"; position:absolute; left:0; color:#3b82f6; }
-  .num { display:inline-block; width:22px; height:22px; background:#1d4ed8; color:#fff;
-    border-radius:50%; text-align:center; line-height:22px; font-size:13px; font-weight:700; margin-right:8px; }
-  .why { color:#8b98a5; font-size:14px; font-style:italic; }
-  .box { background:#0f1620; border:1px solid #1f2937; border-radius:10px; padding:16px 18px; margin:8px 0; }
-  .edge { border-left:3px solid #f59e0b; }
-  .learn { border-left:3px solid #10b981; }
-  .src { font-size:12.5px; color:#6b7684; margin-top:8px; }
-  .src a { color:#58a6ff; text-decoration:none; }
-  a { color:#58a6ff; }
-  .foot { margin-top:26px; padding-top:14px; border-top:1px solid #1f2937; font-size:12.5px; color:#6b7684; }
-  strong { color:#fff; }
+  :root{--bg:#0b0f17;--panel:#131a26;--panel2:#0f1622;--edge:#1f2a3a;--txt:#e8edf5;--mut:#93a1b5;--acc:#4da3ff;--grn:#2ecc71;--red:#ff5c6c;--amb:#f5b940;--gold:#e8c14a;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:17px;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px;}
+  header{border-bottom:1px solid var(--edge);padding-bottom:16px;margin-bottom:8px;}
+  .kicker{color:var(--acc);font-weight:700;letter-spacing:.14em;font-size:12.5px;text-transform:uppercase;}
+  h1{font-size:26px;font-weight:800;margin:6px 0 4px;letter-spacing:-.01em;}
+  .sub{color:var(--mut);font-size:14px;}
+  .tldr{background:linear-gradient(180deg,#16202f,#111927);border:1px solid var(--edge);border-left:3px solid var(--acc);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:16px;}
+  .tldr b{color:#fff;}
+  section{margin:26px 0;}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);border-bottom:1px solid var(--edge);padding-bottom:7px;margin-bottom:12px;}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--panel);}
+  th{color:var(--mut);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;}
+  td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+  .up{color:var(--grn);}.dn{color:var(--red);}.fl{color:var(--mut);}
+  .tick{font-weight:800;}
+  ul{list-style:none;}
+  li{padding:9px 0;border-bottom:1px solid var(--panel);}
+  li:last-child{border-bottom:none;}
+  .lbl{font-weight:700;color:#fff;}
+  .why{color:var(--mut);font-size:14.5px;display:block;margin-top:2px;}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#04101f;font-weight:800;font-size:13px;margin-right:8px;flex:none;}
+  .edge{background:var(--panel2);border:1px solid var(--edge);border-radius:12px;padding:16px;}
+  .edge .tag{display:inline-block;background:#3a2a05;color:var(--amb);font-weight:700;font-size:11px;letter-spacing:.1em;padding:3px 9px;border-radius:20px;text-transform:uppercase;margin-bottom:10px;}
+  .nugget{background:var(--panel2);border:1px dashed var(--edge);border-radius:12px;padding:14px 16px;font-size:15px;color:#d3ddec;}
+  .nugget b{color:var(--acc);}
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--edge);font-size:12.5px;color:var(--mut);}
+  footer a{color:var(--acc);text-decoration:none;}
+  .flag{color:var(--gold);font-weight:700;}
+  .chip{font-size:11px;color:var(--mut);border:1px solid var(--edge);border-radius:20px;padding:2px 8px;}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Clark&#39;s Daily Market Brief</div>
+    <h1>Thursday, July 30, 2026 &middot; Pre-Market</h1>
+    <div class="sub">Fed Day hangover meets a Microsoft blowout &mdash; read in under 3 minutes.</div>
+  </header>
 
-<div class="head">
-  <div class="kicker">Clark · Pre-Market Brief</div>
-  <h1>Wednesday, July 29, 2026</h1>
-  <div class="sub">Fed decision day · Big-tech earnings after close · Prices as of Tue 7/28 close &amp; overnight</div>
+  <div class="tldr">
+    Stocks got hammered Wednesday on a <b>hawkish Fed hold</b> (three officials dissented for a <b>hike</b>) &mdash; Dow &minus;2.2%, its worst day since April 2025. But <b>Microsoft blew the doors off</b> (Azure +43%, first time past $100B annual), lifting futures green pre-market. Oil ripped +6.2% on Middle East tensions, 10Y yield jumped to 4.66%. Today: <b>Q2 GDP + PCE at 830am</b>, and <b>Apple + Amazon report after the close</b>.
+  </div>
+
+  <section>
+    <h2>1 &middot; Market Snapshot</h2>
+    <table>
+      <tr><th>Instrument</th><th style="text-align:right">Level</th><th style="text-align:right">Move</th></tr>
+      <tr><td class="tick">S&amp;P 500</td><td class="n">7,316.15</td><td class="n dn">&minus;1.52%</td></tr>
+      <tr><td class="tick">Nasdaq Comp</td><td class="n">24,442.94</td><td class="n dn">&minus;1.74%</td></tr>
+      <tr><td class="tick">Dow</td><td class="n">51,594.14</td><td class="n dn">&minus;2.19%</td></tr>
+      <tr><td class="tick">10Y Treasury</td><td class="n">4.66%</td><td class="n dn">&uarr; post-Fed</td></tr>
+      <tr><td class="tick">WTI Crude</td><td class="n">$84.18</td><td class="n up">+6.2%</td></tr>
+      <tr><td class="tick">Gold</td><td class="n">$4,080</td><td class="n up">+0.36%</td></tr>
+      <tr><td class="tick">Bitcoin</td><td class="n">~$64,900</td><td class="n up">+0.43%</td></tr>
+    </table>
+    <p class="why" style="margin-top:10px">Overnight: Nikkei +0.71% to 61,867. US futures rebounding &mdash; Dow +0.4%, S&amp;P +0.6%, <b>Nasdaq-100 +1.4%</b> as Microsoft (+8.3% pre-market) and semis lead the bounce.</p>
+  </section>
+
+  <section>
+    <h2>2 &middot; Your Watchlist</h2>
+    <table>
+      <tr><th>Ticker</th><th style="text-align:right">Last</th><th style="text-align:right">Move</th><th>Note</th></tr>
+      <tr><td class="tick">SPY</td><td class="n">~$731.6</td><td class="n dn">&minus;1.5%</td><td>Futures green today</td></tr>
+      <tr><td class="tick">QQQ</td><td class="n">$661.73</td><td class="n dn">&minus;1.7%</td><td>Ndx-100 fut +1.4% pre-mkt</td></tr>
+      <tr><td class="tick">DIA</td><td class="n">~$515.9</td><td class="n dn">&minus;2.2%</td><td>Worst Dow day since Apr &#39;25</td></tr>
+      <tr><td class="tick">AAPL</td><td class="n">$4.96T cap</td><td class="n fl">flat</td><td class="flag">Reports fiscal Q3 tonight 5pm ET</td></tr>
+      <tr><td class="tick">NVDA</td><td class="n">~$197</td><td class="n up">rebound</td><td>Ceded #1 mkt-cap to Apple; semis bouncing</td></tr>
+      <tr><td class="tick">MSFT</td><td class="n">+8% AH</td><td class="n up">+8.3%</td><td>EPS $4.74 vs $4.24 est; Azure +43%</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>3 &middot; Top 3 Things That Matter Today</h2>
+    <ul>
+      <li><span class="lbl"><span class="num">1</span>Hawkish Fed hold &mdash; 3 dissents for a HIKE.</span><span class="why">Dissenting to <em>tighten</em> (not ease) is rare and signals the committee&#39;s risk is skewed hawkish &mdash; it repriced the 10Y to 4.66% and clubbed rate-sensitive/long-duration equities.</span></li>
+      <li><span class="lbl"><span class="num">2</span>Microsoft&#39;s Azure clears $100B (+43%).</span><span class="why">Hard proof that Big Tech&#39;s AI capex is converting into real revenue &mdash; it re-rates the whole AI-infra trade and sets the tone for Apple &amp; Amazon tonight.</span></li>
+      <li><span class="lbl"><span class="num">3</span>Oil +6.2% on Middle East tensions.</span><span class="why">A fresh energy-driven inflation impulse arrives just as the Fed signals no cuts &mdash; the stagflation-lite combo markets least want to see.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4 &middot; On the Calendar Today</h2>
+    <ul>
+      <li><span class="lbl">830am ET &mdash; Q2 GDP (advance):</span> cons. <b>+2.3%</b> vs +2.1% prior.</li>
+      <li><span class="lbl">830am ET &mdash; June PCE:</span> Core PCE <b>+0.2% m/m</b> exp; headline PCE ~<b>+3.6% y/y</b> (cooling from 4.1%). Income +0.3%, spending +0.4%.</li>
+      <li><span class="lbl">830am ET &mdash; Initial jobless claims:</span> cons. <b>201K</b> vs 187K prior.</li>
+      <li><span class="lbl">After close &mdash; Earnings:</span> <span class="flag">Apple (AAPL)</span> 5pm ET &amp; Amazon (AMZN). Watch iPhone/Services, AWS growth, capex guide.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5 &middot; One Thing to Sound Smart About</h2>
+    <div class="edge">
+      <span class="tag">The Edge</span>
+      <p>Microsoft&#39;s headline capex &ldquo;cut&rdquo; to ~$175B (from ~$190B) isn&#39;t spending discipline &mdash; it&#39;s largely <b>accounting</b>. Two levers: (1) they extended data-center <b>useful life from 15&rarr;25 years</b>, which lowers annual depreciation and flatters operating income (a &gt;$10B first-year boost <em>across</em> hyperscalers); and (2) more future data-center leases shift from <b>finance to operating leases</b> &mdash; and operating leases don&#39;t count in capex. The cash obligation to secure power, sites and compute is unchanged; only the <em>presentation</em> moved. So the bulls cheering &ldquo;capex discipline&rdquo; are partly cheering a reclassification &mdash; a classic earnings-quality tell.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6 &middot; Learning Nugget</h2>
+    <div class="nugget"><b>Hawkish dissent.</b> When FOMC members formally vote against the majority in favor of <em>tighter</em> policy (a hike or holding when cuts are expected). Because dissents are rare and public, multiple hawkish dissents are a strong signal the committee&#39;s reaction function is tilted toward fighting inflation &mdash; raising the bar for any near-term cut.</div>
+  </section>
+
+  <footer>
+    Sources: <a href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-july-29-dow-sp-500-nasdaq-082009165.html">Yahoo Finance</a> &middot;
+    <a href="https://www.cnbc.com/2026/07/29/stock-market-today-live-updates.html">CNBC</a> &middot;
+    <a href="https://www.fool.com/coverage/stock-market-today/2026/07/29/stock-market-today-july-29-stocks-slide-on-hawkish-fed-and-increased-middle-east-tensions/">Motley Fool</a> &middot;
+    <a href="https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html">MSFT Earnings (CNBC)</a> &middot;
+    <a href="https://www.pymnts.com/earnings/2026/microsoft-extends-data-center-lifespans-to-soften-ai-buildout-costs/">PYMNTS (capex)</a> &middot;
+    <a href="https://www.investing.com/news/stock-market-news/core-pce-price-index-gdp-and-jobless-claims-due-thursday-93CH-4821457">Investing.com (calendar)</a> &middot;
+    <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262056758-apple-market-cap-overtakes-nvidia-world-largest-q3-earnings-july-30-tradingkey">TradingKey (AAPL)</a>
+    <br><br>Prices as of Jul 29 close / Jul 30 pre-market. SPY &amp; DIA levels approximated from underlying index; QQQ, MSFT, NVDA per quoted sources. Not investment advice. Generated automatically for Clark.
+  </footer>
 </div>
-
-<h2>1 · Market Snapshot</h2>
-<table>
-  <tr><th>Instrument</th><th class="r">Level</th><th class="r">Move</th></tr>
-  <tr><td>S&amp;P 500</td><td class="r">7,428.78</td><td class="r up">+0.21%</td></tr>
-  <tr><td>Nasdaq Composite</td><td class="r">24,876.91</td><td class="r dn">−0.22%</td></tr>
-  <tr><td>Dow Jones</td><td class="r">52,747.32</td><td class="r up">+1.03% (+537)</td></tr>
-  <tr><td>10-Yr Treasury</td><td class="r">4.64%</td><td class="r flat">~flat</td></tr>
-  <tr><td>WTI Crude</td><td class="r">$79.28</td><td class="r dn">−4.03%*</td></tr>
-  <tr><td>Gold</td><td class="r">$4,030</td><td class="r dn">−$61</td></tr>
-  <tr><td>Bitcoin</td><td class="r">~$63,400</td><td class="r dn">−2.5%</td></tr>
-</table>
-<p class="src">*Oil <strong>closed −4%</strong> Tue on US–Iran diplomacy hopes, but is <strong>bouncing overnight</strong> on fresh Middle East attacks. Overnight: Nikkei +1%, Hang Seng +1.4%, KOSPI +1% (rebounding after Tue's −10% AI rout); Europe mostly lower.</p>
-
-<h2>2 · Your Watchlist</h2>
-<table>
-  <tr><th>Ticker</th><th class="r">Last</th><th class="r">Note</th></tr>
-  <tr><td><span class="tick">SPY</span></td><td class="r up">+0.2%</td><td class="r">Tracks S&amp;P — new record-area close</td></tr>
-  <tr><td><span class="tick">QQQ</span></td><td class="r dn">−0.2%</td><td class="r">Dragged by chips</td></tr>
-  <tr><td><span class="tick">DIA</span></td><td class="r up">+1.0%</td><td class="r">Rotation winner</td></tr>
-  <tr><td><span class="tick">AAPL</span></td><td class="r">$337.92 <span class="up">+0.7%</span></td><td class="r">Reports Thu 7/30; ~$4.96T cap</td></tr>
-  <tr><td><span class="tick">NVDA</span></td><td class="r">$196.08 <span class="dn">−5%*</span></td><td class="r">4th straight down day; OpenAI backstop</td></tr>
-  <tr><td><span class="tick">MSFT</span></td><td class="r">$397.24</td><td class="r"><strong>Reports TODAY after close</strong></td></tr>
-</table>
-<p class="src">*NVDA fell ~5% on 7/27 on the OpenAI financing news; down ~7% over two weeks as semis lead the tape lower.</p>
-
-<h2>3 · Top 3 Things That Matter Today</h2>
-<ul>
-  <li><span class="num">1</span><strong>FOMC decision, 2:00pm ET (presser 2:30).</strong> Funds rate 3.50–3.75%, hold widely expected, <strong>no dot plot</strong> this meeting. <br><span class="why">Why it matters: with no new projections, Powell's tone is the only signal for whether a fall cut is live — every word gets traded.</span></li>
-  <li><span class="num">2</span><strong>MSFT &amp; Meta earnings after the close.</strong> Azure growth, AI capex guidance, and Copilot monetization are the tells. <br><span class="why">Why it matters: MSFT is on your list and sets the read-through for the entire megacap-AI complex heading into AAPL/AMZN Thursday.</span></li>
-  <li><span class="num">3</span><strong>The semis-to-everything-else rotation.</strong> Dow +1% while Nasdaq fell; SMH down ~3% for a 4th straight session. <br><span class="why">Why it matters: money is leaving crowded AI chips, not equities — breadth is broadening, but AI leadership is visibly cracking.</span></li>
-</ul>
-
-<h2>4 · On the Calendar Today</h2>
-<ul>
-  <li><strong>2:00pm ET — FOMC rate decision</strong> (consensus: hold, 3.50–3.75%); Powell presser 2:30pm.</li>
-  <li><strong>After close — Earnings:</strong> <span class="tick">MSFT</span> (watchlist), META, Robinhood. Apple &amp; Amazon follow Thu 7/30.</li>
-  <li>No first-tier US data pre-Fed; the decision <em>is</em> the event.</li>
-</ul>
-
-<h2>5 · One Thing To Sound Smart About</h2>
-<div class="box edge">
-  <p>Nvidia's reported <strong>~$250B backstop for OpenAI</strong>'s Ohio data-center debt (plus up to $350B in GPU-purchase financing) is reviving <strong>"circular financing"</strong> fears: NVDA effectively lends its own credit so a non-investment-grade customer can buy NVDA chips. Michael Burry disclosed a bigger NVDA short — <em>"around and around we go."</em> The contrarian read: this props up <em>reported</em> GPU demand while shifting real credit risk onto Nvidia's balance sheet — the tell that the AI capex cycle is maturing from cash-funded to debt-funded, exactly the phase that broke dot-com telecom.</p>
-  <p class="src">Source: <a href="https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing">Bloomberg</a>, <a href="https://www.cnbc.com/2026/07/27/nvidias-potential-250b-backstop-for-openai-is-another-strike-against-the-ai-trade.html">CNBC</a></p>
-</div>
-
-<h2>6 · Learning Nugget</h2>
-<div class="box learn">
-  <p><strong>Vendor financing.</strong> When a supplier funds its customers' purchases of its own products, current revenue looks stronger than underlying demand and the supplier quietly absorbs the customers' credit risk. It flattered late-1990s telecom (Lucent, Nortel) right before the bust — which is why the Nvidia–OpenAI structure is drawing scrutiny.</p>
-</div>
-
-<div class="foot">
-  <strong>Sources:</strong>
-  <a href="https://www.cnbc.com/2026/07/27/stock-market-today-live-updates.html">CNBC</a> ·
-  <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-28-2026">TheStreet</a> ·
-  <a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-july-28-dow-sp-500-nasdaq-chip-stocks-082832371.html">Yahoo Finance</a> ·
-  <a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics (10Y)</a> ·
-  <a href="https://fortune.com/article/current-price-of-gold-07-28-2026/">Fortune (Gold/BTC)</a> ·
-  <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262054300-weekly-preview-fed-apple-microsoft-meta-amazon-earnings-reports-tradingkey">TradingKey (calendar)</a> ·
-  <a href="https://sg.finance.yahoo.com/news/asian-stocks-stabilise-rout-ahead-012705415.html">Reuters (Asia)</a>
-  <br><br>Generated 2026-07-29 08:08 ET · Automated pre-market brief · Not investment advice.
-</div>
-
 </body>
 </html>
