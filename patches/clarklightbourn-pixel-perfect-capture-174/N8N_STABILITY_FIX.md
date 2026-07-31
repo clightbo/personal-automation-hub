@@ -1,13 +1,22 @@
 # n8n fix: stop NOI drift + fill IRR on unpriced deals
 
+## If you see the DEMO deal after a slow run
+
+That is **not** Fix A failing. The site used to treat any failed/timed-out webhook as “show sample IC brief.” Meanwhile n8n kept running and later showed **Success** — so it looked like a bad run followed by success.
+
+**Fix (website):** paste updated `files/src/routes/index.tsx` — it waits up to **4 minutes**, never opens the demo on failure, and tells you to check n8n Executions.
+
+---
+
 ## What’s wrong in YOUR workflow
 
-1. **NOI changes every run** → `LLM - Extract OM` (free Nemotron) re-extracts GPR/opex/NOI differently; your Code node then does `egi - opex` when both exist, so computed NOI swings ($5.7M / $6.5M / $7.1M).
+1. **NOI changes every run** → `LLM - Extract OM` (free Nemotron) re-extracts GPR/opex/NOI differently. Fix A pins **stated `extracted.noi`** so the Code node stops doing `egi - opex` when both exist. **If the LLM still returns a different `noi` each time, the pinned number still changes** — that needs Fix B and/or a better extract model.
 2. **IRR always blank on unpriced OMs** → `computeIRR` requires `purchase_price` + loan. Unpriced deals have neither, and you never recompute IRR after `max_supportable_price`.
 3. **Competitive supply UNKNOWN + empty Market** → there is **no market node**. Frontend sends `market: {}`. Rules correctly return UNKNOWN.
 4. **Memo temp 0.2** → wording changes (fine); should not change numbers if extract is stable.
+5. **Slow / “forever” runs** → free extract + memo can take 1–3+ minutes. Browser/proxy often dies before n8n finishes → old site showed demo.
 
-Extract already has `temperature: 0` — good. Free models still drift; pin the calc.
+Extract already has `temperature: 0` — good. Free models still drift; pin the calc **and** stabilize extract.
 
 ---
 
@@ -186,8 +195,24 @@ Homepage should send default `deal_terms` / `assumptions` (ltv 60, rate 6.5, hol
 
 ---
 
-## Expected after Fix A
-- Same PDF → **same NOI** (pinned stated extract)
+## How to check Fix A actually ran
+
+In a successful n8n execution, open **Metrics + Risk Rules Engine** output and look for:
+
+- `metrics.noi_source` = `stated_in_om_pinned` → Fix A is active
+- If `noi_source` is something else (e.g. computed from egi−opex) → entry point paste didn’t stick, or `extracted.noi` was null that run
+- Compare `extracted.noi` across two runs of the **same PDF**. If those differ, Fix A cannot make NOI identical — do Fix B / switch model
+
+## Expected after Fix A + website wait fix
+- Slow runs no longer dump you into the **demo** deal
+- Same PDF → **same NOI** only when extract returns the same stated `noi`
 - Unpriced deals get **IRR** at max-supportable bid
 - DSCR flag can PASS/HIGH from modeled debt
 - Market still empty until Fix C
+
+## Still drifting after Fix A?
+
+1. Confirm `noi_source === stated_in_om_pinned` on both runs
+2. Apply **Fix B** prompt lines in **LLM - Extract OM**
+3. Optional but strongest: switch extract off free Nemotron to a paid stable model (same prompt, temp 0)
+4. Paste new `index.tsx` so timeouts stop looking like “wrong numbers” (demo)

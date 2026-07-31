@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ChevronDown, FileText, UploadCloud } from "lucide-react";
 import { toast } from "sonner";
@@ -44,24 +44,42 @@ const GUARDRAILS = [
   "Web search",
 ];
 
+/** Free OpenRouter extract + memo often takes 60–180s. Do not fall back to demo. */
+const SCREENING_TIMEOUT_MS = 4 * 60 * 1000;
+
 async function handleRunScreening(file: File, settings?: any) {
   const formData = new FormData();
-  formData.append('data', file);
-  formData.append('deal_terms', JSON.stringify(settings?.dealTerms || {}));
-  formData.append('market', JSON.stringify(settings?.market || {}));
-  formData.append('criteria', JSON.stringify(settings?.criteria || {}));
-  formData.append('assumptions', JSON.stringify(settings?.assumptions || {}));
+  formData.append("data", file);
+  formData.append("deal_terms", JSON.stringify(settings?.dealTerms || {}));
+  formData.append("market", JSON.stringify(settings?.market || {}));
+  formData.append("criteria", JSON.stringify(settings?.criteria || {}));
+  formData.append("assumptions", JSON.stringify(settings?.assumptions || {}));
 
-  const response = await fetch('https://clarkcbre.app.n8n.cloud/webhook/screen-om-free', {
-    method: 'POST',
-    body: formData,
-  });
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), SCREENING_TIMEOUT_MS);
 
-  if (!response.ok) {
-    throw new Error('Screening failed: ' + response.status);
+  try {
+    const response = await fetch("https://clarkcbre.app.n8n.cloud/webhook/screen-om-free", {
+      method: "POST",
+      body: formData,
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Screening failed: HTTP ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (err) {
+    if (err instanceof DOMException && err.name === "AbortError") {
+      throw new Error(
+        "Screening timed out after 4 minutes. Check n8n Executions — the run may still finish there.",
+      );
+    }
+    throw err;
+  } finally {
+    window.clearTimeout(timer);
   }
-
-  return await response.json();
 }
 
 function Index() {
@@ -73,6 +91,15 @@ function Index() {
   const [useWebSearch, setUseWebSearch] = useState(true);
   const [disabled, setDisabled] = useState<string[]>([]);
   const [stage, setStage] = useState<number | null>(null);
+  const [elapsedSec, setElapsedSec] = useState(0);
+  const [statusHint, setStatusHint] = useState("");
+
+  useEffect(() => {
+    if (stage === null) return;
+    setElapsedSec(0);
+    const id = window.setInterval(() => setElapsedSec((s) => s + 1), 1000);
+    return () => window.clearInterval(id);
+  }, [stage === null ? null : "running"]);
 
   const pick = (f: File | undefined) => {
     if (!f) return;
@@ -89,6 +116,7 @@ function Index() {
       return;
     }
     setStage(0);
+    setStatusHint("Reading the OM PDF…");
     const request = handleRunScreening(file, {
       dealTerms: {
         ltv: 60,
@@ -110,10 +138,20 @@ function Index() {
       (result) => ({ ok: true as const, result }),
       (error: unknown) => ({ ok: false as const, error }),
     );
+
+    // Animate stages while waiting — do NOT treat animation end as failure.
     for (let i = 0; i < STAGES.length; i++) {
       setStage(i);
-      await new Promise((r) => setTimeout(r, 750));
+      setStatusHint(
+        i < 2
+          ? "Extract model is reading the OM (often 1–3 min on free models)…"
+          : "Still running in n8n — stay on this page until it finishes…",
+      );
+      await new Promise((r) => setTimeout(r, 900));
     }
+    setStage(STAGES.length - 1);
+    setStatusHint("Waiting on n8n webhook response…");
+
     const res = await request;
     if (res.ok) {
       try {
@@ -126,10 +164,17 @@ function Index() {
         return;
       }
     }
-    toast("Live screening unavailable — showing a sample result.", {
-      description: "The screening endpoint did not return a result.",
+
+    // Never open the demo deal on a failed/slow run — that looked like “bad numbers.”
+    const message =
+      res.error instanceof Error
+        ? res.error.message
+        : "The screening endpoint did not return a result.";
+    toast.error("Live screening did not finish", {
+      description: `${message} Check n8n Executions — a late success there is the real result.`,
+      duration: 12000,
     });
-    navigate({ to: "/deal/$dealId", params: { dealId: mockDeals[2].id } });
+    setStage(null);
   };
 
   if (stage !== null) {
@@ -137,6 +182,13 @@ function Index() {
       <AppShell>
         <div className="py-16">
           <ProcessingStepper active={stage} />
+          <p className="mx-auto mt-6 max-w-md text-center text-sm text-muted-foreground">
+            {statusHint}
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-center text-xs text-muted-foreground">
+            Elapsed {elapsedSec}s · free extract models often take 60–180s. Do not leave this
+            page — a demo will no longer load on timeout.
+          </p>
         </div>
       </AppShell>
     );
