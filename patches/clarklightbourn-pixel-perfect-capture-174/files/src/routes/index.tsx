@@ -90,10 +90,22 @@ function Index() {
     }
     setStage(0);
     const request = handleRunScreening(file, {
-      dealTerms: {},
+      dealTerms: {
+        ltv: 60,
+        interest_rate: 6.5,
+        amortization_years: 30,
+        min_dscr: 1.25,
+        min_debt_yield: 9,
+      },
       market: {},
       criteria: {},
-      assumptions: {},
+      assumptions: {
+        hold_years: 5,
+        rent_growth: 3,
+        expense_growth: 3,
+        sale_cost_pct: 2,
+        target_irr: 15,
+      },
     }).then(
       (result) => ({ ok: true as const, result }),
       (error: unknown) => ({ ok: false as const, error }),
