@@ -216,7 +216,7 @@ export function normalizeDeal(raw: unknown): Deal {
         p.street_address ??
         r.property_address ??
         r.address ??
-        [r.address, r.city, r.state].filter(Boolean).join(", "),
+        [r.city, r.state].filter(Boolean).join(", "),
     ),
   );
 
