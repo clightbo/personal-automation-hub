@@ -12,6 +12,7 @@ import { MarketResearch } from "@/components/deal/MarketResearch";
 import { MetricCard } from "@/components/deal/MetricCard";
 import { RiskPanel } from "@/components/deal/RiskPanel";
 import { SectionHeading } from "@/components/deal/primitives";
+import { hydrateDealMetrics } from "@/lib/bid-math";
 import { fmtMoney } from "@/lib/deal-types";
 import { getDeal } from "@/lib/mock-deals";
 import { getScreeningResult, saveScreeningResult } from "@/lib/screening-result";
@@ -48,7 +49,15 @@ function DealDashboard() {
   const [deal, setDeal] = useState(loaded);
 
   useEffect(() => {
-    setDeal(getScreeningResult(dealId) ?? getDeal(dealId) ?? null);
+    const raw = getScreeningResult(dealId) ?? getDeal(dealId) ?? null;
+    if (!raw) {
+      setDeal(null);
+      return;
+    }
+    // Unpriced OMs often omit cap/DSCR/DY until a bid is assumed — hydrate immediately.
+    const hydrated = hydrateDealMetrics(raw);
+    if (hydrated !== raw) saveScreeningResult(hydrated);
+    setDeal(hydrated);
   }, [dealId]);
 
   if (!deal) {

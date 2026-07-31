@@ -116,6 +116,28 @@ export function buildBidLadder(
   });
 }
 
+/** Rough breakeven occupancy from NOI, expense ratio, occupancy, and debt service. */
+function estimateBreakevenOcc(
+  noi: number,
+  expenseRatioPct: number | null,
+  occupancyPct: number | null,
+  annualDebtSvc: number,
+): number | null {
+  if (!(noi > 0) || expenseRatioPct == null || !(expenseRatioPct > 0 && expenseRatioPct < 100)) {
+    return null;
+  }
+  const er = expenseRatioPct / 100;
+  const egi = noi / (1 - er);
+  if (!(egi > 0)) return null;
+  const opex = egi * er;
+  const occ = occupancyPct != null && occupancyPct > 0 ? occupancyPct / 100 : 1;
+  const gpr = egi / occ;
+  if (!(gpr > 0)) return null;
+  const be = ((opex + annualDebtSvc) / gpr) * 100;
+  if (!Number.isFinite(be) || be <= 0 || be > 100) return null;
+  return round(be, 1);
+}
+
 /** Recompute bid sensitivity + leverage metrics on a deal from Deal Terms inputs. */
 export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
   const noi = deal.metrics.noi.value;
@@ -126,9 +148,17 @@ export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
   const units = deal.property.units || 1;
   const ladder = buildBidLadder(noi, units, a, deal.deal_terms.stated_price);
   const atBid =
-    ladder.find((r) => r.bid_price === a.bid) ??
+    ladder.find((r) => Math.abs(r.bid_price - a.bid) < 1) ??
     evaluateBid(noi, units, a.bid, a);
   const maxPrice = maxSupportablePrice(noi, a);
+  const loan = a.bid * (a.ltv / 100);
+  const ads = annualDebtService(loan, a.rate, a.amort);
+  const breakeven = estimateBreakevenOcc(
+    noi,
+    deal.metrics.expense_ratio.value,
+    deal.metrics.occupancy.value,
+    ads,
+  );
 
   return {
     ...deal,
@@ -142,10 +172,62 @@ export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
         ...deal.metrics.price_per_unit,
         value: atBid.price_per_unit,
       },
+      breakeven_occupancy: {
+        ...deal.metrics.breakeven_occupancy,
+        value: breakeven ?? deal.metrics.breakeven_occupancy.value,
+      },
     },
     bid_sensitivity: ladder,
-    max_supportable_price: maxPrice,
+    max_supportable_price: maxPrice > 0 ? maxPrice : deal.max_supportable_price,
   };
+}
+
+/** Pick a sensible starting bid + debt assumptions for first paint. */
+export function defaultAssumptionsFromDeal(deal: Deal): BidAssumptions | null {
+  const noi = deal.metrics.noi.value;
+  if (noi == null || !(noi > 0)) return null;
+
+  const ltv = deal.metrics.ltv.value ?? 60;
+  const rate = 6.5;
+  const amort = 30;
+  const minDscr = 1.25;
+  const minDy = 9;
+  const base = { ltv, rate, amort, minDscr, minDy };
+
+  const stated = deal.deal_terms.stated_price;
+  const maxPrice =
+    deal.max_supportable_price > 0
+      ? deal.max_supportable_price
+      : maxSupportablePrice(noi, base);
+
+  const ladderMid =
+    deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]?.bid_price ??
+    null;
+  const financeable =
+    [...deal.bid_sensitivity].reverse().find((r) => r.financeable)?.bid_price ?? null;
+
+  // Prefer stated ask, else max supportable, else last financeable rung, else ladder mid.
+  const bid = stated ?? maxPrice ?? financeable ?? ladderMid;
+  if (!(bid && bid > 0)) return null;
+
+  return { bid, ...base };
+}
+
+/**
+ * Fill cap / DSCR / DY / $/unit (and breakeven when possible) on first load
+ * so unpriced OMs don't show blank primary metrics until Re-run.
+ */
+export function hydrateDealMetrics(deal: Deal): Deal {
+  const needsHydration =
+    deal.metrics.cap_rate.value == null ||
+    deal.metrics.dscr.value == null ||
+    deal.metrics.debt_yield.value == null ||
+    deal.metrics.price_per_unit.value == null;
+
+  if (!needsHydration) return deal;
+  const assumptions = defaultAssumptionsFromDeal(deal);
+  if (!assumptions) return deal;
+  return applyBidAssumptions(deal, assumptions);
 }
 
 export function parseAssumptions(raw: {

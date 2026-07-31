@@ -3,7 +3,11 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { applyBidAssumptions, parseAssumptions } from "@/lib/bid-math";
+import {
+  applyBidAssumptions,
+  defaultAssumptionsFromDeal,
+  parseAssumptions,
+} from "@/lib/bid-math";
 import type { Deal } from "@/lib/deal-types";
 import { SectionHeading } from "./primitives";
 
@@ -15,18 +19,20 @@ export function DealTerms({
   onDealUpdate?: (deal: Deal) => void;
 }) {
   const priced = deal.deal_terms.stated_price !== null;
+  const defaults = defaultAssumptionsFromDeal(deal);
   const [terms, setTerms] = useState({
-    bid: priced
-      ? String(deal.deal_terms.stated_price)
-      : String(
-          deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]
-            ?.bid_price ?? "",
-        ),
-    ltv: String(deal.metrics.ltv.value ?? 60),
-    rate: "6.5",
-    amort: "30",
-    minDscr: "1.25",
-    minDy: "9",
+    bid: String(
+      defaults?.bid ??
+        deal.deal_terms.stated_price ??
+        deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]
+          ?.bid_price ??
+        "",
+    ),
+    ltv: String(defaults?.ltv ?? deal.metrics.ltv.value ?? 60),
+    rate: String(defaults?.rate ?? 6.5),
+    amort: String(defaults?.amort ?? 30),
+    minDscr: String(defaults?.minDscr ?? 1.25),
+    minDy: String(defaults?.minDy ?? 9),
   });
   const set = (k: keyof typeof terms) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setTerms((t) => ({ ...t, [k]: e.target.value }));

@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
+import { hydrateDealMetrics } from "@/lib/bid-math";
 import { mockDeals } from "@/lib/mock-deals";
 import { normalizeDeal, saveScreeningResult } from "@/lib/screening-result";
 import { cn } from "@/lib/utils";
@@ -104,7 +105,7 @@ function Index() {
     const res = await request;
     if (res.ok) {
       try {
-        const deal = saveScreeningResult(normalizeDeal(res.result));
+        const deal = saveScreeningResult(hydrateDealMetrics(normalizeDeal(res.result)));
         navigate({ to: "/deal/$dealId", params: { dealId: deal.id } });
         return;
       } catch {
