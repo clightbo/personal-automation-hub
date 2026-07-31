@@ -6,9 +6,18 @@ if (Array.isArray(incoming.comps) && incoming.comps.length) {
   return [{ json: { ...input, market: incoming } }];
 }
 
-const sub = String(extracted.submarket || '').toLowerCase();
-const addr = String(extracted.address || extracted.property_name || '').toLowerCase();
-const isGramercy = sub.includes('gramercy') || addr.includes('east 22nd') || addr.includes('e 22nd');
+const blob = [
+  extracted.property_name,
+  extracted.address,
+  extracted.submarket,
+  extracted.city,
+  JSON.stringify(extracted.analyst_notes || []),
+].filter(Boolean).join(' ').toLowerCase();
+
+const isGramercy =
+  blob.includes('gramercy') ||
+  blob.includes('east 22nd') ||
+  blob.includes('e 22nd');
 
 let market = {
   pipeline_pct_of_stock: incoming.pipeline_pct_of_stock ?? null,
