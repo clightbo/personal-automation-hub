@@ -1,0 +1,1727 @@
+From 17e072991effbd924e9d95e424eba43f37cc9e7c Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Thu, 30 Jul 2026 23:54:08 +0000
+Subject: [PATCH 1/2] Wire Deal Terms to client bid sensitivity and harden deal
+ normalization
+
+Add a client-side bid-math engine so Re-run sensitivity recomputes the
+ladder and max supportable price from Deal Terms inputs, and fix
+normalizeDeal/narrative handling for swapped or packed name/address
+fields and object-shaped memo bullets.
+---
+ src/components/deal/DealTerms.tsx         |  49 +++++--
+ src/components/deal/InvestmentSummary.tsx |  25 +++-
+ src/lib/bid-math.ts                       | 170 ++++++++++++++++++++++
+ src/lib/screening-result.ts               | 111 ++++++++++++--
+ src/routes/deal.$dealId.tsx               |   9 +-
+ 5 files changed, 333 insertions(+), 31 deletions(-)
+ create mode 100644 src/lib/bid-math.ts
+
+diff --git a/src/components/deal/DealTerms.tsx b/src/components/deal/DealTerms.tsx
+index 8ed1be9..4da3b12 100644
+--- a/src/components/deal/DealTerms.tsx
++++ b/src/components/deal/DealTerms.tsx
+@@ -1,17 +1,28 @@
+ import { useState } from "react";
++import { toast } from "sonner";
+ import { Button } from "@/components/ui/button";
+ import { Input } from "@/components/ui/input";
+ import { Label } from "@/components/ui/label";
+-import { SectionHeading } from "./primitives";
++import { applyBidAssumptions, parseAssumptions } from "@/lib/bid-math";
+ import type { Deal } from "@/lib/deal-types";
++import { SectionHeading } from "./primitives";
+ 
+-export function DealTerms({ deal }: { deal: Deal }) {
++export function DealTerms({
++  deal,
++  onDealUpdate,
++}: {
++  deal: Deal;
++  onDealUpdate?: (deal: Deal) => void;
++}) {
+   const priced = deal.deal_terms.stated_price !== null;
+   const [terms, setTerms] = useState({
+     bid: priced
+       ? String(deal.deal_terms.stated_price)
+-      : String(deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)].bid_price),
+-    ltv: "60",
++      : String(
++          deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]
++            ?.bid_price ?? "",
++        ),
++    ltv: String(deal.metrics.ltv.value ?? 60),
+     rate: "6.5",
+     amort: "30",
+     minDscr: "1.25",
+@@ -20,6 +31,24 @@ export function DealTerms({ deal }: { deal: Deal }) {
+   const set = (k: keyof typeof terms) => (e: React.ChangeEvent<HTMLInputElement>) =>
+     setTerms((t) => ({ ...t, [k]: e.target.value }));
+ 
++  const rerun = () => {
++    const assumptions = parseAssumptions(terms);
++    if (!assumptions) {
++      toast.error("Enter valid numbers for bid, LTV, rate, and underwriting floors.");
++      return;
++    }
++    if (deal.metrics.noi.value == null) {
++      toast.error("NOI is missing — sensitivity cannot be recomputed.");
++      return;
++    }
++    const updated = applyBidAssumptions(deal, assumptions);
++    onDealUpdate?.(updated);
++    document
++      .getElementById("bid-sensitivity")
++      ?.scrollIntoView({ behavior: "smooth" });
++    toast.success("Bid sensitivity updated.");
++  };
++
+   return (
+     <section id="deal-terms">
+       <SectionHeading title="Deal terms" description={deal.deal_terms.offering_type} />
+@@ -50,15 +79,7 @@ export function DealTerms({ deal }: { deal: Deal }) {
+           <Field id="minDy" label="Min debt yield (%)" value={terms.minDy} onChange={set("minDy")} />
+         </div>
+         <div className="mt-5 flex justify-end">
+-          <Button
+-            onClick={() =>
+-              document
+-                .getElementById("bid-sensitivity")
+-                ?.scrollIntoView({ behavior: "smooth" })
+-            }
+-          >
+-            Re-run sensitivity
+-          </Button>
++          <Button onClick={rerun}>Re-run sensitivity</Button>
+         </div>
+       </div>
+     </section>
+@@ -87,4 +108,4 @@ function Field({
+       {hint ? <p className="text-[11px] text-muted-foreground">{hint}</p> : null}
+     </div>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/deal/InvestmentSummary.tsx b/src/components/deal/InvestmentSummary.tsx
+index 63e26bf..554af5d 100644
+--- a/src/components/deal/InvestmentSummary.tsx
++++ b/src/components/deal/InvestmentSummary.tsx
+@@ -3,15 +3,28 @@ import { Button } from "@/components/ui/button";
+ import { SectionHeading } from "./primitives";
+ import type { Deal } from "@/lib/deal-types";
+ 
+-function List({ title, items }: { title: string; items: string[] }) {
++function asText(item: unknown): string {
++  if (typeof item === "string") return item;
++  if (typeof item === "number" || typeof item === "boolean") return String(item);
++  if (item && typeof item === "object") {
++    const o = item as Record<string, unknown>;
++    const nested =
++      o.text ?? o.content ?? o.summary ?? o.title ?? o.label ?? o.item ?? o.description;
++    if (typeof nested === "string") return nested;
++  }
++  return "";
++}
++
++function List({ title, items }: { title: string; items: unknown[] }) {
++  const lines = items.map(asText).filter(Boolean);
+   return (
+     <div>
+       <p className="text-xs tracking-wide text-muted-foreground uppercase">{title}</p>
+       <ul className="mt-2 space-y-2 text-sm leading-relaxed">
+-        {items.map((i) => (
+-          <li key={i} className="flex gap-2">
++        {lines.map((line, idx) => (
++          <li key={`${idx}-${line.slice(0, 24)}`} className="flex gap-2">
+             <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+-            <span>{i}</span>
++            <span>{line}</span>
+           </li>
+         ))}
+       </ul>
+@@ -34,10 +47,10 @@ export function InvestmentSummary({ deal }: { deal: Deal }) {
+       <div className="card-surface space-y-6 p-6">
+         <div>
+           <h3 className="text-xl font-semibold tracking-tight">
+-            {deal.narrative.headline}
++            {asText(deal.narrative.headline)}
+           </h3>
+           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+-            {deal.narrative.executive_summary}
++            {asText(deal.narrative.executive_summary)}
+           </p>
+         </div>
+         <div className="grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+diff --git a/src/lib/bid-math.ts b/src/lib/bid-math.ts
+new file mode 100644
+index 0000000..8d20b80
+--- /dev/null
++++ b/src/lib/bid-math.ts
+@@ -0,0 +1,170 @@
++import type { BidRow, Deal } from "./deal-types";
++
++/** Inputs from the Deal Terms form (percent fields are 0–100, not decimals). */
++export type BidAssumptions = {
++  bid: number;
++  ltv: number;
++  rate: number;
++  amort: number;
++  minDscr: number;
++  minDy: number;
++};
++
++/** Annual debt service for a fully amortizing loan. */
++export function annualDebtService(
++  loan: number,
++  ratePct: number,
++  amortYears: number,
++): number {
++  if (!(loan > 0) || !(amortYears > 0)) return 0;
++  const monthlyRate = ratePct / 100 / 12;
++  const n = Math.round(amortYears * 12);
++  if (monthlyRate === 0) return loan / amortYears;
++  const payment =
++    (loan * monthlyRate * Math.pow(1 + monthlyRate, n)) /
++    (Math.pow(1 + monthlyRate, n) - 1);
++  return payment * 12;
++}
++
++function round(n: number, d: number) {
++  const f = 10 ** d;
++  return Math.round(n * f) / f;
++}
++
++/** Evaluate a single bid rung against in-place NOI. */
++export function evaluateBid(
++  noi: number,
++  units: number,
++  bidPrice: number,
++  a: Pick<BidAssumptions, "ltv" | "rate" | "amort" | "minDscr" | "minDy">,
++  note?: string,
++): BidRow {
++  const ltv = a.ltv / 100;
++  const loan = bidPrice * ltv;
++  const capRate = bidPrice > 0 && noi > 0 ? (noi / bidPrice) * 100 : null;
++  const debtYield = loan > 0 && noi > 0 ? (noi / loan) * 100 : null;
++  const ads = annualDebtService(loan, a.rate, a.amort);
++  const dscr = ads > 0 && noi > 0 ? noi / ads : null;
++  const financeable =
++    dscr !== null &&
++    debtYield !== null &&
++    dscr >= a.minDscr &&
++    debtYield >= a.minDy;
++  const negativeLeverage = capRate !== null && capRate < a.rate;
++
++  return {
++    bid_price: bidPrice,
++    price_per_unit: units > 0 ? Math.round(bidPrice / units) : 0,
++    cap_rate: capRate === null ? null : round(capRate, 2),
++    dscr: dscr === null ? null : round(dscr, 2),
++    debt_yield: debtYield === null ? null : round(debtYield, 1),
++    financeable,
++    negative_leverage: negativeLeverage,
++    note,
++  };
++}
++
++/**
++ * Highest bid that still clears min DSCR and min debt yield at the assumed
++ * leverage / rate / amortization.
++ */
++export function maxSupportablePrice(
++  noi: number,
++  a: Pick<BidAssumptions, "ltv" | "rate" | "amort" | "minDscr" | "minDy">,
++): number {
++  if (!(noi > 0) || !(a.ltv > 0)) return 0;
++  const ltv = a.ltv / 100;
++  const byDy = noi / ((a.minDy / 100) * ltv);
++  const factor = annualDebtService(1, a.rate, a.amort);
++  const byDscr = factor > 0 ? noi / (a.minDscr * ltv * factor) : Infinity;
++  const max = Math.min(byDy, byDscr);
++  if (!Number.isFinite(max) || max <= 0) return 0;
++  // Round down to nearest $100k so the rung is still financeable after rounding.
++  return Math.floor(max / 100_000) * 100_000;
++}
++
++/** Build a 7-rung ladder around the entered bid, always including any OM price. */
++export function buildBidLadder(
++  noi: number,
++  units: number,
++  a: BidAssumptions,
++  statedPrice: number | null = null,
++): BidRow[] {
++  const center = a.bid > 0 ? a.bid : (statedPrice ?? 0);
++  if (!(center > 0)) return [];
++
++  const spreads = [-0.09, -0.05, 0, 0.044, 0.107, 0.17, 0.237];
++  const prices = new Set<number>();
++  for (const s of spreads) {
++    prices.add(Math.round((center * (1 + s)) / 100_000) * 100_000);
++  }
++  prices.add(Math.round(center / 1000) * 1000);
++  if (statedPrice && statedPrice > 0) prices.add(statedPrice);
++
++  const sorted = [...prices].filter((p) => p > 0).sort((x, y) => x - y);
++  let taggedNeg = false;
++
++  return sorted.map((bidPrice) => {
++    const row = evaluateBid(noi, units, bidPrice, a);
++    const notes: string[] = [];
++    if (statedPrice && bidPrice === statedPrice) notes.push("OM guidance");
++    if (row.negative_leverage && !taggedNeg) {
++      notes.push(`cost of debt ${a.rate.toFixed(2)}%`);
++      taggedNeg = true;
++    }
++    return notes.length ? { ...row, note: notes.join(" · ") } : row;
++  });
++}
++
++/** Recompute bid sensitivity + leverage metrics on a deal from Deal Terms inputs. */
++export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
++  const noi = deal.metrics.noi.value;
++  if (noi == null || !(noi > 0) || !(a.bid > 0)) {
++    return deal;
++  }
++
++  const units = deal.property.units || 1;
++  const ladder = buildBidLadder(noi, units, a, deal.deal_terms.stated_price);
++  const atBid =
++    ladder.find((r) => r.bid_price === a.bid) ??
++    evaluateBid(noi, units, a.bid, a);
++  const maxPrice = maxSupportablePrice(noi, a);
++
++  return {
++    ...deal,
++    metrics: {
++      ...deal.metrics,
++      cap_rate: { ...deal.metrics.cap_rate, value: atBid.cap_rate },
++      dscr: { ...deal.metrics.dscr, value: atBid.dscr },
++      debt_yield: { ...deal.metrics.debt_yield, value: atBid.debt_yield },
++      ltv: { ...deal.metrics.ltv, value: a.ltv },
++      price_per_unit: {
++        ...deal.metrics.price_per_unit,
++        value: atBid.price_per_unit,
++      },
++    },
++    bid_sensitivity: ladder,
++    max_supportable_price: maxPrice,
++  };
++}
++
++export function parseAssumptions(raw: {
++  bid: string;
++  ltv: string;
++  rate: string;
++  amort: string;
++  minDscr: string;
++  minDy: string;
++}): BidAssumptions | null {
++  const bid = Number(String(raw.bid).replace(/[$,\s]/g, ""));
++  const ltv = Number(raw.ltv);
++  const rate = Number(raw.rate);
++  const amort = Number(raw.amort);
++  const minDscr = Number(raw.minDscr);
++  const minDy = Number(raw.minDy);
++  if (![bid, ltv, rate, amort, minDscr, minDy].every((n) => Number.isFinite(n))) {
++    return null;
++  }
++  if (!(bid > 0) || !(ltv > 0) || !(amort > 0)) return null;
++  return { bid, ltv, rate, amort, minDscr, minDy };
++}
+diff --git a/src/lib/screening-result.ts b/src/lib/screening-result.ts
+index 75b393b..6a709b8 100644
+--- a/src/lib/screening-result.ts
++++ b/src/lib/screening-result.ts
+@@ -29,14 +29,82 @@ const metric = (v: unknown): Metric => {
+   return { value: num(v) };
+ };
+ 
+-const str = (v: unknown, fallback = ""): string =>
+-  typeof v === "string" ? v : v == null ? fallback : String(v);
++/** Coerce webhook values to display strings without emitting "[object Object]". */
++const str = (v: unknown, fallback = ""): string => {
++  if (typeof v === "string") return v;
++  if (typeof v === "number" || typeof v === "boolean") return String(v);
++  if (v == null) return fallback;
++  if (Array.isArray(v)) {
++    const parts = v.map((item) => str(item)).filter(Boolean);
++    return parts.length ? parts.join("; ") : fallback;
++  }
++  if (typeof v === "object") {
++    const o = v as Record<string, unknown>;
++    const nested =
++      o.text ??
++      o.value ??
++      o.content ??
++      o.summary ??
++      o.title ??
++      o.label ??
++      o.item ??
++      o.name ??
++      o.description ??
++      o.reason ??
++      o.detail;
++    if (nested != null && nested !== v) return str(nested, fallback);
++    return fallback;
++  }
++  return fallback;
++};
+ 
+ const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
+ 
+ const obj = (v: unknown): Record<string, unknown> =>
+   v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
+ 
++const looksLikeAddress = (s: string) => /^\d+\s+\S+/.test(s.trim());
++
++/**
++ * n8n sometimes returns property as a bare string, swaps name/address, or packs
++ * both into one field ("Name — 123 Main St"). Normalize to a clean pair.
++ */
++function parseNameAddress(
++  nameRaw: string,
++  addressRaw: string,
++): { name: string; address: string } {
++  let name = nameRaw.trim();
++  let address = addressRaw.trim();
++
++  if (looksLikeAddress(name) && address && !looksLikeAddress(address)) {
++    [name, address] = [address, name];
++  }
++
++  if (!address) {
++    const splitEm =
++      name.match(/^(.*?)\s+[—–]\s+(.+)$/) ||
++      name.match(/^(.*?)\s+\|\s+(.+)$/) ||
++      name.match(/^([^,\n]+),\s+(\d+\s+.+)$/) ||
++      name.match(/^([^\n]+)\n+(.+)$/);
++    if (splitEm) {
++      const left = splitEm[1].trim();
++      const right = splitEm[2].trim();
++      if (looksLikeAddress(right) && !looksLikeAddress(left)) {
++        name = left;
++        address = right;
++      } else if (looksLikeAddress(left) && !looksLikeAddress(right)) {
++        name = right;
++        address = left;
++      }
++    }
++  }
++
++  return {
++    name: name || "Screened Deal",
++    address: address || "Address not stated in OM",
++  };
++}
++
+ /** source_pages may be a number, an array of page refs, or an object map. */
+ const countPages = (v: unknown): number => {
+   if (Array.isArray(v)) return v.length;
+@@ -124,7 +192,8 @@ function unwrap(raw: unknown): Record<string, unknown> {
+ /** Normalize an arbitrary webhook payload into the Deal shape the dashboard renders. */
+ export function normalizeDeal(raw: unknown): Deal {
+   const r = unwrap(raw);
+-  const p = obj(r.property ?? r.subject_property ?? r.asset);
++  const propertyRaw = r.property ?? r.subject_property ?? r.asset;
++  const p = typeof propertyRaw === "string" ? {} : obj(propertyRaw);
+   const mRaw = obj(r.metrics ?? r.financials ?? r.key_metrics);
+   const s = obj(r.summary ?? r.risk_summary);
+   const t = obj(r.deal_terms ?? r.terms);
+@@ -132,7 +201,23 @@ export function normalizeDeal(raw: unknown): Deal {
+   const n = obj(r.narrative ?? r.investment_summary ?? r.memo);
+   const meta = obj(r.extraction_meta ?? r.extraction);
+ 
+-  const name = str(p.name ?? p.property_name ?? r.property_name, "Screened Deal");
++  const { name, address } = parseNameAddress(
++    str(
++      (typeof propertyRaw === "string" ? propertyRaw : null) ??
++        p.name ??
++        p.property_name ??
++        r.property_name ??
++        r.name,
++      "Screened Deal",
++    ),
++    str(
++      p.address ??
++        p.property_address ??
++        p.street_address ??
++        r.property_address ??
++        r.address,
++    ),
++  );
+ 
+   const metrics: DealMetrics = {
+     noi: metric(mRaw.noi),
+@@ -163,7 +248,7 @@ export function normalizeDeal(raw: unknown): Deal {
+     id: slugify(name),
+     property: {
+       name,
+-      address: str(p.address, "Address not stated in OM"),
++      address,
+       units: num(p.units) ?? num(mRaw.units) ?? metric(mRaw.units).value ?? 0,
+       year_built: num(p.year_built) ?? num(mRaw.year_built) ?? metric(mRaw.year_built).value,
+       submarket: str(p.submarket ?? p.market, "—"),
+@@ -216,10 +301,18 @@ export function normalizeDeal(raw: unknown): Deal {
+     narrative: {
+       headline: str(n.headline, `${name} screening result`),
+       executive_summary: str(n.executive_summary ?? n.summary),
+-      key_strengths: arr<unknown>(n.key_strengths ?? n.strengths).map((v) => str(v)),
+-      key_concerns: arr<unknown>(n.key_concerns ?? n.concerns).map((v) => str(v)),
+-      critical_questions: arr<unknown>(n.critical_questions ?? n.questions).map((v) => str(v)),
+-      recommended_next_steps: arr<unknown>(n.recommended_next_steps ?? n.next_steps).map((v) => str(v)),
++      key_strengths: arr<unknown>(n.key_strengths ?? n.strengths)
++        .map((v) => str(v))
++        .filter(Boolean),
++      key_concerns: arr<unknown>(n.key_concerns ?? n.concerns)
++        .map((v) => str(v))
++        .filter(Boolean),
++      critical_questions: arr<unknown>(n.critical_questions ?? n.questions)
++        .map((v) => str(v))
++        .filter(Boolean),
++      recommended_next_steps: arr<unknown>(n.recommended_next_steps ?? n.next_steps)
++        .map((v) => str(v))
++        .filter(Boolean),
+     },
+     extraction_meta: {
+       source_pages: countPages(meta.source_pages),
+diff --git a/src/routes/deal.$dealId.tsx b/src/routes/deal.$dealId.tsx
+index 771b018..60c8903 100644
+--- a/src/routes/deal.$dealId.tsx
++++ b/src/routes/deal.$dealId.tsx
+@@ -11,7 +11,7 @@ import { InvestmentSummary } from "@/components/deal/InvestmentSummary";
+ import { RecommendationBadge, SectionHeading } from "@/components/deal/primitives";
+ import { getDeal } from "@/lib/mock-deals";
+ import { fmtMoney } from "@/lib/deal-types";
+-import { getScreeningResult } from "@/lib/screening-result";
++import { getScreeningResult, saveScreeningResult } from "@/lib/screening-result";
+ 
+ export const Route = createFileRoute("/deal/$dealId")({
+   loader: ({ params }) => getDeal(params.dealId) ?? null,
+@@ -108,7 +108,12 @@ function DealDashboard() {
+           </div>
+         </section>
+ 
+-        <DealTerms deal={deal} />
++        <DealTerms
++          deal={deal}
++          onDealUpdate={(next) => {
++            setDeal(saveScreeningResult(next));
++          }}
++        />
+         <BidSensitivity deal={deal} />
+         <RiskPanel deal={deal} />
+         <MarketResearch deal={deal} />
+-- 
+2.43.0
+
+
+From 579f8736d11b9113f4fb9ee00202dad30df31a16 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Thu, 30 Jul 2026 23:57:52 +0000
+Subject: [PATCH 2/2] Reshape DealScreen as an IC-style portfolio manager brief
+
+Reorganize the dashboard around recommendation, thesis, kill criteria,
+and primary underwriting metrics first; add sticky section nav, richer
+pipeline comparison columns, and institutional typography/atmosphere
+while keeping the n8n OM upload flow intact.
+---
+ src/components/AppShell.tsx               |  18 +--
+ src/components/deal/BidSensitivity.tsx    |   4 +-
+ src/components/deal/DealBrief.tsx         | 106 +++++++++++++++
+ src/components/deal/DealSectionNav.tsx    |  64 +++++++++
+ src/components/deal/InvestmentSummary.tsx |  13 +-
+ src/components/deal/MetricCard.tsx        |  25 +++-
+ src/components/deal/RiskPanel.tsx         |  24 ++--
+ src/components/deal/primitives.tsx        |   2 +-
+ src/routes/__root.tsx                     |   2 +-
+ src/routes/deal.$dealId.tsx               | 151 +++++++++++++++------
+ src/routes/index.tsx                      | 124 ++++++++++-------
+ src/routes/pipeline.tsx                   | 144 ++++++++++++--------
+ src/styles.css                            | 158 +++++++++++++++++-----
+ 13 files changed, 619 insertions(+), 216 deletions(-)
+ create mode 100644 src/components/deal/DealBrief.tsx
+ create mode 100644 src/components/deal/DealSectionNav.tsx
+
+diff --git a/src/components/AppShell.tsx b/src/components/AppShell.tsx
+index a917f7a..1b36c04 100644
+--- a/src/components/AppShell.tsx
++++ b/src/components/AppShell.tsx
+@@ -4,26 +4,28 @@ import type { ReactNode } from "react";
+ 
+ export function AppShell({ children }: { children: ReactNode }) {
+   return (
+-    <div className="min-h-screen bg-background">
+-      <header className="sticky top-0 z-30 border-b border-border bg-card/90 backdrop-blur print:hidden">
++    <div className="min-h-screen">
++      <header className="sticky top-0 z-30 border-b border-border/80 bg-card/85 backdrop-blur-md print:hidden">
+         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
+-          <Link to="/" className="flex items-center gap-2">
+-            <span className="flex h-7 w-7 items-center justify-center rounded bg-primary text-primary-foreground">
++          <Link to="/" className="group flex items-center gap-2.5">
++            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-[1.03]">
+               <Building2 className="h-4 w-4" />
+             </span>
+-            <span className="font-semibold tracking-tight">DealScreen AI</span>
++            <span className="font-display text-lg font-semibold tracking-tight">
++              DealScreen AI
++            </span>
+           </Link>
+           <nav className="flex items-center gap-1 text-sm">
+             <Link
+               to="/"
+               activeOptions={{ exact: true }}
+-              className="rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-secondary [&.active]:bg-secondary [&.active]:text-foreground"
++              className="rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground [&.active]:bg-secondary [&.active]:text-foreground"
+             >
+               Screen a deal
+             </Link>
+             <Link
+               to="/pipeline"
+-              className="rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-secondary [&.active]:bg-secondary [&.active]:text-foreground"
++              className="rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground [&.active]:bg-secondary [&.active]:text-foreground"
+             >
+               Pipeline
+             </Link>
+@@ -33,4 +35,4 @@ export function AppShell({ children }: { children: ReactNode }) {
+       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">{children}</main>
+     </div>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/deal/BidSensitivity.tsx b/src/components/deal/BidSensitivity.tsx
+index cde6716..01db5cd 100644
+--- a/src/components/deal/BidSensitivity.tsx
++++ b/src/components/deal/BidSensitivity.tsx
+@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
+ 
+ export function BidSensitivity({ deal }: { deal: Deal }) {
+   return (
+-    <section id="bid-sensitivity">
++    <section id="bid-sensitivity" className="animate-rise">
+       <SectionHeading
+         title="Bid sensitivity"
+-        description="A ladder of bid prices tested against the asset's actual in-place income."
++        description="Where the bid still clears DSCR and debt-yield floors — and where leverage turns negative."
+       />
+       <div className="card-surface overflow-hidden">
+         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border bg-primary p-5 text-primary-foreground">
+diff --git a/src/components/deal/DealBrief.tsx b/src/components/deal/DealBrief.tsx
+new file mode 100644
+index 0000000..053ae76
+--- /dev/null
++++ b/src/components/deal/DealBrief.tsx
+@@ -0,0 +1,106 @@
++import { fmtMoney } from "@/lib/deal-types";
++import type { Deal } from "@/lib/deal-types";
++import { RecommendationBadge } from "./primitives";
++
++function Stat({
++  label,
++  value,
++  tone,
++}: {
++  label: string;
++  value: string;
++  tone?: "pass" | "warn" | "critical" | "default";
++}) {
++  const toneClass =
++    tone === "pass"
++      ? "text-pass"
++      : tone === "warn"
++        ? "text-warn-foreground"
++        : tone === "critical"
++          ? "text-critical"
++          : "text-foreground";
++  return (
++    <div className="min-w-0">
++      <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">
++        {label}
++      </p>
++      <p className={`num mt-1 truncate text-lg font-semibold tracking-tight ${toneClass}`}>
++        {value}
++      </p>
++    </div>
++  );
++}
++
++function riskTone(score: number): "pass" | "warn" | "critical" {
++  if (score >= 70) return "critical";
++  if (score >= 40) return "warn";
++  return "pass";
++}
++
++/** First-viewport IC brief: recommendation, thesis, and the numbers that kill or clear a deal. */
++export function DealBrief({ deal }: { deal: Deal }) {
++  const asking = deal.deal_terms.stated_price;
++  const risk = deal.summary.risk_score;
++  const confidence = Math.round(deal.extraction_meta.confidence * 100);
++
++  return (
++    <section id="overview" className="deal-brief animate-rise">
++      <div className="deal-brief__glow" aria-hidden />
++      <div className="relative flex flex-wrap items-start justify-between gap-4">
++        <div className="max-w-3xl">
++          <p className="text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
++            Investment committee brief · screened {deal.screened_on}
++          </p>
++          <h1 className="font-display mt-2 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
++            {deal.property.name}
++          </h1>
++          <p className="mt-2 text-sm text-muted-foreground">
++            {deal.property.address}
++            <span className="mx-2 text-border">·</span>
++            {deal.property.units} units
++            <span className="mx-2 text-border">·</span>
++            {deal.property.year_built ?? "Vintage n/a"}
++            <span className="mx-2 text-border">·</span>
++            {deal.property.submarket}
++          </p>
++        </div>
++        <RecommendationBadge value={deal.summary.recommendation} />
++      </div>
++
++      <p className="font-display mt-5 max-w-4xl text-lg leading-snug text-foreground/90 text-pretty sm:text-xl">
++        {deal.narrative.headline}
++      </p>
++      <p className="mt-3 max-w-4xl text-sm leading-relaxed text-muted-foreground">
++        {deal.narrative.executive_summary}
++      </p>
++
++      <div className="mt-6 grid gap-4 border-t border-border/80 pt-5 sm:grid-cols-2 lg:grid-cols-5">
++        <Stat label="Risk score" value={`${risk} / 100`} tone={riskTone(risk)} />
++        <Stat
++          label="Flags"
++          value={`${deal.summary.critical} critical · ${deal.summary.high} high`}
++          tone={
++            deal.summary.critical > 0
++              ? "critical"
++              : deal.summary.high > 0
++                ? "warn"
++                : "pass"
++          }
++        />
++        <Stat
++          label="Guidance / ask"
++          value={asking == null ? "Unpriced" : fmtMoney(asking)}
++        />
++        <Stat
++          label="Max supportable"
++          value={fmtMoney(deal.max_supportable_price)}
++          tone="pass"
++        />
++        <Stat
++          label="Extraction confidence"
++          value={`${confidence}% · ${deal.extraction_meta.source_pages} pp`}
++        />
++      </div>
++    </section>
++  );
++}
+diff --git a/src/components/deal/DealSectionNav.tsx b/src/components/deal/DealSectionNav.tsx
+new file mode 100644
+index 0000000..41279dc
+--- /dev/null
++++ b/src/components/deal/DealSectionNav.tsx
+@@ -0,0 +1,64 @@
++import { useEffect, useState } from "react";
++import { cn } from "@/lib/utils";
++
++const SECTIONS = [
++  { id: "overview", label: "Brief" },
++  { id: "key-metrics", label: "Metrics" },
++  { id: "risk", label: "Risk" },
++  { id: "bid-sensitivity", label: "Bid ladder" },
++  { id: "deal-terms", label: "Terms" },
++  { id: "market", label: "Market" },
++  { id: "summary", label: "Memo" },
++] as const;
++
++export function DealSectionNav() {
++  const [active, setActive] = useState<string>("overview");
++
++  useEffect(() => {
++    const nodes = SECTIONS.map((s) => document.getElementById(s.id)).filter(
++      (n): n is HTMLElement => Boolean(n),
++    );
++    if (!nodes.length) return;
++
++    const observer = new IntersectionObserver(
++      (entries) => {
++        const visible = entries
++          .filter((e) => e.isIntersecting)
++          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
++        if (visible?.target?.id) setActive(visible.target.id);
++      },
++      { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.4, 0.7] },
++    );
++    nodes.forEach((n) => observer.observe(n));
++    return () => observer.disconnect();
++  }, []);
++
++  return (
++    <nav
++      aria-label="Deal sections"
++      className="sticky top-14 z-20 -mx-4 mb-8 border-y border-border/80 bg-background/90 px-4 backdrop-blur print:hidden sm:-mx-6 sm:px-6"
++    >
++      <div className="flex gap-1 overflow-x-auto py-2">
++        {SECTIONS.map((s) => (
++          <a
++            key={s.id}
++            href={`#${s.id}`}
++            onClick={(e) => {
++              e.preventDefault();
++              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
++              setActive(s.id);
++            }}
++            className={cn(
++              "shrink-0 rounded-md px-3 py-1.5 text-xs font-medium tracking-wide transition-colors",
++              active === s.id
++                ? "bg-primary text-primary-foreground"
++                : "text-muted-foreground hover:bg-secondary hover:text-foreground",
++            )}
++          >
++            {s.label}
++          </a>
++        ))}
++      </div>
++    </nav>
++  );
++}
+diff --git a/src/components/deal/InvestmentSummary.tsx b/src/components/deal/InvestmentSummary.tsx
+index 554af5d..779519a 100644
+--- a/src/components/deal/InvestmentSummary.tsx
++++ b/src/components/deal/InvestmentSummary.tsx
+@@ -34,9 +34,10 @@ function List({ title, items }: { title: string; items: unknown[] }) {
+ 
+ export function InvestmentSummary({ deal }: { deal: Deal }) {
+   return (
+-    <section id="summary">
++    <section id="summary" className="animate-rise">
+       <SectionHeading
+-        title="Investment summary"
++        title="Investment memo"
++        description="What goes in the IC packet after the first screen."
+         action={
+           <Button variant="outline" size="sm" onClick={() => window.print()}>
+             <Download className="mr-2 h-4 w-4" />
+@@ -44,16 +45,16 @@ export function InvestmentSummary({ deal }: { deal: Deal }) {
+           </Button>
+         }
+       />
+-      <div className="card-surface space-y-6 p-6">
++      <div className="card-surface space-y-6 p-6 sm:p-8">
+         <div>
+-          <h3 className="text-xl font-semibold tracking-tight">
++          <h3 className="font-display text-2xl font-semibold tracking-tight text-balance">
+             {asText(deal.narrative.headline)}
+           </h3>
+-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
++          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+             {asText(deal.narrative.executive_summary)}
+           </p>
+         </div>
+-        <div className="grid gap-6 border-t border-border pt-6 md:grid-cols-2">
++        <div className="grid gap-8 border-t border-border pt-6 md:grid-cols-2">
+           <List title="Key strengths" items={deal.narrative.key_strengths} />
+           <List title="Key concerns" items={deal.narrative.key_concerns} />
+           <List title="Critical questions for the broker" items={deal.narrative.critical_questions} />
+diff --git a/src/components/deal/MetricCard.tsx b/src/components/deal/MetricCard.tsx
+index 21c9379..11292ce 100644
+--- a/src/components/deal/MetricCard.tsx
++++ b/src/components/deal/MetricCard.tsx
+@@ -3,31 +3,37 @@ import {
+   TooltipContent,
+   TooltipTrigger,
+ } from "@/components/ui/tooltip";
+-import { NotInOm } from "./primitives";
++import { cn } from "@/lib/utils";
+ import type { Metric } from "@/lib/deal-types";
++import { NotInOm } from "./primitives";
+ 
+ export function MetricCard({
+   label,
+   metric,
+   format,
+   explain,
++  emphasis = "secondary",
+ }: {
+   label: string;
+   metric: Metric;
+   format: (n: number) => string;
+   explain: string;
++  /** Primary metrics are what a PM looks at before anything else. */
++  emphasis?: "primary" | "secondary";
+ }) {
+   const missing = metric.value === null;
+   return (
+     <Tooltip>
+       <TooltipTrigger asChild>
+         <div
+-          className={`card-surface p-4 text-left transition-shadow hover:shadow-md ${
+-            missing ? "opacity-70" : ""
+-          }`}
++          className={cn(
++            "card-surface text-left transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md",
++            emphasis === "primary" ? "p-5" : "p-4",
++            missing && "opacity-70",
++          )}
+         >
+           <div className="flex items-start justify-between gap-2">
+-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
++            <p className="text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
+               {label}
+             </p>
+             {metric.page && !missing ? (
+@@ -40,7 +46,12 @@ export function MetricCard({
+             {missing ? (
+               <NotInOm />
+             ) : (
+-              <span className="num text-2xl font-semibold">
++              <span
++                className={cn(
++                  "num font-semibold tracking-tight",
++                  emphasis === "primary" ? "text-3xl" : "text-2xl",
++                )}
++              >
+                 {format(metric.value as number)}
+               </span>
+             )}
+@@ -55,4 +66,4 @@ export function MetricCard({
+       </TooltipContent>
+     </Tooltip>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/components/deal/RiskPanel.tsx b/src/components/deal/RiskPanel.tsx
+index 55efd26..e02b095 100644
+--- a/src/components/deal/RiskPanel.tsx
++++ b/src/components/deal/RiskPanel.tsx
+@@ -100,21 +100,29 @@ function FlagCard({ flag }: { flag: RiskFlag }) {
+   );
+ }
+ 
++const SEVERITY_ORDER = { CRITICAL: 0, HIGH: 1, UNKNOWN: 2, PASS: 3 } as const;
++
+ export function RiskPanel({ deal }: { deal: Deal }) {
++  const flags = [...deal.flags].sort(
++    (a, b) => SEVERITY_ORDER[a.severity] - SEVERITY_ORDER[b.severity],
++  );
++
+   return (
+-    <section>
++    <section id="risk" className="animate-rise">
+       <SectionHeading
+-        title="Risk panel"
+-        description={`${deal.summary.critical} critical · ${deal.summary.high} high · ${deal.summary.unknown} unknown`}
++        title="Risk & kill criteria"
++        description={`${deal.summary.critical} critical · ${deal.summary.high} high · ${deal.summary.unknown} unknown — critical flags first`}
+       />
+       <div className="card-surface mb-4 p-5">
+-        <Gauge score={deal.summary.risk_score} />
+-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+-          {deal.summary.rationale}
+-        </p>
++        <div className="flex flex-wrap items-end justify-between gap-4">
++          <Gauge score={deal.summary.risk_score} />
++          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
++            {deal.summary.rationale}
++          </p>
++        </div>
+       </div>
+       <div className="space-y-3">
+-        {deal.flags.map((f) => (
++        {flags.map((f) => (
+           <FlagCard key={f.id} flag={f} />
+         ))}
+       </div>
+diff --git a/src/components/deal/primitives.tsx b/src/components/deal/primitives.tsx
+index 2a113c5..20f71a9 100644
+--- a/src/components/deal/primitives.tsx
++++ b/src/components/deal/primitives.tsx
+@@ -66,7 +66,7 @@ export function SectionHeading({
+   return (
+     <div className="mb-4 flex items-end justify-between gap-4">
+       <div>
+-        <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
++        <h2 className="font-display text-xl font-semibold tracking-tight">{title}</h2>
+         {description ? (
+           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+         ) : null}
+diff --git a/src/routes/__root.tsx b/src/routes/__root.tsx
+index 34b70d6..f2f22e9 100644
+--- a/src/routes/__root.tsx
++++ b/src/routes/__root.tsx
+@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+       {
+         rel: "stylesheet",
+-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
++        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap",
+       },
+       {
+         rel: "stylesheet",
+diff --git a/src/routes/deal.$dealId.tsx b/src/routes/deal.$dealId.tsx
+index 60c8903..175ac0d 100644
+--- a/src/routes/deal.$dealId.tsx
++++ b/src/routes/deal.$dealId.tsx
+@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
+ import { createFileRoute, Link } from "@tanstack/react-router";
+ import { ArrowLeft } from "lucide-react";
+ import { AppShell } from "@/components/AppShell";
+-import { MetricCard } from "@/components/deal/MetricCard";
+-import { RiskPanel } from "@/components/deal/RiskPanel";
+ import { BidSensitivity } from "@/components/deal/BidSensitivity";
++import { DealBrief } from "@/components/deal/DealBrief";
++import { DealChat } from "@/components/deal/DealChat";
++import { DealSectionNav } from "@/components/deal/DealSectionNav";
+ import { DealTerms } from "@/components/deal/DealTerms";
+-import { MarketResearch } from "@/components/deal/MarketResearch";
+ import { InvestmentSummary } from "@/components/deal/InvestmentSummary";
+-import { RecommendationBadge, SectionHeading } from "@/components/deal/primitives";
+-import { getDeal } from "@/lib/mock-deals";
++import { MarketResearch } from "@/components/deal/MarketResearch";
++import { MetricCard } from "@/components/deal/MetricCard";
++import { RiskPanel } from "@/components/deal/RiskPanel";
++import { SectionHeading } from "@/components/deal/primitives";
+ import { fmtMoney } from "@/lib/deal-types";
++import { getDeal } from "@/lib/mock-deals";
+ import { getScreeningResult, saveScreeningResult } from "@/lib/screening-result";
+ 
+ export const Route = createFileRoute("/deal/$dealId")({
+@@ -45,7 +48,6 @@ function DealDashboard() {
+   const [deal, setDeal] = useState(loaded);
+ 
+   useEffect(() => {
+-    // Live screening results are stored client-side after the webhook returns.
+     setDeal(getScreeningResult(dealId) ?? getDeal(dealId) ?? null);
+   }, [dealId]);
+ 
+@@ -53,7 +55,7 @@ function DealDashboard() {
+     return (
+       <AppShell>
+         <div className="py-24 text-center">
+-          <h1 className="text-xl font-semibold">Screening result not found</h1>
++          <h1 className="font-display text-2xl font-semibold">Screening result not found</h1>
+           <p className="mt-2 text-sm text-muted-foreground">
+             This result may have expired. Run the screening again.
+           </p>
+@@ -71,54 +73,121 @@ function DealDashboard() {
+     <AppShell>
+       <Link
+         to="/pipeline"
+-        className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground print:hidden"
++        className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground print:hidden"
+       >
+         <ArrowLeft className="h-4 w-4" /> Back to pipeline
+       </Link>
+ 
+-      <header className="flex flex-wrap items-start justify-between gap-4">
+-        <div>
+-          <h1 className="text-2xl font-semibold tracking-tight">{deal.property.name}</h1>
+-          <p className="mt-1 text-sm text-muted-foreground">
+-            {deal.property.address} · {deal.property.units} units ·{" "}
+-            {deal.property.year_built ?? "Year built not stated in OM"}
+-          </p>
+-        </div>
+-        <RecommendationBadge value={deal.summary.recommendation} />
+-      </header>
++      <DealBrief deal={deal} />
++      <DealSectionNav />
+ 
+-      <div className="mt-8 space-y-10">
+-        <section>
++      <div className="space-y-12">
++        <section id="key-metrics" className="animate-rise">
+           <SectionHeading
+-            title="Key metrics"
+-            description="Hover any card for a plain-English explanation and the OM source page."
++            title="Underwriting snapshot"
++            description="The six numbers a portfolio manager checks before reading the rest of the OM."
+           />
+           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+-            <MetricCard label="NOI" metric={m.noi} format={fmtMoney} explain="Net operating income: rental income left after operating costs, before any loan payments." />
+-            <MetricCard label="Cap rate" metric={m.cap_rate} format={pct} explain="NOI divided by price. A rough yield on an all-cash purchase — higher means cheaper." />
+-            <MetricCard label="DSCR" metric={m.dscr} format={x} explain="Debt service coverage: income divided by loan payments. 1.25x means 25% more income than the mortgage needs." />
+-            <MetricCard label="IRR" metric={m.irr} format={pct} explain="Internal rate of return: the annualized return over the hold, counting cash flow and sale proceeds." />
+-            <MetricCard label="Occupancy" metric={m.occupancy} format={pct} explain="Share of units physically occupied today." />
+-            <MetricCard label="Price / unit" metric={m.price_per_unit} format={(n) => `$${Math.round(n).toLocaleString()}`} explain="Purchase price divided by unit count — the fastest way to compare deals." />
+-            <MetricCard label="LTV" metric={m.ltv} format={pct} explain="Loan-to-value: how much of the price is borrowed. Higher means more leverage and more risk." />
+-            <MetricCard label="Debt yield" metric={m.debt_yield} format={pct} explain="NOI divided by loan amount. Lenders use it as a floor regardless of rates." />
+-            <MetricCard label="Expense ratio" metric={m.expense_ratio} format={pct} explain="Operating costs as a share of income. Lower is more efficient." />
+-            <MetricCard label="Breakeven occ." metric={m.breakeven_occupancy} format={pct} explain="Occupancy needed to cover costs and debt. The gap to actual occupancy is your cushion." />
+-            <MetricCard label="Rent / income" metric={m.rent_to_income} format={pct} explain="Share of a typical tenant's income spent on rent. Above 30% signals affordability strain." />
++            <MetricCard
++              label="Cap rate"
++              metric={m.cap_rate}
++              format={pct}
++              emphasis="primary"
++              explain="NOI divided by price. A rough yield on an all-cash purchase — higher means cheaper."
++            />
++            <MetricCard
++              label="DSCR"
++              metric={m.dscr}
++              format={x}
++              emphasis="primary"
++              explain="Debt service coverage: income divided by loan payments. 1.25x means 25% more income than the mortgage needs."
++            />
++            <MetricCard
++              label="Debt yield"
++              metric={m.debt_yield}
++              format={pct}
++              emphasis="primary"
++              explain="NOI divided by loan amount. Lenders use it as a floor regardless of rates."
++            />
++            <MetricCard
++              label="NOI"
++              metric={m.noi}
++              format={fmtMoney}
++              emphasis="primary"
++              explain="Net operating income: rental income left after operating costs, before any loan payments."
++            />
++            <MetricCard
++              label="Price / unit"
++              metric={m.price_per_unit}
++              format={(n) => `$${Math.round(n).toLocaleString()}`}
++              emphasis="primary"
++              explain="Purchase price divided by unit count — the fastest way to compare deals."
++            />
++            <MetricCard
++              label="Occupancy"
++              metric={m.occupancy}
++              format={pct}
++              emphasis="primary"
++              explain="Share of units physically occupied today."
++            />
++          </div>
++
++          <div className="mt-6">
++            <p className="mb-3 text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">
++              Secondary metrics
++            </p>
++            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
++              <MetricCard
++                label="IRR"
++                metric={m.irr}
++                format={pct}
++                explain="Internal rate of return: the annualized return over the hold, counting cash flow and sale proceeds."
++              />
++              <MetricCard
++                label="LTV"
++                metric={m.ltv}
++                format={pct}
++                explain="Loan-to-value: how much of the price is borrowed. Higher means more leverage and more risk."
++              />
++              <MetricCard
++                label="Expense ratio"
++                metric={m.expense_ratio}
++                format={pct}
++                explain="Operating costs as a share of income. Lower is more efficient."
++              />
++              <MetricCard
++                label="Breakeven occ."
++                metric={m.breakeven_occupancy}
++                format={pct}
++                explain="Occupancy needed to cover costs and debt. The gap to actual occupancy is your cushion."
++              />
++              <MetricCard
++                label="Rent / income"
++                metric={m.rent_to_income}
++                format={pct}
++                explain="Share of a typical tenant's income spent on rent. Above 30% signals affordability strain."
++              />
++            </div>
+           </div>
+         </section>
+ 
+-        <DealTerms
+-          deal={deal}
+-          onDealUpdate={(next) => {
+-            setDeal(saveScreeningResult(next));
+-          }}
+-        />
+-        <BidSensitivity deal={deal} />
+         <RiskPanel deal={deal} />
++
++        <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] xl:items-start">
++          <DealTerms
++            deal={deal}
++            onDealUpdate={(next) => {
++              setDeal(saveScreeningResult(next));
++            }}
++          />
++          <BidSensitivity deal={deal} />
++        </div>
++
+         <MarketResearch deal={deal} />
+         <InvestmentSummary deal={deal} />
+       </div>
++
++      <DealChat deal={deal} />
+     </AppShell>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/routes/index.tsx b/src/routes/index.tsx
+index 7edd494..2baa10e 100644
+--- a/src/routes/index.tsx
++++ b/src/routes/index.tsx
+@@ -131,61 +131,81 @@ function Index() {
+ 
+   return (
+     <AppShell>
+-      <div className="mx-auto max-w-2xl">
+-        <h1 className="text-center text-3xl font-semibold tracking-tight">
+-          Screen a multifamily deal
+-        </h1>
+-        <p className="mt-2 text-center text-sm text-muted-foreground">
+-          Upload an offering memorandum and get metrics, risk flags, a bid
+-          sensitivity ladder and a written investment memo.
+-        </p>
++      <div className="mx-auto max-w-3xl animate-rise">
++        <div className="upload-stage relative px-6 py-10 sm:px-10 sm:py-12">
++          <div className="relative">
++            <p className="text-center text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
++              DealScreen AI · OM screening desk
++            </p>
++            <h1 className="font-display mt-3 text-center text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
++              Turn an offering memorandum into an IC brief
++            </h1>
++            <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-muted-foreground">
++              Drop a multifamily OM PDF. We extract underwriting metrics, score
++              kill criteria, build a bid ladder, and draft the memo a portfolio
++              manager needs before the first broker call.
++            </p>
+ 
+-        <div
+-          onDragOver={(e) => {
+-            e.preventDefault();
+-            setDragging(true);
+-          }}
+-          onDragLeave={() => setDragging(false)}
+-          onDrop={(e) => {
+-            e.preventDefault();
+-            setDragging(false);
+-            pick(e.dataTransfer.files[0]);
+-          }}
+-          onClick={() => inputRef.current?.click()}
+-          className={cn(
+-            "mt-8 cursor-pointer rounded-lg border-2 border-dashed p-12 text-center transition-colors",
+-            dragging ? "border-primary bg-secondary" : "border-border bg-card",
+-          )}
+-        >
+-          <input
+-            ref={inputRef}
+-            type="file"
+-            accept="application/pdf"
+-            className="hidden"
+-            onChange={(e) => pick(e.target.files?.[0])}
+-          />
+-          {file ? (
+-            <div className="flex flex-col items-center gap-2">
+-              <FileText className="h-8 w-8 text-primary" />
+-              <p className="font-medium">{file.name}</p>
+-              <p className="text-xs text-muted-foreground">
+-                {(file.size / 1024 / 1024).toFixed(1)} MB · click to replace
+-              </p>
++            <div
++              onDragOver={(e) => {
++                e.preventDefault();
++                setDragging(true);
++              }}
++              onDragLeave={() => setDragging(false)}
++              onDrop={(e) => {
++                e.preventDefault();
++                setDragging(false);
++                pick(e.dataTransfer.files[0]);
++              }}
++              onClick={() => inputRef.current?.click()}
++              className={cn(
++                "mt-8 cursor-pointer rounded-lg border-2 border-dashed p-10 text-center transition-all duration-300",
++                dragging
++                  ? "border-primary bg-secondary scale-[1.01]"
++                  : "border-border/80 bg-card/80 hover:border-primary/40",
++              )}
++            >
++              <input
++                ref={inputRef}
++                type="file"
++                accept="application/pdf"
++                className="hidden"
++                onChange={(e) => pick(e.target.files?.[0])}
++              />
++              {file ? (
++                <div className="flex flex-col items-center gap-2">
++                  <FileText className="h-8 w-8 text-primary" />
++                  <p className="font-medium">{file.name}</p>
++                  <p className="text-xs text-muted-foreground">
++                    {(file.size / 1024 / 1024).toFixed(1)} MB · click to replace
++                  </p>
++                </div>
++              ) : (
++                <div className="flex flex-col items-center gap-2">
++                  <UploadCloud className="h-8 w-8 text-muted-foreground" />
++                  <p className="font-medium">Drop the offering memorandum here</p>
++                  <p className="text-xs text-muted-foreground">PDF only · up to 50 MB</p>
++                </div>
++              )}
+             </div>
+-          ) : (
+-            <div className="flex flex-col items-center gap-2">
+-              <UploadCloud className="h-8 w-8 text-muted-foreground" />
+-              <p className="font-medium">Drop the offering memorandum here</p>
+-              <p className="text-xs text-muted-foreground">PDF only, up to 50 MB</p>
++
++            <div className="mt-4 grid gap-3 text-center text-[11px] tracking-wide text-muted-foreground uppercase sm:grid-cols-3">
++              <p>Cap · DSCR · debt yield</p>
++              <p>Risk flags & kill criteria</p>
++              <p>Bid ladder + IC memo</p>
+             </div>
+-          )}
++          </div>
+         </div>
+ 
+-        <div className="mt-4 space-y-1.5">
++        <div className="mt-5 space-y-1.5">
+           <Label htmlFor="notes" className="text-xs tracking-wide text-muted-foreground uppercase">
+-            Notes (optional)
++            Notes for underwriting (optional)
+           </Label>
+-          <Textarea id="notes" placeholder="Anything the model should know about this deal…" rows={3} />
++          <Textarea
++            id="notes"
++            placeholder="Sponsor context, target hold, leverage preference, anything the screen should weight…"
++            rows={3}
++          />
+         </div>
+ 
+         <div className="card-surface mt-4 overflow-hidden">
+@@ -194,7 +214,7 @@ function Index() {
+             onClick={() => setSettingsOpen((o) => !o)}
+             className="flex w-full items-center justify-between px-4 py-3 text-sm font-medium"
+           >
+-            Analysis settings
++            Underwriting settings
+             <ChevronDown className={cn("h-4 w-4 transition-transform", settingsOpen && "rotate-180")} />
+           </button>
+           {settingsOpen ? (
+@@ -226,7 +246,7 @@ function Index() {
+                           setDisabled((d) => (off ? d.filter((i) => i !== g) : [...d, g]))
+                         }
+                         className={cn(
+-                          "rounded-full border px-3 py-1 text-xs transition-colors",
++                          "rounded-md border px-3 py-1 text-xs transition-colors",
+                           off
+                             ? "border-critical/40 bg-critical-soft text-critical line-through"
+                             : "border-border bg-card hover:bg-secondary",
+@@ -244,14 +264,14 @@ function Index() {
+ 
+         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+           <Button className="flex-1" size="lg" onClick={run}>
+-            Run Screening
++            Run screening
+           </Button>
+           <Button
+             variant="outline"
+             size="lg"
+             onClick={() => navigate({ to: "/deal/$dealId", params: { dealId: mockDeals[0].id } })}
+           >
+-            Load Sample Deal
++            Open sample IC brief
+           </Button>
+         </div>
+       </div>
+diff --git a/src/routes/pipeline.tsx b/src/routes/pipeline.tsx
+index fff8d10..29dc9bb 100644
+--- a/src/routes/pipeline.tsx
++++ b/src/routes/pipeline.tsx
+@@ -1,7 +1,11 @@
+ import { createFileRoute, Link } from "@tanstack/react-router";
+ import { AppShell } from "@/components/AppShell";
+ import { RecommendationBadge } from "@/components/deal/primitives";
++import { fmtMoney } from "@/lib/deal-types";
+ import { mockDeals } from "@/lib/mock-deals";
++import { listScreeningResults } from "@/lib/screening-result";
++import { useEffect, useState } from "react";
++import type { Deal } from "@/lib/deal-types";
+ 
+ export const Route = createFileRoute("/pipeline")({
+   component: Pipeline,
+@@ -11,13 +15,13 @@ export const Route = createFileRoute("/pipeline")({
+       {
+         name: "description",
+         content:
+-          "Every screened multifamily offering memorandum in one table — recommendation, DSCR, cap rate and risk score at a glance.",
++          "Compare screened multifamily OMs — recommendation, guidance price, max supportable bid, DSCR, cap rate and risk.",
+       },
+       { property: "og:title", content: "Deal Pipeline | DealScreen AI" },
+       {
+         property: "og:description",
+         content:
+-          "Review all screened multifamily deals with recommendation, DSCR, cap rate and risk score.",
++          "Review screened multifamily deals with recommendation, pricing, DSCR, cap rate and risk score.",
+       },
+       { property: "og:type", content: "website" },
+       { name: "twitter:card", content: "summary_large_image" },
+@@ -26,61 +30,95 @@ export const Route = createFileRoute("/pipeline")({
+ });
+ 
+ function Pipeline() {
++  const [deals, setDeals] = useState<Deal[]>(mockDeals);
++
++  useEffect(() => {
++    const live = listScreeningResults();
++    const ids = new Set(live.map((d) => d.id));
++    setDeals([...live, ...mockDeals.filter((d) => !ids.has(d.id))]);
++  }, []);
++
+   return (
+     <AppShell>
+-      <h1 className="text-2xl font-semibold tracking-tight">Deal pipeline</h1>
+-      <p className="mt-1 text-sm text-muted-foreground">
+-        {mockDeals.length} screened offerings. Select a row to open the dashboard.
+-      </p>
+-      <div className="card-surface mt-6 overflow-hidden">
+-        <div className="overflow-x-auto">
+-          <table className="w-full text-sm">
+-            <thead>
+-              <tr className="border-b border-border text-left text-xs tracking-wide text-muted-foreground uppercase">
+-                <th className="px-4 py-3 font-medium">Property</th>
+-                <th className="px-4 py-3 font-medium">Screened</th>
+-                <th className="px-4 py-3 font-medium">Recommendation</th>
+-                <th className="px-4 py-3 font-medium">DSCR</th>
+-                <th className="px-4 py-3 font-medium">Cap rate</th>
+-                <th className="px-4 py-3 font-medium">Risk score</th>
+-              </tr>
+-            </thead>
+-            <tbody>
+-              {mockDeals.map((d) => (
+-                <tr key={d.id} className="border-b border-border/70 last:border-0 hover:bg-secondary/60">
+-                  <td className="px-4 py-3">
+-                    <Link to="/deal/$dealId" params={{ dealId: d.id }} className="block font-medium">
+-                      {d.property.name}
+-                      <span className="block text-xs font-normal text-muted-foreground">
+-                        {d.property.units} units · {d.property.submarket}
+-                      </span>
+-                    </Link>
+-                  </td>
+-                  <td className="num px-4 py-3 text-muted-foreground">{d.screened_on}</td>
+-                  <td className="px-4 py-3">
+-                    <RecommendationBadge value={d.summary.recommendation} size="sm" />
+-                  </td>
+-                  <td className="num px-4 py-3">
+-                    {d.metrics.dscr.value === null ? (
+-                      <span className="text-muted-foreground">Not stated in OM</span>
+-                    ) : (
+-                      `${d.metrics.dscr.value.toFixed(2)}x`
+-                    )}
+-                  </td>
+-                  <td className="num px-4 py-3">
+-                    {d.metrics.cap_rate.value === null ? (
+-                      <span className="text-muted-foreground">Not stated in OM</span>
+-                    ) : (
+-                      `${d.metrics.cap_rate.value.toFixed(2)}%`
+-                    )}
+-                  </td>
+-                  <td className="num px-4 py-3 font-medium">{d.summary.risk_score}</td>
++      <div className="animate-rise">
++        <p className="text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
++          Active pipeline
++        </p>
++        <h1 className="font-display mt-2 text-3xl font-semibold tracking-tight">
++          Deal pipeline
++        </h1>
++        <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
++          Compare offerings the way an acquisitions desk does: recommendation,
++          guidance vs max supportable, coverage, and risk before opening the brief.
++        </p>
++
++        <div className="card-surface mt-6 overflow-hidden">
++          <div className="overflow-x-auto">
++            <table className="w-full text-sm">
++              <thead>
++                <tr className="border-b border-border text-left text-[11px] tracking-[0.12em] text-muted-foreground uppercase">
++                  <th className="px-4 py-3 font-medium">Property</th>
++                  <th className="px-4 py-3 font-medium">Rec</th>
++                  <th className="px-4 py-3 font-medium">Guidance</th>
++                  <th className="px-4 py-3 font-medium">Max bid</th>
++                  <th className="px-4 py-3 font-medium">$/Unit</th>
++                  <th className="px-4 py-3 font-medium">Cap</th>
++                  <th className="px-4 py-3 font-medium">DSCR</th>
++                  <th className="px-4 py-3 font-medium">Risk</th>
+                 </tr>
+-              ))}
+-            </tbody>
+-          </table>
++              </thead>
++              <tbody>
++                {deals.map((d) => (
++                  <tr
++                    key={d.id}
++                    className="border-b border-border/70 transition-colors last:border-0 hover:bg-secondary/60"
++                  >
++                    <td className="px-4 py-3.5">
++                      <Link
++                        to="/deal/$dealId"
++                        params={{ dealId: d.id }}
++                        className="block font-medium hover:underline"
++                      >
++                        {d.property.name}
++                        <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
++                          {d.property.units} units · {d.property.submarket} · {d.screened_on}
++                        </span>
++                      </Link>
++                    </td>
++                    <td className="px-4 py-3.5">
++                      <RecommendationBadge value={d.summary.recommendation} size="sm" />
++                    </td>
++                    <td className="num px-4 py-3.5">
++                      {d.deal_terms.stated_price == null
++                        ? "Unpriced"
++                        : fmtMoney(d.deal_terms.stated_price)}
++                    </td>
++                    <td className="num px-4 py-3.5 font-medium">
++                      {fmtMoney(d.max_supportable_price)}
++                    </td>
++                    <td className="num px-4 py-3.5">
++                      {d.metrics.price_per_unit.value == null
++                        ? "—"
++                        : `$${Math.round(d.metrics.price_per_unit.value).toLocaleString()}`}
++                    </td>
++                    <td className="num px-4 py-3.5">
++                      {d.metrics.cap_rate.value == null
++                        ? "—"
++                        : `${d.metrics.cap_rate.value.toFixed(2)}%`}
++                    </td>
++                    <td className="num px-4 py-3.5">
++                      {d.metrics.dscr.value == null
++                        ? "—"
++                        : `${d.metrics.dscr.value.toFixed(2)}x`}
++                    </td>
++                    <td className="num px-4 py-3.5 font-semibold">{d.summary.risk_score}</td>
++                  </tr>
++                ))}
++              </tbody>
++            </table>
++          </div>
+         </div>
+       </div>
+     </AppShell>
+   );
+-}
+\ No newline at end of file
++}
+diff --git a/src/styles.css b/src/styles.css
+index 771ab9e..fbb83c9 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -7,15 +7,8 @@
+ /*
+  * Design system definition.
+  *
+- * The @theme inline block maps CSS custom properties to Tailwind utility
+- * classes (e.g. --color-primary -> bg-primary, text-primary).
+- *
+- * The :root and .dark blocks define the actual color values using oklch.
+- * All colors MUST use oklch format.
+- *
+- * To add a new semantic color:
+- * 1. Add the variable to :root (light value) and .dark (dark value)
+- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
++ * Institutional CRE screening desk — cool slate navy, paper grain, serif display.
++ * Severity tokens stay explicit for risk communication.
+  */
+ 
+ @theme inline {
+@@ -31,6 +24,7 @@
+   --color-unknown: var(--unknown);
+   --color-unknown-soft: var(--unknown-soft);
+   --font-sans: var(--font-sans);
++  --font-display: var(--font-display);
+   --radius-sm: calc(var(--radius) - 4px);
+   --radius-md: calc(var(--radius) - 2px);
+   --radius-lg: var(--radius);
+@@ -74,28 +68,27 @@
+ }
+ 
+ :root {
+-  --radius: 0.5rem;
+-  --background: oklch(0.972 0.003 247.9);
+-  --foreground: oklch(0.24 0.045 264);
+-  --card: oklch(1 0 0);
+-  --card-foreground: oklch(0.24 0.045 264);
+-  --popover: oklch(1 0 0);
+-  --popover-foreground: oklch(0.24 0.045 264);
+-  --primary: oklch(0.293 0.068 262.6);
+-  --primary-foreground: oklch(0.985 0.003 247.9);
+-  --secondary: oklch(0.945 0.008 250);
+-  --secondary-foreground: oklch(0.293 0.068 262.6);
+-  --muted: oklch(0.955 0.006 250);
+-  --muted-foreground: oklch(0.53 0.03 258);
+-  --accent: oklch(0.94 0.02 250);
+-  --accent-foreground: oklch(0.293 0.068 262.6);
++  --radius: 0.45rem;
++  --background: oklch(0.965 0.008 250);
++  --foreground: oklch(0.22 0.04 255);
++  --card: oklch(0.995 0.002 250);
++  --card-foreground: oklch(0.22 0.04 255);
++  --popover: oklch(0.995 0.002 250);
++  --popover-foreground: oklch(0.22 0.04 255);
++  --primary: oklch(0.3 0.055 250);
++  --primary-foreground: oklch(0.985 0.004 250);
++  --secondary: oklch(0.94 0.012 250);
++  --secondary-foreground: oklch(0.3 0.055 250);
++  --muted: oklch(0.95 0.008 250);
++  --muted-foreground: oklch(0.5 0.03 255);
++  --accent: oklch(0.93 0.018 230);
++  --accent-foreground: oklch(0.28 0.05 250);
+   --destructive: oklch(0.52 0.18 27.5);
+   --destructive-foreground: oklch(0.985 0.003 247.9);
+-  --border: oklch(0.9 0.008 255);
+-  --input: oklch(0.9 0.008 255);
+-  --ring: oklch(0.293 0.068 262.6);
++  --border: oklch(0.88 0.012 250);
++  --input: oklch(0.88 0.012 250);
++  --ring: oklch(0.3 0.055 250);
+ 
+-  /* Severity / status tokens */
+   --pass: oklch(0.54 0.13 150);
+   --pass-foreground: oklch(0.99 0 0);
+   --pass-soft: oklch(0.95 0.04 150);
+@@ -107,14 +100,14 @@
+   --critical-soft: oklch(0.95 0.04 27.5);
+   --unknown: oklch(0.62 0.01 255);
+   --unknown-soft: oklch(0.94 0.004 255);
+-  --shadow-card: 0 1px 2px oklch(0.24 0.045 264 / 0.06), 0 4px 16px oklch(0.24 0.045 264 / 0.05);
+-  --font-sans:
+-    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+-  --chart-1: oklch(0.646 0.222 41.116);
+-  --chart-2: oklch(0.6 0.118 184.704);
+-  --chart-3: oklch(0.398 0.07 227.392);
+-  --chart-4: oklch(0.828 0.189 84.429);
+-  --chart-5: oklch(0.769 0.188 70.08);
++  --shadow-card: 0 1px 2px oklch(0.22 0.04 255 / 0.05), 0 8px 24px oklch(0.22 0.04 255 / 0.05);
++  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
++  --font-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
++  --chart-1: oklch(0.45 0.08 250);
++  --chart-2: oklch(0.62 0.1 170);
++  --chart-3: oklch(0.55 0.12 75);
++  --chart-4: oklch(0.5 0.08 230);
++  --chart-5: oklch(0.58 0.1 30);
+   --sidebar: oklch(0.984 0.003 247.858);
+   --sidebar-foreground: oklch(0.129 0.042 264.695);
+   --sidebar-primary: oklch(0.208 0.042 265.755);
+@@ -165,11 +158,26 @@
+     border-color: var(--color-border);
+   }
+ 
++  html {
++    scroll-behavior: smooth;
++  }
++
+   body {
+     background-color: var(--color-background);
++    background-image:
++      radial-gradient(ellipse 80% 50% at 10% -10%, oklch(0.9 0.03 230 / 0.55), transparent 55%),
++      radial-gradient(ellipse 60% 40% at 100% 0%, oklch(0.92 0.02 250 / 0.45), transparent 50%),
++      linear-gradient(180deg, oklch(0.975 0.006 250), oklch(0.955 0.01 250));
+     color: var(--color-foreground);
+     font-family: var(--font-sans);
+-    font-feature-settings: "tnum" 1;
++    font-feature-settings: "tnum" 1, "ss01" 1;
++  }
++
++  h1,
++  h2,
++  h3,
++  .font-display {
++    font-family: var(--font-display);
+   }
+ }
+ 
+@@ -184,3 +192,79 @@
+   font-variant-numeric: tabular-nums;
+   letter-spacing: -0.01em;
+ }
++
++@utility font-display {
++  font-family: var(--font-display);
++}
++
++@keyframes rise-in {
++  from {
++    opacity: 0;
++    transform: translateY(10px);
++  }
++  to {
++    opacity: 1;
++    transform: translateY(0);
++  }
++}
++
++@utility animate-rise {
++  animation: rise-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
++}
++
++.deal-brief {
++  position: relative;
++  overflow: hidden;
++  border: 1px solid var(--border);
++  border-radius: calc(var(--radius) + 6px);
++  background:
++    linear-gradient(135deg, oklch(0.995 0.002 250) 0%, oklch(0.97 0.015 245) 100%);
++  box-shadow: var(--shadow-card);
++  padding: 1.5rem;
++}
++
++@media (min-width: 640px) {
++  .deal-brief {
++    padding: 2rem;
++  }
++}
++
++.deal-brief__glow {
++  pointer-events: none;
++  position: absolute;
++  inset: auto -20% -40% auto;
++  width: 55%;
++  height: 80%;
++  background: radial-gradient(circle, oklch(0.75 0.06 230 / 0.18), transparent 70%);
++}
++
++.upload-stage {
++  position: relative;
++  overflow: hidden;
++  border-radius: calc(var(--radius) + 10px);
++  border: 1px solid var(--border);
++  background:
++    linear-gradient(160deg, oklch(0.995 0.002 250) 0%, oklch(0.96 0.02 245) 100%);
++  box-shadow: var(--shadow-card);
++}
++
++.upload-stage::before {
++  content: "";
++  position: absolute;
++  inset: 0;
++  background-image:
++    linear-gradient(oklch(0.3 0.05 250 / 0.04) 1px, transparent 1px),
++    linear-gradient(90deg, oklch(0.3 0.05 250 / 0.04) 1px, transparent 1px);
++  background-size: 28px 28px;
++  mask-image: linear-gradient(180deg, black, transparent 85%);
++  pointer-events: none;
++}
++
++@media print {
++  body {
++    background: white;
++  }
++  .deal-brief {
++    box-shadow: none;
++  }
++}
+-- 
+2.43.0
+

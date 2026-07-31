@@ -34,9 +34,10 @@ function List({ title, items }: { title: string; items: unknown[] }) {
 
 export function InvestmentSummary({ deal }: { deal: Deal }) {
   return (
-    <section id="summary">
+    <section id="summary" className="animate-rise">
       <SectionHeading
-        title="Investment summary"
+        title="Investment memo"
+        description="What goes in the IC packet after the first screen."
         action={
           <Button variant="outline" size="sm" onClick={() => window.print()}>
             <Download className="mr-2 h-4 w-4" />
@@ -44,16 +45,16 @@ export function InvestmentSummary({ deal }: { deal: Deal }) {
           </Button>
         }
       />
-      <div className="card-surface space-y-6 p-6">
+      <div className="card-surface space-y-6 p-6 sm:p-8">
         <div>
-          <h3 className="text-xl font-semibold tracking-tight">
+          <h3 className="font-display text-2xl font-semibold tracking-tight text-balance">
             {asText(deal.narrative.headline)}
           </h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
             {asText(deal.narrative.executive_summary)}
           </p>
         </div>
-        <div className="grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+        <div className="grid gap-8 border-t border-border pt-6 md:grid-cols-2">
           <List title="Key strengths" items={deal.narrative.key_strengths} />
           <List title="Key concerns" items={deal.narrative.key_concerns} />
           <List title="Critical questions for the broker" items={deal.narrative.critical_questions} />
