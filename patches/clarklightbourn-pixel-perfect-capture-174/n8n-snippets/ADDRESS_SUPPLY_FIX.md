@@ -75,22 +75,54 @@ https://raw.githubusercontent.com/clightbo/personal-automation-hub/cursor/pm-dea
 
 **What this does:** After risk rules run, if Competitive Supply is still UNKNOWN but market has a pipeline %, rewrite that flag to PASS / HIGH / CRITICAL.
 
+You do **not** need the comment `/* ===== n8n entry point ===== */`. That only appears if you pasted an older Fix A. Most workflows never have it.
+
+### How to find where to paste
+
 1. Click **Metrics + Risk Rules Engine**
-2. Scroll to the **bottom** of the code until you see exactly:
+2. Click inside the Code box
+3. Press **Ctrl+F** (Mac: **Cmd+F**) and search for one of these (try in order):
+
+| Search for | What it means |
+|------------|----------------|
+| `screenDealPinned(` | You already have Fix A — good |
+| `screenDeal(` | Original entry — also fine |
+| `const input = $input.first().json` | Entry always starts near this |
+
+4. You want the **last** block at the **bottom** of the file (helpers are above; the runner is below).
+5. Click at the start of that bottom block — usually a line like:
 
 ```
-/* ===== n8n entry point ===== */
+const input = $input.first().json;
 ```
 
-3. **Keep everything ABOVE that line** (all the helper functions). Do not delete the top.
-4. Select from that comment line **through the very end** of the file → Delete
-5. Open this Raw link → Copy **all** of it:
+   (If you see that line more than once, use the **last** one near the end.)
+
+6. Select from that line **all the way to the end** of the Code box → Delete  
+   - Leave all the helper functions above (things like `function num`, `function computeMetrics`, `function runRules`, etc.)
+7. Open this Raw link → Copy **all**:
 
 https://raw.githubusercontent.com/clightbo/personal-automation-hub/cursor/pm-dealscreen-ic-brief-15a6/patches/clarklightbourn-pixel-perfect-capture-174/n8n-snippets/04_metrics_ENTRY_ONLY.js
 
-6. Paste it where you deleted (starting at the bottom)
-7. You should still see the helpers on top, then the entry comment / new code at the bottom
-8. Save
+8. Paste at the bottom  
+9. **Save**
+
+### What “good” looks like after paste
+
+- Top of Metrics: still has lots of helper functions (`num`, `round`, `computeMetrics`, `runRules`, …)
+- Bottom of Metrics: starts with either the comment **or** `const input = $input.first().json;` and ends with `return [{ json: result }];`
+- Somewhere in the bottom you should see `patchCompetitiveSupply` if you scroll — that means supply routing is in
+
+### If you still can’t tell where helpers end
+
+Safe rule:
+1. Scroll to the **very bottom**
+2. Find the final `return [{ json:` …
+3. Scroll **up** from there until you hit `const input = $input.first().json;`
+4. Delete from that `const input` through the final `return`
+5. Paste the Raw file from Step 3
+
+Do **not** replace the whole Metrics node — only the bottom runner. If you wipe `runRules` / `computeMetrics`, the node will break.
 
 ---
 

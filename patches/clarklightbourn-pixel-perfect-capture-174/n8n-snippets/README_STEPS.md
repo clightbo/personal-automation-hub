@@ -36,11 +36,14 @@ See also: `ADDRESS_SUPPLY_FIX.md`
 
 ## Step C — Metrics entry only
 1. Open Metrics + Risk Rules Engine
-2. Scroll to the bottom until you see: /* ===== n8n entry point ===== */
-3. Delete FROM that line to the end of the file
-4. Paste ALL of: .../n8n-snippets/04_metrics_ENTRY_ONLY.js
-5. Keep everything ABOVE that comment (helpers) untouched
-6. Save
+2. You may **not** see `/* ===== n8n entry point ===== */` — that is fine
+3. Ctrl+F for `screenDeal(` or the **last** `const input = $input.first().json` near the bottom
+4. Delete FROM that bottom `const input` line to the end of the file
+5. Paste ALL of: .../n8n-snippets/04_metrics_ENTRY_ONLY.js
+6. Keep everything ABOVE (helpers like `computeMetrics`, `runRules`) untouched
+7. Save
+
+See `ADDRESS_SUPPLY_FIX.md` Step 3 for the full version.
 
 ## Step D — Assemble Response
 1. Open Assemble Response
