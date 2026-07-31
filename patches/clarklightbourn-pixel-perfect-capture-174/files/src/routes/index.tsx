@@ -93,6 +93,7 @@ function Index() {
   const [stage, setStage] = useState<number | null>(null);
   const [elapsedSec, setElapsedSec] = useState(0);
   const [statusHint, setStatusHint] = useState("");
+  const [runError, setRunError] = useState<string | null>(null);
 
   useEffect(() => {
     if (stage === null) return;
@@ -108,6 +109,7 @@ function Index() {
       return;
     }
     setFile(f);
+    setRunError(null);
   };
 
   const run = async () => {
@@ -115,6 +117,7 @@ function Index() {
       toast.error("Upload an offering memorandum PDF first.");
       return;
     }
+    setRunError(null);
     setStage(0);
     setStatusHint("Reading the OM PDF…");
     const request = handleRunScreening(file, {
@@ -159,21 +162,29 @@ function Index() {
         navigate({ to: "/deal/$dealId", params: { dealId: deal.id } });
         return;
       } catch {
-        toast.error("The screening response could not be read.");
+        setRunError(
+          "n8n returned data but it could not be read. Check the webhook JSON shape.",
+        );
         setStage(null);
         return;
       }
     }
 
-    // Never open the demo deal on a failed/slow run — that looked like “bad numbers.”
-    const message =
+    // Never open the demo deal. Show a lasting error — toast alone looks like a “reset.”
+    const raw =
       res.error instanceof Error
         ? res.error.message
         : "The screening endpoint did not return a result.";
-    toast.error("Live screening did not finish", {
-      description: `${message} Check n8n Executions — a late success there is the real result.`,
-      duration: 12000,
-    });
+    const failedFetch =
+      /failed to fetch|networkerror|load failed|http 52|http 504|http 502|timed out/i.test(
+        raw,
+      );
+    setRunError(
+      failedFetch
+        ? "The connection dropped before n8n finished (usually ~2–3 min). n8n may still show Success in Executions. Fix: in n8n, Respond to Webhook RIGHT AFTER Metrics — before the memo LLM. See N8N_FAST_RESPONSE.md."
+        : raw,
+    );
+    toast.error("Screening did not reach the browser in time");
     setStage(null);
   };
 
@@ -186,8 +197,8 @@ function Index() {
             {statusHint}
           </p>
           <p className="mx-auto mt-2 max-w-md text-center text-xs text-muted-foreground">
-            Elapsed {elapsedSec}s · free extract models often take 60–180s. Do not leave this
-            page — a demo will no longer load on timeout.
+            Elapsed {elapsedSec}s · free extract + memo often exceeds the webhook limit. If this
+            resets, fix n8n to respond after Metrics (before memo).
           </p>
         </div>
       </AppShell>
@@ -197,6 +208,15 @@ function Index() {
   return (
     <AppShell>
       <div className="mx-auto max-w-3xl animate-rise">
+        {runError ? (
+          <div className="mb-5 rounded-lg border border-critical/40 bg-critical-soft px-4 py-3 text-sm text-critical">
+            <p className="font-medium">Screening did not finish in the browser</p>
+            <p className="mt-1 text-critical/90">{runError}</p>
+            <p className="mt-2 text-xs text-critical/80">
+              Your PDF is still selected — fix n8n (respond after Metrics), then hit Run again.
+            </p>
+          </div>
+        ) : null}
         <div className="upload-stage relative px-6 py-10 sm:px-10 sm:py-12">
           <div className="relative">
             <p className="text-center text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
