@@ -160,25 +160,84 @@ export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
     ads,
   );
 
-  return {
-    ...deal,
-    metrics: {
-      ...deal.metrics,
-      cap_rate: { ...deal.metrics.cap_rate, value: atBid.cap_rate },
-      dscr: { ...deal.metrics.dscr, value: atBid.dscr },
-      debt_yield: { ...deal.metrics.debt_yield, value: atBid.debt_yield },
-      ltv: { ...deal.metrics.ltv, value: a.ltv },
-      price_per_unit: {
-        ...deal.metrics.price_per_unit,
-        value: atBid.price_per_unit,
-      },
-      breakeven_occupancy: {
-        ...deal.metrics.breakeven_occupancy,
-        value: breakeven ?? deal.metrics.breakeven_occupancy.value,
-      },
+  const metrics = {
+    ...deal.metrics,
+    cap_rate: { ...deal.metrics.cap_rate, value: atBid.cap_rate },
+    dscr: { ...deal.metrics.dscr, value: atBid.dscr },
+    debt_yield: { ...deal.metrics.debt_yield, value: atBid.debt_yield },
+    ltv: { ...deal.metrics.ltv, value: a.ltv },
+    price_per_unit: {
+      ...deal.metrics.price_per_unit,
+      value: atBid.price_per_unit,
     },
+    breakeven_occupancy: {
+      ...deal.metrics.breakeven_occupancy,
+      value: breakeven ?? deal.metrics.breakeven_occupancy.value,
+    },
+  };
+
+  const withMetrics: Deal = {
+    ...deal,
+    metrics,
     bid_sensitivity: ladder,
     max_supportable_price: maxPrice > 0 ? maxPrice : deal.max_supportable_price,
+  };
+
+  return refreshCoverageFlags(withMetrics, a.minDscr);
+}
+
+/** Update DSCR risk flag from modeled coverage so it is not stuck on UNKNOWN. */
+function refreshCoverageFlags(deal: Deal, minDscr: number): Deal {
+  const dscr = deal.metrics.dscr.value;
+  if (dscr == null) return deal;
+
+  let severity: Deal["flags"][number]["severity"] = "PASS";
+  if (dscr < 1.15) severity = "CRITICAL";
+  else if (dscr < minDscr) severity = "HIGH";
+
+  const observed = `${dscr.toFixed(2)}x`;
+  const threshold = `HIGH below ${minDscr.toFixed(2)}x / CRITICAL below 1.15x`;
+  const reason =
+    severity === "PASS"
+      ? `Modeled DSCR of ${observed} clears the ${minDscr.toFixed(2)}x floor at the current bid and leverage.`
+      : `Modeled DSCR of ${observed} is below the ${minDscr.toFixed(2)}x underwriting floor at the current bid and leverage.`;
+
+  let found = false;
+  const flags = deal.flags.map((f) => {
+    if (!/debt service|dscr|coverage/i.test(f.rule)) return f;
+    found = true;
+    return {
+      ...f,
+      severity,
+      observed,
+      threshold,
+      reason,
+    };
+  });
+  if (!found) {
+    flags.unshift({
+      id: "dscr-modeled",
+      rule: "Debt Service Coverage",
+      severity,
+      reason,
+      observed,
+      threshold,
+    });
+  }
+
+  const critical = flags.filter((f) => f.severity === "CRITICAL").length;
+  const high = flags.filter((f) => f.severity === "HIGH").length;
+  const unknown = flags.filter((f) => f.severity === "UNKNOWN").length;
+
+  return {
+    ...deal,
+    flags,
+    summary: {
+      ...deal.summary,
+      critical,
+      high,
+      unknown,
+    },
   };
 }
 
@@ -223,8 +282,11 @@ export function hydrateDealMetrics(deal: Deal): Deal {
     deal.metrics.dscr.value == null ||
     deal.metrics.debt_yield.value == null ||
     deal.metrics.price_per_unit.value == null;
+  const dscrUnknown = deal.flags.some(
+    (f) => /debt service|dscr|coverage/i.test(f.rule) && f.severity === "UNKNOWN",
+  );
 
-  if (!needsHydration) return deal;
+  if (!needsHydration && !dscrUnknown) return deal;
   const assumptions = defaultAssumptionsFromDeal(deal);
   if (!assumptions) return deal;
   return applyBidAssumptions(deal, assumptions);
