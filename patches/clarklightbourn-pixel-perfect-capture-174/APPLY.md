@@ -14,6 +14,7 @@ Copy these files into that repo (or apply the patch) so Lovable syncs them.
 5. **Client bid-math** — Re-run sensitivity actually recomputes the ladder
 6. **Hardened normalizeDeal / narrative** — name/address + object bullet fixes
 7. **Institutional formatting** — Source Serif + IBM Plex, paper atmosphere
+8. **No demo-on-timeout** — slow n8n runs wait up to 4 min and show an error instead of opening the sample deal
 
 ## Apply by copying files
 ```bash
