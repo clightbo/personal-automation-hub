@@ -215,8 +215,14 @@ export function normalizeDeal(raw: unknown): Deal {
         p.property_address ??
         p.street_address ??
         r.property_address ??
-        r.address,
+        r.address ??
+        [r.address, r.city, r.state].filter(Boolean).join(", "),
     ),
+  );
+
+  const submarket = str(
+    p.submarket ?? p.market ?? r.submarket ?? r.market_name,
+    "—",
   );
 
   const metrics: DealMetrics = {
@@ -249,9 +255,10 @@ export function normalizeDeal(raw: unknown): Deal {
     property: {
       name,
       address,
-      units: num(p.units) ?? num(mRaw.units) ?? metric(mRaw.units).value ?? 0,
-      year_built: num(p.year_built) ?? num(mRaw.year_built) ?? metric(mRaw.year_built).value,
-      submarket: str(p.submarket ?? p.market, "—"),
+      units: num(p.units) ?? num(r.units) ?? num(mRaw.units) ?? metric(mRaw.units).value ?? 0,
+      year_built:
+        num(p.year_built) ?? num(r.year_built) ?? num(mRaw.year_built) ?? metric(mRaw.year_built).value,
+      submarket,
     },
     screened_on: str(r.screened_on, new Date().toISOString().slice(0, 10)),
     metrics,

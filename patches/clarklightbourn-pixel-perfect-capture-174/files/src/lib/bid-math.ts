@@ -79,8 +79,8 @@ export function maxSupportablePrice(
   const byDscr = factor > 0 ? noi / (a.minDscr * ltv * factor) : Infinity;
   const max = Math.min(byDy, byDscr);
   if (!Number.isFinite(max) || max <= 0) return 0;
-  // Round down to nearest $100k so the rung is still financeable after rounding.
-  return Math.floor(max / 100_000) * 100_000;
+  // Match n8n maxSupportablePrice: nearest $100k (not floor-only).
+  return Math.round(max / 100_000) * 100_000;
 }
 
 /** Build a 7-rung ladder around the entered bid, always including any OM price. */
@@ -101,6 +101,9 @@ export function buildBidLadder(
   prices.add(Math.round(center / 1000) * 1000);
   if (statedPrice && statedPrice > 0) prices.add(statedPrice);
 
+  const maxPrice = maxSupportablePrice(noi, a);
+  if (maxPrice > 0) prices.add(maxPrice);
+
   const sorted = [...prices].filter((p) => p > 0).sort((x, y) => x - y);
   let taggedNeg = false;
 
@@ -108,6 +111,7 @@ export function buildBidLadder(
     const row = evaluateBid(noi, units, bidPrice, a);
     const notes: string[] = [];
     if (statedPrice && bidPrice === statedPrice) notes.push("OM guidance");
+    if (maxPrice > 0 && bidPrice === maxPrice) notes.push("max supportable");
     if (row.negative_leverage && !taggedNeg) {
       notes.push(`cost of debt ${a.rate.toFixed(2)}%`);
       taggedNeg = true;
