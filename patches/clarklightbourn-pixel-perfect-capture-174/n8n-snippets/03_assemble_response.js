@@ -5,8 +5,8 @@ let narrative;
 try { narrative = JSON.parse(raw); }
 catch (e) {
   narrative = {
-    headline: engine.summary.recommendation + ' - ' + engine.summary.rationale,
-    executive_summary: engine.summary.rationale,
+    headline: (engine.summary?.recommendation || 'SCREEN') + ' - ' + (engine.summary?.rationale || ''),
+    executive_summary: engine.summary?.rationale || '',
     key_strengths: [], key_concerns: [],
     critical_questions: [], recommended_next_steps: [],
     _note: 'Narrative generation failed.'
@@ -14,6 +14,10 @@ catch (e) {
 }
 return [{ json: {
   ...engine,
+  address: engine.address || engine.full_address || null,
+  city: engine.city || null,
+  state: engine.state || null,
+  submarket: engine.submarket || null,
   market: engine.market || {},
   narrative,
   status: 'complete'
