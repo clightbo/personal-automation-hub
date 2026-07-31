@@ -2,6 +2,15 @@
 
 Do ONE step at a time. Each file is small.
 
+## Step 0 — Fix Parse Extraction (if JSON error)
+
+If you see: `Expected ',' or '}' after property value in JSON…`
+
+1. Open **Parse Extraction**
+2. Replace all code with: .../n8n-snippets/05_parse_extraction.js
+3. See also: `PARSE_FIX.md`
+4. Save → re-run OM
+
 ## Step A — Enrich Extraction
 1. Click + after Parse Extraction
 2. Core → Code
