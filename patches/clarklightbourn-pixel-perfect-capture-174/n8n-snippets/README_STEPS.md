@@ -12,7 +12,7 @@ If you see: `Expected ',' or '}' after property value in JSON…`
 4. Save → re-run OM
 
 ## Step A — Enrich Extraction
-1. Click + after Parse Extraction
+1. Click + after Parse Extraction (or open existing Enrich Extraction)
 2. Core → Code
 3. Name: Enrich Extraction
 4. Open https://raw.githubusercontent.com/clightbo/personal-automation-hub/cursor/pm-dealscreen-ic-brief-15a6/patches/clarklightbourn-pixel-perfect-capture-174/n8n-snippets/01_enrich_extraction.js
@@ -20,13 +20,19 @@ If you see: `Expected ',' or '}' after property value in JSON…`
 6. Connect: Parse Extraction → Enrich Extraction
 7. Save
 
+**Re-paste this whenever address is missing** — scrapes street + City, ST ZIP from OM text.
+
 ## Step B — Build Market Pack
-1. + after Enrich Extraction → Core → Code
+1. + after Enrich Extraction → Core → Code (or open existing)
 2. Name: Build Market Pack
 3. Paste from: .../n8n-snippets/02_build_market_pack.js
 4. Connect: Enrich Extraction → Build Market Pack → Valid OM?
 5. Delete old line Parse → Valid OM? if still there
 6. Save
+
+**Re-paste this when Competitive Supply is UNKNOWN but the memo cites pipeline** — routes OM pipeline into `pipeline_pct_of_stock`.
+
+See also: `ADDRESS_SUPPLY_FIX.md`
 
 ## Step C — Metrics entry only
 1. Open Metrics + Risk Rules Engine

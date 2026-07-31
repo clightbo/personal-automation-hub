@@ -214,11 +214,21 @@ export function normalizeDeal(raw: unknown): Deal {
       p.address ??
         p.property_address ??
         p.street_address ??
+        p.full_address ??
+        r.full_address ??
         r.property_address ??
         r.address ??
-        [r.city, r.state].filter(Boolean).join(", "),
+        "",
     ),
   );
+
+  const city = str(p.city ?? r.city);
+  const state = str(p.state ?? r.state);
+  const zip = str(p.zip ?? p.postal_code ?? r.zip ?? r.postal_code);
+  const composed =
+    address && address !== "Address not stated in OM"
+      ? [address, [city, state].filter(Boolean).join(", "), zip].filter(Boolean).join(", ").replace(/,\s*,/g, ",").trim()
+      : [city, state, zip].filter(Boolean).join(", ") || address;
 
   const submarket = str(
     p.submarket ?? p.market ?? r.submarket ?? r.market_name,
@@ -254,7 +264,7 @@ export function normalizeDeal(raw: unknown): Deal {
     id: slugify(name),
     property: {
       name,
-      address,
+      address: composed,
       units: num(p.units) ?? num(r.units) ?? num(mRaw.units) ?? metric(mRaw.units).value ?? 0,
       year_built:
         num(p.year_built) ?? num(r.year_built) ?? num(mRaw.year_built) ?? metric(mRaw.year_built).value,

@@ -68,6 +68,66 @@ function screenDealPinned(extracted, market = {}, criteria = {}, assumptions = {
 
 const result = screenDealPinned(extracted, market, criteria, assumptions);
 
+/** If market has pipeline % but Competitive Supply stayed UNKNOWN, route it into the flag. */
+function patchCompetitiveSupply(result, market) {
+  const pct = num(market?.pipeline_pct_of_stock);
+  if (pct === null) return result;
+  const flags = Array.isArray(result.flags) ? [...result.flags] : [];
+  const idx = flags.findIndex((f) =>
+    /competitive\s*supply|supply\s*pipeline|^supply$/i.test(String(f.rule || f.id || '')),
+  );
+  let severity = 'PASS';
+  if (pct > 15) severity = 'CRITICAL';
+  else if (pct > 10) severity = 'HIGH';
+  const observed = `${pct}% of stock`;
+  const threshold = 'HIGH above 10% / CRITICAL above 15% with flat rent growth';
+  const reason =
+    market.note ||
+    `OM-stated pipeline equals ${pct}% of submarket stock` +
+      (market.pipeline_units && market.stock_units
+        ? ` (${Number(market.pipeline_units).toLocaleString()} vs ${Number(market.stock_units).toLocaleString()} units).`
+        : '.');
+  const flag = {
+    id: 'supply',
+    rule: 'Competitive Supply',
+    severity,
+    reason,
+    observed,
+    threshold,
+  };
+  if (idx >= 0) {
+    const existing = flags[idx];
+    if (String(existing.severity || '').toUpperCase() === 'UNKNOWN' || existing.observed == null) {
+      flags[idx] = { ...existing, ...flag, id: existing.id || 'supply' };
+    }
+  } else {
+    flags.push(flag);
+  }
+  result.flags = flags;
+  if (result.summary) {
+    const count = (sev) => flags.filter((f) => String(f.severity).toUpperCase() === sev).length;
+    result.summary = {
+      ...result.summary,
+      critical: count('CRITICAL'),
+      high: count('HIGH'),
+      unknown: count('UNKNOWN'),
+    };
+  }
+  return result;
+}
+
+patchCompetitiveSupply(result, market);
+
+// Prefer enriched address fields on the result (UI reads top-level)
+if (!result.address && extracted.address) result.address = extracted.address;
+if (!result.city && extracted.city) result.city = extracted.city;
+if (!result.state && extracted.state) result.state = extracted.state;
+if (!result.submarket && extracted.submarket) result.submarket = extracted.submarket;
+if (extracted.full_address && (!result.address || result.address === '—')) {
+  result.address = extracted.full_address;
+}
+if (extracted.zip) result.zip = extracted.zip;
+
 if (!dealTerms.purchase_price && !extracted.purchase_price && result.metrics.noi) {
   const noi = result.metrics.noi;
   const bids = [4.5, 5.0, 5.5, 6.0, 6.5].map(c => Math.round(noi / (c / 100) / 1e5) * 1e5);
@@ -100,6 +160,7 @@ if (!dealTerms.purchase_price && !extracted.purchase_price && result.metrics.noi
   const risk2 = runRules(result.metrics, market, criteria);
   result.flags = risk2.flags;
   result.summary = risk2.summary;
+  patchCompetitiveSupply(result, market);
 }
 
 result.market = market;
