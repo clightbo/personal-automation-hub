@@ -66,10 +66,25 @@ async function handleRunScreening(file: File, settings?: any) {
     });
 
     if (!response.ok) {
-      throw new Error(`Screening failed: HTTP ${response.status}`);
+      const errText = await response.text().catch(() => "");
+      throw new Error(
+        `Screening failed: HTTP ${response.status}${errText ? ` — ${errText.slice(0, 200)}` : ""}`,
+      );
     }
 
-    return await response.json();
+    const text = await response.text();
+    if (!text || !text.trim()) {
+      throw new Error(
+        "n8n returned an empty body. In Respond to Lovable, set Response Body to ={{ $json }} (not JSON.stringify).",
+      );
+    }
+    try {
+      return JSON.parse(text);
+    } catch {
+      throw new Error(
+        `n8n returned non-JSON (${text.length} chars). First bytes: ${text.slice(0, 120)}`,
+      );
+    }
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") {
       throw new Error(
