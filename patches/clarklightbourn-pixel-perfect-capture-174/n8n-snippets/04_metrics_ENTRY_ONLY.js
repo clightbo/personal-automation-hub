@@ -74,7 +74,8 @@ function patchCompetitiveSupply(result, market) {
   if (pct === null) return result;
   const flags = Array.isArray(result.flags) ? [...result.flags] : [];
   const idx = flags.findIndex((f) =>
-    /competitive\s*supply|supply\s*pipeline|^supply$/i.test(String(f.rule || f.id || '')),
+    /competitive\s*supply|supply\s*pipeline|^supply$|^R3$/i.test(String(f.rule || f.id || '')) ||
+    String(f.id) === 'R3' || String(f.id) === 'supply',
   );
   let severity = 'PASS';
   if (pct > 15) severity = 'CRITICAL';
@@ -88,7 +89,7 @@ function patchCompetitiveSupply(result, market) {
         ? ` (${Number(market.pipeline_units).toLocaleString()} vs ${Number(market.stock_units).toLocaleString()} units).`
         : '.');
   const flag = {
-    id: 'supply',
+    id: 'R3',
     rule: 'Competitive Supply',
     severity,
     reason,
@@ -98,7 +99,7 @@ function patchCompetitiveSupply(result, market) {
   if (idx >= 0) {
     const existing = flags[idx];
     if (String(existing.severity || '').toUpperCase() === 'UNKNOWN' || existing.observed == null) {
-      flags[idx] = { ...existing, ...flag, id: existing.id || 'supply' };
+      flags[idx] = { ...existing, ...flag, id: existing.id || 'R3', rule: 'Competitive Supply' };
     }
   } else {
     flags.push(flag);
