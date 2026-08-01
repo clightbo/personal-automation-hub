@@ -383,6 +383,65 @@ function looksLikeStreet(s) {
   );
 }
 
+
+function scrapeHouseholdIncome(blob) {
+  let m =
+    String(blob).match(
+      /1-mile\s+avg(?:erage)?\s+household\s+income\s+\$?\s*([\d]{2,3}(?:\.\d+)?)\s*K\+?/i,
+    ) ||
+    String(blob).match(
+      /\$?\s*([\d]{2,3}(?:\.\d+)?)\s*K\+?\s*(?:[\w\s-]{0,24})?(?:avg|average)\s+household\s+income/i,
+    ) ||
+    String(blob).match(
+      /(?:avg|average)\s+(?:household|HH)\s+income[:\s]+\$?\s*([\d]{2,3}(?:\.\d+)?)\s*K\+?/i,
+    ) ||
+    String(blob).match(
+      /(?:avg|average)\s+(?:household|HH)\s+income[:\s]+\$\s*([\d,]{5,})/i,
+    ) ||
+    String(blob).match(/household income[^\d$]{0,30}\$([\d,]{5,})/i);
+  if (!m) return null;
+  const raw = m[1].replace(/,/g, '');
+  const n = Number(raw);
+  if (!Number.isFinite(n)) return null;
+  // 230 or 230.5 with K → thousands; 230000 already full
+  return n < 1000 ? Math.round(n * 1000) : Math.round(n);
+}
+
+function scrapeAvgRent(blob) {
+  const m =
+    String(blob).match(/average\s+(?:monthly\s+)?rent\s+(?:of\s+)?\$([0-9,]+)/i) ||
+    String(blob).match(/avg\.?\s+(?:monthly\s+)?rent[:\s]+\$([0-9,]+)/i) ||
+    String(blob).match(/in-place\s+rent[:\s]+\$([0-9,]+)/i);
+  if (!m) return null;
+  const n = Number(m[1].replace(/,/g, ''));
+  return Number.isFinite(n) ? n : null;
+}
+
+function enrichSubmarketGeo(e, blob) {
+  if (!e.submarket) {
+    if (/Cherry Creek/i.test(blob)) e.submarket = 'Cherry Creek';
+    else if (/Gramercy\s+Park/i.test(blob)) e.submarket = 'Gramercy Park';
+  }
+  if (!e.city) {
+    if (/Denver/i.test(blob)) e.city = 'Denver';
+    else if (/New York|Manhattan/i.test(blob)) e.city = 'New York';
+  }
+  if (!e.state) {
+    if (/Denver|,\s*CO\b|Colorado/i.test(blob)) e.state = 'CO';
+    else if (/New York|Manhattan|,\s*NY\b/i.test(blob)) e.state = 'NY';
+  }
+  const inc = scrapeHouseholdIncome(blob);
+  if (inc && (!e.submarket_median_income || Number(e.submarket_median_income) < 1000)) {
+    e.submarket_median_income = inc;
+    e._income_benchmark = 'om_stated_avg_household_income';
+  }
+  if (e.avg_monthly_rent == null) {
+    const r = scrapeAvgRent(blob);
+    if (r) e.avg_monthly_rent = r;
+  }
+  return e;
+}
+
 function enrichAddress(e, blob) {
   if (!e.address) {
     e.address =
@@ -449,9 +508,17 @@ function buildMarketFromText(blob, e, incoming) {
   let pct = toN(market.pipeline_pct_of_stock);
   let note = market.note || null;
 
-  const vsMatch = blob.match(
+  const vsPatterns = [
+    /\(?\s*([\d,]+)\s+pipeline\s+units?[^\d\n]{0,80}?vs\.?\s+([\d,]+)/i,
+    /([\d,]+)\s+pipeline\s+units?\s+in\s+[A-Za-z .'/-]+?\s+vs\.?\s+([\d,]+)/i,
+    /Limited competing supply[^\d\n]{0,40}([\d,]+)[^\d\n]{0,80}?([\d,]+)/i,
     /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)/i,
-  );
+  ];
+  let vsMatch = null;
+  for (const re of vsPatterns) {
+    vsMatch = blob.match(re);
+    if (vsMatch) break;
+  }
   if (vsMatch) {
     pipelineUnits = toN(vsMatch[1]);
     stockUnits = toN(vsMatch[2]);
@@ -600,7 +667,9 @@ if (attempt.ok) {
 const got = collectOmText(item);
 const blob = [got.text, JSON.stringify(extracted), content].filter(Boolean).join('\n');
 enrichAddress(extracted, blob);
+enrichSubmarketGeo(extracted, blob);
 const market = buildMarketFromText(blob, extracted, item.market);
+if (extracted.submarket_median_income) market.avg_household_income = extracted.submarket_median_income;
 
 return [
   {

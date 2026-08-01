@@ -77,9 +77,17 @@ function scrapePipeline(src) {
   }
 
   // "1,127 units vs 19,382" / "1,127 units versus 19,382 in CBD"
-  const vsMatch = src.match(
-    /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)(?:\s*(?:units?\s+)?(?:in\s+)?(?:the\s+)?(?:CBD|submarket|market|inventory|stock))?/i,
-  );
+  const vsPatterns = [
+    /\(?\s*([\d,]+)\s+pipeline\s+units?[^\d\n]{0,80}?vs\.?\s+([\d,]+)/i,
+    /([\d,]+)\s+pipeline\s+units?\s+in\s+[A-Za-z .'/-]+?\s+vs\.?\s+([\d,]+)/i,
+    /Limited competing supply[^\d\n]{0,40}([\d,]+)[^\d\n]{0,80}?([\d,]+)/i,
+    /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)/i,
+  ];
+  let vsMatch = null;
+  for (const re of vsPatterns) {
+    vsMatch = src.match(re);
+    if (vsMatch) break;
+  }
   if (vsMatch) {
     pipelineUnits = toNum(vsMatch[1]);
     stockUnits = toNum(vsMatch[2]);
