@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,10 +9,15 @@ import { SectionHeading } from "./primitives";
 
 export function DealTerms({
   deal,
+  selectedBid,
   onDealUpdate,
+  onBidChange,
 }: {
   deal: Deal;
+  /** Bid selected from the ladder (keeps this form in sync). */
+  selectedBid?: number | null;
   onDealUpdate?: (deal: Deal) => void;
+  onBidChange?: (bid: number) => void;
 }) {
   const priced = deal.deal_terms.stated_price !== null;
   const defaultBid = priced
@@ -32,6 +37,12 @@ export function DealTerms({
   const set = (k: keyof typeof terms) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setTerms((t) => ({ ...t, [k]: e.target.value }));
 
+  useEffect(() => {
+    if (selectedBid != null && selectedBid > 0) {
+      setTerms((t) => (t.bid === String(selectedBid) ? t : { ...t, bid: String(selectedBid) }));
+    }
+  }, [selectedBid]);
+
   const rerun = () => {
     const assumptions = parseAssumptions(terms);
     if (!assumptions) {
@@ -43,13 +54,14 @@ export function DealTerms({
       return;
     }
     const updated = applyBidAssumptions(deal, assumptions);
+    onBidChange?.(assumptions.bid);
     onDealUpdate?.(updated);
     const el = document.getElementById("bid-sensitivity");
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - 120;
       window.scrollTo({ top, behavior: "smooth" });
     }
-    toast.success("Bid sensitivity updated.");
+    toast.success("Metrics updated for this bid.");
   };
 
   return (
@@ -65,7 +77,7 @@ export function DealTerms({
         >
           {priced
             ? deal.deal_terms.note
-            : "The OM did not state a price. Enter the bid you want to test."}
+            : "The OM did not state a price. Enter a bid, or click a row on the bid ladder — cap, DSCR, and related metrics will update."}
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Field
@@ -82,7 +94,7 @@ export function DealTerms({
           <Field id="minDy" label="Min debt yield (%)" value={terms.minDy} onChange={set("minDy")} />
         </div>
         <div className="mt-5 flex justify-end">
-          <Button onClick={rerun}>Re-run sensitivity</Button>
+          <Button onClick={rerun}>Update metrics</Button>
         </div>
       </div>
     </section>

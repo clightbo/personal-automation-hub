@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 import { MetricCard } from "@/components/deal/MetricCard";
 import { RiskPanel } from "@/components/deal/RiskPanel";
@@ -12,6 +13,7 @@ import { DealTerms } from "@/components/deal/DealTerms";
 import { MarketResearch } from "@/components/deal/MarketResearch";
 import { InvestmentSummary } from "@/components/deal/InvestmentSummary";
 import { SectionHeading } from "@/components/deal/primitives";
+import { applyBidAssumptions, defaultBidAssumptions } from "@/lib/bid-math";
 import { getDeal, mockDeals } from "@/lib/mock-deals";
 import { fmtMoney } from "@/lib/deal-types";
 import { basisTooltip, metricBasis } from "@/lib/metric-basis";
@@ -49,9 +51,21 @@ function DealDashboard() {
   const { dealId } = Route.useParams();
   const loaded = Route.useLoaderData();
   const [deal, setDeal] = useState(loaded);
+  const [selectedBid, setSelectedBid] = useState<number | null>(null);
 
   useEffect(() => {
-    setDeal(getScreeningResult(dealId) ?? getDeal(dealId) ?? null);
+    const next = getScreeningResult(dealId) ?? getDeal(dealId) ?? null;
+    setDeal(next);
+    if (next) {
+      setSelectedBid(
+        next.max_supportable_price ||
+          next.bid_sensitivity.find((r) => r.financeable)?.bid_price ||
+          next.bid_sensitivity[0]?.bid_price ||
+          null,
+      );
+    } else {
+      setSelectedBid(null);
+    }
   }, [dealId]);
 
   if (!deal) {
@@ -221,11 +235,32 @@ function DealDashboard() {
         <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] xl:items-start">
           <DealTerms
             deal={deal}
+            selectedBid={selectedBid}
+            onBidChange={setSelectedBid}
             onDealUpdate={(next) => {
               setDeal(saveScreeningResult(next));
             }}
           />
-          <BidSensitivity deal={deal} />
+          <BidSensitivity
+            deal={deal}
+            selectedBid={selectedBid}
+            onSelectBid={(bidPrice) => {
+              if (deal.metrics.noi.value == null) {
+                toast.error("NOI is missing — cannot recompute metrics for this bid.");
+                return;
+              }
+              const updated = applyBidAssumptions(
+                deal,
+                defaultBidAssumptions(deal, bidPrice),
+              );
+              setSelectedBid(bidPrice);
+              setDeal(saveScreeningResult(updated));
+              toast.success(`Metrics set to bid ${fmtMoney(bidPrice)}.`);
+              document
+                .getElementById("key-metrics")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          />
         </div>
 
         <MarketResearch deal={deal} />

@@ -119,7 +119,24 @@ export function buildBidLadder(
   });
 }
 
-/** Recompute bid sensitivity + leverage metrics on a deal from Deal Terms inputs. */
+/** Rough breakeven occ. from NOI, expense ratio, and annual debt service. */
+function estimateBreakeven(
+  noi: number,
+  expenseRatioPct: number | null,
+  ads: number,
+): number | null {
+  if (!(noi > 0) || expenseRatioPct == null || !(expenseRatioPct > 0) || expenseRatioPct >= 100) {
+    return null;
+  }
+  const egi = noi / (1 - expenseRatioPct / 100);
+  if (!(egi > 0)) return null;
+  return round(((egi * (expenseRatioPct / 100) + ads) / egi) * 100, 2);
+}
+
+/**
+ * Recompute bid sensitivity + headline leverage metrics from Deal Terms
+ * or a clicked ladder row.
+ */
 export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
   const noi = deal.metrics.noi.value;
   if (noi == null || !(noi > 0) || !(a.bid > 0)) {
@@ -132,6 +149,9 @@ export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
     ladder.find((r) => r.bid_price === a.bid) ??
     evaluateBid(noi, units, a.bid, a);
   const maxPrice = maxSupportablePrice(noi, a);
+  const loan = a.bid * (a.ltv / 100);
+  const ads = annualDebtService(loan, a.rate, a.amort);
+  const breakeven = estimateBreakeven(noi, deal.metrics.expense_ratio.value, ads);
 
   return {
     ...deal,
@@ -145,9 +165,30 @@ export function applyBidAssumptions(deal: Deal, a: BidAssumptions): Deal {
         ...deal.metrics.price_per_unit,
         value: atBid.price_per_unit,
       },
+      breakeven_occupancy: {
+        ...deal.metrics.breakeven_occupancy,
+        value: breakeven ?? deal.metrics.breakeven_occupancy.value,
+      },
     },
     bid_sensitivity: ladder,
     max_supportable_price: maxPrice,
+  };
+}
+
+/** Defaults used when selecting a ladder row (matches Deal Terms form). */
+export function defaultBidAssumptions(
+  deal: Deal,
+  bid: number,
+  overrides?: Partial<BidAssumptions>,
+): BidAssumptions {
+  return {
+    bid,
+    ltv: deal.metrics.ltv.value ?? 60,
+    rate: 6.5,
+    amort: 30,
+    minDscr: 1.25,
+    minDy: 9,
+    ...overrides,
   };
 }
 
