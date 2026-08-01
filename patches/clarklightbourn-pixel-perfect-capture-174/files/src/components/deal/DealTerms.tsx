@@ -15,13 +15,14 @@ export function DealTerms({
   onDealUpdate?: (deal: Deal) => void;
 }) {
   const priced = deal.deal_terms.stated_price !== null;
+  const defaultBid = priced
+    ? deal.deal_terms.stated_price
+    : deal.max_supportable_price ||
+      deal.bid_sensitivity.find((r) => r.financeable)?.bid_price ||
+      deal.bid_sensitivity[0]?.bid_price ||
+      "";
   const [terms, setTerms] = useState({
-    bid: priced
-      ? String(deal.deal_terms.stated_price)
-      : String(
-          deal.bid_sensitivity[Math.floor(deal.bid_sensitivity.length / 2)]
-            ?.bid_price ?? "",
-        ),
+    bid: String(defaultBid ?? ""),
     ltv: String(deal.metrics.ltv.value ?? 60),
     rate: "6.5",
     amort: "30",
@@ -43,9 +44,11 @@ export function DealTerms({
     }
     const updated = applyBidAssumptions(deal, assumptions);
     onDealUpdate?.(updated);
-    document
-      .getElementById("bid-sensitivity")
-      ?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById("bid-sensitivity");
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
     toast.success("Bid sensitivity updated.");
   };
 

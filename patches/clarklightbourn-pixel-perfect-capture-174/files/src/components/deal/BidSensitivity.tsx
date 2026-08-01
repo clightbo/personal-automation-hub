@@ -26,6 +26,11 @@ export function BidSensitivity({ deal }: { deal: Deal }) {
             debt yield tests at the assumed leverage and rate.
           </p>
         </div>
+        <p className="border-b border-border bg-warn-soft/50 px-4 py-2 text-[11px] leading-relaxed text-warn-foreground">
+          Modeled ladder — not OM guidance. Rows use assumed LTV, rate, and
+          amort; on unpriced deals the header bid is max supportable, not an
+          asking price from the offering.
+        </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
