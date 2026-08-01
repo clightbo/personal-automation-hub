@@ -15,32 +15,50 @@ const debt = {
   min_debt_yield: num(dealTerms.min_debt_yield) ?? 9,
 };
 
-/* ---- Pull OM text from earlier nodes (Enrich/Market Pack may be missing) ---- */
+/* ---- Pull OM text: prefer stamped om_text from Parse, then Trim/PDF nodes ---- */
 function readNodeText(name) {
   try {
     const j = $(name).first().json;
-    return String(j.text || j.data || j.content || j.om_text || '');
+    return String(j.om_text || j.text || j.data || j.content || j.trimmed_text || '');
   } catch (e) {
     return '';
   }
 }
 
 let omText = '';
+let omTextSource = 'none';
+// 1) Already stamped by Parse Extraction (most reliable)
+if (typeof input.om_text === 'string' && input.om_text.length > omText.length) {
+  omText = input.om_text;
+  omTextSource = 'input.om_text';
+}
+if (typeof extracted.om_text === 'string' && extracted.om_text.length > omText.length) {
+  omText = extracted.om_text;
+  omTextSource = 'extracted.om_text';
+}
 const textNodeNames = [
+  'Parse Extraction',
   'Trim For Context Window',
   'Trim for Context Window',
   'Trim For Context',
+  'Trim',
+  'Trim Text',
   'Extract PDF Text',
   'Extract from File',
   'Extract PDF',
   'PDF Extract',
+  'Code in JavaScript',
+  'Code in JavaScript1',
+  'Code in JavaScript2',
 ];
 for (const n of textNodeNames) {
-  if (omText.length > 500) break;
   const t = readNodeText(n);
-  if (t.length > omText.length) omText = t;
+  if (t.length > omText.length) {
+    omText = t;
+    omTextSource = n;
+  }
 }
-// Also fold in anything sitting on the item / notes
+// Also fold identity crumbs / notes
 omText = [
   omText,
   extracted.property_name,
@@ -253,6 +271,7 @@ if (/gramercy|east 22nd|e\.?\s*22nd/i.test(omText)) {
 
 extracted._metrics_enrich = {
   om_text_chars: omText.length,
+  om_text_source: omTextSource,
   address: extracted.address || null,
   pipeline_pct_of_stock: market.pipeline_pct_of_stock ?? null,
 };
@@ -289,9 +308,21 @@ function screenDealPinned(extracted, market = {}, criteria = {}, assumptions = {
   const risk = runRules(metrics, market, criteria);
   const unpriced = !extracted.purchase_price;
   const undebted = !extracted.loan_amount;
+  const propName = extracted.property_name || 'Unnamed Asset';
+  const propAddress = extracted.full_address || extracted.address || null;
   return {
-    property: extracted.property_name || 'Unnamed Asset',
-    address: extracted.address || extracted.full_address || null,
+    property: {
+      name: propName,
+      property_name: propName,
+      address: propAddress,
+      city: extracted.city || null,
+      state: extracted.state || null,
+      submarket: extracted.submarket || null,
+      units: extracted.units || null,
+      year_built: extracted.year_built || null,
+      zip: extracted.zip || null,
+    },
+    address: propAddress,
     city: extracted.city || null,
     state: extracted.state || null,
     submarket: extracted.submarket || null,

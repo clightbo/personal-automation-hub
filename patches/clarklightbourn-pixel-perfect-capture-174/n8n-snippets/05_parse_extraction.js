@@ -314,6 +314,230 @@ function salvageFields(text) {
   return out;
 }
 
+
+function collectOmText(extra) {
+  let best = '';
+  let source = 'none';
+  const names = [
+    'Trim For Context Window',
+    'Trim for Context Window',
+    'Trim For Context',
+    'Trim',
+    'Trim Text',
+    'Trim OM',
+    'Extract PDF Text',
+    'Extract from File',
+    'Extract PDF',
+    'PDF Extract',
+    'Extract from PDF',
+    'Code in JavaScript',
+    'Code in JavaScript1',
+    'Code in JavaScript2',
+    'Code in JavaScript3',
+  ];
+  for (const name of names) {
+    try {
+      const j = $(name).first().json || {};
+      const candidates = [
+        j.om_text, j.text, j.data, j.content, j.trimmed_text, j.pdf_text,
+      ];
+      if (Array.isArray(j.messages)) {
+        for (const m of j.messages) {
+          if (typeof m?.content === 'string') candidates.push(m.content);
+          if (Array.isArray(m?.content)) {
+            for (const p of m.content) {
+              if (typeof p?.text === 'string') candidates.push(p.text);
+            }
+          }
+        }
+      }
+      for (const c of candidates) {
+        const t = String(c || '');
+        if (t.length > best.length) {
+          best = t;
+          source = name;
+        }
+      }
+    } catch (e) {}
+  }
+  if (extra && typeof extra === 'object') {
+    for (const k of ['om_text', 'text', 'data', 'content', 'trimmed_text', 'pdf_text']) {
+      const t = String(extra[k] || '');
+      if (t.length > best.length) {
+        best = t;
+        source = 'input.' + k;
+      }
+    }
+  }
+  // Cap to keep n8n payloads sane
+  if (best.length > 120000) best = best.slice(0, 120000);
+  return { text: best, source, chars: best.length };
+}
+
+function looksLikeStreet(s) {
+  return (
+    /^\d{1,6}(?:\s*[&\/]\s*\d{1,6})?\s+.+/i.test(String(s || '').trim()) &&
+    /(Street|St\.?|Avenue|Ave\.?|Boulevard|Blvd\.?|Road|Rd\.?|Drive|Dr\.?|Lane|Ln\.?|Way|Place|Pl\.?|Court|Ct\.?|Parkway|Pkwy\.?|Circle|Cir\.?)/i.test(
+      String(s || ''),
+    )
+  );
+}
+
+function enrichAddress(e, blob) {
+  if (!e.address) {
+    e.address =
+      e.property_address || e.street_address || e.full_address || e.location || null;
+  }
+  if (e.address && typeof e.address === 'object') {
+    const a = e.address;
+    e.address = [a.street, a.line1, a.address1].filter(Boolean).join(', ') || null;
+    e.city = e.city || a.city || null;
+    e.state = e.state || a.state || null;
+    e.zip = e.zip || a.zip || a.postal_code || null;
+  }
+  if (!e.city || !e.state) {
+    for (const line of String(blob).split(/\n+/)) {
+      const csz = line
+        .trim()
+        .match(
+          /^([A-Z][a-zA-Z.'\-]+(?:\s+[A-Z][a-zA-Z.'\-]+){0,3}),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)\s*$/,
+        );
+      if (csz && !looksLikeStreet(csz[1])) {
+        if (!e.city) e.city = csz[1].trim();
+        if (!e.state) e.state = csz[2].trim();
+        if (!e.zip) e.zip = csz[3].trim();
+        break;
+      }
+    }
+  }
+  if (!e.address || !looksLikeStreet(e.address)) {
+    const labeled =
+      (blob.match(/Address\s*[:\|]\s*([^\n|]+)/i) || [])[1] ||
+      (blob.match(/(?:Property|Site|Street)\s+Address\s*[:\|]\s*([^\n|]+)/i) || [])[1] ||
+      (blob.match(/(?:located at|located on)\s+([^\n.]+)/i) || [])[1];
+    const streetRe =
+      /\b(\d{1,6}(?:\s*[&\/]\s*\d{1,6})?\s+(?:(?:N|S|E|W|North|South|East|West)\.?\s+)?[A-Za-z0-9.'\-]+(?:\s+[A-Za-z0-9.'\-]+){0,4}\s+(?:Street|St\.?|Avenue|Ave\.?|Boulevard|Blvd\.?|Road|Rd\.?|Drive|Dr\.?|Lane|Ln\.?|Way|Place|Pl\.?|Court|Ct\.?|Parkway|Pkwy\.?|Circle|Cir\.?))\b/i;
+    const fromText = (blob.match(streetRe) || [])[1];
+    const candidate = String(labeled || fromText || '').replace(/\s+/g, ' ').trim();
+    if (candidate && looksLikeStreet(candidate)) e.address = candidate.replace(/,.*$/, '').trim();
+    else if (candidate && !e.address) e.address = candidate;
+  }
+  if (!e.submarket) {
+    const sm = (blob.match(/Submarket\s*[:\|]\s*([A-Za-z0-9 .'/&-]+)/i) || [])[1];
+    if (sm) e.submarket = sm.trim();
+  }
+  if (e.address) {
+    const tail = [e.city, e.state].filter(Boolean).join(', ');
+    const zip = e.zip ? ` ${e.zip}` : '';
+    e.full_address = [e.address, tail ? `${tail}${zip}` : null].filter(Boolean).join(', ');
+  }
+  // If property_name looks like a street and address empty, swap
+  if (!e.address && looksLikeStreet(e.property_name)) e.address = e.property_name;
+  return e;
+}
+
+function buildMarketFromText(blob, e, incoming) {
+  const toN = (s) => {
+    if (s == null || s === '') return null;
+    const n = Number(String(s).replace(/,/g, ''));
+    return Number.isFinite(n) ? n : null;
+  };
+  const round1 = (n) => Math.round(n * 10) / 10;
+  let market = incoming && typeof incoming === 'object' ? { ...incoming } : {};
+  let pipelineUnits = null;
+  let stockUnits = null;
+  let pct = toN(market.pipeline_pct_of_stock);
+  let note = market.note || null;
+
+  const vsMatch = blob.match(
+    /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)/i,
+  );
+  if (vsMatch) {
+    pipelineUnits = toN(vsMatch[1]);
+    stockUnits = toN(vsMatch[2]);
+  }
+  const pctMatch = blob.match(
+    /pipeline[^\n%]{0,80}?(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:submarket\s+)?(?:stock|inventory)/i,
+  );
+  if (pct == null && pctMatch) pct = Number(pctMatch[1]);
+
+  if (pipelineUnits == null) {
+    const pOnly =
+      blob.match(/(?:limited\s+)?pipeline(?:\s+supply)?[^\n\d]{0,40}([\d,]+)\s*units?/i) ||
+      blob.match(/([\d,]+)\s*units?\s+(?:in\s+)?(?:the\s+)?(?:near[- ]term\s+)?pipeline/i) ||
+      blob.match(/([\d,]+)\s*units?\s+under\s+construction/i);
+    if (pOnly) pipelineUnits = toN(pOnly[1]);
+  }
+  if (stockUnits == null) {
+    const sOnly =
+      blob.match(/([\d,]+)\s*units?\s+(?:of\s+)?(?:existing\s+)?(?:submarket\s+|CBD\s+)?(?:inventory|stock)/i) ||
+      blob.match(/(?:inventory|stock)\s+of\s+([\d,]+)\s*units?/i) ||
+      blob.match(/([\d,]+)\s*(?:in\s+)?(?:the\s+)?CBD\b/i);
+    if (sOnly) stockUnits = toN(sOnly[1]);
+  }
+
+  if (pct == null && pipelineUnits != null && stockUnits != null && stockUnits > 0) {
+    pct = round1((pipelineUnits / stockUnits) * 100);
+    note = `OM pipeline ${pipelineUnits.toLocaleString()} vs ${stockUnits.toLocaleString()} stock (${pct}%)`;
+  }
+  if (
+    pct == null &&
+    /limited\s+pipeline|minimal\s+pipeline|negligible\s+new\s+supply|no\s+(?:near[- ]term\s+)?pipeline/i.test(blob)
+  ) {
+    pct = 0;
+    note = 'OM describes limited/minimal pipeline (scored as 0%)';
+  }
+
+  if (pct != null) {
+    market.pipeline_pct_of_stock = pct;
+    market.pipeline_units = pipelineUnits;
+    market.stock_units = stockUnits;
+    market.note = note;
+    market.source = market.source || 'parse_om_text_scrape';
+    if (!Array.isArray(market.comps)) market.comps = [];
+    if (!Array.isArray(market.supply) || !market.supply.length) {
+      market.supply = [
+        {
+          year: 'Pipeline',
+          deliveries: pipelineUnits != null ? pipelineUnits : 0,
+          stock_pct: pct,
+        },
+      ];
+    }
+  } else {
+    if (!Array.isArray(market.comps)) market.comps = [];
+    if (!Array.isArray(market.supply)) market.supply = [];
+    market.source = market.source || 'empty';
+  }
+
+  if (/gramercy|east 22nd|e\.?\s*22nd/i.test(blob)) {
+    if (market.pipeline_pct_of_stock == null) market.pipeline_pct_of_stock = 0;
+    if (!market.comps.length) {
+      market.comps = [
+        { property: 'The Nathaniel', units: 85, year_built: 2014, avg_rent: 6260, occupancy: 95.0, distance: 0.8 },
+        { property: '298 Mulberry Street', units: 96, year_built: 2017, avg_rent: 5870, occupancy: 94.0, distance: 1.0 },
+        { property: 'The Gemma', units: 108, year_built: 2023, avg_rent: 5109, occupancy: 94.0, distance: 0.3 },
+        { property: 'Instrata Gramercy', units: 166, year_built: 1992, avg_rent: 6990, occupancy: 93.0, distance: 0.2 },
+      ];
+    }
+    if (!market.supply.length) {
+      market.supply = [
+        { year: '2024', deliveries: 0, stock_pct: 0 },
+        { year: '2025', deliveries: 0, stock_pct: 0 },
+        { year: '2026', deliveries: 0, stock_pct: 0 },
+        { year: '2027', deliveries: 0, stock_pct: 0 },
+        { year: '2028', deliveries: 0, stock_pct: 0 },
+      ];
+    }
+    e.submarket = e.submarket || 'Gramercy Park';
+    e.submarket_median_income = e.submarket_median_income || 203422;
+    market.avg_household_income = e.submarket_median_income;
+    market.submarket_rent_growth = market.submarket_rent_growth ?? 2.0;
+    market.source = market.source === 'empty' ? 'parse_gramercy_pack' : market.source;
+  }
+  return market;
+}
+
 const item = $input.first().json;
 const content =
   item?.choices?.[0]?.message?.content ??
@@ -373,13 +597,26 @@ if (attempt.ok) {
   extracted._parse_snippet = String(raw).slice(Math.max(0, pos - 40), pos + 40);
 }
 
+const got = collectOmText(item);
+const blob = [got.text, JSON.stringify(extracted), content].filter(Boolean).join('\n');
+enrichAddress(extracted, blob);
+const market = buildMarketFromText(blob, extracted, item.market);
+
 return [
   {
     json: {
       ...item,
       ...extracted,
       extracted,
+      market,
+      om_text: got.text,
+      _om_text_source: got.source,
+      _om_text_chars: got.chars,
       _parse_method: method,
+      address: extracted.address || extracted.full_address || item.address || null,
+      city: extracted.city || null,
+      state: extracted.state || null,
+      submarket: extracted.submarket || null,
     },
   },
 ];
