@@ -520,46 +520,112 @@ function scrapePipeline(blob, e, incoming) {
     ) ||
     blob.match(
       /(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:submarket\s+)?(?:stock|inventory)[^\n.]{0,40}pipeline/i,
-    );
+    ) ||
+    blob.match(/(\d{1,2}(?:\.\d+)?)\s*%\s*of\s+(?:the\s+)?(?:submarket|CBD|market)\b/i);
   if (pct == null && pctMatch) {
     pct = Number(pctMatch[1]);
     note = `OM stated pipeline ~${pct}% of stock`;
   }
 
   const vsPatterns = [
-    /\(?\s*([\d,]+)\s+pipeline\s+units?[^\d\n]{0,80}?vs\.?\s+([\d,]+)/i,
+    /\(?\s*([\d,]+)\s+pipeline\s+units?[^\d\n]{0,100}?vs\.?\s+([\d,]+)/i,
     /([\d,]+)\s+pipeline\s+units?\s+in\s+[A-Za-z .'/-]+?\s+vs\.?\s+([\d,]+)/i,
-    /Limited competing supply[^\d\n]{0,40}([\d,]+)[^\d\n]{0,80}?([\d,]+)/i,
+    /([\d,]+)\s*units?\s+(?:of\s+)?(?:new\s+)?(?:supply|pipeline|deliveries)[^\d\n]{0,100}?(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)/i,
+    /([\d,]+)\s*units?[^\d\n]{0,40}?(?:vs\.?|versus)\s*([\d,]+)\s*(?:units?)?[^\n.]{0,40}?(?:CBD|submarket|inventory|stock)/i,
     /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)/i,
   ];
-  let vsMatch = null;
   for (const re of vsPatterns) {
-    vsMatch = blob.match(re);
-    if (vsMatch) break;
-  }
-  if (vsMatch) {
-    pipelineUnits = toN(vsMatch[1]);
-    stockUnits = toN(vsMatch[2]);
+    const vsMatch = blob.match(re);
+    if (vsMatch) {
+      const a = toN(vsMatch[1]);
+      const b = toN(vsMatch[2]);
+      if (a != null && b != null && b > a) {
+        pipelineUnits = a;
+        stockUnits = b;
+        break;
+      }
+    }
   }
   if (pipelineUnits == null) {
     const pOnly =
       blob.match(/(?:limited\s+)?pipeline(?:\s+supply)?[^\n\d]{0,30}([\d,]+)\s*units?/i) ||
       blob.match(/([\d,]+)\s*(?:-|\s)?units?\s+(?:in\s+)?(?:the\s+)?(?:near[- ]term\s+)?pipeline/i) ||
-      blob.match(/([\d,]+)\s*units?\s+under\s+construction/i);
+      blob.match(/([\d,]+)\s*units?\s+under\s+construction/i) ||
+      blob.match(/([\d,]+)\s*units?\s+of\s+(?:new\s+)?(?:supply|deliveries)/i);
     if (pOnly) pipelineUnits = toN(pOnly[1]);
   }
   if (stockUnits == null) {
     const sOnly =
       blob.match(
-        /([\d,]+)\s*units?\s+(?:of\s+)?(?:existing\s+)?(?:submarket\s+|CBD\s+)?(?:inventory|stock)/i,
-      ) || blob.match(/(?:inventory|stock)\s+of\s+([\d,]+)\s*units?/i);
+        /([\d,]+)\s*units?\s+(?:of\s+)?(?:existing\s+)?(?:submarket\s+|CBD\s+|Cherry Creek\s+)?(?:inventory|stock)/i,
+      ) ||
+      blob.match(/(?:inventory|stock)\s+of\s+([\d,]+)\s*units?/i) ||
+      blob.match(
+        /(?:submarket|CBD|market)\s+(?:inventory|stock|supply)\s*(?:of|:)?\s*([\d,]+)/i,
+      ) ||
+      blob.match(/([\d,]+)\s*[-–]?\s*unit\s+(?:submarket|inventory|stock|CBD)/i) ||
+      blob.match(
+        /(?:existing|current)\s+(?:inventory|stock|supply)\s*(?:of|:)?\s*([\d,]+)/i,
+      );
     if (sOnly) stockUnits = toN(sOnly[1]);
   }
 
   pipelineUnits =
-    pipelineUnits ?? toN(e.pipeline_units ?? e.pipeline ?? e.units_in_pipeline);
-  stockUnits = stockUnits ?? toN(e.submarket_stock ?? e.stock_units ?? e.inventory_units);
+    pipelineUnits ??
+    toN(
+      e.pipeline_units ??
+        e.pipeline ??
+        e.units_in_pipeline ??
+        incoming.pipeline_units,
+    );
+  stockUnits =
+    stockUnits ??
+    toN(
+      e.submarket_stock_units ??
+        e.submarket_stock ??
+        e.stock_units ??
+        e.inventory_units ??
+        incoming.stock_units,
+    );
   if (pct == null) pct = toN(e.pipeline_pct_of_stock ?? e.pipeline_pct);
+
+  if (stockUnits == null && pipelineUnits != null) {
+    const variants = [pipelineUnits.toLocaleString('en-US'), String(pipelineUnits)];
+    for (const v of variants) {
+      const esc = v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const near =
+        blob.match(
+          new RegExp(
+            esc +
+              String.raw`\s*(?:pipeline\s+)?units?[^\d]{0,120}?(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)`,
+            'i',
+          ),
+        ) ||
+        blob.match(
+          new RegExp(
+            String.raw`(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)[^\d]{0,80}?` + esc,
+            'i',
+          ),
+        );
+      if (near) {
+        const cand = toN(near[1]);
+        if (cand != null && cand > pipelineUnits * 2) {
+          stockUnits = cand;
+          break;
+        }
+      }
+    }
+  }
+  if (stockUnits == null && pipelineUnits != null) {
+    const idx = blob.search(/pipeline|new\s+supply|under\s+construction|deliveries/i);
+    if (idx >= 0) {
+      const window = blob.slice(Math.max(0, idx - 250), idx + 450);
+      const nums = [...window.matchAll(/([\d,]{3,6})\s*units?/gi)]
+        .map((m) => toN(m[1]))
+        .filter((n) => n != null && n > pipelineUnits * 2 && n < 500000);
+      if (nums.length) stockUnits = Math.min(...nums);
+    }
+  }
 
   if (pct == null && pipelineUnits != null && stockUnits != null && stockUnits > 0) {
     pct = round1((pipelineUnits / stockUnits) * 100);
@@ -569,6 +635,7 @@ function scrapePipeline(blob, e, incoming) {
   }
   if (
     pct == null &&
+    pipelineUnits == null &&
     /limited\s+pipeline|minimal\s+pipeline|no\s+(?:near[- ]term\s+)?pipeline|negligible\s+new\s+supply/i.test(
       blob,
     )
@@ -587,13 +654,13 @@ if (extracted.submarket_median_income) {
 }
 const pipe = scrapePipeline(omText, extracted, market);
 
-if (pipe.pct != null) {
-  market.pipeline_pct_of_stock = pipe.pct;
-  market.pipeline_units = pipe.pipelineUnits;
-  market.stock_units = pipe.stockUnits;
-  market.note = pipe.note;
-  market.source = market.source || 'metrics_om_text_scrape';
-  if (!Array.isArray(market.supply) || market.supply.length === 0) {
+if (pipe.pct != null || pipe.pipelineUnits != null || pipe.stockUnits != null) {
+  if (pipe.pct != null) market.pipeline_pct_of_stock = pipe.pct;
+  if (pipe.pipelineUnits != null) market.pipeline_units = pipe.pipelineUnits;
+  if (pipe.stockUnits != null) market.stock_units = pipe.stockUnits;
+  if (pipe.note) market.note = pipe.note;
+  if (pipe.pct != null) market.source = market.source || 'metrics_om_text_scrape';
+  if (pipe.pct != null && (!Array.isArray(market.supply) || market.supply.length === 0)) {
     market.supply = [
       {
         year: 'Pipeline',
@@ -601,6 +668,11 @@ if (pipe.pct != null) {
         stock_pct: pipe.pct,
       },
     ];
+  } else if (pipe.pct != null && Array.isArray(market.supply) && market.supply.length) {
+    // Backfill 0% stock_pct rows once we know pipeline vs stock.
+    market.supply = market.supply.map((row) =>
+      !row.stock_pct || row.stock_pct === 0 ? { ...row, stock_pct: pipe.pct } : row,
+    );
   }
   if (!Array.isArray(market.comps)) market.comps = [];
 }
@@ -781,14 +853,18 @@ if (!result.submarket && extracted.submarket) result.submarket = extracted.subma
 if (extracted.zip) result.zip = extracted.zip;
 
 if (!dealTerms.purchase_price && !extracted.purchase_price && result.metrics.noi) {
-  const noi = result.metrics.noi;
-  const bids = [4.5, 5.0, 5.5, 6.0, 6.5].map(
-    (c) => Math.round(noi / (c / 100) / 1e5) * 1e5,
-  );
-  result.bid_sensitivity = bidSensitivity(extracted, bids, debt);
+  // Ladder centered on max supportable (not aspirational low-cap bids that all fail).
   result.max_supportable_price = maxSupportablePrice(extracted, debt);
-
   const bid = result.max_supportable_price;
+  const spreads = [-0.10, -0.05, 0, 0.10, 0.20, 0.35, 0.50, 0.65];
+  const bids = [
+    ...new Set(
+      spreads
+        .map((s) => Math.round((bid * (1 + s)) / 1e5) * 1e5)
+        .filter((p) => p > 0),
+    ),
+  ].sort((a, b) => a - b);
+  result.bid_sensitivity = bidSensitivity(extracted, bids, debt);
   const pricedExtract = {
     ...extracted,
     purchase_price: bid,

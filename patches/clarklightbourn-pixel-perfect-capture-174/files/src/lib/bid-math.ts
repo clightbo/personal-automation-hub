@@ -93,13 +93,16 @@ export function buildBidLadder(
   const center = a.bid > 0 ? a.bid : (statedPrice ?? 0);
   if (!(center > 0)) return [];
 
-  const spreads = [-0.09, -0.05, 0, 0.044, 0.107, 0.17, 0.237];
+  const spreads = [-0.10, -0.05, 0, 0.10, 0.20, 0.35, 0.50];
   const prices = new Set<number>();
   for (const s of spreads) {
     prices.add(Math.round((center * (1 + s)) / 100_000) * 100_000);
   }
   prices.add(Math.round(center / 1000) * 1000);
   if (statedPrice && statedPrice > 0) prices.add(statedPrice);
+  // Always include the clearing max-supportable rung at these assumptions.
+  const maxCleared = maxSupportablePrice(noi, a);
+  if (maxCleared > 0) prices.add(maxCleared);
 
   const sorted = [...prices].filter((p) => p > 0).sort((x, y) => x - y);
   let taggedNeg = false;

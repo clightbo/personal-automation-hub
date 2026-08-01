@@ -11,6 +11,16 @@ const SECTIONS = [
   { id: "summary", label: "Memo" },
 ] as const;
 
+/** Sticky app header (h-14) + this nav (~2.75rem) — keep section titles below both. */
+const SCROLL_OFFSET_PX = 120;
+
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+}
+
 export function DealSectionNav() {
   const [active, setActive] = useState<string>("overview");
 
@@ -20,6 +30,11 @@ export function DealSectionNav() {
     );
     if (!nodes.length) return;
 
+    // Match sticky chrome so active tab tracks the visible section title.
+    nodes.forEach((n) => {
+      n.style.scrollMarginTop = `${SCROLL_OFFSET_PX}px`;
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -27,7 +42,7 @@ export function DealSectionNav() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target?.id) setActive(visible.target.id);
       },
-      { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.4, 0.7] },
+      { rootMargin: `-${SCROLL_OFFSET_PX}px 0px -55% 0px`, threshold: [0.15, 0.4, 0.7] },
     );
     nodes.forEach((n) => observer.observe(n));
     return () => observer.disconnect();
@@ -45,7 +60,7 @@ export function DealSectionNav() {
             href={`#${s.id}`}
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+              scrollToSection(s.id);
               setActive(s.id);
             }}
             className={cn(
