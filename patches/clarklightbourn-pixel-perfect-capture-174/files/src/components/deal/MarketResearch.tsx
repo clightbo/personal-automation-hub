@@ -43,7 +43,6 @@ export function MarketResearch({ deal }: { deal: Deal }) {
                       <th className="px-4 py-3 font-medium">Built</th>
                       <th className="px-4 py-3 font-medium">Avg rent</th>
                       <th className="px-4 py-3 font-medium">Occ.</th>
-                      <th className="px-4 py-3 font-medium">Dist.</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -54,7 +53,6 @@ export function MarketResearch({ deal }: { deal: Deal }) {
                         <td className="num px-4 py-3">{c.year_built}</td>
                         <td className="num px-4 py-3">${c.avg_rent.toLocaleString()}</td>
                         <td className="num px-4 py-3">{c.occupancy.toFixed(1)}%</td>
-                        <td className="num px-4 py-3">{c.distance.toFixed(1)} mi</td>
                       </tr>
                     ))}
                   </tbody>
