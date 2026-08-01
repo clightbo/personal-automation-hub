@@ -84,10 +84,39 @@ const bad = flags.filter((f) =>
 const unk = flags.filter((f) => String(f.severity).toUpperCase() === "UNKNOWN");
 
 const m = engine.metrics || {};
+const num = (v) => {
+  if (v == null || v === "") return null;
+  if (typeof v === "number" && Number.isFinite(v)) return v;
+  if (typeof v === "object" && v !== null && "value" in v) {
+    const n = Number(v.value);
+    return Number.isFinite(n) ? n : null;
+  }
+  const n = Number(String(v).replace(/[%,$\s,]/g, ""));
+  return Number.isFinite(n) ? n : null;
+};
+const irr = num(m.irr);
+const irrAssumptions =
+  m.irr_assumptions && typeof m.irr_assumptions === "object" ? m.irr_assumptions : {};
+const maxBid = num(engine.max_supportable_price);
+const unpriced =
+  !engine.deal_terms?.stated_price &&
+  (engine.deal_terms?.purchase_price_source === "not_stated_in_om" ||
+    /unpriced/i.test(String(engine.deal_terms?.offering_type || "")));
+
 const strengths = [];
 if (pass.length) strengths.push(...pass.slice(0, 4).map((f) => `${f.rule}: ${f.reason || "PASS"}`));
-if (m.noi != null) strengths.push(`In-place NOI ${m.noi}`);
-if (m.occupancy != null) strengths.push(`Occupancy ${m.occupancy}%`);
+if (num(m.noi) != null) strengths.push(`In-place NOI ${num(m.noi)} (from OM)`);
+if (num(m.occupancy) != null) strengths.push(`Occupancy ${num(m.occupancy)}% (from OM)`);
+if (irr != null) {
+  const hold = irrAssumptions.hold_years || 5;
+  const bidBit =
+    maxBid != null
+      ? ` at max supportable $${Math.round(maxBid).toLocaleString("en-US")}`
+      : "";
+  strengths.push(
+    `Estimated IRR ${irr}% (modeled${bidBit}, ${hold}-yr hold — not stated in the OM)`,
+  );
+}
 if (!strengths.length) strengths.push("Core metrics extracted from the OM");
 
 const concerns = bad.length
@@ -112,11 +141,20 @@ if (market.pipeline_pct_of_stock != null) {
 }
 if (!next.length) next.push("Complete broker Q&A on missing fields");
 
+const modeledDisclaimer = unpriced
+  ? ` Cap rate, DSCR, debt yield, $/unit, and estimated IRR are modeled at an assumed bid` +
+    (maxBid != null ? ` (max supportable $${Math.round(maxBid).toLocaleString("en-US")})` : "") +
+    ` and financing — not asking-price returns from the OM.`
+  : irr != null
+    ? ` Estimated IRR ${irr}% is modeled from hold/exit assumptions — not an OM-stated IRR.`
+    : "";
+
 const narrative = {
   headline: `${summary.recommendation || "SCREEN"} — ${name}`,
   executive_summary:
-    summary.rationale ||
-    `Screened ${name} at ${address}. Risk score ${summary.risk_score ?? "n/a"}/100.`,
+    (summary.rationale ||
+      `Screened ${name} at ${address}. Risk score ${summary.risk_score ?? "n/a"}/100.`) +
+    modeledDisclaimer,
   key_strengths: strengths.slice(0, 6),
   key_concerns: concerns.slice(0, 6),
   critical_questions: questions.slice(0, 6),

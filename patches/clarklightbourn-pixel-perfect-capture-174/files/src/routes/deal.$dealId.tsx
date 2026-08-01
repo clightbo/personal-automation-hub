@@ -173,12 +173,12 @@ function DealDashboard() {
             </p>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               <MetricCard
-                label="IRR"
+                label="Estimated IRR"
                 metric={m.irr}
                 format={pct}
                 basis={basis("irr")}
                 basisNote={note("irr")}
-                explain="Internal rate of return: modeled annualized return over the hold from assumed cash flows and exit — not an OM-stated IRR."
+                explain="Estimated levered IRR: modeled annualized return over the hold from assumed cash flows and exit — not an OM-stated IRR."
               />
               <MetricCard
                 label="LTV"

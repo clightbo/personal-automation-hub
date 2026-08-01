@@ -157,7 +157,7 @@ function answerFor(deal: Deal, q: string): Msg {
       };
     }
     const bits = [
-      `Modeled levered IRR is ${fmtPct(m.irr.value)}`,
+      `Estimated IRR is ${fmtPct(m.irr.value)} (modeled — not stated in the OM)`,
       a?.hold_years != null ? `over a ${a.hold_years}-year hold` : null,
       a?.bid_price != null
         ? `at bid ${fmtMoney(a.bid_price)}${a.bid_basis === "max_supportable_price" ? " (max supportable)" : ""}`
