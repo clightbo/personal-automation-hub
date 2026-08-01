@@ -44,7 +44,6 @@ const GUARDRAILS = [
 ];
 
 const SCREEN_ENDPOINT = "https://clarkcbre.app.n8n.cloud/webhook/screen-om-free";
-const API_KEY = (import.meta.env as Record<string, string | undefined>).VITE_SCREEN_API_KEY ?? "";
 
 export interface ScreeningSettings {
   dealTerms: Record<string, unknown>;
@@ -53,6 +52,9 @@ export interface ScreeningSettings {
   assumptions: Record<string, unknown>;
   notes?: string;
 }
+
+/** Free OpenRouter extract + memo often takes 60–180s. Do not fall back to demo. */
+const SCREENING_TIMEOUT_MS = 4 * 60 * 1000;
 
 async function handleRunScreening(file: File, settings: ScreeningSettings) {
   const formData = new FormData();
@@ -63,17 +65,49 @@ async function handleRunScreening(file: File, settings: ScreeningSettings) {
   formData.append("assumptions", JSON.stringify(settings.assumptions || {}));
   if (settings.notes) formData.append("notes", settings.notes);
 
-  const response = await fetch(SCREEN_ENDPOINT, {
-    method: "POST",
-    headers: API_KEY ? { "x-api-key": API_KEY } : undefined,
-    body: formData,
-  });
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), SCREENING_TIMEOUT_MS);
 
-  if (!response.ok) {
-    throw new Error("Screening failed: " + response.status);
+  try {
+    const response = await fetch(SCREEN_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => "");
+      throw new Error(
+        `Screening failed: HTTP ${response.status}${errText ? ` — ${errText.slice(0, 200)}` : ""}`,
+      );
+    }
+
+    // n8n often returns HTTP 200 with an empty body when "Respond to Lovable"
+    // uses JSON.stringify($json) instead of $json — response.json() then throws
+    // "Unexpected end of JSON input".
+    const text = await response.text();
+    if (!text || !text.trim()) {
+      throw new Error(
+        "n8n returned an empty body. In Respond to Lovable, set Response Body to ={{ $json }} (not JSON.stringify).",
+      );
+    }
+    try {
+      return JSON.parse(text);
+    } catch {
+      throw new Error(
+        `n8n returned non-JSON (${text.length} chars). First bytes: ${text.slice(0, 120)}`,
+      );
+    }
+  } catch (err) {
+    if (err instanceof DOMException && err.name === "AbortError") {
+      throw new Error(
+        "Screening timed out after 4 minutes. Check n8n Executions — the run may still finish there.",
+      );
+    }
+    throw err;
+  } finally {
+    window.clearTimeout(timer);
   }
-
-  return await response.json();
 }
 
 function collectSettings(useWebSearch: boolean, disabledSources: string[]): ScreeningSettings {
@@ -166,10 +200,17 @@ function Index() {
         return;
       }
     }
-    toast("Live screening unavailable — showing a sample result.", {
-      description: "The screening endpoint did not return a result. The deal below is sample data.",
+
+    // Never open the demo deal on a failed/slow run — that looked like “bad numbers.”
+    const message =
+      res.error instanceof Error
+        ? res.error.message
+        : "The screening endpoint did not return a result.";
+    toast.error("Live screening did not finish", {
+      description: `${message} Check n8n Executions — a late success there is the real result.`,
+      duration: 12000,
     });
-    navigate({ to: "/deal/$dealId", params: { dealId: mockDeals[2].id } });
+    setStage(null);
   };
 
   if (stage !== null) {
