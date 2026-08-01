@@ -1,126 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — Jul 30, 2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clark's Pre-Market Brief — Sat Aug 1, 2026</title>
 <style>
-  :root{--bg:#0b0f17;--panel:#131a26;--panel2:#0f1622;--edge:#1f2a3a;--txt:#e8edf5;--mut:#93a1b5;--acc:#4da3ff;--grn:#2ecc71;--red:#ff5c6c;--amb:#f5b940;--gold:#e8c14a;}
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:17px;-webkit-text-size-adjust:100%;}
-  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px;}
-  header{border-bottom:1px solid var(--edge);padding-bottom:16px;margin-bottom:8px;}
-  .kicker{color:var(--acc);font-weight:700;letter-spacing:.14em;font-size:12.5px;text-transform:uppercase;}
-  h1{font-size:26px;font-weight:800;margin:6px 0 4px;letter-spacing:-.01em;}
-  .sub{color:var(--mut);font-size:14px;}
-  .tldr{background:linear-gradient(180deg,#16202f,#111927);border:1px solid var(--edge);border-left:3px solid var(--acc);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:16px;}
-  .tldr b{color:#fff;}
-  section{margin:26px 0;}
-  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);border-bottom:1px solid var(--edge);padding-bottom:7px;margin-bottom:12px;}
-  table{width:100%;border-collapse:collapse;font-size:15.5px;}
-  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--panel);}
-  th{color:var(--mut);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;}
-  td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
-  .up{color:var(--grn);}.dn{color:var(--red);}.fl{color:var(--mut);}
-  .tick{font-weight:800;}
-  ul{list-style:none;}
-  li{padding:9px 0;border-bottom:1px solid var(--panel);}
-  li:last-child{border-bottom:none;}
-  .lbl{font-weight:700;color:#fff;}
-  .why{color:var(--mut);font-size:14.5px;display:block;margin-top:2px;}
-  .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#04101f;font-weight:800;font-size:13px;margin-right:8px;flex:none;}
-  .edge{background:var(--panel2);border:1px solid var(--edge);border-radius:12px;padding:16px;}
-  .edge .tag{display:inline-block;background:#3a2a05;color:var(--amb);font-weight:700;font-size:11px;letter-spacing:.1em;padding:3px 9px;border-radius:20px;text-transform:uppercase;margin-bottom:10px;}
-  .nugget{background:var(--panel2);border:1px dashed var(--edge);border-radius:12px;padding:14px 16px;font-size:15px;color:#d3ddec;}
-  .nugget b{color:var(--acc);}
-  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--edge);font-size:12.5px;color:var(--mut);}
-  footer a{color:var(--acc);text-decoration:none;}
-  .flag{color:var(--gold);font-weight:700;}
-  .chip{font-size:11px;color:var(--mut);border:1px solid var(--edge);border-radius:20px;padding:2px 8px;}
+  :root{
+    --bg:#0b0f14; --panel:#131a22; --panel2:#0f151c; --line:#243140;
+    --txt:#e8eef4; --muted:#93a3b3; --accent:#4ea1ff; --green:#3ddc84; --red:#ff6b6b;
+    --amber:#ffcf5c;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;font-size:17px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+  h1{font-size:26px;margin:6px 0 4px;line-height:1.2}
+  .date{color:var(--muted);font-size:14px}
+  .read{color:var(--muted);font-size:13px;margin-top:6px}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;margin:16px 0}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    margin:0 0 12px;font-weight:700}
+  table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  td,th{text-align:left;padding:7px 4px;border-bottom:1px solid var(--panel2)}
+  th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  td.num{text-align:right;font-weight:600}
+  .up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--panel2)}
+  .row:last-child{border-bottom:none}
+  .row .t{font-weight:700;min-width:56px}
+  .row .d{color:var(--txt);flex:1}
+  .row .m{font-weight:700;white-space:nowrap}
+  ol.matter{margin:0;padding-left:20px}
+  ol.matter li{margin-bottom:12px}
+  ol.matter b{color:var(--txt)}
+  .why{color:var(--muted);font-size:15px;display:block;margin-top:2px}
+  .cal li{margin-bottom:8px;list-style:none}
+  .cal ul{padding:0;margin:0}
+  .tag{display:inline-block;background:#1b2836;color:var(--accent);border:1px solid var(--line);
+    border-radius:6px;padding:1px 7px;font-size:12px;font-weight:700;margin-left:6px}
+  .edge{background:linear-gradient(180deg,#16212e,#131a22);border-color:#2a3d52}
+  .edge p{margin:0 0 8px}
+  .nugget{background:var(--panel2)}
+  .src{font-size:13px;color:var(--muted)}
+  .src a{color:var(--accent);text-decoration:none}
+  .src a:hover{text-decoration:underline}
+  .foot{color:var(--muted);font-size:12px;margin-top:18px;text-align:center}
+  a{color:var(--accent)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Clark&#39;s Daily Market Brief</div>
-    <h1>Thursday, July 30, 2026 &middot; Pre-Market</h1>
-    <div class="sub">Fed Day hangover meets a Microsoft blowout &mdash; read in under 3 minutes.</div>
+    <div class="kicker">Pre-Market Brief</div>
+    <h1>Saturday, August 1, 2026</h1>
+    <div class="date">Weekend edition &middot; figures reflect Friday, Jul 31 close</div>
+    <div class="read">~3 min read &middot; built for Clark</div>
   </header>
-
-  <div class="tldr">
-    Stocks got hammered Wednesday on a <b>hawkish Fed hold</b> (three officials dissented for a <b>hike</b>) &mdash; Dow &minus;2.2%, its worst day since April 2025. But <b>Microsoft blew the doors off</b> (Azure +43%, first time past $100B annual), lifting futures green pre-market. Oil ripped +6.2% on Middle East tensions, 10Y yield jumped to 4.66%. Today: <b>Q2 GDP + PCE at 830am</b>, and <b>Apple + Amazon report after the close</b>.
-  </div>
 
   <section>
     <h2>1 &middot; Market Snapshot</h2>
     <table>
       <tr><th>Instrument</th><th style="text-align:right">Level</th><th style="text-align:right">Move</th></tr>
-      <tr><td class="tick">S&amp;P 500</td><td class="n">7,316.15</td><td class="n dn">&minus;1.52%</td></tr>
-      <tr><td class="tick">Nasdaq Comp</td><td class="n">24,442.94</td><td class="n dn">&minus;1.74%</td></tr>
-      <tr><td class="tick">Dow</td><td class="n">51,594.14</td><td class="n dn">&minus;2.19%</td></tr>
-      <tr><td class="tick">10Y Treasury</td><td class="n">4.66%</td><td class="n dn">&uarr; post-Fed</td></tr>
-      <tr><td class="tick">WTI Crude</td><td class="n">$84.18</td><td class="n up">+6.2%</td></tr>
-      <tr><td class="tick">Gold</td><td class="n">$4,080</td><td class="n up">+0.36%</td></tr>
-      <tr><td class="tick">Bitcoin</td><td class="n">~$64,900</td><td class="n up">+0.43%</td></tr>
+      <tr><td>S&amp;P 500</td><td class="num">7,489.72</td><td class="num up">+0.7%</td></tr>
+      <tr><td>Nasdaq Comp.</td><td class="num">25,373.85</td><td class="num up">+1.0%</td></tr>
+      <tr><td>Dow Jones</td><td class="num">52,485.03</td><td class="num up">+0.53%</td></tr>
+      <tr><td>10Y Treasury</td><td class="num">4.74%</td><td class="num down">+6 bps</td></tr>
+      <tr><td>WTI Crude</td><td class="num">$85.69</td><td class="num up">firm</td></tr>
+      <tr><td>Gold</td><td class="num">$4,076</td><td class="num down">-0.5%</td></tr>
+      <tr><td>Bitcoin</td><td class="num">$63,683</td><td class="num down">off highs</td></tr>
     </table>
-    <p class="why" style="margin-top:10px">Overnight: Nikkei +0.71% to 61,867. US futures rebounding &mdash; Dow +0.4%, S&amp;P +0.6%, <b>Nasdaq-100 +1.4%</b> as Microsoft (+8.3% pre-market) and semis lead the bounce.</p>
+    <p class="why">Stocks rallied to close a wild July — Amazon +11.7% and Microsoft's mid-week +15% carried the tape, offsetting Apple's plunge. But the 10Y hit its highest since Jan 2025: bonds, not stocks, are the story. Asia/Europe followed Wall St higher into the weekend.</p>
   </section>
 
   <section>
     <h2>2 &middot; Your Watchlist</h2>
-    <table>
-      <tr><th>Ticker</th><th style="text-align:right">Last</th><th style="text-align:right">Move</th><th>Note</th></tr>
-      <tr><td class="tick">SPY</td><td class="n">~$731.6</td><td class="n dn">&minus;1.5%</td><td>Futures green today</td></tr>
-      <tr><td class="tick">QQQ</td><td class="n">$661.73</td><td class="n dn">&minus;1.7%</td><td>Ndx-100 fut +1.4% pre-mkt</td></tr>
-      <tr><td class="tick">DIA</td><td class="n">~$515.9</td><td class="n dn">&minus;2.2%</td><td>Worst Dow day since Apr &#39;25</td></tr>
-      <tr><td class="tick">AAPL</td><td class="n">$4.96T cap</td><td class="n fl">flat</td><td class="flag">Reports fiscal Q3 tonight 5pm ET</td></tr>
-      <tr><td class="tick">NVDA</td><td class="n">~$197</td><td class="n up">rebound</td><td>Ceded #1 mkt-cap to Apple; semis bouncing</td></tr>
-      <tr><td class="tick">MSFT</td><td class="n">+8% AH</td><td class="n up">+8.3%</td><td>EPS $4.74 vs $4.24 est; Azure +43%</td></tr>
-    </table>
+    <div class="row"><span class="t">SPY</span><span class="d">Tracks the S&amp;P; broad tape firm, breadth improving as Amazon led</span><span class="m up">+0.7%</span></div>
+    <div class="row"><span class="t">QQQ</span><span class="d">Nasdaq-100 proxy; MSFT strength &amp; Amazon offset AAPL drag</span><span class="m up">+1.0%</span></div>
+    <div class="row"><span class="t">DIA</span><span class="d">Dow proxy; fourth straight winning month for the index</span><span class="m up">+0.5%</span></div>
+    <div class="row"><span class="t">AAPL</span><span class="d">Cratered on soft Q4 revenue guidance — weak China &amp; Services; ceded "most valuable" back to NVDA</span><span class="m down">-7.8%</span></div>
+    <div class="row"><span class="t">NVDA</span><span class="d">Reclaimed #1 market-cap crown from Apple; earnings due late Aug</span><span class="m flat">flat</span></div>
+    <div class="row"><span class="t">MSFT</span><span class="d">Jumped 15%+ on this week's results — the standout Mag-7 print</span><span class="m up">+15%*</span></div>
+    <p class="why">*MSFT move is its post-earnings reaction earlier in the week; it held gains into Friday.</p>
   </section>
 
   <section>
     <h2>3 &middot; Top 3 Things That Matter Today</h2>
+    <ol class="matter">
+      <li><b>The bond market is the real signal.</b> The 10Y at 4.74% (highest since Jan 2025) plus a soft 20Y reopening (weak direct bidders, dealers stuffed) point to a supply/inflation-driven selloff.
+        <span class="why">Why it matters: rising yields lift the discount rate on every equity — a headwind to multiples even if earnings hold.</span></li>
+      <li><b>Mag-7 dispersion is widening.</b> Same week: MSFT +15%, Amazon +12%, Apple -8%, Meta -8%. The "they all move together" era is fracturing.
+        <span class="why">Why it matters: index-level calm hides single-stock risk — stock selection now matters more than beta.</span></li>
+      <li><b>Oil near $85 is rekindling inflation fear.</b> Crude is firm partly on Middle East tension (fresh US-Iran strikes), feeding the yield backup.
+        <span class="why">Why it matters: sustained oil pressures headline CPI and complicates any Fed easing narrative.</span></li>
+    </ol>
+  </section>
+
+  <section class="cal">
+    <h2>4 &middot; On the Calendar</h2>
+    <p class="why">Markets closed today (Saturday). The week ahead is labor-heavy:</p>
     <ul>
-      <li><span class="lbl"><span class="num">1</span>Hawkish Fed hold &mdash; 3 dissents for a HIKE.</span><span class="why">Dissenting to <em>tighten</em> (not ease) is rare and signals the committee&#39;s risk is skewed hawkish &mdash; it repriced the 10Y to 4.66% and clubbed rate-sensitive/long-duration equities.</span></li>
-      <li><span class="lbl"><span class="num">2</span>Microsoft&#39;s Azure clears $100B (+43%).</span><span class="why">Hard proof that Big Tech&#39;s AI capex is converting into real revenue &mdash; it re-rates the whole AI-infra trade and sets the tone for Apple &amp; Amazon tonight.</span></li>
-      <li><span class="lbl"><span class="num">3</span>Oil +6.2% on Middle East tensions.</span><span class="why">A fresh energy-driven inflation impulse arrives just as the Fed signals no cuts &mdash; the stagflation-lite combo markets least want to see.</span></li>
+      <li>&bull; <b>Mon Aug 3</b> — ISM Manufacturing PMI (Jul), 10:00 ET; China &amp; Germany PMIs overnight</li>
+      <li>&bull; <b>Wed Aug 5</b> — ADP Employment + ISM Services PMI</li>
+      <li>&bull; <b>Fri Aug 7</b> — July Nonfarm Payrolls &amp; unemployment rate — the week's main event</li>
+      <li>&bull; <b>Earnings</b> — <span class="tag">NVDA</span> reports late Aug, not this week; watchlist quiet near-term after AAPL/MSFT</li>
     </ul>
   </section>
 
-  <section>
-    <h2>4 &middot; On the Calendar Today</h2>
-    <ul>
-      <li><span class="lbl">830am ET &mdash; Q2 GDP (advance):</span> cons. <b>+2.3%</b> vs +2.1% prior.</li>
-      <li><span class="lbl">830am ET &mdash; June PCE:</span> Core PCE <b>+0.2% m/m</b> exp; headline PCE ~<b>+3.6% y/y</b> (cooling from 4.1%). Income +0.3%, spending +0.4%.</li>
-      <li><span class="lbl">830am ET &mdash; Initial jobless claims:</span> cons. <b>201K</b> vs 187K prior.</li>
-      <li><span class="lbl">After close &mdash; Earnings:</span> <span class="flag">Apple (AAPL)</span> 5pm ET &amp; Amazon (AMZN). Watch iPhone/Services, AWS growth, capex guide.</li>
-    </ul>
+  <section class="edge">
+    <h2>5 &middot; One Thing To Sound Smart About</h2>
+    <p>This yield spike is <b>low-quality</b>. Yields can rise for a "good" reason (stronger growth) or a "bad" one (more supply + inflation risk). Wednesday's 20-year reopening tailed — stopping at 5.163% vs. a 5.158% when-issued, with below-average direct bidding and dealers absorbing the slack. That's soft domestic demand meeting a ballooning deficit, i.e. a <b>term-premium</b> story, not a growth story.</p>
+    <p class="why">Contrarian read: bulls citing "yields up = economy strong" have it backwards here. A term-premium-led backup historically compresses P/E multiples even when earnings are fine — so the melt-up tape and the bond tape are telling different stories. Watch the 5%+ long end. (Wolf Street; Mariemont Capital)</p>
   </section>
 
-  <section>
-    <h2>5 &middot; One Thing to Sound Smart About</h2>
-    <div class="edge">
-      <span class="tag">The Edge</span>
-      <p>Microsoft&#39;s headline capex &ldquo;cut&rdquo; to ~$175B (from ~$190B) isn&#39;t spending discipline &mdash; it&#39;s largely <b>accounting</b>. Two levers: (1) they extended data-center <b>useful life from 15&rarr;25 years</b>, which lowers annual depreciation and flatters operating income (a &gt;$10B first-year boost <em>across</em> hyperscalers); and (2) more future data-center leases shift from <b>finance to operating leases</b> &mdash; and operating leases don&#39;t count in capex. The cash obligation to secure power, sites and compute is unchanged; only the <em>presentation</em> moved. So the bulls cheering &ldquo;capex discipline&rdquo; are partly cheering a reclassification &mdash; a classic earnings-quality tell.</p>
-    </div>
-  </section>
-
-  <section>
+  <section class="nugget">
     <h2>6 &middot; Learning Nugget</h2>
-    <div class="nugget"><b>Hawkish dissent.</b> When FOMC members formally vote against the majority in favor of <em>tighter</em> policy (a hike or holding when cuts are expected). Because dissents are rare and public, multiple hawkish dissents are a strong signal the committee&#39;s reaction function is tilted toward fighting inflation &mdash; raising the bar for any near-term cut.</div>
+    <p><b>Term premium</b> is the extra yield investors demand to hold a long-dated bond instead of rolling short T-bills — compensation for inflation and supply risk. When yields rise because of term premium (not because the Fed is expected to hike), it signals worry about deficits and inflation rather than optimism, and it tends to weigh on equity valuations.</p>
   </section>
 
-  <footer>
-    Sources: <a href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-july-29-dow-sp-500-nasdaq-082009165.html">Yahoo Finance</a> &middot;
-    <a href="https://www.cnbc.com/2026/07/29/stock-market-today-live-updates.html">CNBC</a> &middot;
-    <a href="https://www.fool.com/coverage/stock-market-today/2026/07/29/stock-market-today-july-29-stocks-slide-on-hawkish-fed-and-increased-middle-east-tensions/">Motley Fool</a> &middot;
-    <a href="https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html">MSFT Earnings (CNBC)</a> &middot;
-    <a href="https://www.pymnts.com/earnings/2026/microsoft-extends-data-center-lifespans-to-soften-ai-buildout-costs/">PYMNTS (capex)</a> &middot;
-    <a href="https://www.investing.com/news/stock-market-news/core-pce-price-index-gdp-and-jobless-claims-due-thursday-93CH-4821457">Investing.com (calendar)</a> &middot;
-    <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262056758-apple-market-cap-overtakes-nvidia-world-largest-q3-earnings-july-30-tradingkey">TradingKey (AAPL)</a>
-    <br><br>Prices as of Jul 29 close / Jul 30 pre-market. SPY &amp; DIA levels approximated from underlying index; QQQ, MSFT, NVDA per quoted sources. Not investment advice. Generated automatically for Clark.
-  </footer>
+  <section class="src">
+    <h2>Sources</h2>
+    <a href="https://www.washingtonpost.com/business/2026/07/31/wall-street-stocks-dow-nasdaq/ee08da40-8d1d-11f1-8912-d71e69d679d7_story.html">WaPo — how US indexes fared Fri 7/31</a><br>
+    <a href="https://247wallst.com/cards/nasdaq-led-friday-s-rally-with-a-1-1-jump-as-all-three-majo-gspc-market-bell-01kywwcem3j2q2kbbyjtetwpdm">24/7 Wall St — S&amp;P close</a><br>
+    <a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics — 10Y at 4.74%</a><br>
+    <a href="https://fxdailyreport.com/daily-oil-gold-silver-technical-analysis-july-31-2026/">FX Daily Report — oil &amp; gold 7/31</a><br>
+    <a href="https://9to5mac.com/2026/07/31/apple-stock-opens-down-roughly-10-following-mixed-q3-2026-results/">9to5Mac — Apple down on Q3 results</a><br>
+    <a href="https://www.fool.com/investing/2026/07/31/apple-just-passed-nvidia-as-the-worlds-largest-com/">Motley Fool — Apple cedes #1 to Nvidia</a><br>
+    <a href="https://wolfstreet.com/2026/07/25/long-term-treasury-yields-jump-as-bloodied-bond-market-gets-edgier-about-inflation-the-massive-new-debt/">Wolf Street — long yields jump on debt/inflation</a><br>
+    <a href="https://mariemontcapital.com/treasury-yields-july-2026-oil-bear-flattener/">Mariemont Capital — oil-driven bear flattener</a><br>
+    <a href="https://www.litefinance.org/blog/analysts-opinions/weekly-economic-calendar-for-03082026-09082026/">LiteFinance — week-ahead calendar</a>
+  </section>
+
+  <div class="foot">Auto-generated pre-market brief &middot; not investment advice &middot; verify figures before acting</div>
 </div>
 </body>
 </html>
