@@ -51,7 +51,8 @@ export function BidSensitivity({
         </div>
         <p className="border-b border-border bg-warn-soft/50 px-4 py-2 text-[11px] leading-relaxed text-warn-foreground">
           Modeled ladder — not OM guidance. Click any bid to drive the headline
-          metrics. Rows use assumed LTV, rate, and amort.
+          metrics. Rows use assumed LTV, rate, and amort; on unpriced deals the
+          header is max supportable, not an asking price from the offering.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
