@@ -8,8 +8,10 @@
 //   Do NOT add a manual Authorization header if credential is set.
 
 const cfg = $("⚙️ SETTINGS").first().json;
-const text = String($input.first().json.text || "");
-const model = cfg.model || "deepseek/deepseek-r1-0528:free";
+// Strip PDF control chars that can break OpenRouter's JSON parse
+const text = String($input.first().json.text || "")
+  .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, " ");
+const model = cfg.model || "deepseek/deepseek-chat";
 
 const system = `You are a commercial real estate analyst extracting structured data from a multifamily Offering Memorandum. Accuracy matters more than completeness.
 
