@@ -17,14 +17,19 @@ export function slugify(input: string) {
 const num = (v: unknown): number | null =>
   typeof v === "number" && Number.isFinite(v)
     ? v
-    : typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v.replace(/[$,%\s,]/g, "")))
+    : typeof v === "string" &&
+        v.trim() !== "" &&
+        Number.isFinite(Number(v.replace(/[$,%\s,]/g, "")))
       ? Number(v.replace(/[$,%\s,]/g, ""))
       : null;
 
 const metric = (v: unknown): Metric => {
   if (v && typeof v === "object" && !Array.isArray(v)) {
     const o = v as Record<string, unknown>;
-    return { value: num(o.value ?? o.amount ?? o.val), page: num(o.page ?? o.source_page) ?? undefined };
+    return {
+      value: num(o.value ?? o.amount ?? o.val),
+      page: num(o.page ?? o.source_page) ?? undefined,
+    };
   }
   return { value: num(v) };
 };
@@ -58,7 +63,7 @@ const str = (v: unknown, fallback = ""): string => {
   return fallback;
 };
 
-const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
+const arr = <T>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 
 const obj = (v: unknown): Record<string, unknown> =>
   v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
@@ -69,10 +74,7 @@ const looksLikeAddress = (s: string) => /^\d+\s+\S+/.test(s.trim());
  * n8n sometimes returns property as a bare string, swaps name/address, or packs
  * both into one field ("Name — 123 Main St"). Normalize to a clean pair.
  */
-function parseNameAddress(
-  nameRaw: string,
-  addressRaw: string,
-): { name: string; address: string } {
+function parseNameAddress(nameRaw: string, addressRaw: string): { name: string; address: string } {
   let name = nameRaw.trim();
   let address = addressRaw.trim();
 
@@ -212,11 +214,15 @@ export function normalizeDeal(raw: unknown): Deal {
     ),
     str(
       p.address ??
+        r.address ??
+        p.full_address ??
         p.property_address ??
         p.street_address ??
-        r.property_address ??
-        r.address,
-    ),
+        r.property_address,
+      "",
+    ) ||
+      [str(p.city ?? r.city), str(p.state ?? r.state)].filter(Boolean).join(", ") ||
+      str(p.submarket ?? r.submarket, "Address not stated in OM"),
   );
 
   const metrics: DealMetrics = {
