@@ -6,10 +6,12 @@ function Stat({
   label,
   value,
   tone,
+  modeled,
 }: {
   label: string;
   value: string;
   tone?: "pass" | "warn" | "critical" | "default";
+  modeled?: boolean;
 }) {
   const toneClass =
     tone === "pass"
@@ -21,8 +23,13 @@ function Stat({
           : "text-foreground";
   return (
     <div className="min-w-0">
-      <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">
-        {label}
+      <p className="flex flex-wrap items-center gap-1.5 text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">
+        <span>{label}</span>
+        {modeled ? (
+          <span className="rounded bg-warn-soft px-1 py-0.5 text-[9px] font-semibold tracking-wide text-warn-foreground normal-case">
+            Modeled
+          </span>
+        ) : null}
       </p>
       <p className={`num mt-1 truncate text-lg font-semibold tracking-tight ${toneClass}`}>
         {value}
@@ -95,12 +102,19 @@ export function DealBrief({ deal }: { deal: Deal }) {
           label="Max supportable"
           value={fmtMoney(deal.max_supportable_price)}
           tone="pass"
+          modeled
         />
         <Stat
           label="Extraction confidence"
           value={`${confidence}% · ${deal.extraction_meta.source_pages} pp`}
         />
       </div>
+      <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground">
+        <span className="font-semibold text-warn-foreground">Modeled</span> figures
+        (max supportable, and yields like cap / DSCR / IRR when the OM is unpriced)
+        use assumed bid, leverage, and hold — they are not asking prices or returns
+        stated in the offering memorandum.
+      </p>
     </section>
   );
 }
