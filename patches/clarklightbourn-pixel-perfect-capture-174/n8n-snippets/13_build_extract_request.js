@@ -1,11 +1,11 @@
-// Add as NEW Code node: "Build Extract Request"
-// Wire: Trim For Context Window → Build Extract Request → LLM - Extract OM
+// Build Extract Request — wire: Trim → this → LLM - Extract OM
 //
-// Then open LLM - Extract OM and change JSON body to EXACTLY:
-//   ={{ $json.openrouter_body }}
-// (delete the giant old expression)
-//
-// Improved schema: address/city/state/zip + rent_comps + supply pipeline fields.
+// LLM node (simple):
+//   Authentication: Header Auth (your CBRE / OpenRouter credential)
+//   Body Content Type: Raw
+//   Content Type: application/json
+//   Body:  ={{ $json.openrouter_body_json }}
+//   Do NOT add a manual Authorization header if credential is set.
 
 const cfg = $("⚙️ SETTINGS").first().json;
 const text = String($input.first().json.text || "");
