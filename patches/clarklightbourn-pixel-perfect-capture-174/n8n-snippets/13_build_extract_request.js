@@ -105,6 +105,8 @@ return [
       text,
       model,
       openrouter_body,
+      // Pre-stringified for LLM Raw body (avoids n8n JSON Body / [object Object] bugs)
+      openrouter_body_json: JSON.stringify(openrouter_body),
     },
   },
 ];
