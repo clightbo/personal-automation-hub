@@ -7,19 +7,20 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-03 14:23 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-03 22:16 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-04 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.42M, prev 7.59M |
-| 2026-08-05 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 71K, prev 98K |
+| 2026-08-04 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.44M, prev 7.59M |
+| 2026-08-04 20:15 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
+| 2026-08-05 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 68K, prev 98K |
 | 2026-08-05 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.5, prev 54.0 |
 | 2026-08-05 16:05 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
 | 2026-08-05 20:35 ET | Low | Fed | **FOMC Member Daly Speaks** — Low impact |
-| 2026-08-06 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 197K |
+| 2026-08-06 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 203K, prev 197K |
 | 2026-08-06 17:30 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
 | 2026-08-07 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.3% |
-| 2026-08-07 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 88K, prev 57K |
+| 2026-08-07 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 85K, prev 57K |
 | 2026-08-07 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.2%, prev 4.2% |
 | 2026-08-07 10:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-08 12:45 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
@@ -48,6 +49,7 @@ _Updated 2026-08-03 14:23 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
+- **2026-08-04 20:15** — FOMC Member Schmid Speaks
 - **2026-08-05 16:05** — FOMC Member Cook Speaks
 - **2026-08-05 20:35** — FOMC Member Daly Speaks
 - **2026-08-06 17:30** — FOMC Member Musalem Speaks
