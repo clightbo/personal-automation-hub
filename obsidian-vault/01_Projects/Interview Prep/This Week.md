@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-02 22:08 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-03 14:23 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-CREDIT CAUTION (tighten HY exposure): Late-cycle: tight spreads don't compensate for recession risk if unemployment ticks up. Thesis: favor IG over HY, or put spreads on HYG. Catalyst: weak jobs/claims, rising defaults. Risk: soft landing + hunt for yield keeps spreads compressed.
+LONG NVDA (AI infrastructure): Hyperscalers are still in a capex arms race; NVDA's data-center GPUs have pricing power and a wide CUDA moat. Catalyst: next earnings guide + Blackwell shipment ramp. Risk: export controls, customer concentration (MSFT/GOOG/META), multiple compression if growth slows.
 
 ## Rehearsal checklist
 
