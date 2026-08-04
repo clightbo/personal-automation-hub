@@ -7,15 +7,15 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-04 13:53 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-04 22:21 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-04 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.44M, prev 7.59M |
 | 2026-08-04 20:15 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-08-05 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 68K, prev 98K |
 | 2026-08-05 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.5, prev 54.0 |
 | 2026-08-05 16:05 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
+| 2026-08-05 16:30 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-08-05 20:35 ET | Low | Fed | **FOMC Member Daly Speaks** — Low impact |
 | 2026-08-06 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 203K, prev 197K |
 | 2026-08-06 17:30 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
@@ -69,9 +69,9 @@ _Updated 2026-08-04 13:53 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-08-04 10:00** — JOLTS Job Openings
 - **2026-08-05 08:15** — ADP Non-Farm Employment Change
 - **2026-08-05 10:00** — ISM Services PMI
+- **2026-08-05 16:30** — President Trump Speaks
 - **2026-08-06 08:30** — Unemployment Claims
 - **2026-08-07 08:30** — Average Hourly Earnings m/m
 - **2026-08-07 08:30** — Non-Farm Employment Change
