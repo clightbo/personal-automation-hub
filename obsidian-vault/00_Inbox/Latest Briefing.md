@@ -1,63 +1,61 @@
 ---
-tags: [daily, markets, inbox]
+tags:
+  - daily
+  - markets
+  - inbox
 ---
 
 # Latest Market Briefing
 
-_Last synced: 2026-08-03 07:12 CDT._
+_Last synced: 2026-08-04 07:30 ET._
 
-## 1 · Market Snapshot
+## Market Snapshot
 
-| Instrument | Level | Move |
+| Asset | Level | Move |
 |---|---|---|
-| S&P 500 | 7,489.72 | +0.7% |
-| Nasdaq Composite | 25,373.85 | +1.0% |
-| Dow Jones | 52,485.03 | +0.53% |
-| 10Y Treasury | ~4.74% | YTD high |
-| WTI Crude | $84.67 | +1.3% |
-| Gold | ~$4,100 | slipped below 4,100 |
-| Bitcoin | ~$63,000 | soft overnight |
+| S&P 500 | 7,600.50 | +1.48% (record) |
+| Nasdaq Comp | 25,913.9 | +2.10% (record) |
+| Dow | 53,178.41 | +1.32% / +693 (record) |
+| 10Y Treasury | ~4.68% | near high since Jan '25 |
+| WTI Crude | ~$86 | down from >$100 |
+| Gold | $4,119 | +0.70% |
+| Bitcoin | ~$63,900 | +2.2% |
+| Nikkei (o/n) | 63,200 | −0.87% |
 
-- **Overnight:** Nikkei +4.0% (64,362) led by semis on US Big-Tech beats; Shanghai +0.7%, Hang Seng flat. Europe mixed — FTSE −0.3%, DAX +0.1%, CAC +0.3%.
-- US closed a volatile July on a rally; Dow booked a 4th straight winning month.
+Big Tech powered all three US indexes to record closes; oil round-tripped from above $100 on renewed Trump–Iran peace talks, while the 10Y sits near its highest since early 2025 as Fed hike odds climb.
 
-## 2 · Your Watchlist
+## Your Watchlist
 
-- **SPY** ~$749 · +0.7% — tracked the broad rally into month-end; index at/near records.
-- **QQQ** +~1% — tech-led tape; Big-Tech earnings drove Nasdaq outperformance.
-- **DIA** +~0.5% — Dow's 4th consecutive monthly gain despite the yield drag.
-- **AAPL** −~4% Fri (~−8% post-print) — weak fiscal-Q4 guidance, soft services & Greater China revenue.
-- **NVDA** ~flat — hasn't reported; last Mag-7 name, due late August. Peers' AI-capex commentary is the read-through.
-- **MSFT** +~8% Fri — revenue $90.01B vs $87.62B est; Azure/AI strength rewarded.
+- **SPY** — +1.5% to a record, tracking the S&P.
+- **QQQ** — ~+2% with the Nasdaq-100; Big Tech led.
+- **DIA** — +1.3%, Dow record close.
+- **AAPL** — $303.42 (−1.8%); down >10% in 4 sessions on supply constraints & softer revenue guidance.
+- **NVDA** — $206.64 (+2.9%); Flash Memory Summit + new High-Bandwidth Flash spec (SK hynix/SanDisk) keep AI-memory demand in focus.
+- **MSFT** — $487.65 (+4.9%); blowout Q4, Azure +43%, $678B backlog.
 
-_ETF levels are index-derived approximations; single-stock moves are reported closes._
+## Top 3 Things That Matter Today
 
-## 3 · Top 3 Things That Matter Today
+1. **Fed hike odds ~81% for September.** Records plus a tightening Fed is a rare mix — a hike into all-time highs is the setup that compresses stretched multiples fastest.
+2. **Oil's round trip, >$100 → ~$86.** Energy drove the rising hike odds; if the Trump–Iran de-escalation holds, cooling oil eases the inflation case and could soften the Fed's hand.
+3. **Mega-cap earnings are splitting.** MSFT/AMZN AI capex is converting to revenue (Azure +43%) while AAPL sheds 10% in four days — leadership is narrowing to AI-cloud winners.
 
-1. **Yields at YTD highs (~4.74%).** The move is driven by *real* rates, not inflation breakevens — the purest valuation gravity on long-duration tech. A grind toward 5% compresses multiples regardless of earnings.
-2. **Mag-7 dispersion is widening.** MSFT & AMZN ripped, AAPL slid — the market now pays only for AI capex tied to monetization/FCF. The "own them all" trade is breaking.
-3. **Oil near $85 + energy geopolitics.** Energy is the swing input feeding the inflation/real-rate story and Fed-hike odds; oil spikes now transmit into rate fear more than growth optimism.
+## On the Calendar Today
 
-## 4 · On the Calendar Today
+- **8:30 ET** — Advance Goods Trade Balance (June)
+- **10:00 ET** — JOLTS Job Openings (June), consensus ~6.88M vs prior ~6.95M
+- **10:00 ET** — Factory Orders & Durable Goods (June, final)
+- **Earnings** — ~335 names; Spotify (SPOT) before open. No watchlist names today (MSFT & AAPL already reported). Jobs report Fri.
 
-- **ISM Manufacturing PMI** · 10:00 ET · consensus **~54.0** vs 53.3 prior. Watch **Prices Paid** for the inflation signal.
-- **Earnings this week:** Palantir (PLTR), AMD, SanDisk, SpaceX's first public report. *(No watchlist names report today.)*
-- **Marquee event:** July jobs report (NFP) **Friday, Aug 7** — the week's main rate-path catalyst.
+## One Thing To Sound Smart About
 
-## 5 · One Thing To Sound Smart About
+The **equity risk premium is near zero** — the S&P's forward earnings yield sits roughly level with the 10Y Treasury (ERP ~0.02% by one measure, among the lowest on record). At record highs, stocks pay almost nothing over risk-free bonds, precisely as the Fed is ~81% likely to *hike* in September. You're not being paid for the risk. _(Damodaran; SimpleVisor / RIA)_
 
-**The bond market is now more hawkish than the Fed.** Traders price ~47% odds of a *hike* in 2026 with cuts near zero, while the Fed's dot plot still shows one cut. The 10Y's climb is coming from **real rates and term premium, not breakevens** — the market wants to be paid for duration, not bracing for runaway inflation. Contrarian setup: a soft jobs print Friday could trigger a sharp **bull-steepening** rally lifting both Treasuries and beaten-down long-duration tech. _(Source: Bloomberg; CME FedWatch.)_
+## Learning Nugget
 
-## 6 · Learning Nugget
-
-**Real rates vs. nominal.** A nominal Treasury yield equals the real yield plus expected inflation (the "breakeven"). When yields rise on *real* rates rather than breakevens, it signals tighter-for-longer policy and resilient growth — which compresses equity valuations more than an equal inflation-driven move.
-
----
-
-### Quick links
-- [[03_Finance_Data/Markets/Calendar]]
-- [[03_Finance_Data/Markets/Watchlist]]
-- [[01_Projects/Interview Prep/This Week]]
+**Equity Risk Premium (ERP):** the extra return investors demand for holding stocks over risk-free Treasuries, proxied as (forward earnings yield − 10Y yield). When it compresses toward zero, you're paid almost nothing extra to bear equity risk — historically a marker of stretched valuations.
 
 ---
-_Sources: [TheStreet](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-31-2026), [TradingKey scorecard](https://www.tradingkey.com/analysis/stocks/us-stocks/262067315-big-tech-earnings-scorecard-microsoft-amazon-apple-july-31-2026-tradingkey), [Yahoo (gold)](https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-july-31-2026-gold-price-finally-breaks-above-4100-as-us-paused-airstrikes-overnight-123436216.html), [Bloomberg (yields)](https://www.bloomberg.com/news/articles/2026-07-23/us-treasury-yields-rise-to-2026-highs-as-oil-gains-spark-fed-bet), [TradingKey week-ahead](https://www.tradingkey.com/analysis/stocks/us-stocks/262067492-august-3-7-2026-preview-palantir-amd-sandisk-earnings-nfarm-payrolls-tradingkey), [Investing.com (ISM)](https://www.investing.com/news/stock-market-news/manufacturing-pmi-and-ism-manufacturing-pmi-due-monday-93CH-4829123)._
+
+**Quick links:** [[03_Finance_Data/Markets/Calendar]] · [[03_Finance_Data/Markets/Watchlist]] · [[01_Projects/Interview Prep/This Week]]
+
+_Sources: Yahoo Finance, CNBC, Forbes, Trading Economics, TradingKey, CME FedWatch, Investrade, MacroMicro, SimpleVisor._
