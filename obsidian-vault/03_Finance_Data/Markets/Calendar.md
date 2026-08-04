@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-03 22:16 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-04 13:53 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -26,9 +26,9 @@ _Updated 2026-08-03 22:16 UTC. Auto-generated from personal-automation-hub._
 | 2026-08-08 12:45 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.083 |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.70294 |
+| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71331 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98014 |
+| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.97643 |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-01-27 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-03-17 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
