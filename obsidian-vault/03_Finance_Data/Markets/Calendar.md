@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-06 13:48 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-07 01:02 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-06 17:30 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
 | 2026-08-07 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.3% |
 | 2026-08-07 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 85K, prev 57K |
 | 2026-08-07 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.2%, prev 4.2% |
@@ -42,7 +41,6 @@ _Updated 2026-08-06 13:48 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-08-06 17:30** — FOMC Member Musalem Speaks
 - **2026-08-07 10:00** — FOMC Member Barkin Speaks
 - **2026-08-08 12:45** — FOMC Member Bowman Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
