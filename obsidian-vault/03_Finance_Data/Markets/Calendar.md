@@ -7,13 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-07 01:02 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-07 12:45 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-07 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.3% |
-| 2026-08-07 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 85K, prev 57K |
-| 2026-08-07 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.2%, prev 4.2% |
 | 2026-08-07 10:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-08 12:45 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.083 |
@@ -54,10 +51,4 @@ _Updated 2026-08-07 01:02 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
-
-### Macro
-
-- **2026-08-07 08:30** — Average Hourly Earnings m/m
-- **2026-08-07 08:30** — Non-Farm Employment Change
-- **2026-08-07 08:30** — Unemployment Rate
 
