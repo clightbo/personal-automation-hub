@@ -1,126 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily Market Brief — Aug 7, 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark's Daily Market Brief — Aug 9, 2026</title>
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0b0f17;
-    color: #e6edf3;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    padding: 20px 16px 48px;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  header { border-bottom: 1px solid #1f2733; padding-bottom: 16px; margin-bottom: 22px; }
-  .kicker { color: #58a6ff; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
-  h1 { font-size: 26px; margin: 6px 0 4px; letter-spacing: -0.3px; }
-  .date { color: #8b98a5; font-size: 14px; }
-  .tldr {
-    background: linear-gradient(135deg,#111a2b,#0f1622);
-    border: 1px solid #22304a; border-left: 3px solid #58a6ff;
-    border-radius: 10px; padding: 14px 16px; margin: 18px 0 26px; font-size: 15px; color: #cdd9e5;
-  }
-  h2 {
-    font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: #7ee787;
-    margin: 30px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #1f2733;
-  }
-  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-  td { padding: 7px 4px; border-bottom: 1px solid #161c26; vertical-align: top; }
-  td.lab { color: #8b98a5; white-space: nowrap; width: 34%; }
-  td.val { font-variant-numeric: tabular-nums; font-weight: 600; }
-  .up { color: #3fb950; } .down { color: #f85149; } .flat { color: #d29922; }
-  ul { list-style: none; }
-  li { padding: 9px 0 9px 20px; position: relative; border-bottom: 1px solid #141a24; font-size: 15px; }
-  li:before { content: "▸"; position: absolute; left: 0; color: #58a6ff; }
-  li b { color: #fff; }
-  .why { color: #8b98a5; font-size: 13.5px; display: block; margin-top: 2px; }
-  .tag { display:inline-block; font-size:11px; background:#1f6feb33; color:#79c0ff; border:1px solid #1f6feb55; border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:middle;}
-  .smart, .nugget { background:#0f1622; border:1px solid #1f2733; border-radius:10px; padding:14px 16px; font-size:15px; color:#cdd9e5; }
-  .nugget { border-left:3px solid #d29922; }
-  .smart { border-left:3px solid #bc8cff; }
-  .wl td.val small { color:#8b98a5; font-weight:400; }
-  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid #1f2733; font-size: 12px; color: #6e7b8a; }
-  footer a { color: #58a6ff; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  .src { display:block; margin-top:4px; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-text-size-adjust:100%; }
+  body { background:#0b0e14; color:#e6e9ef; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.55; padding:20px 16px 48px; }
+  .wrap { max-width:720px; margin:0 auto; }
+  .kicker { color:#7d8799; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; }
+  h1 { font-size:26px; font-weight:700; margin:4px 0 2px; color:#fff; letter-spacing:-.01em; }
+  .sub { color:#8b94a7; font-size:14px; margin-bottom:6px; }
+  .tldr { background:#131824; border:1px solid #1f2637; border-left:3px solid #4c8bf5; border-radius:10px; padding:12px 14px; margin:16px 0 22px; font-size:14.5px; color:#c8cfdd; }
+  .tldr b { color:#eef1f6; }
+  h2 { font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#4c8bf5; margin:26px 0 12px; font-weight:700; border-bottom:1px solid #1c2334; padding-bottom:7px; }
+  table { width:100%; border-collapse:collapse; font-size:14.5px; }
+  td { padding:8px 6px; border-bottom:1px solid #171d2b; vertical-align:top; }
+  td.k { color:#9aa3b5; white-space:nowrap; padding-right:14px; }
+  td.v { color:#eef1f6; font-weight:600; text-align:right; white-space:nowrap; }
+  .up { color:#3fce89; } .down { color:#ff6b6b; } .flat { color:#c8cfdd; }
+  .row { padding:9px 0; border-bottom:1px solid #171d2b; font-size:14.5px; }
+  .row:last-child { border-bottom:none; }
+  .tkr { display:inline-block; min-width:52px; font-weight:700; color:#fff; }
+  .mv { font-weight:700; margin-left:2px; }
+  .note { color:#aab2c4; }
+  ol { margin:0; padding-left:0; list-style:none; counter-reset:t; }
+  ol li { counter-increment:t; position:relative; padding:10px 0 10px 34px; border-bottom:1px solid #171d2b; font-size:14.5px; }
+  ol li:last-child { border-bottom:none; }
+  ol li::before { content:counter(t); position:absolute; left:0; top:9px; width:22px; height:22px; background:#1c2740; color:#6ba4ff; border-radius:6px; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .why { color:#8b94a7; font-style:italic; }
+  .lead { color:#fff; font-weight:600; }
+  .edge { background:#141b12; border:1px solid #26331b; border-left:3px solid #7bd15b; border-radius:10px; padding:14px 16px; font-size:14.5px; color:#d6ddca; }
+  .nugget { background:#181322; border:1px solid #2a2138; border-left:3px solid #b07bf0; border-radius:10px; padding:14px 16px; font-size:14.5px; color:#dcd2ea; }
+  .cal b { color:#eef1f6; }
+  .src { margin-top:28px; padding-top:14px; border-top:1px solid #1c2334; font-size:12px; color:#6b7488; }
+  .src a { color:#5f89c9; text-decoration:none; word-break:break-all; }
+  .foot { margin-top:20px; color:#5a6376; font-size:11.5px; text-align:center; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="kicker">Pre-Market Brief</div>
-    <h1>Daily Market Brief</h1>
-    <div class="date">Friday, August 7, 2026 · before the open · jobs day</div>
-  </header>
+  <div class="kicker">Pre-Market Brief · Sunday Edition</div>
+  <h1>Clark's Daily Market Brief</h1>
+  <div class="sub">Sunday, August 9, 2026 — week-ahead read. Figures as of Friday, Aug 8 close.</div>
 
   <div class="tldr">
-    <b>TL;DR —</b> Dow printed a <b>record</b> (+0.5%) while the Nasdaq fell 0.8% for a second straight day of AI/semi selling; the tape is rotating, not de-risking. Oil is back as a headwind on renewed Hormuz threats (Brent ~$83), gold sits near a record ~$4,166, and the 10Y ticked up to ~4.73%. All eyes on <b>8:30am ET July payrolls</b> (consensus ~80k) after a soft ADP — a big miss reopens the rate-cut debate.
+    <b>The setup:</b> A shock July jobs report (payrolls <span class="down">−23k</span>, revisions <span class="down">−103k</span>) flipped the Fed narrative from "maybe hikes" to "cuts on the table," and stocks ripped to record highs — best week since April. All eyes now on <b>Wednesday's CPI</b>: with no FOMC until Sept 16, it's the only thing that can validate the newly dovish path.
   </div>
 
-  <h2>1 · Market Snapshot <span style="color:#6e7b8a;text-transform:none;letter-spacing:0">(Aug 6 close / overnight)</span></h2>
+  <h2>1 · Market Snapshot <span style="color:#5a6376;font-weight:500;text-transform:none;letter-spacing:0;">(Fri close)</span></h2>
   <table>
-    <tr><td class="lab">S&amp;P 500</td><td class="val">7,723.55 <span class="down">−0.2%</span></td></tr>
-    <tr><td class="lab">Nasdaq Composite</td><td class="val">26,363.44 <span class="down">−0.8%</span> <small style="color:#8b98a5">(AI/semis lead lower)</small></td></tr>
-    <tr><td class="lab">Dow Jones</td><td class="val">54,349.12 <span class="up">+0.5%</span> <small style="color:#8b98a5">record close</small></td></tr>
-    <tr><td class="lab">10Y Treasury</td><td class="val">~4.73% <span class="down">+7 bps</span></td></tr>
-    <tr><td class="lab">Oil (Brent)</td><td class="val">~$83.6 <span class="up">+1.4%</span> <small style="color:#8b98a5">Hormuz risk premium</small></td></tr>
-    <tr><td class="lab">Gold (spot)</td><td class="val">~$4,166 <small style="color:#8b98a5">near record</small></td></tr>
-    <tr><td class="lab">Bitcoin</td><td class="val">~$64,300 <span class="flat">flat</span> <small style="color:#8b98a5">pre-jobs</small></td></tr>
-    <tr><td class="lab">Asia / Europe</td><td class="val">Nikkei −0.1% <small style="color:#8b98a5">2nd day of tech selling; Japan spending −3.3%</small></td></tr>
+    <tr><td class="k">S&amp;P 500</td><td class="v">7,757.64 <span class="up">+0.62%</span> · record</td></tr>
+    <tr><td class="k">Nasdaq Composite</td><td class="v">26,690.62 <span class="up">+1.3%</span></td></tr>
+    <tr><td class="k">Dow Jones</td><td class="v">54,036.93 <span class="up">+0.28%</span></td></tr>
+    <tr><td class="k">10-Yr Treasury</td><td class="v">~4.65% <span class="down">▼</span> post-jobs</td></tr>
+    <tr><td class="k">WTI Crude</td><td class="v">~$78 / bbl</td></tr>
+    <tr><td class="k">Gold</td><td class="v">$4,347 <span class="up">+2.5%</span></td></tr>
+    <tr><td class="k">Bitcoin</td><td class="v">~$64,900</td></tr>
+    <tr><td class="k">Asia / Europe</td><td class="v flat">Weekend — no session; futures reopen Sun PM ET</td></tr>
   </table>
 
   <h2>2 · Your Watchlist</h2>
-  <table class="wl">
-    <tr><td class="lab">SPY</td><td class="val"><span class="down">≈ −0.2%</span> <small>tracks S&amp;P; quiet, jobs on deck</small></td></tr>
-    <tr><td class="lab">QQQ</td><td class="val"><span class="down">≈ −0.8%</span> <small>dragged by megacap AI/semis</small></td></tr>
-    <tr><td class="lab">DIA</td><td class="val"><span class="up">≈ +0.5%</span> <small>rode the Dow to a record</small></td></tr>
-    <tr><td class="lab">AAPL</td><td class="val">$312.41 <small>downgraded to Hold (PT $280 — stock already above it); $0.27 div, ex-date Aug 10</small></td></tr>
-    <tr><td class="lab">NVDA</td><td class="val">$218.99 <span class="flat">−0.1%</span> <small>announced $80B buyback + dividend hike; China DC revenue a drag</small></td></tr>
-    <tr><td class="lab">MSFT</td><td class="val">$499.86 <small>knocking on the $4T door; holding up better than the Nasdaq</small></td></tr>
-  </table>
+  <div class="row"><span class="tkr">SPY</span> <span class="mv up">+0.6%</span> — tracks S&amp;P, sitting at a record close.</div>
+  <div class="row"><span class="tkr">QQQ</span> <span class="mv up">+1.3%</span> — Nasdaq-100 proxy; tech led Friday's melt-up.</div>
+  <div class="row"><span class="tkr">DIA</span> <span class="mv up">+0.3%</span> — Dow proxy; lagged the growth names.</div>
+  <div class="row"><span class="tkr">AAPL</span> <span class="mv flat">~flat</span> — <span class="note">No fresh catalyst; quiet into the fall iPhone cycle.</span></div>
+  <div class="row"><span class="tkr">NVDA</span> <span class="mv up">+2.3%</span> — <span class="note">~+11% on the week. Committing up to $3B to Blackstone-backed power developer Lancium (AI-datacenter power). Earnings Aug 26.</span></div>
+  <div class="row"><span class="tkr">MSFT</span> <span class="mv flat">—</span> <span class="note">Declared $0.91 dividend, ex-date Aug 20; balancing AI capex against tech-sector layoffs.</span></div>
 
-  <h2>3 · Top 3 Things That Matter Today</h2>
-  <ul>
-    <li><b>July jobs report, 8:30am ET.</b> Consensus ~80–83k with unemployment 4.2%, but forecasts run a huge 18k–83k after ADP printed just 44k.
-      <span class="why">Why it matters: it's the swing factor for September Fed-cut odds — a soft number reopens the cut trade; an in-line print keeps the "higher-for-longer + oil inflation" tension alive.</span></li>
-    <li><b>Oil &amp; the Strait of Hormuz.</b> Brent back to ~$83–84 on renewed Iranian threats to restrict US/Israeli shipping; gold at a record confirms the hedging bid.
-      <span class="why">Why it matters: a fresh supply-shock inflation impulse is the one thing that could take rate cuts off the table exactly when the labor market is softening.</span></li>
-    <li><b>The AI trade is wobbling.</b> Nasdaq −0.8% for a second day, semis leading lower globally (Nikkei tech down two sessions), NVDA flat despite an $80B buyback.
-      <span class="why">Why it matters: leadership is narrow, so if the AI complex rolls, the cap-weighted index has little to catch it — the Dow record is masking the crack.</span></li>
-  </ul>
+  <h2>3 · Top 3 Things That Matter</h2>
+  <ol>
+    <li><span class="lead">July jobs contraction rewrote the Fed script.</span> −23k payrolls vs +83k expected, −103k in prior-month revisions, wage growth to 3.2% (lowest since 2021). <span class="why">Why it matters: the rate path is the market's oxygen right now — Friday's rally is a bet the Fed pivots to easing.</span></li>
+    <li><span class="lead">An inflation-heavy week is the gut-check.</span> CPI Wed, PPI Thu, Retail Sales Fri. <span class="why">Why it matters: with no FOMC until Sept 16, CPI is the only data that can confirm — or blow up — the dovish repricing.</span></li>
+    <li><span class="lead">Records on improving-but-fragile breadth.</span> Equal-weight has been outrunning cap-weight, yet the top 10 names are still ~39% of the index. <span class="why">Why it matters: broadening leadership is healthy, but that concentration leaves the tape one credit hiccup away from a fast reversal.</span></li>
+  </ol>
 
-  <h2>4 · On the Calendar Today</h2>
-  <ul>
-    <li><b>8:30am ET — July Nonfarm Payrolls.</b> Consensus ~80–83k · Unemployment 4.2% · Avg hourly earnings +0.3% m/m. <span class="tag">market-mover</span></li>
-    <li><b>Earnings:</b> light for large caps; <b>no watchlist names report today</b> (AAPL, MSFT, NVDA already out). Second-tier movers this week: Paycom, Unity, Hertz.</li>
-  </ul>
+  <h2>4 · On the Calendar</h2>
+  <div class="cal">
+    <div class="row"><b>Today (Sun Aug 9):</b> No US data or earnings — weekend.</div>
+    <div class="row"><b>Wed Aug 12:</b> July CPI, 8:30am ET — cons. <b>+0.2%</b> headline / <b>+0.3%</b> core. Cisco earnings.</div>
+    <div class="row"><b>Thu Aug 13:</b> July PPI + jobless claims, 8:30am ET. Applied Materials earnings.</div>
+    <div class="row"><b>Fri Aug 14:</b> July Retail Sales, 8:30am ET.</div>
+    <div class="row"><span class="note">No watchlist names report this week — NVDA is Aug 26.</span></div>
+  </div>
 
-  <h2>5 · One Thing To Sound Smart About</h2>
-  <div class="smart">
-    Everyone's calling 2026 a "narrow AI melt-up," but the tell is the opposite: a <b>Dow record on a day the Nasdaq falls 0.8%</b> is rotation, not distribution. Equal-weight S&amp;P, small caps and cyclicals have been quietly gaining, with the <i>median</i> stock's Q2 earnings tracking ~25% YoY. Watch the <b>equal-weight vs cap-weight S&amp;P ratio</b> — if it keeps rising, breadth is broadening and the "just seven stocks" bears are fighting last year's war.
+  <h2>5 · One Thing to Sound Smart About</h2>
+  <div class="edge">
+    "Bad news is good news" is back — but on a jobs report that was weak for the <i>wrong</i> reasons. Unemployment fell to 4.1% not from hiring but because the labor force <i>shrank</i>; payrolls actually contracted and two months were revised down 103k. A shrinking workforce plus softening demand is the recipe for an H2 earnings-estimate problem, not a clean soft landing. The real tell isn't CPI — it's <b>credit spreads</b>: equal-weight and small-cap leadership has historically unwound the moment spreads widen. That's where the first crack shows.
   </div>
 
   <h2>6 · Learning Nugget</h2>
   <div class="nugget">
-    <b>Term premium.</b> It's the extra yield investors demand to hold a long bond instead of rolling short-term bills — when the 10Y rises on term premium rather than rate-hike expectations, it's signaling fiscal/supply-of-bonds worry, not a stronger economy. That distinction matters today: a yield backup driven by oil-inflation and issuance fears is more bearish for stocks than one driven by growth.
+    <b>Watch the revisions, not just the headline.</b> BLS restates prior months as more employer surveys arrive, so a benign top-line number can hide a deteriorating trend — this month's −103k two-month revision effectively erased jobs the market had already counted. That's why economists track the 3-month average payroll trend rather than any single print.
   </div>
 
-  <footer>
-    Sources:
-    <a class="src" href="https://www.cnbc.com/2026/08/05/stock-market-today-live-updates.html">CNBC — market close Aug 5–6</a>
-    <a class="src" href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-august-6-dow-sp-nasdaq-091620000.html">Yahoo Finance — Aug 6 indices</a>
-    <a class="src" href="https://www.coindesk.com/markets/2026/08/07/live-updates-bitcoin-flat-at-usd64-300-before-us-jobs-report-with-oil-back-as-a-headwind">CoinDesk — BTC, oil, 10Y (Aug 7)</a>
-    <a class="src" href="https://www.cnbc.com/2026/08/06/the-july-jobs-numbers-are-due-out-friday-heres-what-to-expect.html">CNBC — July jobs preview</a>
-    <a class="src" href="https://www.morningstar.com/economy/july-jobs-report-show-moderate-hiring-bounce">Morningstar — payrolls consensus</a>
-    <a class="src" href="https://www.forbes.com/advisor/investing/gold-price/">Forbes — gold price</a>
-    <a class="src" href="https://www.aol.com/articles/equal-weight-p-500-quietly-133117698.html">AOL/Motley Fool — equal-weight S&amp;P breadth</a>
-    <div style="margin-top:10px;color:#4d5866">Generated automatically · read time &lt; 3 min · not investment advice.</div>
-  </footer>
+  <div class="src">
+    Sources ·
+    <a href="https://www.cnbc.com/2026/08/06/stock-market-today-live-updates.html">CNBC — S&P record close</a> ·
+    <a href="https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html">CNBC — July jobs report</a> ·
+    <a href="https://capitalstreetfx.com/market-analysis/week-ahead-1014-august-2026-july/">Capital Street FX — Week ahead</a> ·
+    <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262090642-weekly-preview-us-cpi-ppi-data-market-focus-crwv-amat-earnings-reports-tradingkey">TradingKey — CPI/PPI preview</a> ·
+    <a href="https://www.fool.com/investing/2026/08/06/history-says-this-is-what-will-happen-to-nvidia-st/">Motley Fool — NVDA</a> ·
+    <a href="https://www.indexologyblog.com/2026/01/29/big-tech-breadth-and-balance/">S&P DJI — breadth</a>
+  </div>
+  <div class="foot">Generated automatically · Not investment advice · Verify prices before acting.</div>
 </div>
 </body>
 </html>
