@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-09 21:46 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-10 12:53 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-LONG NVDA (AI infrastructure): Hyperscalers are still in a capex arms race; NVDA's data-center GPUs have pricing power and a wide CUDA moat. Catalyst: next earnings guide + Blackwell shipment ramp. Risk: export controls, customer concentration (MSFT/GOOG/META), multiple compression if growth slows.
+LONG MSFT (quality + AI monetization): Enterprise stickiness + Copilot upsell turns Office/Azure into an AI tax on business software. Catalyst: Azure growth re-acceleration, Copilot seat attach. Risk: slow enterprise adoption, antitrust, capex weighing on FCF near term.
 
 ## Rehearsal checklist
 
