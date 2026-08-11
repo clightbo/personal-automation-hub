@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-11 12:48 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-11 22:02 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -18,7 +18,7 @@ _Updated 2026-08-11 12:48 UTC. Auto-generated from personal-automation-hub._
 | 2026-08-13 08:15 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-08-13 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
 | 2026-08-13 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.2%, prev -0.3% |
-| 2026-08-13 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 203K, prev 199K |
+| 2026-08-13 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 202K, prev 199K |
 | 2026-08-13 08:40 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-14 08:30 ET | Medium | Macro | **Core Retail Sales m/m** — Medium impact; forecast 0.2%, prev -0.2% |
 | 2026-08-14 08:30 ET | Medium | Macro | **Retail Sales m/m** — Medium impact; forecast 0.1%, prev 0.2% |
@@ -28,7 +28,7 @@ _Updated 2026-08-11 12:48 UTC. Auto-generated from personal-automation-hub._
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71331 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.97643 |
+| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98013 |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-01-27 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-03-17 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
