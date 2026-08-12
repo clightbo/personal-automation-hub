@@ -7,14 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-11 22:02 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-12 12:53 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-12 08:30 ET | High | Macro | **Core CPI m/m** — High impact; forecast 0.2%, prev 0.0% |
-| 2026-08-12 08:30 ET | High | Macro | **Core CPI y/y** — High impact; forecast 2.5%, prev 2.6% |
-| 2026-08-12 08:30 ET | High | Macro | **CPI m/m** — High impact; forecast 0.1%, prev -0.4% |
-| 2026-08-12 08:30 ET | High | Macro | **CPI y/y** — High impact; forecast 3.4%, prev 3.5% |
 | 2026-08-13 08:15 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-08-13 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
 | 2026-08-13 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.2%, prev -0.3% |
@@ -65,10 +61,6 @@ _Updated 2026-08-11 22:02 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-08-12 08:30** — Core CPI m/m
-- **2026-08-12 08:30** — Core CPI y/y
-- **2026-08-12 08:30** — CPI m/m
-- **2026-08-12 08:30** — CPI y/y
 - **2026-08-13 08:30** — Core PPI m/m
 - **2026-08-13 08:30** — PPI m/m
 - **2026-08-13 08:30** — Unemployment Claims
