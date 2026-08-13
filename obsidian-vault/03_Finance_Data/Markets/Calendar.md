@@ -7,15 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-12 22:00 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-13 12:54 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-13 08:15 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
-| 2026-08-13 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
-| 2026-08-13 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.2%, prev -0.3% |
-| 2026-08-13 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 202K, prev 199K |
-| 2026-08-13 08:40 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-14 08:30 ET | Medium | Macro | **Core Retail Sales m/m** — Medium impact; forecast 0.2%, prev -0.2% |
 | 2026-08-14 08:30 ET | Medium | Macro | **Retail Sales m/m** — Medium impact; forecast 0.1%, prev 0.2% |
 | 2026-08-14 10:00 ET | Medium | Macro | **Prelim UoM Consumer Sentiment** — Medium impact; forecast 54.7, prev 54.4 |
@@ -45,8 +40,6 @@ _Updated 2026-08-12 22:00 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-08-13 08:15** — FOMC Member Hammack Speaks
-- **2026-08-13 08:40** — FOMC Member Barkin Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
@@ -61,9 +54,6 @@ _Updated 2026-08-12 22:00 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-08-13 08:30** — Core PPI m/m
-- **2026-08-13 08:30** — PPI m/m
-- **2026-08-13 08:30** — Unemployment Claims
 - **2026-08-14 08:30** — Core Retail Sales m/m
 - **2026-08-14 08:30** — Retail Sales m/m
 - **2026-08-14 10:00** — Prelim UoM Consumer Sentiment
