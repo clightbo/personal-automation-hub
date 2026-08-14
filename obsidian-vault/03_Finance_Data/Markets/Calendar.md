@@ -7,13 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-14 12:49 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-14 21:38 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-14 10:00 ET | Medium | Macro | **Prelim UoM Consumer Sentiment** — Medium impact; forecast 54.7, prev 54.4 |
-| 2026-08-14 10:00 ET | Medium | Macro | **Prelim UoM Inflation Expectations** — Medium impact |
-| 2026-08-14 15:00 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.083 |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71331 |
@@ -50,10 +47,4 @@ _Updated 2026-08-14 12:49 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
-
-### Macro
-
-- **2026-08-14 10:00** — Prelim UoM Consumer Sentiment
-- **2026-08-14 10:00** — Prelim UoM Inflation Expectations
-- **2026-08-14 15:00** — President Trump Speaks
 
