@@ -1,153 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clark's Market Brief — Aug 14, 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark's Market Brief — Aug 15, 2026</title>
 <style>
-  :root{ color-scheme: dark; }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{
-    background:#0b0f1a;
-    color:#e7ecf5;
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0b0e14; color:#e6e9ef;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    padding:18px;
+    line-height:1.5; padding:20px; -webkit-font-smoothing:antialiased;
   }
-  .wrap{ max-width:760px; margin:0 auto; }
-  header{
-    border-bottom:1px solid #1e2942;
-    padding-bottom:14px; margin-bottom:20px;
-  }
-  .kicker{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#6f7ea3; font-weight:600; }
-  h1{ font-size:26px; font-weight:800; margin:4px 0 6px; color:#fff; letter-spacing:-.01em; }
-  .synced{ font-size:12.5px; color:#7d8aad; }
-  .tape{
-    display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 4px;
-  }
-  .chip{
-    background:#111a2e; border:1px solid #1e2942; border-radius:9px;
-    padding:8px 11px; font-size:13px; min-width:104px;
-  }
-  .chip b{ display:block; font-size:11px; color:#8090b3; font-weight:600; letter-spacing:.03em; text-transform:uppercase; margin-bottom:2px;}
-  .chip span{ font-size:15px; font-weight:700; color:#fff; }
-  .up{ color:#3ddc84 !important; } .down{ color:#ff6b6b !important; }
-  section{ margin:26px 0; }
-  h2{
-    font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#8ea2d6;
-    border-left:3px solid #3d6bff; padding-left:9px; margin-bottom:12px; font-weight:700;
-  }
-  table{ width:100%; border-collapse:collapse; font-size:14px; }
-  th,td{ text-align:left; padding:8px 6px; border-bottom:1px solid #17223a; vertical-align:top; }
-  th{ color:#7d8aad; font-size:11px; text-transform:uppercase; letter-spacing:.05em; }
-  td.tkr{ font-weight:800; color:#fff; white-space:nowrap; }
-  td.mv{ font-weight:700; white-space:nowrap; }
-  .row{ margin:11px 0; }
-  .row h3{ font-size:15px; color:#fff; margin-bottom:2px; font-weight:700; }
-  .row p{ font-size:14px; color:#c4cde3; }
-  .why{ color:#8ea2d6; font-style:italic; }
-  .num{ display:inline-block; width:22px; height:22px; border-radius:50%; background:#3d6bff; color:#fff;
-        font-size:12px; font-weight:800; text-align:center; line-height:22px; margin-right:8px; }
-  .edge{ background:#111a2e; border:1px solid #24345c; border-radius:11px; padding:16px; }
-  .edge p{ font-size:14.5px; color:#dbe3f4; }
-  .nugget{ background:#0f1830; border:1px dashed #2a3a63; border-radius:11px; padding:15px; }
-  .nugget p{ font-size:14px; color:#cdd6ec; }
-  ul{ margin:6px 0 0 2px; list-style:none; }
-  li{ font-size:14px; color:#c4cde3; padding:5px 0 5px 16px; position:relative; }
-  li:before{ content:"▸"; color:#3d6bff; position:absolute; left:0; }
-  .cal-time{ color:#9fb0dc; font-weight:700; font-variant-numeric:tabular-nums; }
-  footer{ margin-top:28px; padding-top:14px; border-top:1px solid #1e2942; font-size:12px; color:#6f7ea3; }
-  footer a{ color:#7f97d8; text-decoration:none; }
-  .flag{ background:#3d6bff22; border:1px solid #3d6bff55; color:#9fb4ff; font-size:11px; padding:1px 6px; border-radius:5px; margin-left:6px; }
-  @media(max-width:480px){ h1{font-size:22px;} .chip{min-width:calc(50% - 4px);} body{padding:14px;} }
+  .wrap { max-width:760px; margin:0 auto; }
+  header { border-bottom:1px solid #232a38; padding-bottom:16px; margin-bottom:8px; }
+  h1 { font-size:26px; font-weight:700; letter-spacing:-0.02em; color:#fff; }
+  .sub { color:#8a93a6; font-size:14px; margin-top:4px; }
+  .sms { background:#131826; border:1px solid #232a38; border-radius:10px; padding:12px 14px;
+    font-size:14px; color:#b9c2d6; margin:16px 0; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  section { margin-top:26px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:#5aa9ff;
+    font-weight:700; margin-bottom:12px; }
+  table { width:100%; border-collapse:collapse; font-size:15px; }
+  td { padding:8px 6px; border-bottom:1px solid #1b2130; vertical-align:top; }
+  td.k { color:#c7cee0; font-weight:600; white-space:nowrap; }
+  td.v { color:#e6e9ef; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  td.n { color:#8a93a6; font-size:13px; }
+  .up { color:#3ddc84; }
+  .down { color:#ff6b6b; }
+  .flat { color:#c7cee0; }
+  ul { list-style:none; }
+  li { padding:10px 0; border-bottom:1px solid #1b2130; font-size:15px; }
+  li:last-child { border-bottom:none; }
+  li .lead { color:#fff; font-weight:600; }
+  li .why { color:#8a93a6; font-size:14px; display:block; margin-top:3px; }
+  .edge { background:#131826; border-left:3px solid #5aa9ff; border-radius:6px; padding:14px 16px; font-size:15px; }
+  .nugget { background:#101520; border-radius:8px; padding:14px 16px; font-size:15px; color:#c7cee0; }
+  .nugget b { color:#fff; }
+  footer { margin-top:30px; padding-top:16px; border-top:1px solid #232a38; }
+  footer, .src { color:#6b7488; font-size:12px; }
+  .src a { color:#5aa9ff; text-decoration:none; }
+  .tag { display:inline-block; background:#1a2540; color:#5aa9ff; font-size:11px; font-weight:700;
+    padding:2px 7px; border-radius:5px; margin-left:6px; vertical-align:middle; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Clark's Pre-Market Brief</div>
-    <h1>Friday, August 14, 2026</h1>
-    <div class="synced">Last synced: 2026-08-14 11:25 PM EDT · Watchlist: SPY · QQQ · DIA · AAPL · NVDA · MSFT</div>
+    <h1>Pre-Market Brief</h1>
+    <div class="sub">Saturday, August 15, 2026 · weekend edition · reflects Fri Aug 14 close</div>
   </header>
 
-  <div class="tape">
-    <div class="chip"><b>S&amp;P 500</b><span class="up">7,799 &#9650;0.65%</span></div>
-    <div class="chip"><b>Nasdaq</b><span class="up">26,803 &#9650;0.81%</span></div>
-    <div class="chip"><b>Dow</b><span class="up">53,840 &#9650;0.13%</span></div>
-    <div class="chip"><b>10Y UST</b><span class="down">4.70%</span></div>
-    <div class="chip"><b>WTI Crude</b><span class="up">$82.40 &#9650;1.4%</span></div>
-    <div class="chip"><b>Gold</b><span class="down">$4,373</span></div>
-    <div class="chip"><b>Bitcoin</b><span class="down">$62.9k &#9660;0.9%</span></div>
-  </div>
+  <div class="sms">📱 SPY -0.2% Nasdaq -0.3% Dow -0.2%, 10Y 4.68%, NVDA 225 AAPL 304 MSFT 495. Retail -0.6%. Jackson Hole wk. Edge- HY OAS 271bps priced for perfection</div>
 
   <section>
     <h2>1 · Market Snapshot</h2>
-    <ul>
-      <li><b>US:</b> S&amp;P 500 closed a fresh record 7,799 (+0.65%), clearing 7,800 intraday for the first time; Nasdaq +0.81% to 26,803; Dow +0.13% to 53,840 — all lifted by a cooler July CPI and softer oil.</li>
-      <li><b>Rates:</b> 10Y Treasury swung up toward 4.70%, hovering just under the ~4.75% 19-month high hit earlier in the week — bonds are NOT confirming the equity melt-up.</li>
-      <li><b>Commodities:</b> WTI ~$82.40 (+1.4%), Brent ~$87; gold eased to ~$4,373/oz but still +10% on the month.</li>
-      <li><b>Crypto:</b> Bitcoin ~$62,940 (−0.9%), soft as yields press higher.</li>
-      <li><b>Asia:</b> Nikkei +0.6% (68,714), Kospi +2.4% (6,978, 5th straight gain) on AI/chip strength — but Hang Seng −1% and Shanghai −0.5% diverged.</li>
-      <li><b>Europe (Thu close):</b> Mostly lower — FTSE −0.56%, DAX −0.12%, CAC −0.28%, STOXX 600 −0.04%.</li>
-    </ul>
+    <table>
+      <tr><td class="k">S&amp;P 500</td><td class="v down">7,786 · -0.17%</td><td class="n">3rd straight weekly gain despite Fri dip</td></tr>
+      <tr><td class="k">Nasdaq Comp</td><td class="v down">26,729 · -0.28%</td><td class="n">Mega-cap tech eased off record</td></tr>
+      <tr><td class="k">Dow</td><td class="v down">53,732 · -0.20%</td><td class="n">Broad but shallow pullback</td></tr>
+      <tr><td class="k">10Y Treasury</td><td class="v flat">~4.68%</td><td class="n">Firm; soft data caps upside</td></tr>
+      <tr><td class="k">WTI Crude</td><td class="v flat">~$82</td><td class="n">Held near weekly highs</td></tr>
+      <tr><td class="k">Gold (spot)</td><td class="v down">~$4,365 · -0.6%</td><td class="n">Profit-taking off inflation-fueled rally</td></tr>
+      <tr><td class="k">Bitcoin</td><td class="v flat">~$62,800</td><td class="n">~50% below Oct-25 ATH of $126k</td></tr>
+    </table>
+    <p class="n" style="margin-top:12px;">Overnight: Asia/Europe were steady-to-firm on cooling US inflation earlier in the week; Friday's soft US data was the swing factor into the weekend.</p>
   </section>
 
   <section>
     <h2>2 · Your Watchlist</h2>
     <table>
-      <thead><tr><th>Ticker</th><th>Last</th><th>Move</th><th>Note</th></tr></thead>
-      <tbody>
-        <tr><td class="tkr">SPY</td><td>~$779</td><td class="mv up">+0.6%</td><td>Tracks S&amp;P to a new record; broad risk-on on the CPI relief.</td></tr>
-        <tr><td class="tkr">QQQ</td><td>$732.07</td><td class="mv up">+0.8%</td><td>Semis/AI leadership back in front; rode Nasdaq to record territory.</td></tr>
-        <tr><td class="tkr">DIA</td><td>~$538</td><td class="mv up">+0.1%</td><td>Dow lagged — cyclical/value names muted vs. tech.</td></tr>
-        <tr><td class="tkr">AAPL</td><td>~flat</td><td class="mv">≈0%</td><td>Rumored mid-cycle iPhone 17 price hike tied to the DRAM shortage; Jefferies cut to Sell (Aug 10); Wallet chief J. Bailey retiring.</td></tr>
-        <tr><td class="tkr">NVDA</td><td>—</td><td class="mv up">▲</td><td>EPS growth ~109%, P/E down to ~31.7x, new $80B buyback; earnings due late Aug — the market's next big test.</td></tr>
-        <tr><td class="tkr">MSFT</td><td>—</td><td class="mv">—</td><td>$0.91 dividend, ex-date Aug 20; Street watching OpenAI revenue concentration in its AI capex.</td></tr>
-      </tbody>
+      <tr><td class="k">SPY</td><td class="v down">-0.2%</td><td class="n">Tracks S&amp;P; index near record</td></tr>
+      <tr><td class="k">QQQ</td><td class="v down">-0.3%</td><td class="n">Tracks Nasdaq-100; tech breather</td></tr>
+      <tr><td class="k">DIA</td><td class="v down">-0.2%</td><td class="n">Tracks Dow</td></tr>
+      <tr><td class="k">AAPL</td><td class="v up">$303.65 · +0.46%</td><td class="n">Green in a red tape; steady</td></tr>
+      <tr><td class="k">NVDA</td><td class="v flat">$225.16</td><td class="n">Earnings the next big catalyst; DB lifted PT</td></tr>
+      <tr><td class="k">MSFT</td><td class="v up">$494.66 · +0.45%</td><td class="n">$0.91 div, ex-date Aug 20; AI-rev concentration chatter</td></tr>
     </table>
   </section>
 
   <section>
     <h2>3 · Top 3 Things That Matter Today</h2>
-    <div class="row"><h3><span class="num">1</span>Retail Sales (Jul) at 8:30am ET</h3><p>Consensus +0.3% headline / +0.2% core. <span class="why">Why it matters: the last major read on the consumer before the Fed's next move — a hot print hardens the "no cut, maybe hike" camp.</span></p></div>
-    <div class="row"><h3><span class="num">2</span>The Fed debate has flipped from CUT to HIKE</h3><p>July CPI held at 3.4% y/y (core +0.2%); CME FedWatch shows ~62% odds of a September hold but ~42% priced for a HIKE. <span class="why">Why it matters: stocks at all-time highs while the market prices rate-hike risk is a rare, complacent setup.</span></p></div>
-    <div class="row"><h3><span class="num">3</span>The memory-chip "hundred-year flood"</h3><p>A DRAM/NAND shortage is pushing Apple toward an unusual mid-cycle iPhone price hike and raising AI-hardware costs. <span class="why">Why it matters: input-cost inflation is quietly spreading through the hardware and AI supply chain — a margin story hiding under the CPI headline.</span></p></div>
-  </section>
-
-  <section>
-    <h2>4 · On The Calendar Today</h2>
     <ul>
-      <li><span class="cal-time">8:30am ET</span> — Retail Sales (Jul): est. <b>+0.3%</b> m/m; Core (ex-autos) est. <b>+0.2%</b> (prior −0.2%).</li>
-      <li><span class="cal-time">10:00am ET</span> — U. Michigan Consumer Sentiment (Aug prelim): est. <b>54.1</b> (prior 55.2); 1-yr inflation expectations <b>4.2%</b>.</li>
-      <li><span class="cal-time">Earnings</span> — ~102 companies report; <b>no watchlist names today</b> <span class="flag">NVDA reports late Aug</span>.</li>
+      <li><span class="lead">The US consumer just blinked.</span><span class="why">Why it matters: July retail sales -0.6% (vs +0.1% expected) and U-Mich sentiment 51 (vs 55) revive September rate-cut odds — but a weakening consumer is exactly what bulls can't have if it's demand, not just weather.</span></li>
+      <li><span class="lead">Jackson Hole is the week's whole ballgame.</span><span class="why">Why it matters: Powell speaks into the Aug 21–23 symposium with July FOMC minutes out Wednesday — the setup for whether a September cut is telegraphed or walked back.</span></li>
+      <li><span class="lead">The index is a handful of stocks.</span><span class="why">Why it matters: Top 10 names are now ~35% of the S&amp;P (vs 25% at the dot-com peak); narrow breadth means one AI wobble drags the whole tape.</span></li>
     </ul>
   </section>
 
   <section>
-    <h2>5 · One Thing To Sound Smart About</h2>
-    <div class="edge">
-      <p><b>Records + rising hike odds + real yields near cycle highs is a fragile cocktail.</b> Equities just printed all-time highs while fed funds futures price a ~42% chance of a September <i>hike</i> and the 10Y sits near a 19-month high. Tellingly, gold is up ~10% on the month <i>alongside</i> stocks — gold usually falls when real yields climb, so a simultaneous rally hints investors are buying tail-risk / policy-mistake hedges rather than pure risk-on. Watch the equity-vs-bond divergence: if the 10Y breaks 4.75%, the "good inflation news" narrative gets tested fast. <span class="synced">(Source: CME FedWatch via Motley Fool / CNBC)</span></p>
-    </div>
+    <h2>4 · On the Calendar</h2>
+    <ul>
+      <li><span class="lead">Today (Sat):</span> No US data or earnings — markets closed. Weekend read-ahead.</li>
+      <li><span class="lead">Week ahead:</span> Wed — <b>July FOMC minutes</b>. Thu–Sat — <b>Jackson Hole symposium</b> (Aug 21–23).</li>
+      <li><span class="lead">Earnings (retail week):</span> Home Depot (Tue), Target / Lowe's / TJX (Wed), Walmart / Deere (Thu). <span class="tag">no watchlist names report</span></li>
+    </ul>
   </section>
 
   <section>
-    <h2>6 · Learning Nugget — Real Yields</h2>
-    <div class="nugget">
-      <p><b>Real yield</b> = nominal Treasury yield minus expected inflation (proxied by TIPS). When real yields <i>rise</i> yet gold <i>also</i> rises, it's often a signal of demand for inflation or tail-risk hedges rather than economic confidence — because gold normally weakens as real yields climb and cash becomes more attractive.</p>
-    </div>
+    <h2>5 · One Thing to Sound Smart About</h2>
+    <div class="edge">Equities look calm; credit is priced for perfection. High-yield OAS sits around <b>271–284 bps</b> — the richest decile in its history against a long-run median near ~450. That's asymmetric: almost no room to tighten, lots of room to widen on any shock. Beneath the surface, rising payment-in-kind (PIK) usage in private credit is spread <i>across</i> sectors, hinting at broad middle-market cash-flow stress that tight public spreads aren't pricing. The tell to watch isn't the VIX — it's the first crack in HY.</div>
+  </section>
+
+  <section>
+    <h2>6 · Learning Nugget</h2>
+    <div class="nugget"><b>Option-Adjusted Spread (OAS).</b> It's the yield premium a corporate bond pays over Treasuries after stripping out the value of embedded options (like a call feature), so you're comparing pure credit risk. A very tight OAS means investors are demanding little compensation to take credit risk — often a late-cycle signal that complacency is high.</div>
   </section>
 
   <footer>
-    Sources:
-    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-13-2026">TheStreet (indices)</a> ·
-    <a href="https://www.cnbc.com/2026/08/12/cpi-inflation-report-july-2026.html">CNBC (July CPI)</a> ·
-    <a href="https://www.fool.com/investing/2026/08/12/july-inflation-data-came-in-as-expected-lowering-the-odds-of-a-fed-hike-in-september-yet-again/">Motley Fool (FedWatch)</a> ·
-    <a href="https://www.cnbc.com/select/the-price-of-gold-today-august-14-2026/">CNBC (gold)</a> ·
-    <a href="https://www.stl.news/overseas-stock-market-update-august-14-2026/">STL.News (Asia/Europe)</a> ·
-    <a href="https://x.com/marketsday/status/2085942627464257800">Markets Today (calendar)</a> ·
-    <a href="https://www.macrumors.com/2026/08/08/iphone-17-prices-could-rise-as-soon-as-monday/">MacRumors (Apple)</a>
-    <br><br>Auto-generated pre-market brief · not investment advice.
+    <div class="src">Sources:
+      <a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-august-14-dow-sp-500-nasdaq-102635519.html">Yahoo Finance — Aug 14 close</a> ·
+      <a href="https://www.etftrends.com/fixed-income-content-hub/treasury-yields-snapshot-august-14-2026/">ETF Trends — 10Y yield</a> ·
+      <a href="https://www.usagold.com/daily-precious-metals-market-report-august-14-2026/">USAGOLD — gold</a> ·
+      <a href="https://fortune.com/article/price-of-bitcoin-08-14-2026/">Fortune — Bitcoin</a> ·
+      <a href="https://www.fxstreet.com/analysis/forecasting-the-upcoming-week-focus-shifts-to-the-fomc-minutes-and-the-jackson-hole-symposium-202508151843">FXStreet — week ahead</a> ·
+      <a href="https://convextrade.com/metrics/bamlh0a0hym2">Convex — HY OAS</a> ·
+      <a href="https://intellectia.ai/blog/stock-market-warning-august-2026">Intellectia — breadth/concentration</a>
+    </div>
+    <div style="margin-top:8px;">Auto-generated · not investment advice · Last synced 2026-08-15 15:15 CDT</div>
   </footer>
 </div>
 </body>
