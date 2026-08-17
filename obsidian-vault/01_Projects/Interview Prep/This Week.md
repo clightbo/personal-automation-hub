@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-16 21:33 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-17 12:29 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-LONG MSFT (quality + AI monetization): Enterprise stickiness + Copilot upsell turns Office/Azure into an AI tax on business software. Catalyst: Azure growth re-acceleration, Copilot seat attach. Risk: slow enterprise adoption, antitrust, capex weighing on FCF near term.
+LONG XLE / energy (geopolitical supply risk): Middle East disruptions and OPEC discipline keep a floor under crude; majors trade below historical multiples with buybacks/dividends. Catalyst: Strait of Hormuz headlines, inventory draws. Risk: global recession crushing demand, surprise supply increase.
 
 ## Rehearsal checklist
 
