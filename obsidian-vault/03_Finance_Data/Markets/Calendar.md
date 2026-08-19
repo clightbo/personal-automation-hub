@@ -7,11 +7,12 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-18 21:36 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-19 12:32 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
 | 2026-08-19 14:00 ET | High | Fed | **FOMC Meeting Minutes** — High impact |
+| 2026-08-19 14:30 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-08-20 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 24.1, prev 41.4 |
 | 2026-08-20 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 210K, prev 209K |
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.0838 |
@@ -55,5 +56,6 @@ _Updated 2026-08-18 21:36 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
+- **2026-08-19 14:30** — President Trump Speaks
 - **2026-08-20 08:30** — Unemployment Claims
 
