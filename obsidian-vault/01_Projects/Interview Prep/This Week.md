@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-23 21:34 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-24 12:34 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-LONG XLE / energy (geopolitical supply risk): Middle East disruptions and OPEC discipline keep a floor under crude; majors trade below historical multiples with buybacks/dividends. Catalyst: Strait of Hormuz headlines, inventory draws. Risk: global recession crushing demand, surprise supply increase.
+PAIRS: LONG QQQ / SHORT DIA (tech vs old economy): Leadership stays in megacap tech while industrials lag on rates and slowing PMI. Catalyst: earnings dispersion, AI narrative. Risk: factor reversal if Fed cuts spark broad rally in cyclicals.
 
 ## Rehearsal checklist
 
