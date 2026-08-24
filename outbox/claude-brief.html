@@ -1,130 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily Market Brief — Aug 18, 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark's Pre-Market Brief — Aug 24, 2026</title>
 <style>
-  :root{ color-scheme: dark; }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0b0e14; color:#e6e9ef;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:#0b0f17; color:#e6edf3; line-height:1.5;
-    -webkit-font-smoothing:antialiased; padding:18px;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 48px;
   }
-  .wrap{ max-width:760px; margin:0 auto; }
-  header{ border-bottom:1px solid #1f2937; padding-bottom:14px; margin-bottom:18px; }
-  .kicker{ color:#f59e0b; font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
-  h1{ font-size:26px; font-weight:800; margin:4px 0 6px; letter-spacing:-.01em; }
-  .sub{ color:#8b98a9; font-size:13px; }
-  h2{
-    font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#7dd3fc;
-    margin:26px 0 12px; font-weight:700; border-left:3px solid #38bdf8; padding-left:9px;
+  .wrap { max-width:760px; margin:0 auto; }
+  .head { border-bottom:1px solid #1e2633; padding-bottom:16px; margin-bottom:24px; }
+  .kicker { color:#5eead4; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+  h1 { font-size:26px; font-weight:800; margin:6px 0 4px; letter-spacing:-0.5px; }
+  .sub { color:#8b95a7; font-size:14px; }
+  h2 {
+    font-size:13px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase;
+    color:#5eead4; margin:30px 0 12px; display:flex; align-items:center; gap:8px;
   }
-  .snap{ width:100%; border-collapse:collapse; font-size:15px; }
-  .snap td{ padding:9px 8px; border-bottom:1px solid #161c26; }
-  .snap td:first-child{ color:#aeb9c7; white-space:nowrap; }
-  .snap td:last-child{ text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
-  .up{ color:#34d399; } .down{ color:#f87171; } .flat{ color:#cbd5e1; }
-  ul{ list-style:none; }
-  .wl li, .why li{ padding:9px 0; border-bottom:1px solid #161c26; font-size:15px; }
-  .wl .tkr{ font-weight:800; color:#fbbf24; display:inline-block; min-width:52px; }
-  .why li{ padding-left:26px; position:relative; }
-  .why li .n{ position:absolute; left:0; top:9px; color:#38bdf8; font-weight:800; }
-  .why b{ color:#fff; }
-  .cal li{ padding:7px 0; border-bottom:1px solid #161c26; font-size:14.5px; }
-  .time{ color:#f59e0b; font-weight:700; font-variant-numeric:tabular-nums; }
-  .smart, .nugget{
-    background:#111826; border:1px solid #1f2937; border-radius:10px;
-    padding:14px 16px; font-size:15px;
+  h2 .n { background:#132029; color:#5eead4; border:1px solid #234; border-radius:6px;
+    font-size:12px; padding:1px 7px; }
+  p { font-size:15.5px; color:#d3d9e4; margin-bottom:10px; }
+  .snap { width:100%; border-collapse:collapse; font-size:14.5px; margin-top:4px; }
+  .snap td { padding:9px 8px; border-bottom:1px solid #161d28; }
+  .snap td:first-child { color:#9aa4b5; white-space:nowrap; }
+  .snap td:nth-child(2) { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+  .snap td:nth-child(3) { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; width:96px; }
+  .up { color:#4ade80; }
+  .down { color:#f87171; }
+  .flat { color:#9aa4b5; }
+  ul { list-style:none; margin:4px 0 6px; }
+  li { position:relative; padding-left:20px; margin-bottom:12px; font-size:15.5px; color:#d3d9e4; }
+  li:before { content:""; position:absolute; left:2px; top:9px; width:7px; height:7px;
+    background:#5eead4; border-radius:50%; }
+  .tk { font-weight:800; color:#fff; }
+  .why { color:#8b95a7; font-size:14px; display:block; margin-top:2px; }
+  .edge, .nugget {
+    background:#101722; border:1px solid #1e2c3a; border-left:3px solid #5eead4;
+    border-radius:10px; padding:14px 16px; margin-top:6px;
   }
-  .smart{ border-left:4px solid #f59e0b; }
-  .nugget{ border-left:4px solid #34d399; }
-  .tag{ display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
-        text-transform:uppercase; color:#0b0f17; background:#f59e0b; padding:2px 8px;
-        border-radius:5px; margin-bottom:8px; }
-  .tag.g{ background:#34d399; }
-  .sms{ font-size:12.5px; color:#8b98a9; background:#0f1723; border:1px dashed #263141;
-        border-radius:8px; padding:10px 12px; margin-top:6px; font-family:ui-monospace,Menlo,monospace; }
-  footer{ margin-top:26px; padding-top:14px; border-top:1px solid #1f2937; font-size:12.5px; color:#6b7787; }
-  footer a{ color:#7dd3fc; text-decoration:none; }
-  footer a:hover{ text-decoration:underline; }
-  .em{ color:#fff; font-weight:600; }
-  @media(max-width:520px){ body{padding:12px;} h1{font-size:22px;} .snap td,.wl li,.why li{font-size:14.5px;} }
+  .edge p:last-child, .nugget p:last-child { margin-bottom:0; }
+  .foot { margin-top:34px; padding-top:16px; border-top:1px solid #1e2633; font-size:12.5px; color:#6b7488; }
+  .foot a { color:#7dd3fc; text-decoration:none; word-break:break-word; }
+  .foot a:hover { text-decoration:underline; }
+  b, strong { color:#fff; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="kicker">Clark&#39;s Daily Market Brief</div>
-    <h1>Bear-steepener bites tech</h1>
-    <div class="sub">Tuesday, August 18, 2026 &middot; data as of midday ET</div>
-  </header>
 
-  <h2>Market Snapshot</h2>
+  <div class="head">
+    <div class="kicker">Clark's Pre-Market Brief</div>
+    <h1>Monday, August 24, 2026</h1>
+    <div class="sub">Prices as of Fri Aug 21 close. Prepared 1:42 AM EDT · read time ~3 min</div>
+  </div>
+
+  <h2><span class="n">1</span> Market Snapshot</h2>
   <table class="snap">
-    <tr><td>S&amp;P 500</td><td class="down">7,703 &nbsp;&minus;0.5%</td></tr>
-    <tr><td>Nasdaq Composite</td><td class="down">26,755 &nbsp;&minus;1.6%</td></tr>
-    <tr><td>Dow Jones</td><td class="down">~53,320 &nbsp;&minus;0.3%</td></tr>
-    <tr><td>10Y Treasury</td><td class="down">4.74% &nbsp;(near 19-mo high)</td></tr>
-    <tr><td>30Y Treasury</td><td class="down">5.31% &nbsp;(highest since 2007)</td></tr>
-    <tr><td>WTI Crude</td><td class="up">~$84 &nbsp;(Brent ~$91)</td></tr>
-    <tr><td>Gold</td><td class="up">$4,429 &nbsp;+0.3%</td></tr>
-    <tr><td>Bitcoin</td><td class="up">~$64,900 &nbsp;+2%</td></tr>
-    <tr><td>Asia / Europe</td><td class="down">Global bear-steepening; risk-off</td></tr>
+    <tr><td>S&amp;P 500</td><td>7,674.37</td><td class="up">+0.43%</td></tr>
+    <tr><td>Nasdaq Comp</td><td>26,180.46</td><td class="up">+0.43%</td></tr>
+    <tr><td>Dow 30</td><td>53,277.01</td><td class="up">+0.98%</td></tr>
+    <tr><td>Russell 2000</td><td>3,017.87</td><td class="up">+0.85%</td></tr>
+    <tr><td>VIX</td><td>15.13</td><td class="down">-5.5%</td></tr>
+    <tr><td>10Y Treasury</td><td>~4.70%</td><td class="flat">rangebound</td></tr>
+    <tr><td>30Y Treasury</td><td>5.26%</td><td class="down">2007 high</td></tr>
+    <tr><td>WTI Crude</td><td>$87.06</td><td class="up">+0.26%</td></tr>
+    <tr><td>Brent Crude</td><td>$93.42</td><td class="up">Iran bid</td></tr>
+    <tr><td>Gold</td><td>$4,680.60</td><td class="up">+2.39%</td></tr>
+    <tr><td>Bitcoin</td><td>$77,274</td><td class="up">+22% wk</td></tr>
   </table>
+  <p style="margin-top:12px; font-size:14px; color:#9aa4b5;">All three indices rose Friday but posted <b>weekly losses</b> — a midweek bond sell-off did the damage. Overnight: Asia mixed (Nikkei -0.3%, Kospi +0.9%, Hang Seng +1.1%, CSI 300 +0.6%); Europe flat-to-lower. Gold at 3-month highs; Bitcoin logged its best week in ~2 years.</p>
 
-  <h2>Your Watchlist</h2>
-  <ul class="wl">
-    <li><span class="tkr">SPY</span> <span class="down">&minus;0.5%</span> — tracks the S&amp;P; slipping from last week&#39;s record.</li>
-    <li><span class="tkr">QQQ</span> <span class="down">&minus;1.6%</span> — Nasdaq-100 hit hardest by the duration selloff.</li>
-    <li><span class="tkr">DIA</span> <span class="down">&minus;0.3%</span> — Dow&#39;s value tilt is today&#39;s relative winner.</li>
-    <li><span class="tkr">AAPL</span> <span class="flat">$305.59 ~flat</span> — steadying after soft revenue guidance; still #1 at ~$4.5T cap.</li>
-    <li><span class="tkr">NVDA</span> <span class="down">~$225 (+17.7% YTD)</span> — dragging with semis; disclosed $21B SpaceX stake; <b>Q2 earnings Aug 26</b> = the week&#39;s main event.</li>
-    <li><span class="tkr">MSFT</span> <span class="down">~$465</span> — off ~3% recently on AI-capex worries; $0.91 dividend, ex-date Aug 20.</li>
+  <h2><span class="n">2</span> Your Watchlist</h2>
+  <table class="snap">
+    <tr><td>SPY</td><td>765.72</td><td class="up">+0.43%</td></tr>
+    <tr><td>QQQ</td><td>713.44</td><td class="up">+0.43%</td></tr>
+    <tr><td>DIA</td><td>532.22</td><td class="up">+0.98%</td></tr>
+    <tr><td>AAPL</td><td>~$305.93</td><td class="flat">quiet</td></tr>
+    <tr><td>NVDA</td><td>214.72</td><td class="down">-0.98%</td></tr>
+    <tr><td>MSFT</td><td>~$495.40</td><td class="flat">quiet</td></tr>
+  </table>
+  <p style="margin-top:12px; font-size:14px; color:#9aa4b5;"><b>NVDA</b> is the week's main event — Q2 FY27 earnings <b>Wed Aug 26</b>, Street modeling ~$91B revenue, ~$1T order book cited for 2026-27. Stock slipped Friday into the print. AAPL &amp; MSFT drifted with no fresh catalyst.</p>
+
+  <h2><span class="n">3</span> Top 3 Things That Matter Today</h2>
+  <ul>
+    <li><span class="tk">Bessent unveils the Iran economic-isolation plan today.</span> Billed as the "toughest sanctions in history," pressuring allies and China to pick a side.
+      <span class="why">Why it matters: secondary sanctions on China (Iran's biggest oil buyer) risk a fresh trade collision and keep a geopolitical premium under crude.</span></li>
+    <li><span class="tk">The long end is the real story: 30Y at 5.26%, highest since 2007.</span> A bond-buyback signal from Treasury only calmed things briefly before yields snapped back.
+      <span class="why">Why it matters: long yields set the discount rate for every equity multiple — higher-for-longer at the long end caps how far valuations can stretch.</span></li>
+    <li><span class="tk">NVDA earnings (Wed) + Jackson Hole (Warsh keynote Thu) frame the week.</span> AI-capex demand and the September rate path both get tested in 72 hours.
+      <span class="why">Why it matters: NVDA's guide is a read on the entire AI trade; Warsh's first Jackson Hole as Chair sets rate-cut odds for September.</span></li>
   </ul>
 
-  <h2>Top 3 Things That Matter Today</h2>
-  <ul class="why">
-    <li><span class="n">1.</span><b>30Y yield hits 5.31%, highest since 2007.</b> Why it matters: this is a supply/term-premium move, not a growth scare — a higher discount rate compresses equity multiples and punishes long-duration megacap tech most.</li>
-    <li><span class="n">2.</span><b>Oil back to 2-week highs on Iran blockade tensions.</b> Why it matters: re-accelerating energy costs threaten the disinflation story and narrow the Fed&#39;s room to cut.</li>
-    <li><span class="n">3.</span><b>AI capex is now a rates story.</b> Why it matters: hyperscaler debt issuance plus MSFT/NVDA spend feeds bond supply — the AI trade&#39;s biggest risk has shifted from demand to the cost of funding it.</li>
+  <h2><span class="n">4</span> On the Calendar</h2>
+  <ul>
+    <li><span class="tk">Today (Mon):</span> Treasury Sec. Bessent Iran press conference. Light US data/earnings day — positioning ahead of a heavy week.</li>
+    <li><span class="tk">This week:</span> Durable Goods (Tue/Wed), Q2 GDP 2nd est. (Thu), and the marquee print — <span class="tk">Core PCE, Fri</span>, the Fed's preferred inflation gauge and key input for the Sept FOMC.</li>
+    <li><span class="tk">Earnings:</span> <span class="tk">NVDA Wed (watchlist)</span> and Marvell headline the AI-demand tape.</li>
+    <li><span class="tk">Jackson Hole:</span> Fed Chair Warsh keynote Thu Aug 27 — the week's biggest macro signal.</li>
   </ul>
 
-  <h2>On the Calendar Today</h2>
-  <ul class="cal">
-    <li><span class="time">8:30am</span> — Housing Starts (Jul), est <span class="em">1.390M</span> vs 1.427M prior; Building Permits est 1.380M vs 1.367M.</li>
-    <li><span class="time">9:15am</span> — Industrial Production (Jul), est <span class="em">+0.2%</span>; Capacity Utilization 76.3%.</li>
-    <li><span class="time">8:30am</span> — Import Prices +0.1% / Export Prices +0.2%.</li>
-    <li><span class="time">Earnings</span> — No watchlist names today; retail (Home Depot &amp; co.) in focus. <b>NVDA reports Aug 26</b>; MSFT ex-dividend Aug 20.</li>
-  </ul>
-
-  <h2>One Thing To Sound Smart About</h2>
-  <div class="smart">
-    <span class="tag">The Edge</span>
-    Headlines blame Iran, but the tape is a <b>bear-steepener</b>: the 30Y is selling off faster than the 2Y, so this is a fiscal / term-premium move, not a growth scare. The tell is <b>gold rising alongside yields</b> — the usual inverse has broken, signaling a debt-sustainability / debasement trade rather than classic risk-off. That&#39;s why the highest-multiple names (Nasdaq &minus;1.6%) are punished far more than cyclicals (Dow &minus;0.3%). <span style="color:#6b7787;">(Bloomberg / CNBC bond-selloff coverage.)</span>
+  <h2><span class="n">5</span> One Thing To Sound Smart About</h2>
+  <div class="edge">
+    <p>This is a <b>bear steepener driven by supply and term premium — not a growth or crisis trade.</b> The 30Y hit 5.26% (2007 highs), yet the MOVE index (bond-vol / term-premium proxy) sits at just <b>74.7, ~36th percentile</b>, high-yield spreads are a benign <b>275bps</b>, and 2s10s has re-steepened to <b>+35bps</b>.</p>
+    <p style="margin-top:8px;">Translation: the market is <b>calmly repricing structural Treasury supply and "higher-for-longer,"</b> not pricing a recession or a funding scare. The tell to watch isn't the VIX — it's term premium and the next long-bond auction. If MOVE stays dormant while the 30Y grinds up, equities can keep absorbing it; a MOVE spike is the real risk-off trigger.</p>
   </div>
 
-  <h2>Learning Nugget</h2>
+  <h2><span class="n">6</span> Learning Nugget</h2>
   <div class="nugget">
-    <span class="tag g">Term Premium</span>
-    The extra yield investors demand to hold a long-dated bond instead of rolling short-term ones, compensating for inflation and supply risk. When it rises — as now, with heavy Treasury issuance — long yields climb even without Fed hikes, compressing equity valuations independent of the growth outlook.
+    <p><b>Bear steepener:</b> when long-term yields rise faster than short-term ones, steepening the curve. It typically signals the market pricing in more term premium, supply, or inflation risk — rather than imminent Fed cuts — and it hits long-duration assets (growth stocks, long bonds) the hardest.</p>
   </div>
 
-  <div class="sms">SMS: SPY -0.5% Nasdaq -1.6% Dow -0.3%, 10Y 4.74% 30Y 5.31%, oil 84 gold 4429 BTC 65k, NVDA earnings Aug26, Edge- bear steepener not Iran</div>
-
-  <footer>
+  <div class="foot">
     Sources:
-    <a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-august-18-dow-sp-500-nasdaq-080822735.html">Yahoo Finance</a> &middot;
-    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-18-2026">TheStreet</a> &middot;
-    <a href="https://seekingalpha.com/news/4634066-30-year-treasury-yield-hits-530-its-highest-level-since-2007">Seeking Alpha (30Y)</a> &middot;
-    <a href="https://www.cnbc.com/2026/08/18/30-year-treasury-yield-three-things-that-could-drive-it-even-higher.html">CNBC (yields)</a> &middot;
-    <a href="https://www.coindesk.com/tech/2026/08/18/live-updates-bitcoin-holds-usd64-000-as-surging-yields-and-oil-drain-risk-appetite">CoinDesk (BTC)</a> &middot;
-    <a href="https://www.xtb.com/en/market-analysis/macro-calendar-us-housing-market-in-the-spotlight-of-investors-18-08-2026">XTB (calendar)</a> &middot;
-    <a href="https://intellectia.ai/blog/nvda-stock-earnings-august-2026">Intellectia (NVDA)</a> &middot;
-    <a href="https://www.gurufocus.com/news/8997685/tech-stocks-diverge-as-apple-drops-and-microsoft-soars">GuruFocus (AAPL/MSFT)</a>
-    <br><br>Generated automatically &middot; not investment advice.
-  </footer>
+    <a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-august-21-dow-sp-500-nasdaq-bitcoin-080533702.html">Yahoo Finance — market close Aug 21</a> ·
+    <a href="https://www.cboe.com/insights/posts/week-of-8-17-2026-volatility-convexity-premia-fall-to-lowest-ytd-levels-on-benign-inflation-data">Cboe — vol/term premia</a> ·
+    <a href="https://www.axios.com/2026/08/17/treasury-yields-warsh-bonds">Axios — rising Treasury yields</a> ·
+    <a href="https://convextrade.com/metrics/bamlh0a0hym2">Convex — HY credit spreads</a> ·
+    <a href="https://www.bloomberg.com/news/articles/2026-08-20/bessent-to-detail-us-plans-to-isolate-iran-s-economy-on-monday">Bloomberg — Bessent Iran plan</a> ·
+    <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262126132-jackson-hole-warsh-nvidia-marvell-earnings-ai-investment-sentiment-tradingkey">TradingKey — week ahead</a> ·
+    <a href="https://www.fool.com/investing/2026/08/21/prediction-nvidia-stock-will-go-parabolic-after-aug-26-here-are-2-3-trillion-reasons-why/">Motley Fool — NVDA preview</a>
+    <br><br>Auto-generated pre-market brief · not investment advice.
+  </div>
+
 </div>
 </body>
 </html>
