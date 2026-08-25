@@ -7,12 +7,12 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-24 21:42 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-25 12:34 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-08-25 08:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-25 10:00 ET | Medium | Macro | **CB Consumer Confidence** — Medium impact; forecast 90.3, prev 90.8 |
+| 2026-08-25 16:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.09161 |
 | 2026-08-26 08:30 ET | High | Macro | **Core PCE Price Index m/m** — High impact; forecast 0.2%, prev 0.1% |
 | 2026-08-26 08:30 ET | High | Macro | **Prelim GDP q/q** — High impact; forecast 1.5%, prev 1.5% |
@@ -47,7 +47,7 @@ _Updated 2026-08-24 21:42 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-08-25 08:30** — FOMC Member Barkin Speaks
+- **2026-08-25 16:00** — FOMC Member Barkin Speaks
 - **2026-08-26 11:45** — FOMC Member Barkin Speaks
 - **2026-08-28 10:00** — Fed Chairman Warsh Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
