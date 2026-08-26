@@ -7,14 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-25 21:42 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-26 12:37 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
 | 2026-08-26 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.09161 |
-| 2026-08-26 08:30 ET | High | Macro | **Core PCE Price Index m/m** — High impact; forecast 0.2%, prev 0.1% |
-| 2026-08-26 08:30 ET | High | Macro | **Prelim GDP q/q** — High impact; forecast 1.5%, prev 1.5% |
-| 2026-08-26 08:30 ET | Medium | Macro | **Prelim GDP Price Index q/q** — Medium impact; forecast 6.2%, prev 6.2% |
 | 2026-08-26 11:45 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-08-27 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 208K, prev 206K |
 | 2026-08-28 10:00 ET | High | Fed | **Fed Chairman Warsh Speaks** — High impact |
@@ -61,9 +58,6 @@ _Updated 2026-08-25 21:42 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-08-26 08:30** — Core PCE Price Index m/m
-- **2026-08-26 08:30** — Prelim GDP q/q
-- **2026-08-26 08:30** — Prelim GDP Price Index q/q
 - **2026-08-27 08:30** — Unemployment Claims
 - **2026-08-28 10:00** — Prelim Benchmark Payrolls Revision
 - **2026-08-28 10:00** — Revised UoM Consumer Sentiment
