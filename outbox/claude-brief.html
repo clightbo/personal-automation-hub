@@ -3,120 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clark's Pre-Market Brief — Aug 26, 2026</title>
+<title>Daily Market Brief — Aug 27, 2026</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    background:#0b0e14; color:#e6e9ef;
+    background:#0b0f17; color:#e6edf3;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55; padding:20px; -webkit-font-smoothing:antialiased;
+    line-height:1.55; font-size:17px; padding:20px 16px 48px;
   }
-  .wrap { max-width:760px; margin:0 auto; }
-  .hdr { border-bottom:2px solid #1e2635; padding-bottom:16px; margin-bottom:8px; }
-  .hdr h1 { font-size:26px; font-weight:700; letter-spacing:-0.3px; color:#fff; }
-  .hdr .date { color:#7d8798; font-size:14px; margin-top:4px; }
-  .tag { display:inline-block; background:#132032; color:#4da3ff; font-size:11px;
-    font-weight:600; padding:3px 9px; border-radius:5px; margin-top:10px; letter-spacing:0.4px; text-transform:uppercase; }
-  h2 { font-size:15px; text-transform:uppercase; letter-spacing:0.8px; color:#4da3ff;
-    margin:28px 0 12px; font-weight:700; }
-  .card { background:#111725; border:1px solid #1e2635; border-radius:10px; padding:16px 18px; }
-  table { width:100%; border-collapse:collapse; font-size:15px; }
-  th,td { text-align:left; padding:8px 6px; border-bottom:1px solid #1a2231; }
-  th { color:#7d8798; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
-  td.sym { font-weight:700; color:#fff; }
-  tr:last-child td { border-bottom:none; }
-  .up { color:#3ddc84; font-weight:600; }
-  .down { color:#ff6b6b; font-weight:600; }
-  .flat { color:#a8b2c1; font-weight:600; }
-  ul { list-style:none; }
-  li { padding:9px 0 9px 20px; position:relative; border-bottom:1px solid #161d29; font-size:15px; }
+  .wrap { max-width:720px; margin:0 auto; }
+  .hdr { border-bottom:1px solid #1e2a3a; padding-bottom:16px; margin-bottom:22px; }
+  .kicker { color:#5eead4; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+  h1 { font-size:26px; margin:6px 0 4px; letter-spacing:-.4px; }
+  .sub { color:#8b98a9; font-size:14px; }
+  h2 {
+    font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#5eead4;
+    margin:30px 0 12px; padding-bottom:6px; border-bottom:1px solid #1e2a3a;
+  }
+  .num { color:#8b98a9; font-weight:700; margin-right:6px; }
+  table { width:100%; border-collapse:collapse; margin:4px 0 8px; font-size:15px; }
+  th,td { text-align:left; padding:8px 6px; border-bottom:1px solid #16202e; }
+  th { color:#8b98a9; font-size:11px; letter-spacing:1px; text-transform:uppercase; font-weight:600; }
+  td.r,th.r { text-align:right; font-variant-numeric:tabular-nums; }
+  .up { color:#3fb950; } .dn { color:#f85149; } .flat { color:#c9d1d9; }
+  ul { list-style:none; margin:6px 0; }
+  li { padding:7px 0 7px 18px; position:relative; border-bottom:1px solid #121a26; }
+  li:before { content:"▸"; position:absolute; left:0; color:#5eead4; }
   li:last-child { border-bottom:none; }
-  li:before { content:"▸"; position:absolute; left:0; color:#4da3ff; }
-  .num { display:inline-block; background:#4da3ff; color:#0b0e14; font-weight:700; font-size:13px;
-    width:22px; height:22px; line-height:22px; text-align:center; border-radius:50%; margin-right:8px; }
-  .top li { padding-left:0; } .top li:before { content:""; }
-  .why { color:#9aa5b5; font-size:13.5px; font-style:italic; }
-  .edge { border-left:3px solid #ffb84d; }
-  .nugget { border-left:3px solid #3ddc84; }
-  .lbl { color:#7d8798; font-size:12px; }
-  a { color:#4da3ff; text-decoration:none; }
-  .src { margin-top:26px; padding-top:14px; border-top:1px solid #1e2635; font-size:12px; color:#6b7688; }
-  .src a { display:inline-block; margin:2px 8px 2px 0; }
-  .foot { text-align:center; color:#4a5568; font-size:11px; margin-top:20px; }
+  .tk { font-weight:700; color:#fff; }
+  .why { color:#8b98a9; font-size:14px; }
+  .card { background:#111826; border:1px solid #1e2a3a; border-radius:10px; padding:16px 18px; margin-top:8px; }
+  .edge { border-left:3px solid #5eead4; }
+  .nugget { border-left:3px solid #d29922; }
+  a { color:#58a6ff; text-decoration:none; }
+  .src { font-size:12px; color:#6e7b8c; margin-top:8px; }
+  .src a { color:#6e7b8c; }
+  .foot { margin-top:34px; padding-top:14px; border-top:1px solid #1e2a3a; color:#6e7b8c; font-size:12px; }
+  strong { color:#fff; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="hdr">
-    <h1>Pre-Market Brief</h1>
-    <div class="date">Wednesday, August 26, 2026 &middot; ~3-min read</div>
-    <span class="tag">Prepared for Clark</span>
+    <div class="kicker">Pre-Market Brief</div>
+    <h1>Daily Market Brief</h1>
+    <div class="sub">Thursday, August 27, 2026 · 8:08am ET · Watchlist: SPY QQQ DIA AAPL NVDA MSFT</div>
   </div>
 
-  <h2>Market Snapshot</h2>
-  <div class="card">
-    <table>
-      <tr><th>Asset</th><th>Last</th><th>Move</th></tr>
-      <tr><td class="sym">S&amp;P 500</td><td>7,677.28</td><td class="up">+0.32%</td></tr>
-      <tr><td class="sym">Nasdaq Comp</td><td>~+0.6%</td><td class="up">+0.6%</td></tr>
-      <tr><td class="sym">Dow</td><td>53,579.94</td><td class="up">+0.30% (+160)</td></tr>
-      <tr><td class="sym">10Y Treasury</td><td>~4.65%</td><td class="down">near 20-mo high</td></tr>
-      <tr><td class="sym">30Y Treasury</td><td>~5.27%</td><td class="down">highest since 2007</td></tr>
-      <tr><td class="sym">WTI Crude</td><td>$81.11</td><td class="down">-4.55%</td></tr>
-      <tr><td class="sym">Gold</td><td>$4,627</td><td class="down">-0.40% (hit 3-mo high $4,677)</td></tr>
-      <tr><td class="sym">Bitcoin</td><td>~$80,000</td><td class="flat">rejected at $81k (50-wk MA)</td></tr>
-    </table>
-    <p style="margin-top:12px; font-size:13.5px; color:#9aa5b5;"><strong style="color:#c8d0dc;">Overnight:</strong> Asia mostly firmer — Hang Seng +1.1%, KOSPI rebounding, Nikkei chip-heavy/mixed. Europe's Stoxx 600 +0.4%, autos lagging on Trump's threat of 50% tariffs on Canadian vehicles.</p>
-  </div>
+  <h2>1 · Market Snapshot</h2>
+  <table>
+    <tr><th>Instrument</th><th class="r">Level</th><th class="r">Move</th></tr>
+    <tr><td>S&amp;P 500 (Wed close)</td><td class="r">~6,470</td><td class="r dn">-0.12%</td></tr>
+    <tr><td>Nasdaq Comp (Wed close)</td><td class="r">—</td><td class="r dn">-0.16%</td></tr>
+    <tr><td>Dow (Wed close)</td><td class="r">—</td><td class="r dn">-0.08%</td></tr>
+    <tr><td>US futures (Thu AM)</td><td class="r">NDX +1%</td><td class="r up">S&amp;P +0.5% · Dow +0.2%</td></tr>
+    <tr><td>10Y Treasury</td><td class="r">~4.6%</td><td class="r flat">-10bp prior day</td></tr>
+    <tr><td>WTI crude</td><td class="r">$81.6</td><td class="r dn">-0.8%</td></tr>
+    <tr><td>Gold</td><td class="r">~$4,658</td><td class="r up">near record</td></tr>
+    <tr><td>Bitcoin</td><td class="r">~$78.8k</td><td class="r dn">-0.2%</td></tr>
+  </table>
+  <div class="why">Wednesday closed flat as sticky PCE and Jackson Hole nerves capped gains; the tape flipped decisively higher overnight after Nvidia's post-close blowout. Asia and Europe followed chips higher.</div>
 
-  <h2>Your Watchlist</h2>
-  <div class="card">
-    <table>
-      <tr><th>Ticker</th><th>Last</th><th>Move</th><th>Note</th></tr>
-      <tr><td class="sym">SPY</td><td>~$767</td><td class="up">+0.3%</td><td class="lbl">Tracks S&amp;P; 3-day risk-on drift</td></tr>
-      <tr><td class="sym">QQQ</td><td>~$710</td><td class="flat">~flat/+0.6%</td><td class="lbl">All eyes on NVDA tonight</td></tr>
-      <tr><td class="sym">DIA</td><td>~$536</td><td class="up">+0.3%</td><td class="lbl">Dow 3-day win streak</td></tr>
-      <tr><td class="sym">AAPL</td><td>$309.90</td><td class="flat">-0.1%</td><td class="lbl">Quiet; consolidating</td></tr>
-      <tr><td class="sym">NVDA</td><td>$213.05</td><td class="up">+2.2%</td><td class="lbl">⚡ Q2 FY27 earnings TONIGHT (after close)</td></tr>
-      <tr><td class="sym">MSFT</td><td>$491.71</td><td class="up">+0.9%</td><td class="lbl">AI/cloud strength</td></tr>
-    </table>
-  </div>
+  <h2>2 · Your Watchlist</h2>
+  <ul>
+    <li><span class="tk">NVDA</span> — +6% pre-market. Q2 (FY27) rev $96.2B (+106% YoY), Data Center $89.0B, adj EPS $2.22 vs ~$2.08 est; guided Q3 to $108B vs $104B est. AWS to buy 2M GPUs + adopt Nvidia's Vera CPU.</li>
+    <li><span class="tk">QQQ</span> — Nasdaq-100 futures +1%, leading on the Nvidia halo plus CRM/CRWD beats. The AI-capex trade is back in the driver's seat.</li>
+    <li><span class="tk">SPY</span> — S&amp;P futures +0.5%; broad tape lifted but breadth still mega-cap-led rather than broad.</li>
+    <li><span class="tk">DIA</span> — Dow futures +0.2%, the laggard given lighter semi weighting; less AI beta.</li>
+    <li><span class="tk">MSFT</span> — Riding AI momentum after its blowout FQ4 (rev ~$90B, +18%); Wall Street's favored mega-cap, still rated Strong Buy by a wide margin.</li>
+    <li><span class="tk">AAPL</span> — Fundamentals firm (F'Q3 iPhone +22%, Mac +29%) but bulls flag a rich ~33x forward P/E; rated only Moderate Buy — the relative laggard vs MSFT/NVDA.</li>
+  </ul>
 
-  <h2>Top 3 Things That Matter Today</h2>
-  <div class="card top">
-    <ul>
-      <li><span class="num">1</span><strong>NVIDIA reports after the close.</strong><br><span class="why">Why it matters: it's the AI-capex bellwether (beat in 22 of last 24 quarters) — the print sets the tone for the entire tech tape and the "is AI spend still accelerating?" debate into September.</span></li>
-      <li><span class="num">2</span><strong>Q2 GDP (2nd est.), Personal Income &amp; Spending, Durable Goods — all 8:30am ET.</strong><br><span class="why">Why it matters: a growth-and-inflation triple that feeds directly into how many Fed cuts the market prices for the rest of 2026.</span></li>
-      <li><span class="num">3</span><strong>Treasury's doubled long-end buybacks aren't taming long yields.</strong><br><span class="why">Why it matters: the 30Y is back at 2007 highs despite intervention — a live signal that fiscal supply is overwhelming demand-side fixes, pressuring every long-duration asset.</span></li>
-    </ul>
-  </div>
+  <h2>3 · Top 3 Things That Matter Today</h2>
+  <ul>
+    <li><strong>Nvidia validated the AI capex cycle.</strong> <span class="why">Why it matters: a $108B guide and the AWS 2M-GPU deal say hyperscaler demand is still accelerating — the single biggest earnings input for the whole index given AI's weight in the S&amp;P.</span></li>
+    <li><strong>Jackson Hole is live; Powell headlines Friday.</strong> <span class="why">Why it matters: with PCE still sticky, any hint on the rate path moves the front end and the multiple far more than one earnings print — position risk into tomorrow.</span></li>
+    <li><strong>Gold near record while stocks rip.</strong> <span class="why">Why it matters: risk assets and the classic haven rallying together points to abundant liquidity and debasement hedging, not fear — a regime worth respecting.</span></li>
+  </ul>
 
-  <h2>One Thing to Sound Smart About</h2>
+  <h2>4 · On the Calendar Today</h2>
+  <ul>
+    <li><strong>Q2 GDP — second estimate</strong>, 8:30am ET. Revision of the first print; watch the consumption and investment mix.</li>
+    <li><strong>Initial jobless claims</strong>, 8:30am ET. Consensus ~340k vs 348k prior — a labor-market read the Fed is watching closely.</li>
+    <li><strong>Kansas City Fed mfg index</strong> (Aug), later AM; consensus ~30.</li>
+    <li><strong>Earnings:</strong> Salesforce (CRM) and CrowdStrike (CRWD) already lifted tech post-close Wed; Dell &amp; Marvell are the marquee AI-adjacent names on deck this week. <span class="why">No watchlist names report today.</span></li>
+  </ul>
+
+  <h2>5 · One Thing to Sound Smart About</h2>
   <div class="card edge">
-    <p>The Treasury quietly <strong>doubled its long-end "liquidity support" buybacks</strong> ($2B → at least $4B per operation, effective Sept 9 through Nov 4) — de facto yield-curve management aimed at the 10–30Y sector. The tell: the rally <em>fizzled within a day</em>, and 30Y yields rebounded to their highest since 2007. Translation for your circle: this is a <strong>term-premium and deficit story, not a Fed story</strong> — demand-side plumbing can't offset the supply of long paper when deficits keep growing. It's the same trade lifting gold (near record) and Bitcoin: a debasement/hedge bid. Watch the <strong>term premium and the 30Y auction tails</strong>, not the next Fed dot.</p>
-    <p class="why" style="margin-top:8px;">Sources: CFR, CNBC, U.S. Treasury.</p>
+    NVDA popped only ~6% on a genuine blowout with a raised guide — a muted reaction relative to the beat. That "sell-the-strength" compression is the tell: the market is paying up less for each incremental AI beat, so the marginal buyer is fading. The read-through is that leadership breadth (equal-weight S&amp;P vs cap-weight) matters more from here than any single mega-cap print — watch whether RSP participates today, not just SPY.
+    <div class="src">Source: <a href="https://www.bloomberg.com/news/articles/2026-08-26/nasdaq-futures-rise-on-bullish-nvidia-sales-growth-markets-wrap">Bloomberg</a>, <a href="https://fortune.com/2026/08/26/nvidia-results-q2-earnings/">Fortune</a></div>
   </div>
 
-  <h2>Learning Nugget</h2>
+  <h2>6 · Learning Nugget</h2>
   <div class="card nugget">
-    <p><strong>Term premium</strong> is the extra yield investors demand to hold a long-term bond instead of rolling short-term bills — compensation for rate and inflation uncertainty over the life of the bond. It's why 30Y yields can march to 2007 highs even when the Fed is cutting or Treasury is buying back debt: the market is pricing risk, not just policy.</p>
+    <strong>Term premium</strong> is the extra yield investors demand for holding a long bond instead of rolling short ones — compensation for duration and inflation risk, separate from expected rate moves. When the 10Y falls even as rate-cut odds don't change, a shrinking term premium is often doing the work, which flatters equity valuations by lowering the discount rate.
   </div>
 
-  <div class="src">
-    <strong>Sources:</strong>
-    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-25-2026">TheStreet</a>
-    <a href="https://www.washingtonpost.com/business/2026/08/25/wall-street-stocks-dow-nasdaq/">WaPo</a>
-    <a href="https://www.cfr.org/articles/what-the-treasurys-buyback-surprise-says-about-the-bond-market">CFR — Buyback</a>
-    <a href="https://www.cnbc.com/2026/08/21/treasury-yields-bonds-inflation-rates.html">CNBC — Yields</a>
-    <a href="https://home.treasury.gov/news/press-releases/sb0607">Treasury Release</a>
-    <a href="https://www.fool.com/investing/2026/08/25/nvda-stock-earnings-q2-date-aug-26/">NVDA Earnings</a>
-    <a href="https://convextrade.com/today/oil-price">WTI</a>
-    <a href="https://fortune.com/article/current-price-of-gold-08-25-2026/">Gold</a>
-    <a href="https://www.coindesk.com/business/2026/08/25/live-updates-bitcoin-etfs-draw-a-seventh-straight-day-of-inflows-as-the-rally-holds-above-usd80-000">Bitcoin</a>
-    <a href="https://therighttrader.com/economic-calendar/this-week">Econ Calendar</a>
-    <a href="https://ts2.tech/en/stock-market-today-08-26-2026-asia/">Asia</a>
+  <div class="foot">
+    Sources:
+    <a href="https://www.cnbc.com/2026/08/25/stock-market-today-live-updates.html">CNBC (Wed close)</a> ·
+    <a href="https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html">CNBC (NVDA)</a> ·
+    <a href="https://fortune.com/2026/08/26/nvidia-results-q2-earnings/">Fortune</a> ·
+    <a href="https://www.bloomberg.com/news/articles/2026-08-26/nasdaq-futures-rise-on-bullish-nvidia-sales-growth-markets-wrap">Bloomberg (futures)</a> ·
+    <a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Kiplinger (calendar)</a> ·
+    <a href="https://www.gurufocus.com/news/8997685/tech-stocks-diverge-as-apple-drops-and-microsoft-soars">GuruFocus (AAPL/MSFT)</a><br>
+    Generated automatically · figures are late-Aug 26 closes / Aug 27 pre-market and may have moved. Not investment advice.
   </div>
-  <div class="foot">Auto-generated pre-market brief &middot; Not investment advice &middot; Verify prices before acting</div>
 </div>
 </body>
 </html>
