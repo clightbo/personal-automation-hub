@@ -6,7 +6,7 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-28 21:38 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-29 03:09 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
