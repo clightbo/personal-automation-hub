@@ -1,130 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre-Market Brief — Aug 28, 2026</title>
+<title>Pre-Market Brief — Mon Aug 31, 2026</title>
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0b0f17;
-    color: #e6edf3;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    padding: 20px 16px 60px;
-    -webkit-font-smoothing: antialiased;
+  :root{
+    --bg:#0b0f14; --panel:#131a22; --panel2:#0f151c; --line:#232e39;
+    --txt:#e7edf3; --muted:#93a1b0; --accent:#4da3ff; --green:#38d17a;
+    --red:#ff6b6b; --amber:#ffcf6b; --chip:#1c2733;
   }
-  .wrap { max-width: 760px; margin: 0 auto; }
-  header { border-bottom: 1px solid #1e2632; padding-bottom: 16px; margin-bottom: 8px; }
-  .kicker { color: #58a6ff; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
-  h1 { font-size: 26px; margin: 6px 0 4px; letter-spacing: -0.01em; }
-  .sub { color: #8b949e; font-size: 14px; }
-  h2 {
-    font-size: 15px; text-transform: uppercase; letter-spacing: .09em;
-    color: #58a6ff; margin: 30px 0 12px; padding-bottom: 6px;
-    border-bottom: 1px solid #1e2632;
-  }
-  .snapshot { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .snapshot td { padding: 9px 6px; border-bottom: 1px solid #161d27; }
-  .snapshot td:first-child { color: #8b949e; white-space: nowrap; }
-  .snapshot td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: #3fb950; font-weight: 600; }
-  .down { color: #f85149; font-weight: 600; }
-  .flat { color: #d29922; font-weight: 600; }
-  ul { list-style: none; }
-  li { padding: 9px 0 9px 18px; position: relative; border-bottom: 1px solid #161d27; font-size: 15px; }
-  li:before { content: "▸"; position: absolute; left: 0; color: #3b6fb0; }
-  .tick { font-weight: 700; color: #e6edf3; }
-  .why { color: #8b949e; font-style: italic; }
-  .num { font-variant-numeric: tabular-nums; }
-  .card {
-    background: #101722; border: 1px solid #1e2632; border-radius: 10px;
-    padding: 16px 18px; margin-top: 4px;
-  }
-  .edge { border-left: 3px solid #d29922; }
-  .nugget { border-left: 3px solid #3fb950; }
-  .smsbox {
-    background: #0d1420; border: 1px dashed #30435c; border-radius: 8px;
-    padding: 12px 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 13px; color: #adbac7; margin-top: 6px; word-break: break-word;
-  }
-  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid #1e2632; font-size: 12px; color: #6e7681; }
-  footer a { color: #58a6ff; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  .disc { margin-top: 10px; color: #565d66; font-size: 11px; }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:820px;margin:0 auto;padding:20px 16px 60px;}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:8px;}
+  .kicker{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;}
+  h1{font-size:26px;margin:6px 0 4px;line-height:1.2;}
+  .sub{color:var(--muted);font-size:14px;}
+  h2{font-size:15px;letter-spacing:.10em;text-transform:uppercase;color:var(--amber);
+    margin:30px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;}
+  .up{color:var(--green);} .down{color:var(--red);} .flat{color:var(--muted);}
+  .tick{font-weight:700;}
+  ul{margin:8px 0 8px 2px;padding-left:18px;} li{margin:7px 0;}
+  .why{color:var(--muted);font-size:13.5px;}
+  .num{display:inline-block;width:22px;height:22px;border-radius:6px;background:var(--chip);
+    color:var(--accent);text-align:center;font-weight:700;font-size:13px;line-height:22px;margin-right:6px;}
+  .edge{background:linear-gradient(180deg,#15202b,#0f171f);border:1px solid #294055;}
+  .edge h2{border:none;margin-top:0;color:var(--accent);}
+  .nugget{background:var(--panel2);border-left:3px solid var(--amber);border-radius:8px;padding:12px 14px;}
+  .foot{margin-top:34px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12.5px;}
+  .foot a{color:var(--accent);text-decoration:none;}
+  .pill{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:999px;
+    padding:2px 10px;font-size:12px;color:var(--muted);margin-right:6px;}
+  .big{font-size:15px;}
+  @media(max-width:520px){h1{font-size:22px;}th,td{padding:8px 5px;font-size:13.5px;}.wrap{padding:16px 12px 50px;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Clark's Pre-Market Brief</div>
-    <h1>Friday, August 28, 2026</h1>
-    <div class="sub">Prepared 8:08 AM ET · closes as of Thu Aug 27 · ~3-min read</div>
+    <div class="kicker">Clark&#39;s Pre-Market Brief</div>
+    <h1>Monday, August 31, 2026</h1>
+    <div class="sub">Last trading day of August &middot; Futures red on renewed U.S.&ndash;Iran conflict &amp; a hawkish Fed. Read time ~3 min.</div>
+    <div style="margin-top:10px;">
+      <span class="pill">Risk-off</span><span class="pill">Oil shock</span><span class="pill">Rate-HIKE bets rising</span>
+    </div>
   </header>
 
-  <h2>1 · Market Snapshot</h2>
-  <table class="snapshot">
-    <tr><td>S&amp;P 500</td><td><span class="up">+0.7%</span> — Nvidia-led melt-up</td></tr>
-    <tr><td>Nasdaq Comp</td><td><span class="up">+1.4%</span> — chips lead</td></tr>
-    <tr><td>Dow Jones</td><td class="num">53,564 <span class="up">(+105 pts)</span></td></tr>
-    <tr><td>10-Yr Treasury</td><td class="num">~4.66% <span class="down">▲ 2nd day</span></td></tr>
-    <tr><td>WTI Crude</td><td class="num">~mid-$80s <span class="flat">choppy</span></td></tr>
-    <tr><td>Gold</td><td class="num">$4,602/oz <span class="up">+0.2%</span> (record zone)</td></tr>
-    <tr><td>Bitcoin</td><td class="num">~$80,000 <span class="up">back above 80k</span></td></tr>
-    <tr><td>Asia (Fri AM)</td><td>Nikkei <span class="up">+0.8%</span> · Hang Seng <span class="up">+0.2%</span> · KOSPI <span class="down">−0.9%</span></td></tr>
+  <h2>1 &middot; Market Snapshot</h2>
+  <div class="card" style="padding:6px 10px;">
+  <table>
+    <tr><th>Asset</th><th class="r">Level</th><th class="r">Move</th></tr>
+    <tr><td>S&amp;P 500 (Fri close)</td><td class="r">7,711.76</td><td class="r down">&minus;0.2%</td></tr>
+    <tr><td>Nasdaq Composite</td><td class="r">26,402.42</td><td class="r down">&minus;0.5%</td></tr>
+    <tr><td>Dow Jones</td><td class="r">53,559.99</td><td class="r flat">&minus;0.02%</td></tr>
+    <tr><td>US 10Y Treasury</td><td class="r">4.73%</td><td class="r down">yields &uarr;</td></tr>
+    <tr><td>WTI Crude</td><td class="r">~$86</td><td class="r up">+3%</td></tr>
+    <tr><td>Brent Crude</td><td class="r">&gt;$90</td><td class="r up">+2&ndash;3%</td></tr>
+    <tr><td>Gold (spot)</td><td class="r">~$4,560&ndash;4,600</td><td class="r down">fell Fri</td></tr>
+    <tr><td>Bitcoin</td><td class="r">~$78,600</td><td class="r flat">soft</td></tr>
   </table>
-  <p style="font-size:13px;color:#8b949e;margin-top:10px;">Overnight: Bank of Korea hiked 25bp to 3.00% and lifted its 2026 growth forecast to 3.3%; Korean chips dragged KOSPI despite the AI-hardware bid. Europe opened mixed.</p>
+  </div>
+  <div class="card">
+    <span class="big">Overnight:</span> Risk-off after U.S. forces struck Iranian rocket launchers near the Strait of Hormuz Sunday. <b>Asia sold hard</b> &mdash; Kospi &minus;3.5%, Nikkei &minus;2.2%, Hang Seng &minus;0.9%, CSI 300 &minus;0.6% (ASX +0.1% bucked it). <b>Europe softer</b> &mdash; DAX &minus;0.9%, CAC &minus;0.1%; UK closed for a bank holiday. U.S. futures: Dow &minus;0.16%, S&amp;P/Nasdaq-100 each ~&minus;0.2%.
+  </div>
 
-  <h2>2 · Your Watchlist</h2>
-  <ul>
-    <li><span class="tick">SPY</span> — tracks S&amp;P <span class="up">+0.7%</span>; broad risk-on into Jackson Hole.</li>
-    <li><span class="tick">QQQ</span> — tracks Nasdaq <span class="up">+1.4%</span>; single best driver was NVDA's guide.</li>
-    <li><span class="tick">DIA</span> — Dow <span class="up">+105 pts</span> to 53,564; laggard vs. tech, value rotation muted.</li>
-    <li><span class="tick">AAPL</span> — ~<span class="num">$313</span> (<span class="up">+1.2%</span> Wed); riding new M6 chip + Mac mini/Studio launch (Aug 25). Watch services read-through.</li>
-    <li><span class="tick">NVDA</span> — <span class="up">blowout</span>: Q2 rev $96B, data center $89B; guided ~70% CY2027 growth (≈2x consensus) + AWS 2M-GPU deal. Stock surged ~8% intraday.</li>
-    <li><span class="tick">MSFT</span> — firm; still the cleanest hyperscaler proxy after its record +$450B day (Aug 3). No new catalyst today.</li>
-  </ul>
+  <h2>2 &middot; Your Watchlist</h2>
+  <div class="card" style="padding:6px 10px;">
+  <table>
+    <tr><th>Ticker</th><th class="r">Last</th><th class="r">Move</th><th>Note</th></tr>
+    <tr><td class="tick">SPY</td><td class="r">tracks S&amp;P</td><td class="r down">&minus;0.2%</td><td class="why">Third straight weekly gain; futures red today</td></tr>
+    <tr><td class="tick">QQQ</td><td class="r">tracks NDX</td><td class="r down">&minus;0.5%</td><td class="why">Growth led the Friday slide</td></tr>
+    <tr><td class="tick">DIA</td><td class="r">tracks Dow</td><td class="r flat">flat</td><td class="why">Most defensive of the three Fri</td></tr>
+    <tr><td class="tick">AAPL</td><td class="r">$314.92</td><td class="r down">&minus;1.5%</td><td class="why">Lagged; rate-sensitive megacap</td></tr>
+    <tr><td class="tick">NVDA</td><td class="r">$219.58</td><td class="r up">+0.9%</td><td class="why">FQ2 rev $96.2B (+106% y/y); guided Oct qtr $108B vs $105B est &mdash; stock +9% Aug 27</td></tr>
+    <tr><td class="tick">MSFT</td><td class="r">$511.14</td><td class="r down">&minus;0.5%</td><td class="why">Drifted with tech</td></tr>
+  </table>
+  </div>
 
-  <h2>3 · Top 3 Things That Matter Today</h2>
-  <ul>
-    <li><span class="tick">Warsh's Jackson Hole debut (10am ET).</span> <span class="why">First keynote as Chair since succeeding Powell in May — the market's first real read on how hawkish the new Fed's reaction function actually is.</span></li>
-    <li><span class="tick">Nvidia reset the AI-capex debate.</span> <span class="why">A ~70% forward guide validates hyperscaler spend and props up the whole tape — but it leans on the same circular-financing loop the BIS just flagged as a systemic risk.</span></li>
-    <li><span class="tick">Consumer cracks vs. sticky inflation.</span> <span class="why">Michigan sentiment fell ~8% in August while core PCE holds at 3.3% — a stagflation-lite setup that boxes in a Fed already leaning hawkish.</span></li>
-  </ul>
+  <h2>3 &middot; Top 3 Things That Matter Today</h2>
+  <div class="card">
+    <div><span class="num">1</span><b>The Fed is now the hike risk, not the cut hope.</b></div>
+    <div class="why" style="margin:6px 0 0 28px;">After Kevin Warsh&#39;s hawkish Jackson Hole keynote, the rates market has flipped toward pricing potential <b>hikes</b>; the 10Y is up at 4.73%. <i>Why it matters:</i> the entire 2026 &ldquo;cuts are coming&rdquo; trade is being repriced &mdash; duration, gold and long-duration tech all wear it.</div>
+  </div>
+  <div class="card">
+    <div><span class="num">2</span><b>Oil shock is back via Hormuz.</b></div>
+    <div class="why" style="margin:6px 0 0 28px;">U.S. strikes on Iranian launchers sent Brent back above $90. <i>Why it matters:</i> higher energy feeds the exact inflation the hawkish Fed is worried about &mdash; oil-up-plus-Fed-hawkish is a textbook stagflation-lite squeeze on risk assets.</div>
+  </div>
+  <div class="card">
+    <div><span class="num">3</span><b>Jobs week into a jittery tape.</b></div>
+    <div class="why" style="margin:6px 0 0 28px;">JOLTS + ISM Tuesday, nonfarm payrolls Friday. <i>Why it matters:</i> with the Fed leaning hawkish, a <b>hot</b> labor print now hurts stocks (locks in higher-for-longer) &mdash; good news is bad news again.</div>
+  </div>
 
-  <h2>4 · On the Calendar Today</h2>
-  <ul>
-    <li><span class="tick">10:00am ET — Fed Chair Warsh, Jackson Hole keynote.</span> Theme: "Financial Innovation." No pre-set on macro vs. policy-path guidance.</li>
-    <li><span class="tick">10:00am ET — U. Michigan Consumer Sentiment (final Aug).</span> Prelim showed ~8% MoM drop; expectations component sank hardest.</li>
-    <li><span class="tick">Context — Core PCE (released Wed):</span> +0.2% MoM / <span class="num">3.3%</span> YoY, in line; headline 3.7% (0.1pt hot). Didn't move Sept odds.</li>
-    <li><span class="tick">Earnings:</span> light; <span class="why">no watchlist names today — NVDA already reported Wed.</span></li>
-  </ul>
+  <h2>4 &middot; On the Calendar Today &amp; This Week</h2>
+  <div class="card">
+    <ul>
+      <li><b>Today (Mon Aug 31):</b> Quiet U.S. data day; month-end rebalancing flows. Watch oil and the 10Y for the risk tone.</li>
+      <li><b>Tue Sep 1:</b> ISM Manufacturing &amp; S&amp;P Manufacturing PMI (cons. ~53.2, prior 53.2); JOLTS job openings (10:00 ET).</li>
+      <li><b>Wed&ndash;Thu:</b> ADP, ISM Services, jobless claims.</li>
+      <li><b>Fri Sep 4:</b> <b>Nonfarm payrolls &amp; unemployment rate</b> (8:30 ET) &mdash; the week&#39;s main event.</li>
+      <li><b>Earnings:</b> Light megacap week; no watchlist names report (NVDA already reported Aug 26).</li>
+    </ul>
+  </div>
 
-  <h2>5 · One Thing to Sound Smart About</h2>
   <div class="card edge">
-    Nvidia's ~70% CY2027 revenue guide is nearly double the Street — but the bull case and the bear case now rest on the <em>same</em> cash flows. The BIS used its 2026 Annual Report to name "circular financing" — Nvidia funding neoclouds like CoreWeave, Nebius and Nscale that then buy its chips, often pledging those chips as loan collateral — as one of the three biggest risks to global financial stability. Translation: the tell isn't NVDA's tape, it's <strong>neocloud credit spreads</strong>. If the debt financing those GPU purchases starts to widen, the demand Nvidia just guided to is the first thing to wobble.
-    <div class="smsbox">SMS: SP500 +0.7% Nasdaq +1.4% Dow 53564, 10Y 4.66%, gold 4602 BTC 80k, NVDA +8% AAPL 313. Jackson Hole Warsh 10am. Edge- BIS flags AI circular financing</div>
+    <h2>5 &middot; One Thing to Sound Smart About</h2>
+    <p style="margin:6px 0 0;"><b>Gold fell while oil and geopolitics jumped &mdash; that divergence is the whole story.</b> In a classic fear shock, gold and oil rise together. This weekend gold <i>dropped</i> toward a one-week low even as Brent broke $90 on the Iran strike. The tell: this isn&#39;t primarily a fear bid, it&#39;s a <b>real-yields</b> move. A hawkish Warsh Fed pushing real rates up raises the opportunity cost of holding zero-yield gold, and that force is overpowering the safe-haven bid. Translation for your circle: watch <b>real yields (10Y TIPS)</b>, not the VIX, to know whether this selloff has legs.</p>
   </div>
 
-  <h2>6 · Learning Nugget</h2>
-  <div class="card nugget">
-    <strong>Circular financing.</strong> When a supplier invests in (or lends to) its own customer, who then uses that money to buy the supplier's product. It flatters reported demand and concentrates credit risk, because the "revenue" and the loan collateral both depend on the same asset holding its value.
+  <h2>6 &middot; Learning Nugget</h2>
+  <div class="nugget">
+    <b>Real yield</b> = nominal Treasury yield minus expected inflation (proxied by TIPS). When real yields rise, non-cash-flowing assets like gold and long-duration growth stocks get cheaper on a relative basis &mdash; which is exactly why gold and rate-sensitive tech can fall together even during a geopolitical scare.
   </div>
 
-  <footer>
-    <strong>Sources:</strong>
-    <a href="https://www.fool.com/coverage/stock-market-today/2026/08/27/stock-market-today-aug-27-nvidia-surges-on-blowout-results-and-surprising-guidance/">Motley Fool — Aug 27 market</a> ·
-    <a href="https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html">CNBC — Nvidia earnings</a> ·
-    <a href="https://www.cnbc.com/2026/08/26/feds-preferred-inflation-gauge-shows-core-prices-rose-3point3percent-annually-in-july.html">CNBC — Core PCE 3.3%</a> ·
-    <a href="https://www.rexshares.com/jackson-hole-explained/">REX — Jackson Hole / Warsh</a> ·
-    <a href="https://tradingeconomics.com/united-states/government-bond-yield">TradingEconomics — 10Y</a> ·
-    <a href="https://fortune.com/article/current-price-of-gold-08-27-2026/">Fortune — Gold</a> ·
-    <a href="https://invezz.com/news/2026/08/27/evening-digest-bitcoin-hits-80k-oil-and-gold-prices-rise/">Invezz — BTC $80k</a> ·
-    <a href="https://ts2.tech/en/stock-market-today-08-28-2026-asia/">TS2 — Asia markets</a> ·
-    <a href="https://io-fund.com/ai-stocks/nvidia-coreweave-nebius-circular-financing-gpu-boom">I/O Fund — Circular financing</a>
-    <div class="disc">Auto-generated pre-market brief · informational only, not investment advice · figures are latest available at generation time and may revise.</div>
-  </footer>
+  <div class="foot">
+    <b>Sources:</b>
+    <a href="https://www.cnbc.com/2026/08/27/stock-market-today-live-updates.html">CNBC (Fri close/Warsh)</a> &middot;
+    <a href="https://www.kvue.com/article/syndication/associatedpress/how-major-us-stock-indexes-fared-friday-8282026/616-4795ac02-ae9a-4412-9c76-63d91e5c96e5">AP index levels 8/28</a> &middot;
+    <a href="https://finance.yahoo.com/markets/live/stock-market-today-monday-august-31-dow-sp-500-nasdaq-113851714.html">Yahoo Finance (Mon futures)</a> &middot;
+    <a href="https://www.bnnbloomberg.ca/business/economics/2026/08/31/world-shares-are-mixed-and-oil-prices-surge-after-us-strike-on-iranian-rocket-launchers/">BNN Bloomberg (Asia/Europe, oil)</a> &middot;
+    <a href="https://www.thenationalnews.com/business/energy/2026/08/31/oil-rises-to-above-90-as-us-and-iran-resume-strikes/">The National (Brent &gt;$90)</a> &middot;
+    <a href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-august-28-2026-gold-steady-as-markets-prepare-for-warsh-speech-115654858.html">Yahoo (gold)</a> &middot;
+    <a href="https://www.fool.com/investing/2026/08/31/prediction-this-is-where-nvidia-stock-will-be-when/">Motley Fool (NVDA)</a>
+    <div style="margin-top:8px;color:#5f6f7e;">Generated automatically &middot; Not investment advice. Prices are late-Aug 28 closes / Aug 31 pre-market and move fast.</div>
+  </div>
 </div>
 </body>
 </html>
