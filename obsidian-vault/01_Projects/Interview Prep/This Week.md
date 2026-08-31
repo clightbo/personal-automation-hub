@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-08-30 23:28 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-08-31 18:34 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-PAIRS: LONG QQQ / SHORT DIA (tech vs old economy): Leadership stays in megacap tech while industrials lag on rates and slowing PMI. Catalyst: earnings dispersion, AI narrative. Risk: factor reversal if Fed cuts spark broad rally in cyclicals.
+LONG AAPL (cash machine + services): Hardware cycle is mature but high-margin Services and buybacks support EPS; Vision/AI features are optional upside. Catalyst: Services growth, capital return. Risk: China demand, App Store regulation, multiple already full.
 
 ## Rehearsal checklist
 

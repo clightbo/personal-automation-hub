@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-30 23:28 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-08-31 18:34 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -19,8 +19,10 @@ _Updated 2026-08-30 23:28 UTC. Auto-generated from personal-automation-hub._
 | 2026-09-03 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 203K |
 | 2026-09-03 08:30 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
 | 2026-09-03 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.1, prev 54.1 |
+| 2026-09-03 15:00 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
+| 2026-09-03 15:05 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-04 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.1% |
-| 2026-09-04 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 58K, prev -23K |
+| 2026-09-04 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 55K, prev -23K |
 | 2026-09-04 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
@@ -49,6 +51,8 @@ _Updated 2026-08-30 23:28 UTC. Auto-generated from personal-automation-hub._
 
 - **2026-09-01 09:05** — FOMC Member Barr Speaks
 - **2026-09-03 08:30** — FOMC Member Waller Speaks
+- **2026-09-03 15:00** — FOMC Member Hammack Speaks
+- **2026-09-03 15:05** — FOMC Member Goolsbee Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
