@@ -7,14 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-01 00:36 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-01 15:53 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-01 09:05 ET | Low | Fed | **FOMC Member Barr Speaks** — Low impact |
-| 2026-09-01 10:00 ET | High | Macro | **ISM Manufacturing PMI** — High impact; forecast 55.2, prev 55.6 |
-| 2026-09-01 10:00 ET | Medium | Macro | **ISM Manufacturing Prices** — Medium impact; forecast 70.5, prev 71.1 |
-| 2026-09-01 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.33M, prev 7.36M |
 | 2026-09-02 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 48K, prev 44K |
 | 2026-09-03 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 203K |
 | 2026-09-03 08:30 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
@@ -49,7 +45,6 @@ _Updated 2026-09-01 00:36 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-01 09:05** — FOMC Member Barr Speaks
 - **2026-09-03 08:30** — FOMC Member Waller Speaks
 - **2026-09-03 15:00** — FOMC Member Hammack Speaks
 - **2026-09-03 15:05** — FOMC Member Goolsbee Speaks
@@ -67,9 +62,6 @@ _Updated 2026-09-01 00:36 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-01 10:00** — ISM Manufacturing PMI
-- **2026-09-01 10:00** — ISM Manufacturing Prices
-- **2026-09-01 10:00** — JOLTS Job Openings
 - **2026-09-02 08:15** — ADP Non-Farm Employment Change
 - **2026-09-03 08:30** — Unemployment Claims
 - **2026-09-03 10:00** — ISM Services PMI
