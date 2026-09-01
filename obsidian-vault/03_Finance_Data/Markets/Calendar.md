@@ -7,18 +7,18 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-08-31 18:34 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-01 00:36 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
 | 2026-09-01 09:05 ET | Low | Fed | **FOMC Member Barr Speaks** — Low impact |
 | 2026-09-01 10:00 ET | High | Macro | **ISM Manufacturing PMI** — High impact; forecast 55.2, prev 55.6 |
-| 2026-09-01 10:00 ET | Medium | Macro | **ISM Manufacturing Prices** — Medium impact; forecast 71.2, prev 71.1 |
+| 2026-09-01 10:00 ET | Medium | Macro | **ISM Manufacturing Prices** — Medium impact; forecast 70.5, prev 71.1 |
 | 2026-09-01 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.33M, prev 7.36M |
-| 2026-09-02 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 47K, prev 44K |
+| 2026-09-02 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 48K, prev 44K |
 | 2026-09-03 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 203K |
 | 2026-09-03 08:30 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
-| 2026-09-03 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.1, prev 54.1 |
+| 2026-09-03 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.2, prev 54.1 |
 | 2026-09-03 15:00 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-09-03 15:05 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-04 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.1% |
