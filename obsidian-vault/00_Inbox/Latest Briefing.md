@@ -1,62 +1,72 @@
 ---
-tags:
-  - daily
-  - markets
-  - inbox
+tags: [daily, markets, inbox]
 ---
 
 # Latest Market Briefing
 
-_Last synced: 2026-08-18 10:45 ET._
+_Last synced: 2026-09-01 07:10 ET._
+
+**One-liner:** Warsh went hawkish at Jackson Hole and markets now price a ~60% chance of a September rate hike — into a labor market that just printed negative payrolls. Oil (~$80, Iran risk) is the inflation swing factor; the 10Y sits at a cycle high (~4.8%). Today it's ISM Manufacturing + JOLTS at 10:00 ET. The tell to watch isn't the data — it's credit spreads.
 
 ## Market Snapshot
 
-| Asset | Level | Move |
-|---|---|---|
-| S&P 500 | 7,703 | −0.5% |
-| Nasdaq Composite | 26,755 | −1.6% |
-| Dow Jones | ~53,320 | −0.3% |
-| 10Y Treasury | 4.74% | near 19-mo high |
-| 30Y Treasury | 5.31% | highest since 2007 |
-| WTI Crude | ~$84 (Brent ~$91) | 2-week high |
-| Gold | $4,429 | +0.3% |
-| Bitcoin | ~$64,900 | +2% |
-| Asia / Europe | — | global bear-steepening, risk-off |
+| Asset | Level | Move | Note |
+|---|---|---|---|
+| S&P 500 | 7,686.14 | −0.33% | Slipped Mon but capped a winning August |
+| Nasdaq Comp | 26,370.89 | −0.12% | Megacap AI cushioned the tape |
+| Dow | 53,185.90 | −0.70% (−374 pts) | Worst of the three (cyclicals) |
+| 10Y Treasury | ~4.79% | ▲ yield | Highest since Jan 2025; oil + hawkish Fed |
+| WTI Crude | ~$80 | ▲ | Iran conflict; tail scenario toward $120 |
+| Gold | <$4,450 | ▼ | Sold off on hawkish Warsh / higher real yields |
+| Bitcoin | ~$78.4k | ▼ | Stronger dollar / risk-off |
+| Nikkei 225 | 66,129 | −0.42% | Oil, Fed, stronger USD |
+| Hang Seng | 25,567 | −0.10% | Risk-off on US–Iran tensions |
+
+_Levels are the Aug 31 close / latest overnight prints._
 
 ## Your Watchlist
 
-- **SPY** −0.5% — tracks the S&P; slipping from last week's record.
-- **QQQ** −1.6% — Nasdaq-100 hit hardest by the duration selloff.
-- **DIA** −0.3% — Dow's value tilt is today's relative winner.
-- **AAPL** $305.59 (~flat, +0.1%) — steadying after soft revenue guidance; still #1 at ~$4.5T cap.
-- **NVDA** ~$225 (+17.7% YTD) — dragging with semis; disclosed $21B SpaceX stake; **Q2 earnings Aug 26** = the week's main event.
-- **MSFT** ~$465 — off ~3% recently on AI-capex worries; $0.91 dividend, ex-date Aug 20.
+- **SPY** — −0.3%. Tracks S&P (7,686); this week's ISM + jobs data are the swing factors.
+- **QQQ** — −0.1%. Tracks Nasdaq-100; held up better than the Dow on AI megacaps.
+- **DIA** — −0.7%. Tracks the Dow (53,186); cyclicals hit hardest by oil + yields.
+- **AAPL** — ~$313 (last read early Aug). Catalyst: iPhone launch event **Sept 9**.
+- **NVDA** — $217.55, −3.4% (Aug 28) despite a blowout: Q rev $96.2B, +106% YoY, EPS $2.22. Classic sell-the-news + Warsh.
+- **MSFT** — ~$496 (last read early Aug). Next earnings Oct 28.
 
 ## Top 3 Things That Matter Today
 
-1. **30Y yield hits 5.31%, highest since 2007.** A supply/term-premium move, not a growth scare — a higher discount rate compresses equity multiples and punishes long-duration megacap tech most.
-2. **Oil back to 2-week highs on Iran blockade tensions.** Re-accelerating energy costs threaten the disinflation story and narrow the Fed's room to cut.
-3. **AI capex is now a rates story.** Hyperscaler debt issuance plus MSFT/NVDA spend feeds bond supply — the AI trade's biggest risk has shifted from demand to the cost of funding it.
+1. **Warsh's hawkish pivot makes a September hike live (~60% odds).** _Why it matters:_ A Fed hiking — after two years of an easing narrative — reprices every asset, front end to equity multiples.
+2. **Iran conflict keeps oil bid (~$80, $120 tail).** _Why it matters:_ Energy is the inflation variable giving Warsh cover to hike; a real supply shock would force the Fed's hand and compress valuations.
+3. **Jobs week culminates Friday (NFP est +55K, prev −23K).** _Why it matters:_ A soft print colliding with rising hike odds is the market's least comfortable setup — the Fed potentially tightening into weakness.
 
 ## On the Calendar Today
 
-- **8:30am** — Housing Starts (Jul), est **1.390M** vs 1.427M prior; Building Permits est 1.380M vs 1.367M.
-- **9:15am** — Industrial Production (Jul), est **+0.2%**; Capacity Utilization 76.3%.
-- **8:30am** — Import Prices +0.1% / Export Prices +0.2%.
-- **Earnings** — No watchlist names today; retail (Home Depot & co.) in focus. **NVDA reports Aug 26**; MSFT ex-dividend Aug 20.
+- **09:05 ET** — Fed's Barr speaks (low)
+- **10:00 ET** — ISM Manufacturing PMI — cons 55.2, prev 55.6 (high)
+- **10:00 ET** — ISM Mfg Prices — cons 71.2, prev 71.1 (inflation tell)
+- **10:00 ET** — JOLTS Job Openings — cons 7.33M, prev 7.36M
 
-## One Thing To Sound Smart About
+_Rest of week:_ ADP (Wed), Jobless Claims + ISM Services (Thu), NFP / Unemployment 4.1% / AHE +0.3% (Fri). No watchlist earnings today — MSFT Oct 28, AAPL Oct 29, NVDA Nov 17.
 
-Headlines blame Iran, but the tape is a **bear-steepener**: the 30Y is selling off faster than the 2Y, so this is a fiscal / term-premium move, not a growth scare. The tell is **gold rising alongside yields** — the usual inverse has broken, signaling a debt-sustainability / debasement trade rather than classic risk-off. That's why the highest-multiple names (Nasdaq −1.6%) are punished far more than cyclicals (Dow −0.3%). _(Bloomberg / CNBC bond-selloff coverage.)_
+## One Thing to Sound Smart About
+
+The reason a September hike is even on the table isn't a hot economy — it's **loose financial conditions**. Corporate credit spreads (IG/HY OAS) remain historically tight even with equities near records: "yields have done the work, spreads have sat still." That gives Warsh cover to hike even with soft jobs, because markets aren't tightening for him. **The tell to watch:** high-yield OAS — if spreads stay tight into the Sep 16 FOMC, a hike gets easier to justify; a sudden widening takes it off the table faster than any data release. Second-order: if Warsh accelerates QT while Treasury funds record deficits, private markets absorb more duration, pushing the term premium higher and steepening the long end regardless of the funds rate.
 
 ## Learning Nugget
 
-**Term premium** — the extra yield investors demand to hold a long-dated bond instead of rolling short-term ones, compensating for inflation and supply risk. When it rises (as now, with heavy Treasury issuance), long yields climb even without Fed hikes, compressing equity valuations independent of the growth outlook.
+**Term premium** — the extra yield investors demand to hold a long-dated bond instead of rolling short-term ones. When QT and heavy government issuance flood the market with duration, that premium rises and pushes long yields up even if the Fed isn't hiking — a big part of why the 10Y is at a cycle high right now.
 
 ---
 
 **Quick links:** [[03_Finance_Data/Markets/Calendar]] · [[03_Finance_Data/Markets/Watchlist]] · [[01_Projects/Interview Prep/This Week]]
 
-**Sources:** [Yahoo Finance](https://finance.yahoo.com/markets/live/stock-market-today-tuesday-august-18-dow-sp-500-nasdaq-080822735.html) · [TheStreet](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-18-2026) · [Seeking Alpha (30Y)](https://seekingalpha.com/news/4634066-30-year-treasury-yield-hits-530-its-highest-level-since-2007) · [CNBC (yields)](https://www.cnbc.com/2026/08/18/30-year-treasury-yield-three-things-that-could-drive-it-even-higher.html) · [CoinDesk (BTC)](https://www.coindesk.com/tech/2026/08/18/live-updates-bitcoin-holds-usd64-000-as-surging-yields-and-oil-drain-risk-appetite) · [XTB (calendar)](https://www.xtb.com/en/market-analysis/macro-calendar-us-housing-market-in-the-spotlight-of-investors-18-08-2026) · [Intellectia (NVDA)](https://intellectia.ai/blog/nvda-stock-earnings-august-2026)
-
-_Generated automatically. Not investment advice._
+### Sources
+- [CNBC — Markets Aug 31](https://www.cnbc.com/2026/08/31/stock-market-today-live-updates.html)
+- [Yahoo Finance — Indices](https://finance.yahoo.com/markets/live/stock-market-today-monday-august-31-dow-sp-500-nasdaq-113851714.html)
+- [CNBC — Warsh / hike odds](https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html)
+- [Chase — September hike expected](https://www.chase.com/personal/investments/learning-and-insights/article/september-2026-rate-hike-now-expected-amid-energy-shocks)
+- [Fortune — Bitcoin](https://fortune.com/article/price-of-bitcoin-08-31-2026/)
+- [Trading Economics — Gold](https://tradingeconomics.com/commodity/gold)
+- [Eastern Herald — NVDA](https://easternherald.com/2026/08/29/nvda-stock-today-august-28-2026-nvidia-falls-warsh-rate-warning/)
+- [Junk Bond Investor — Spreads Are Now a Reason to Hike](https://www.junkbondinvestor.com/p/credit-weekly-spreads-are-now-a-reason)
+- [Dallas Fed — Term premium](https://www.dallasfed.org/research/economics/2026/0625)
