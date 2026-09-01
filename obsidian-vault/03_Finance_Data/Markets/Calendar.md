@@ -7,11 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-01 15:53 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-01 23:17 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-02 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 48K, prev 44K |
+| 2026-09-02 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 47K, prev 44K |
 | 2026-09-03 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 203K |
 | 2026-09-03 08:30 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
 | 2026-09-03 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.2, prev 54.1 |
