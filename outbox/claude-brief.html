@@ -3,164 +3,131 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — Sep 1, 2026</title>
+<title>Pre-Market Brief — Sep 2, 2026</title>
 <style>
   :root{
-    --bg:#0b0f17; --panel:#131a26; --panel2:#0f1622; --line:#243044;
-    --text:#e8edf5; --muted:#9aa7bd; --accent:#4da3ff; --green:#3ddc97;
-    --red:#ff6b6b; --amber:#ffcf5c; --chip:#1c2636;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --bg:#0b0f17; --panel:#131a26; --panel2:#0f1622; --line:#233145;
+    --text:#e8edf5; --muted:#9fb0c7; --accent:#4da3ff; --up:#26d07c; --down:#ff5c6c;
+    --amber:#ffb84d;
   }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans);
-    -webkit-font-smoothing:antialiased;line-height:1.55}
-  .wrap{max-width:820px;margin:0 auto;padding:22px 18px 60px}
-  header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px}
-  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
-  h1{font-size:26px;margin:6px 0 4px;letter-spacing:-.01em}
-  .date{color:var(--muted);font-size:14px}
-  .tldr{background:linear-gradient(180deg,#16233a,#111a2b);border:1px solid var(--line);
-    border-radius:12px;padding:14px 16px;margin:18px 0;font-size:15px}
-  .tldr b{color:var(--amber)}
-  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
-    margin:30px 0 12px;font-weight:700;border-left:3px solid var(--accent);padding-left:10px}
-  table{width:100%;border-collapse:collapse;font-size:14.5px}
-  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-  td.num{font-family:var(--mono);white-space:nowrap}
-  .up{color:var(--green);font-weight:600}
-  .down{color:var(--red);font-weight:600}
-  .flat{color:var(--muted)}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 14px;margin-bottom:14px}
-  ol.items{list-style:none;counter-reset:i;padding:0;margin:0}
-  ol.items li{counter-increment:i;padding:14px 0;border-bottom:1px solid var(--line)}
-  ol.items li:last-child{border-bottom:none}
-  ol.items li .h{display:flex;gap:10px;align-items:baseline}
-  ol.items li .n{font-family:var(--mono);color:var(--accent);font-weight:700;font-size:15px}
-  ol.items li .t{font-weight:700;font-size:16px}
-  ol.items li .why{color:var(--muted);font-size:14px;margin-top:4px;padding-left:26px}
-  .why b{color:var(--text)}
-  ul.cal{list-style:none;padding:0;margin:0;font-size:14.5px}
-  ul.cal li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}
-  ul.cal li:last-child{border-bottom:none}
-  .time{font-family:var(--mono);color:var(--accent);min-width:78px}
-  .badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
-  .b-high{background:#3a1620;color:var(--red)} .b-med{background:#3a2f16;color:var(--amber)} .b-low{background:#16283a;color:var(--accent)}
-  .smart,.nugget{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
-  .smart p,.nugget p{margin:0 0 10px;font-size:15px}
-  .smart p:last-child,.nugget p:last-child{margin-bottom:0}
-  .kicker{color:var(--amber);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
-  .watch td:first-child{font-weight:700;font-family:var(--mono)}
-  .note{color:var(--muted);font-size:12px;font-style:italic}
-  footer{margin-top:34px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12.5px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;padding:18px}
+  .wrap{max-width:760px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+  .kicker{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  h1{font-size:26px;margin:4px 0 2px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:13px}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .up{color:var(--up)} .down{color:var(--down)} .amber{color:var(--amber)}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row .t{font-weight:700} .row .d{color:var(--muted);font-size:14px;text-align:right;flex:1}
+  ol{margin:0;padding-left:20px} ol li{margin-bottom:12px}
+  .why{color:var(--muted);font-size:14px;display:block;margin-top:2px}
+  .edge,.nugget{background:var(--panel2);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;font-size:15px}
+  .nugget{border-left-color:var(--amber)}
+  .tag{display:inline-block;background:#1c2637;color:var(--muted);font-size:11px;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+  .cal{font-size:15px}
+  .cal div{padding:7px 0;border-bottom:1px solid var(--line)} .cal div:last-child{border-bottom:none}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
   footer a{color:var(--accent);text-decoration:none}
-  footer a:hover{text-decoration:underline}
-  .sources{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
-  @media(max-width:520px){h1{font-size:22px} th,td{padding:8px 6px;font-size:13.5px} .wrap{padding:16px 12px 50px}}
+  .snap-note{color:var(--muted);font-size:12px;margin-top:6px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Pre-Market Brief · Personalized</div>
-    <h1>Daily Market Brief</h1>
-    <div class="date">Tuesday, September 1, 2026 · pre-market · watchlist: SPY QQQ DIA AAPL NVDA MSFT</div>
+    <div class="kicker">Pre-Market Brief</div>
+    <h1>Wednesday, September 2, 2026</h1>
+    <div class="sub">Prepared pre-open · reflects Sep 1 closes &amp; overnight tape · ~3 min read</div>
   </header>
 
-  <div class="tldr">
-    <b>The one-liner:</b> Warsh went hawkish at Jackson Hole and markets now price a <b>~60% chance of a September rate hike</b> — into a labor market that just printed <b>negative</b> payrolls. Oil (~$80, Iran risk) is the inflation swing factor; the 10Y sits at a cycle high (~4.8%). Today it's <b>ISM Manufacturing + JOLTS at 10:00 ET</b>. The tell to watch isn't the data — it's credit spreads.
-  </div>
+  <section>
+    <h2>1 · Market Snapshot</h2>
+    <div class="card">
+    <table>
+      <tr><th>Instrument</th><th style="text-align:right">Last</th><th style="text-align:right">Move</th></tr>
+      <tr><td>S&amp;P 500</td><td class="num">7,631.47</td><td class="num down">-0.71%</td></tr>
+      <tr><td>Nasdaq Composite</td><td class="num">26,099.77</td><td class="num down">-1.03%</td></tr>
+      <tr><td>Dow Jones</td><td class="num">52,766.88</td><td class="num down">-0.79%</td></tr>
+      <tr><td>10-Yr Treasury</td><td class="num">4.80%</td><td class="num down">high since Jan '25</td></tr>
+      <tr><td>WTI Crude</td><td class="num">~$90</td><td class="num up">+5%+ (5th day up)</td></tr>
+      <tr><td>Gold</td><td class="num">~$4,350/oz</td><td class="num down">-1.6%</td></tr>
+      <tr><td>Bitcoin</td><td class="num">&lt;$76,500</td><td class="num down">-1% o/n, -3% wk</td></tr>
+    </table>
+    </div>
+    <div class="card cal">
+      <div><strong>Overnight — Asia/Europe:</strong> Asian equities set to fall as the oil-and-yields squeeze bites; JGB 10-yr touched 3% (first since 1996). Euro-area Aug CPI jumped to 3.3% (from 2.9%), all but locking a 25bp ECB hike to 2.5% this month. UK 30-yr gilt yields hit highest since 1998.</div>
+    </div>
+    <div class="snap-note">Global 10-yr yields at their highest since 2008 — the tape is being driven by rates, not earnings.</div>
+  </section>
 
-  <h2>1 · Market Snapshot</h2>
-  <div class="card">
-  <table>
-    <thead><tr><th>Asset</th><th>Level</th><th>Move</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr><td>S&amp;P 500</td><td class="num">7,686.14</td><td class="num down">−0.33%</td><td>Slipped Mon but capped a winning August</td></tr>
-      <tr><td>Nasdaq Comp</td><td class="num">26,370.89</td><td class="num down">−0.12%</td><td>Megacap AI cushioned the tape</td></tr>
-      <tr><td>Dow</td><td class="num">53,185.90</td><td class="num down">−0.70%</td><td>−374 pts, worst of the three (cyclicals)</td></tr>
-      <tr><td>10Y Treasury</td><td class="num">~4.79%</td><td class="num down">▲ yield</td><td>Highest since Jan 2025; oil + hawkish Fed</td></tr>
-      <tr><td>WTI Crude</td><td class="num">~$80</td><td class="num up">▲</td><td>Iran conflict; tail scenario toward $120</td></tr>
-      <tr><td>Gold</td><td class="num">&lt;$4,450</td><td class="num down">▼</td><td>Sold off on hawkish Warsh / higher real yields</td></tr>
-      <tr><td>Bitcoin</td><td class="num">~$78.4k</td><td class="num down">▼</td><td>Pressured by stronger dollar / risk-off</td></tr>
-      <tr><td>Asia (Nikkei)</td><td class="num">66,129</td><td class="num down">−0.42%</td><td>Oil, Fed, stronger USD weighed</td></tr>
-      <tr><td>Asia (Hang Seng)</td><td class="num">25,567</td><td class="num down">−0.10%</td><td>Risk-off on US–Iran tensions</td></tr>
-    </tbody>
-  </table>
-  <div class="note">Levels are the Aug 31 close / latest overnight prints. Europe opened cautious on the same oil-and-rates theme.</div>
-  </div>
+  <section>
+    <h2>2 · Your Watchlist</h2>
+    <div class="card">
+      <div class="row"><span class="t">SPY <span class="tag">S&amp;P 500</span></span><span class="d down">tracks index, ~-0.7% · risk-off into a seasonally weak Sept</span></div>
+      <div class="row"><span class="t">QQQ <span class="tag">Nasdaq-100</span></span><span class="d down">~-1.0% · long-duration tech hit hardest as yields spike</span></div>
+      <div class="row"><span class="t">DIA <span class="tag">Dow</span></span><span class="d down">~-0.8% · -419 pts on the day</span></div>
+      <div class="row"><span class="t">AAPL</span><span class="d up">$325.13 · +2.6% — lone green mega-cap on Day 1 of CEO John Ternus</span></div>
+      <div class="row"><span class="t">NVDA</span><span class="d down">$217.44 · -1.5% · declared $0.25 dividend, ex-date Sep 10</span></div>
+      <div class="row"><span class="t">MSFT</span><span class="d down">$501.02 · -1.2%</span></div>
+    </div>
+  </section>
 
-  <h2>2 · Your Watchlist</h2>
-  <div class="card">
-  <table class="watch">
-    <thead><tr><th>Ticker</th><th>Last</th><th>Read</th></tr></thead>
-    <tbody>
-      <tr><td>SPY</td><td class="num down">−0.3%</td><td>Tracks S&amp;P (7,686). This week's ISM + jobs data are the swing factors.</td></tr>
-      <tr><td>QQQ</td><td class="num down">−0.1%</td><td>Tracks Nasdaq-100; held up better than the Dow on AI megacaps.</td></tr>
-      <tr><td>DIA</td><td class="num down">−0.7%</td><td>Tracks the Dow (53,186); cyclicals hit hardest by oil + yields.</td></tr>
-      <tr><td>AAPL</td><td class="num">~$313</td><td>Last read early Aug. Catalyst: <b>iPhone launch event Sept 9.</b></td></tr>
-      <tr><td>NVDA</td><td class="num">$217.55</td><td><span class="down">−3.4%</span> (Aug 28) despite a blowout: Q rev $96.2B, +106% YoY, EPS $2.22. Classic sell-the-news + Warsh.</td></tr>
-      <tr><td>MSFT</td><td class="num">~$496</td><td>Last read early Aug. Next earnings Oct 28.</td></tr>
-    </tbody>
-  </table>
-  <div class="note">AAPL/MSFT reflect the most recent quotes located; index ETFs move with their benchmarks above.</div>
-  </div>
+  <section>
+    <h2>3 · Top 3 Things That Matter Today</h2>
+    <div class="card">
+    <ol>
+      <li><strong>The Fed is now expected to <em>hike</em>.</strong>
+        <span class="why">Chair Warsh's vow to "finally tame inflation" plus the oil shock has flipped Sept odds to &gt;65% for a hike (from ~36%). A rate-hike regime, not cuts, reprices every risk asset.</span></li>
+      <li><strong>Oil is the whole story.</strong>
+        <span class="why">Renewed U.S. strikes on Iran and Strait of Hormuz risk sent WTI above $90 (+5% Tue). Higher energy feeds straight into CPI, which is what's dragging bonds and stocks together.</span></li>
+      <li><strong>A synchronized global bond selloff.</strong>
+        <span class="why">Yields at 2008 highs worldwide mean the discount rate on everything just jumped — the classic setup for multiple compression in growth/tech.</span></li>
+    </ol>
+    </div>
+  </section>
 
-  <h2>3 · Top 3 Things That Matter Today</h2>
-  <ol class="items">
-    <li>
-      <div class="h"><span class="n">1</span><span class="t">Warsh's hawkish pivot makes a September hike live (~60% odds).</span></div>
-      <div class="why"><b>Why it matters:</b> A Fed <i>hiking</i> — after two years of an easing narrative — is a regime change that reprices every asset, from the front end to equity multiples.</div>
-    </li>
-    <li>
-      <div class="h"><span class="n">2</span><span class="t">Iran conflict keeps oil bid (~$80, $120 tail).</span></div>
-      <div class="why"><b>Why it matters:</b> Energy is the inflation variable giving Warsh cover to hike; a genuine supply shock would force the Fed's hand and compress valuations.</div>
-    </li>
-    <li>
-      <div class="h"><span class="n">3</span><span class="t">Jobs week culminates Friday (NFP est +55K, prev −23K).</span></div>
-      <div class="why"><b>Why it matters:</b> A soft print colliding with rising hike odds is the market's least comfortable setup — the Fed potentially tightening <i>into</i> weakness.</div>
-    </li>
-  </ol>
+  <section>
+    <h2>4 · On the Calendar Today</h2>
+    <div class="card cal">
+      <div><strong>Wed Sep 2 (today):</strong> Light U.S. data day — no tier-1 releases. Watch Fed speakers &amp; oil headlines.</div>
+      <div><strong>Already out (Sep 1):</strong> ISM Manufacturing Aug <strong>55.2</strong> (cons. 55.3, prior 55.6); JOLTS Jul openings <strong>7.3M</strong> (little changed).</div>
+      <div><strong>Ahead this week:</strong> ISM Services, then the <strong>Aug jobs report Fri Sep 4</strong> — the swing factor for the Sep 15–16 FOMC.</div>
+      <div><strong>Watchlist earnings:</strong> none of your names report today.</div>
+    </div>
+  </section>
 
-  <h2>4 · On the Calendar Today</h2>
-  <div class="card">
-  <ul class="cal">
-    <li><span class="time">09:05 ET</span><span class="badge b-low">Low</span> Fed's Barr speaks</li>
-    <li><span class="time">10:00 ET</span><span class="badge b-high">High</span> ISM Manufacturing PMI — <b>cons 55.2</b>, prev 55.6</li>
-    <li><span class="time">10:00 ET</span><span class="badge b-med">Med</span> ISM Mfg Prices — cons 71.2, prev 71.1 (inflation tell)</li>
-    <li><span class="time">10:00 ET</span><span class="badge b-med">Med</span> JOLTS Job Openings — <b>cons 7.33M</b>, prev 7.36M</li>
-  </ul>
-  <div class="note">Rest of week: ADP (Wed), Jobless Claims + ISM Services (Thu), Non-Farm Payrolls / Unemployment 4.1% / AHE +0.3% (Fri). No watchlist earnings today — MSFT Oct 28, AAPL Oct 29, NVDA Nov 17.</div>
-  </div>
+  <section>
+    <h2>5 · One Thing to Sound Smart About</h2>
+    <div class="edge">
+      Everyone's watching the 10-yr at 4.80%, but the real tell is the <strong>long end and overseas</strong>: 30-yr UK gilts at a 1998 high and JGBs at 3% for the first time since 1996. When Japan — the world's anchor of cheap capital — sees 3% yields, the global carry trade that has quietly funded risk assets for a decade starts to unwind. That's a bigger structural signal than any single U.S. print. <span class="why">Source: Bloomberg / CNBC, Sep 1 2026.</span>
+    </div>
+  </section>
 
-  <h2>5 · One Thing to Sound Smart About</h2>
-  <div class="smart">
-    <p class="kicker">The contrarian read</p>
-    <p>The reason a September hike is even on the table isn't a hot economy — it's <b>loose financial conditions</b>. Corporate credit spreads (IG/HY OAS) remain historically <i>tight</i> even with equities near records: "yields have done the work, spreads have sat still." That gives Warsh cover to hike even with soft jobs, because markets aren't tightening for him.</p>
-    <p><b>The tell to watch:</b> high-yield OAS. If spreads stay tight into the Sep 16 FOMC, a hike gets easier to justify; a sudden <i>widening</i> would take it off the table faster than any single data release. And note the second-order tension — if Warsh accelerates QT while Treasury funds record deficits, private markets absorb more duration, pushing the <b>term premium</b> higher and steepening the long end regardless of the funds rate.</p>
-  </div>
-
-  <h2>6 · Learning Nugget</h2>
-  <div class="nugget">
-    <p><span class="kicker">Term premium</span></p>
-    <p>The term premium is the extra yield investors demand to hold a long-dated bond instead of rolling short-term ones. When quantitative tightening and heavy government issuance flood the market with duration, that premium rises and pushes long yields up <i>even if the Fed isn't hiking</i> — a big part of why the 10Y is at a cycle high right now.</p>
-  </div>
+  <section>
+    <h2>6 · Learning Nugget</h2>
+    <div class="nugget">
+      <strong>Duration risk.</strong> A bond's price falls more for a given rise in yields the longer its maturity — that's duration. It's also why high-multiple tech (whose cash flows sit far in the future) trades like a "long-duration" asset and sells off hardest when rates jump, exactly as QQQ did versus the Dow yesterday.
+    </div>
+  </section>
 
   <footer>
-    <div>Sources</div>
-    <div class="sources">
-      <a href="https://www.cnbc.com/2026/08/31/stock-market-today-live-updates.html">CNBC — Markets Aug 31</a>
-      <a href="https://finance.yahoo.com/markets/live/stock-market-today-monday-august-31-dow-sp-500-nasdaq-113851714.html">Yahoo — Indices</a>
-      <a href="https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html">CNBC — Warsh / hike odds</a>
-      <a href="https://www.chase.com/personal/investments/learning-and-insights/article/september-2026-rate-hike-now-expected-amid-energy-shocks">Chase — Sept hike expected</a>
-      <a href="https://fortune.com/article/price-of-bitcoin-08-31-2026/">Fortune — Bitcoin</a>
-      <a href="https://tradingeconomics.com/commodity/gold">Trading Economics — Gold</a>
-      <a href="https://easternherald.com/2026/08/29/nvda-stock-today-august-28-2026-nvidia-falls-warsh-rate-warning/">Eastern Herald — NVDA</a>
-      <a href="https://www.junkbondinvestor.com/p/credit-weekly-spreads-are-now-a-reason">Junk Bond Investor — Spreads</a>
-      <a href="https://www.dallasfed.org/research/economics/2026/0625">Dallas Fed — Term premium</a>
-    </div>
-    <div style="margin-top:12px" class="note">Auto-generated pre-market brief · not investment advice · read in under 3 minutes.</div>
+    <strong>Sources:</strong>
+    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-1-2026">TheStreet</a> ·
+    <a href="https://www.cnbc.com/2026/09/01/bond-yields-iran-inflation-treasurys-japan-uk.html">CNBC (bond yields)</a> ·
+    <a href="https://www.bloomberg.com/news/newsletters/2026-09-01/global-bond-selloff-sends-yields-to-the-highest-since-2008">Bloomberg</a> ·
+    <a href="https://fortune.com/2026/09/01/oil-prices-bond-yields-inflation-fe/">Fortune (oil/yields)</a> ·
+    <a href="https://www.fool.com/investing/2026/09/01/stocks-fall-on-rising-yields-and-oil-prices/">Motley Fool (AAPL)</a> ·
+    <a href="https://www.coindesk.com/markets/2026/09/02/bitcoin-slips-below-usd77-000-as-u-s-strikes-on-iran-send-oil-above-usd93">CoinDesk (BTC)</a> ·
+    <a href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">Apple Newsroom (CEO)</a> ·
+    <a href="https://www.stacking.capital/articles/september-1-2026-ism-manufacturing-552-jolts-733m-modest-downshift-sept-16-fomc-established-owners">ISM/JOLTS</a>
+    <br><br>Automated pre-market brief · figures reflect Sep 1 2026 close and Sep 2 overnight. Not investment advice.
   </footer>
 </div>
 </body>
