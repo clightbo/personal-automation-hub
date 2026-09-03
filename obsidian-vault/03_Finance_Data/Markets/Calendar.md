@@ -7,12 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-03 15:35 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-03 23:15 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-03 15:00 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
-| 2026-09-03 15:55 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-04 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.1% |
 | 2026-09-04 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 55K, prev -23K |
 | 2026-09-04 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
@@ -41,8 +39,6 @@ _Updated 2026-09-03 15:35 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-03 15:00** — FOMC Member Hammack Speaks
-- **2026-09-03 15:55** — FOMC Member Goolsbee Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
