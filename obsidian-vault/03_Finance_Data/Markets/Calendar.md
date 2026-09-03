@@ -7,15 +7,12 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-02 23:17 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-03 15:35 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-03 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 203K |
-| 2026-09-03 08:30 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
-| 2026-09-03 10:00 ET | Medium | Macro | **ISM Services PMI** — Medium impact; forecast 54.2, prev 54.1 |
 | 2026-09-03 15:00 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
-| 2026-09-03 15:05 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
+| 2026-09-03 15:55 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-04 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.1% |
 | 2026-09-04 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 55K, prev -23K |
 | 2026-09-04 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
@@ -44,9 +41,8 @@ _Updated 2026-09-02 23:17 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-03 08:30** — FOMC Member Waller Speaks
 - **2026-09-03 15:00** — FOMC Member Hammack Speaks
-- **2026-09-03 15:05** — FOMC Member Goolsbee Speaks
+- **2026-09-03 15:55** — FOMC Member Goolsbee Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
@@ -61,8 +57,6 @@ _Updated 2026-09-02 23:17 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-03 08:30** — Unemployment Claims
-- **2026-09-03 10:00** — ISM Services PMI
 - **2026-09-04 08:30** — Average Hourly Earnings m/m
 - **2026-09-04 08:30** — Non-Farm Employment Change
 - **2026-09-04 08:30** — Unemployment Rate
