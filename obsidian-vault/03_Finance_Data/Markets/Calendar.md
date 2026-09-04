@@ -7,15 +7,14 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-04 15:33 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-04 23:02 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-04 18:00 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98013 |
+| 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98124 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.46983 |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-01-27 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
@@ -37,7 +36,6 @@ _Updated 2026-09-04 15:33 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-04 18:00** — FOMC Member Goolsbee Speaks
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
