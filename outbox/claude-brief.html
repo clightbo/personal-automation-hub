@@ -3,114 +3,125 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clark's Pre-Market Brief — Fri Sep 4, 2026</title>
+<title>Daily Market Brief — Sept 5, 2026</title>
 <style>
   :root{ color-scheme: dark; }
   *{ box-sizing:border-box; margin:0; padding:0; }
   body{
-    background:#0b0f17;
-    color:#e6edf3;
+    background:#0b0f14; color:#e6edf3;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;
-    padding:20px 16px 48px;
-    -webkit-font-smoothing:antialiased;
+    line-height:1.55; font-size:17px; padding:20px 16px 48px;
+    -webkit-text-size-adjust:100%;
   }
-  .wrap{ max-width:720px; margin:0 auto; }
-  header{ border-bottom:1px solid #1e2733; padding-bottom:16px; margin-bottom:22px; }
-  .kicker{ color:#5eb0ef; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-  h1{ font-size:26px; line-height:1.2; margin:6px 0 4px; }
-  .sub{ color:#8b98a9; font-size:14px; }
-  h2{
-    font-size:15px; letter-spacing:.05em; text-transform:uppercase; color:#9db4d0;
-    margin:30px 0 12px; padding-bottom:6px; border-bottom:1px solid #1e2733;
-  }
-  p{ font-size:16px; margin:8px 0; }
-  .row{ display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid #141c26; font-size:16px; }
-  .row:last-child{ border-bottom:none; }
-  .row .lbl{ color:#c6d3e2; font-weight:600; }
-  .row .val{ text-align:right; color:#e6edf3; }
-  .up{ color:#3fd07f; font-weight:700; }
-  .down{ color:#ff6b6b; font-weight:700; }
-  .flat{ color:#c6a15b; font-weight:700; }
-  .note{ color:#8b98a9; font-size:14px; }
-  ol{ padding-left:20px; } li{ margin:10px 0; font-size:16px; }
-  .why{ color:#8b98a9; font-size:14px; display:block; margin-top:2px; }
-  .card{ background:#111826; border:1px solid #1e2733; border-radius:12px; padding:16px 18px; margin:10px 0; }
-  .edge{ border-left:3px solid #5eb0ef; }
-  .learn{ border-left:3px solid #c6a15b; }
-  .tag{ display:inline-block; background:#16202e; color:#9db4d0; font-size:12px; font-weight:700; padding:3px 9px; border-radius:999px; margin-bottom:8px; letter-spacing:.04em; }
-  a{ color:#5eb0ef; }
-  .sources{ margin-top:12px; font-size:13px; line-height:1.9; }
-  .sources a{ color:#7aa7d4; word-break:break-all; }
-  footer{ margin-top:34px; border-top:1px solid #1e2733; padding-top:14px; color:#5b6675; font-size:12px; }
+  .wrap{ max-width:680px; margin:0 auto; }
+  header{ border-bottom:1px solid #1f2933; padding-bottom:16px; margin-bottom:8px; }
+  .kicker{ color:#58a6ff; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
+  h1{ font-size:26px; margin:6px 0 4px; letter-spacing:-.01em; }
+  .sub{ color:#8b949e; font-size:14px; }
+  h2{ font-size:15px; text-transform:uppercase; letter-spacing:.1em; color:#7ee787;
+      margin:30px 0 12px; padding-bottom:6px; border-bottom:1px solid #1f2933; }
+  p{ margin:0 0 10px; }
+  ul{ list-style:none; }
+  li{ margin:0 0 11px; padding-left:16px; position:relative; }
+  li::before{ content:"▸"; position:absolute; left:0; color:#58a6ff; }
+  .tk{ font-weight:700; color:#e6edf3; }
+  .up{ color:#3fb950; font-weight:700; }
+  .dn{ color:#f85149; font-weight:700; }
+  .why{ color:#8b949e; font-size:14px; display:block; margin-top:2px; }
+  table{ width:100%; border-collapse:collapse; margin:4px 0 8px; font-size:15px; }
+  th,td{ text-align:left; padding:8px 10px; border-bottom:1px solid #1a212b; }
+  th{ color:#8b949e; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  td.r,th.r{ text-align:right; font-variant-numeric:tabular-nums; }
+  .edge{ background:#11171f; border:1px solid #21323f; border-radius:10px; padding:14px 16px; }
+  .edge strong{ color:#d2a8ff; }
+  .nugget{ background:#11171f; border-left:3px solid #7ee787; border-radius:6px; padding:12px 16px; }
+  .sms{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; color:#8b949e;
+        background:#0d1117; border:1px dashed #30363d; border-radius:8px; padding:10px 12px; margin-top:8px; word-break:break-word; }
+  .src{ margin-top:28px; font-size:13px; color:#8b949e; border-top:1px solid #1f2933; padding-top:14px; }
+  .src a{ color:#58a6ff; text-decoration:none; }
+  .src li::before{ content:""; }
+  .src li{ padding-left:0; margin-bottom:5px; }
+  footer{ margin-top:24px; color:#586069; font-size:12px; text-align:center; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Pre-Market Brief</div>
-    <h1>Friday, September 4, 2026</h1>
-    <div class="sub">Jobs day. Generated 8:07 AM ET &middot; ~3 min read</div>
+    <div class="kicker">Clark's Pre-Market Brief</div>
+    <h1>Daily Market Brief</h1>
+    <div class="sub">Saturday, September 5, 2026 · Reflecting Friday Sept 4 close · ~3-min read</div>
   </header>
 
-  <h2>1 &middot; Market Snapshot</h2>
-  <div class="card">
-    <div class="row"><span class="lbl">S&amp;P 500</span><span class="val">7,747.71 <span class="up">+1.06%</span></span></div>
-    <div class="row"><span class="lbl">Nasdaq Comp</span><span class="val">26,584.06 <span class="up">+1.4%</span></span></div>
-    <div class="row"><span class="lbl">Dow</span><span class="val">53,686.11 <span class="up">+1.18%</span></span></div>
-    <div class="row"><span class="lbl">10-Yr Treasury</span><span class="val">~4.74% <span class="flat">flat/soft</span></span></div>
-    <div class="row"><span class="lbl">WTI Crude</span><span class="val">~$90 <span class="up">+9% wk</span></span></div>
-    <div class="row"><span class="lbl">Gold</span><span class="val">$4,526 <span class="up">+2.5%</span></span></div>
-    <div class="row"><span class="lbl">Bitcoin</span><span class="val">~$80,300 <span class="up">+4.3%</span></span></div>
-  </div>
-  <p class="note">Overnight: risk-on carried from Wednesday's broad +1% rally. Oil is the outlier — Brent pushed toward $99 on Russia's diesel-export ban and Strait of Hormuz disruption, a supply shock that complicates the disinflation story right into today's jobs print.</p>
+  <h2>Market Snapshot</h2>
+  <table>
+    <tr><th>Asset</th><th class="r">Level</th><th class="r">Move</th></tr>
+    <tr><td>S&amp;P 500</td><td class="r">7,718.60</td><td class="r dn">−0.38%</td></tr>
+    <tr><td>Nasdaq Comp</td><td class="r">26,506.99</td><td class="r dn">−0.29%</td></tr>
+    <tr><td>Dow</td><td class="r">53,414.25</td><td class="r dn">−0.51%</td></tr>
+    <tr><td>10-Yr Treasury</td><td class="r">4.79%</td><td class="r dn">+3 bp</td></tr>
+    <tr><td>WTI Crude</td><td class="r">$91.20</td><td class="r">elevated</td></tr>
+    <tr><td>Gold</td><td class="r">~$4,540</td><td class="r up">record zone</td></tr>
+    <tr><td>Bitcoin</td><td class="r">~$80k</td><td class="r up">+22% / mo</td></tr>
+  </table>
+  <p class="why">Overnight: Europe firm (STOXX 600 +0.5% Fri), Asia soft/mixed. Oil bid on Middle East / Strait of Hormuz risk; Brent ~$95.75.</p>
 
-  <h2>2 &middot; Your Watchlist</h2>
-  <div class="card">
-    <div class="row"><span class="lbl">SPY</span><span class="val">tracks S&amp;P <span class="up">+1.1%</span></span></div>
-    <div class="row"><span class="lbl">QQQ</span><span class="val">$717.67 <span class="up">+1.4%</span></span></div>
-    <div class="row"><span class="lbl">DIA</span><span class="val">tracks Dow <span class="up">+1.2%</span></span></div>
-    <div class="row"><span class="lbl">AAPL</span><span class="val">$314.19 <span class="down">-1.7%</span></span></div>
-    <div class="row"><span class="lbl">NVDA</span><span class="val">$228.45 <span class="up">+1.8%</span></span></div>
-    <div class="row"><span class="lbl">MSFT</span><span class="val">$510.65 <span class="down">-0.6%</span></span></div>
-  </div>
-  <p class="note"><strong>NVDA</strong>: agreed to buy Hugging Face for $12.93B — a software/moat play, not more silicon — and declared a $0.25 dividend (ex-date Sep 10). <strong>AAPL</strong> was the mega-cap laggard, bucking the tape. <strong>MSFT</strong> slipped modestly despite the Nasdaq surge.</p>
+  <h2>Your Watchlist</h2>
+  <ul>
+    <li><span class="tk">SPY</span> <span class="dn">−0.4%</span> — tracks the S&amp;P; broad-market pullback on the hot jobs print.</li>
+    <li><span class="tk">QQQ</span> <span class="dn">≈−0.3%</span> — Nasdaq-100 held up better than the Dow; mega-cap resilience.</li>
+    <li><span class="tk">DIA</span> <span class="dn">≈−0.5%</span> — Dow was the laggard (−272 pts), cyclicals hit hardest by higher rates.</li>
+    <li><span class="tk">AAPL</span> $314.19 <span class="dn">−1.73%</span> — weakest mega-cap; still in "$4T club" watch alongside MSFT.</li>
+    <li><span class="tk">NVDA</span> $228.45 — declared a $0.25 cash dividend, ex-date Sep 10.</li>
+    <li><span class="tk">MSFT</span> $510.65 <span class="dn">−0.56%</span> — holding near record; likeliest to touch $4T market cap in 2026.</li>
+  </ul>
 
-  <h2>3 &middot; Top 3 Things That Matter Today</h2>
-  <ol>
-    <li><strong>August jobs report, 8:30 AM ET (consensus +53K).</strong><span class="why">This is the day. A hot number likely buries the last flickers of 2026 rate-cut hope; a soft one revives stagflation fear because oil is pushing inflation up at the same time.</span></li>
-    <li><strong>Oil's supply shock (WTI ~$90, +9% on the week).</strong><span class="why">Energy-driven inflation is the hardest kind for the Fed to look through — it lifts headline PCE (already ~3.6-3.7%) and squeezes the consumer just as labor data softens.</span></li>
-    <li><strong>Rates market pricing near-zero cuts in 2026.</strong><span class="why">With Warsh's Fed on hold at 3.50-3.75% and ~89% odds of no cuts this year, equities are rallying on earnings/AI, not liquidity — a more fragile foundation if data disappoints.</span></li>
-  </ol>
+  <h2>Top 3 Things That Matter Today</h2>
+  <ul>
+    <li><span class="tk">Blowout August jobs (+162k vs ~55k est; U-rate 4.1%).</span>
+      <span class="why">Why it matters: after July's −23k shock, this snaps the "Fed must ease" narrative and revives higher-for-longer talk right before the Sep 15–16 FOMC — hence stocks down, yields up.</span></li>
+    <li><span class="tk">Fed blackout began Sept 5.</span>
+      <span class="why">Why it matters: no Fed-speak into the meeting, so this week's inflation data does all the talking — every basis point of CPI/PPI surprise gets amplified.</span></li>
+    <li><span class="tk">Oil stuck near $91 on Hormuz tension.</span>
+      <span class="why">Why it matters: a live energy supply shock is the one thing that can un-anchor the disinflation story exactly when the Fed wants clean data.</span></li>
+  </ul>
 
-  <h2>4 &middot; On the Calendar Today</h2>
-  <p><strong>8:30 AM ET — Aug Nonfarm Payrolls</strong>, consensus +53K (July was a weak ~+22K; a TPS work-permit loss for ~200K Haitian workers may distort the print lower). Unemployment seen ~4.3%. Average hourly earnings watched closely given the oil-inflation backdrop.</p>
-  <p class="note">No major watchlist earnings today — NVDA, AAPL and MSFT already reported this cycle. Light data slate otherwise; the payrolls number owns the session.</p>
+  <h2>On the Calendar This Week</h2>
+  <ul>
+    <li><span class="tk">Mon Sep 7 — Labor Day:</span> US markets closed. Next session Tue Sep 8.</li>
+    <li><span class="tk">Tue Sep 8 — NFIB Small Business Optimism (Aug).</span></li>
+    <li><span class="tk">Wed — PPI (Aug):</span> first inflation read of the week.</li>
+    <li><span class="tk">Thu — CPI (Aug):</span> the marquee print; last major inflation data before FOMC. Plus weekly jobless claims.</li>
+    <li><span class="tk">Fri — UMich Consumer Sentiment (prelim).</span></li>
+    <li><span class="tk">Watchlist earnings:</span> none this week (mega-caps already reported). NVDA trades ex-dividend Sep 10.</li>
+  </ul>
 
-  <h2>5 &middot; One Thing To Sound Smart About</h2>
-  <div class="card edge">
-    <span class="tag">THE EDGE</span>
-    <p>Watch the reaction, not the number. In a "good news is bad news" tape, a strong payrolls print would normally lift stocks — but with oil spiking and the Fed already sidelined, a hot number risks pushing the 10-yr back toward 4.8%+ and pressuring the richly-valued Nasdaq. The tell to watch at 8:31: if <strong>yields rise AND equity futures fall together</strong>, the market has flipped to treating good data as a rate-and-inflation problem, not a growth positive. That regime shift — not the headline jobs figure — is what actually moves your book.</p>
-    <p class="note">Context: gold at a record ~$4,526 alongside a firm dollar and 4.7% yields is the market hedging stagflation, not celebrating growth.</p>
-  </div>
-
-  <h2>6 &middot; Learning Nugget</h2>
-  <div class="card learn">
-    <span class="tag">CONCEPT</span>
-    <p><strong>Breakeven inflation rate.</strong> It's the yield gap between a nominal Treasury and the same-maturity TIPS, and it tells you the inflation rate the bond market is pricing in over that horizon. When an oil shock hits, watch 5-yr breakevens: if they jump, the market thinks the Fed will let inflation run; if they stay anchored, it trusts the Fed to hold the line even at the cost of growth.</p>
-  </div>
-
-  <h2>Sources</h2>
-  <div class="sources">
-    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-03-2026">TheStreet — market close Sep 3, 2026</a><br>
-    <a href="https://www.coindesk.com/markets/2026/09/02/bitcoin-withstands-usd90-oil-and-rising-yields-as-gold-slides-a-firm-dollar-is-the-catch">CoinDesk — oil, yields, gold, Bitcoin</a><br>
-    <a href="https://www.cnbc.com/2026/09/03/august-2026-jobs-report-payrolls.html">CNBC — Aug 2026 jobs preview (+53K)</a><br>
-    <a href="https://fortune.com/article/price-of-oil-09-03-2026/">Fortune — oil price Sep 3, 2026</a><br>
-    <a href="https://www.goldmansachs.com/insights/articles/the-outlook-for-fed-rate-cuts-in-2026">Goldman Sachs — 2026 Fed rate-cut outlook</a><br>
-    <a href="https://stockanalysis.com/etf/qqq/">StockAnalysis — QQQ close</a>
+  <h2>One Thing To Sound Smart About</h2>
+  <div class="edge">
+    <p><strong>The headline was hawkish; the internals were dovish.</strong> The +162k came disproportionately from food services and local-government education — low-cyclicality, lower-quality jobs — while the information sector <em>shed</em> workers. That's why, even as the print "beat," CME FedWatch odds of a 50bp <em>cut</em> at the Sep meeting actually ticked up to ~12% (from 0% the day before). The tape traded the headline (yields up, stocks down); the smart read is that payroll <em>composition</em> is quietly softening under a strong top-line.</p>
   </div>
 
-  <footer>Automated daily brief for Clark. Data from public web sources as of ~8:07 AM ET, Sep 4, 2026; figures are pre-market and may revise. Not investment advice.</footer>
+  <h2>Learning Nugget</h2>
+  <div class="nugget">
+    <p><strong>Duration risk in equities:</strong> long-duration growth stocks (think mega-cap tech) derive most of their value from far-future cash flows, which get discounted harder when yields rise. That's the mechanical reason a jump in the 10-year hits the Nasdaq and names like AAPL more than it hits value/cyclical stocks.</p>
+  </div>
+
+  <div class="sms">SMS: SP500 -0.4% Nasdaq -0.3% Dow -0.5%, 10Y 4.79%, WTI 91, gold 4540, BTC 80k. Aug jobs 162k beat, hikes back on table. CPI Thu. Edge- jobs internals soft</div>
+
+  <div class="src">
+    <strong>Sources</strong>
+    <ul>
+      <li><a href="https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html">CNBC — Stock market today, Sept 4, 2026</a></li>
+      <li><a href="https://www.cnbc.com/2026/09/04/jobs-report-august-2026.html">CNBC — August jobs report (+162k, 4.1%)</a></li>
+      <li><a href="https://www.upi.com/Top_News/US/2026/09/04/nonfarm-payrolls-bureau-labor-statistics-august-2026/8801788532242/">UPI — Nonfarm payrolls +162k, beat expectations</a></li>
+      <li><a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics — US 10-Year yield</a></li>
+      <li><a href="https://tradingeconomics.com/commodity/crude-oil">Trading Economics — WTI crude</a></li>
+      <li><a href="https://fortune.com/article/price-of-bitcoin-09-02-2026/">Fortune — Bitcoin price, early Sept 2026</a></li>
+      <li><a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Kiplinger — This week's economic calendar</a></li>
+      <li><a href="https://www.investing.com/central-banks/fed-rate-monitor">Investing.com — CME FedWatch rate odds</a></li>
+    </ul>
+  </div>
+
+  <footer>Generated by Claude · Not investment advice · Figures reflect Friday Sept 4, 2026 close</footer>
 </div>
 </body>
 </html>
