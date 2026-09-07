@@ -1,140 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clark's Market Brief — Sun Sep 6, 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Market Brief — Sep 7, 2026</title>
 <style>
-  :root{
-    --bg:#0b0f17; --panel:#131a26; --panel2:#0f1520; --ink:#e8eef7; --muted:#93a3ba;
-    --line:#243043; --up:#33d17a; --down:#ff6b6b; --accent:#6ea8fe; --gold:#e7b64b; --chip:#1b2636;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0b0e14; color:#e6e9ef;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;-webkit-font-smoothing:antialiased;font-size:17px}
-  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px}
-  header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px}
-  .kicker{color:var(--accent);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-  h1{font-size:26px;margin:6px 0 4px;line-height:1.2}
-  .sub{color:var(--muted);font-size:14px}
-  .tldr{background:linear-gradient(180deg,#16203040,#131a26);border:1px solid var(--line);
-    border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:15.5px}
-  .tldr b{color:var(--accent)}
-  h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
-    margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
-  table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-  th,td{text-align:right;padding:9px 8px;border-bottom:1px solid var(--line);font-size:15px}
-  th:first-child,td:first-child{text-align:left}
-  th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em}
-  .tick{font-weight:700}
-  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
-  .note{color:var(--muted);font-size:13.5px}
-  ol,ul{margin:8px 0;padding-left:20px}
-  li{margin:9px 0}
-  li .why{color:var(--muted);font-size:14px;display:block;margin-top:2px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
-  .cal li{margin:11px 0}
-  .cal .d{display:inline-block;min-width:74px;color:var(--accent);font-weight:700;font-size:13px}
-  .badge{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--muted);
-    font-size:11px;padding:1px 7px;border-radius:20px;margin-left:6px;vertical-align:middle}
-  .badge.wl{color:var(--gold);border-color:#4a3d17}
-  .smart{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:15.5px}
-  .smart .lead{color:var(--gold);font-weight:700;margin-bottom:6px}
-  .nugget{border:1px dashed var(--line);border-radius:12px;padding:14px 16px;background:#0e141e}
-  .nugget .lead{color:var(--accent);font-weight:700}
-  footer{margin-top:34px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12.5px}
-  footer a{color:var(--accent);text-decoration:none}
-  .src{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
-  @media(max-width:520px){body{font-size:16px} h1{font-size:22px} .wrap{padding:16px 13px 50px}}
+    line-height:1.5; padding:20px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:760px; margin:0 auto; }
+  header { border-bottom:1px solid #1f2733; padding-bottom:16px; margin-bottom:24px; }
+  h1 { font-size:24px; font-weight:700; letter-spacing:-0.3px; color:#fff; }
+  .sub { color:#8a93a6; font-size:14px; margin-top:6px; }
+  .holiday { display:inline-block; background:#3a2a12; color:#f0b866; border:1px solid #5c4420;
+    font-size:12px; font-weight:600; padding:4px 10px; border-radius:6px; margin-top:12px; letter-spacing:0.3px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:1.2px; color:#5aa9ff;
+    margin:28px 0 12px; font-weight:700; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin-top:4px; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid #161c26; }
+  th { color:#8a93a6; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .up { color:#3ddc84; } .down { color:#ff6b6b; } .flat { color:#c9cfda; }
+  ul { list-style:none; }
+  li { padding:9px 0 9px 18px; position:relative; font-size:14.5px; border-bottom:1px solid #12171f; }
+  li:last-child { border-bottom:none; }
+  li::before { content:"▸"; position:absolute; left:0; color:#5aa9ff; font-size:12px; top:11px; }
+  .tick { font-weight:700; color:#fff; }
+  .why { color:#9aa3b5; font-size:13px; display:block; margin-top:2px; }
+  .card { background:#111722; border:1px solid #1c2431; border-radius:10px; padding:16px 18px; margin-top:6px; }
+  .edge { border-left:3px solid #f0b866; }
+  .nugget { border-left:3px solid #3ddc84; }
+  .lead { color:#fff; font-weight:600; }
+  footer { margin-top:32px; padding-top:16px; border-top:1px solid #1f2733; font-size:12px; color:#6b7488; }
+  footer a { color:#5aa9ff; text-decoration:none; }
+  .stat { font-weight:700; color:#fff; }
+  @media (max-width:520px){ body{padding:14px;} h1{font-size:21px;} th,td{padding:7px 6px;} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Clark's Pre-Market Brief</div>
-    <h1>Good news is bad news again</h1>
-    <div class="sub">Sunday, September 6, 2026 · covers Fri Sep 4 close · <b>US markets CLOSED Mon Sep 7 (Labor Day)</b>, reopen Tue Sep 8</div>
+    <h1>Daily Market Brief</h1>
+    <div class="sub">Monday, September 7, 2026 · pre-market · Last synced 10:05 AM EDT</div>
+    <span class="holiday">◆ US STOCK &amp; BOND MARKETS CLOSED — LABOR DAY (reopen Tue 9:30am ET)</span>
   </header>
 
-  <div class="tldr">
-    A hot August jobs report has flipped the Fed script: futures now price a <b>~61% chance of a 25bp HIKE</b> at the Sep 15–16 FOMC — a hike, not a cut. Layer on Brent up ~9% on the week as US–Iran strikes threaten Hormuz, and you get a stagflation-flavored setup. <b>CPI (Fri Sep 11)</b> is now the single most important print of the cycle.
-  </div>
-
-  <h2>1 · Market Snapshot — Fri Sep 4 close</h2>
+  <h2>1 · Market Snapshot</h2>
   <table>
-    <thead><tr><th>Market</th><th>Level</th><th>Move</th></tr></thead>
-    <tbody>
-      <tr><td class="tick">S&P 500</td><td>7,718.60</td><td class="down">−0.38%</td></tr>
-      <tr><td class="tick">Nasdaq Comp</td><td>26,506.99</td><td class="down">−0.29%</td></tr>
-      <tr><td class="tick">Dow</td><td>53,414.25</td><td class="down">−0.51%</td></tr>
-      <tr><td class="tick">10Y Treasury</td><td>~4.79%</td><td class="down">yields ↑ post-jobs</td></tr>
-      <tr><td class="tick">WTI crude</td><td>~$92.4</td><td class="up">Brent ~$97, +9%/wk</td></tr>
-      <tr><td class="tick">Gold</td><td>$4,476.60</td><td class="down">−1.39%</td></tr>
-      <tr><td class="tick">Bitcoin</td><td>~$80,050</td><td class="up">+0.37%</td></tr>
-    </tbody>
+    <tr><th>Instrument</th><th style="text-align:right">Last (Fri 9/4)</th><th style="text-align:right">Move</th></tr>
+    <tr><td>S&amp;P 500</td><td class="num">7,718.60</td><td class="num down">−0.38%</td></tr>
+    <tr><td>Nasdaq Comp</td><td class="num">26,506.99</td><td class="num down">−0.29%</td></tr>
+    <tr><td>Dow Jones</td><td class="num">53,414.25</td><td class="num down">−0.51%</td></tr>
+    <tr><td>10Y Treasury</td><td class="num">4.784%</td><td class="num down">+2 bps (2-mo high)</td></tr>
+    <tr><td>WTI Crude</td><td class="num">~$92.4</td><td class="num up">elevated · Iran/Kuwait</td></tr>
+    <tr><td>Gold</td><td class="num">~$4,500</td><td class="num up">near record</td></tr>
+    <tr><td>Bitcoin</td><td class="num">~$78k</td><td class="num down">geopolitics + hawkish Fed</td></tr>
   </table>
-  <p class="note">Weekend — no fresh overnight tape yet. Watch Asia's Sunday-night open react to the oil spike; US shut Monday for Labor Day, so the week's action really starts Tuesday.</p>
+  <ul>
+    <li><span class="tick">Overnight Asia:</span> Nikkei <span class="up">+2%</span> to ~66,300 (AI/chip names ripping — SoftBank +6%, Kioxia +7%); Hang Seng <span class="down">−0.9%</span> to 25,428 on US rate-hike fears.
+    <span class="why">Same macro, opposite reactions: Japan's tech tilt shrugs it off, HK's rate-sensitive financials/energy get hit.</span></li>
+  </ul>
 
-  <h2>2 · Your Watchlist — Fri Sep 4 close</h2>
+  <h2>2 · Your Watchlist</h2>
   <table>
-    <thead><tr><th>Ticker</th><th>Last</th><th>Move / note</th></tr></thead>
-    <tbody>
-      <tr><td class="tick">SPY</td><td>~$769</td><td class="down">−0.4% (tracks S&P)</td></tr>
-      <tr><td class="tick">QQQ</td><td>~$573</td><td class="down">−0.3% (tracks Nasdaq-100)</td></tr>
-      <tr><td class="tick">DIA</td><td>~$534</td><td class="down">−0.5% (tracks Dow)</td></tr>
-      <tr><td class="tick">AAPL</td><td>$314.19</td><td class="down">−1.73% — worst of group, into Sep 9 event</td></tr>
-      <tr><td class="tick">NVDA</td><td>$230.36</td><td class="flat">~flat w/ tape; no fresh catalyst (earnings were Aug 26)</td></tr>
-      <tr><td class="tick">MSFT</td><td>$510.65</td><td class="down">−0.56%</td></tr>
-    </tbody>
+    <tr><th>Ticker</th><th style="text-align:right">Last</th><th style="text-align:right">Move</th><th>Note</th></tr>
+    <tr><td class="tick">SPY</td><td class="num">~$770</td><td class="num down">−0.4%</td><td>tracks S&amp;P; jobs-driven fade</td></tr>
+    <tr><td class="tick">QQQ</td><td class="num">—</td><td class="num down">−0.3%</td><td>Nasdaq-100 proxy; megacap soft</td></tr>
+    <tr><td class="tick">DIA</td><td class="num">~$534</td><td class="num down">−0.5%</td><td>Dow laggard on the week</td></tr>
+    <tr><td class="tick">AAPL</td><td class="num">$319.97</td><td class="num down">−2.51%</td><td>worst megacap Fri; iPhone event window</td></tr>
+    <tr><td class="tick">NVDA</td><td class="num">$230.36</td><td class="num down">−0.38%</td><td>held up — still just shy of $235.74 record</td></tr>
+    <tr><td class="tick">MSFT</td><td class="num">$499.59</td><td class="num down">−1.6%</td><td>slipped back below $500 / ~$3.5T cap</td></tr>
   </table>
-  <p class="note">ETF prices for SPY/QQQ/DIA are approximate (derived from the underlying index moves); the % moves are firm.</p>
 
   <h2>3 · Top 3 Things That Matter Today</h2>
-  <ol>
-    <li><b>The Fed is now debating a HIKE, not a cut.</b>
-      <span class="why">Aug payrolls came in hot (~160K, well above forecast), pushing fed-funds futures to ~61% odds of a 25bp increase Sep 15–16 (from ~50% the day before). A regime shift that repriced the whole curve — 10Y back to ~4.79%.</span></li>
-    <li><b>Oil shock from renewed US–Iran conflict.</b>
-      <span class="why">Brent ~$97 (+9% on the week) after Iran struck Kuwait and Strait of Hormuz shipping risk jumped. An energy shock on top of hot jobs is textbook stagflation pressure — bad for margins, tricky for the Fed.</span></li>
-    <li><b>CPI Friday is the whole ballgame.</b>
-      <span class="why">With a live hike on the table, Fri Sep 11 CPI (and Thu PPI) is the last major inflation read before the FOMC. A hot print could cement the September increase; a soft one defuses it.</span></li>
-  </ol>
+  <ul>
+    <li><span class="lead">The jobs print flipped the Fed script — market now prices a HIKE.</span>
+    <span class="why">Why it matters: August NFP came in +162k vs ~53–56k expected; fed funds futures moved to ~58% odds of a +25bp <em>hike</em> on Sept 16–17 (2Y yield highest since Jan 2025). A cutting bias became a hiking debate overnight.</span></li>
+    <li><span class="lead">Oil is a live geopolitical shock, not a slow grind.</span>
+    <span class="why">Why it matters: WTI near $92 / Brent ~$97 after Iran struck Kuwait — an energy-price spike layered on hot labor data revives genuine stagflation math for the Fed.</span></li>
+    <li><span class="lead">Gold at ~$4,500 with a hawkish Fed is the tell.</span>
+    <span class="why">Why it matters: Gold usually hates rising real rates; it's rallying anyway, signaling the bid is fear/de-dollarization/geopolitics, not a rate call.</span></li>
+  </ul>
 
-  <h2>4 · On the Calendar — holiday-shortened week</h2>
-  <div class="card cal">
-    <ul>
-      <li><span class="d">Mon Sep 7</span> <b>Labor Day — US markets CLOSED.</b></li>
-      <li><span class="d">Tue Sep 8</span> Markets reopen; NFIB Small-Business Optimism. Light data.</li>
-      <li><span class="d">Wed Sep 9</span> <b>Apple "Surprise & Shine" event</b>, 1pm ET / 10am PT — iPhone 18 Pro / Pro Max + foldable "iPhone Ultra"; first keynote under new CEO John Ternus. <span class="badge wl">AAPL watchlist</span></li>
-      <li><span class="d">Thu Sep 10</span> <b>PPI</b> 8:30am ET; weekly jobless claims.</li>
-      <li><span class="d">Fri Sep 11</span> <b>CPI 8:30am ET</b> — the week's marquee print. <span class="badge">market-mover</span></li>
-    </ul>
-    <p class="note">Fed is in its pre-FOMC quiet period (through Sep 17) — no Fed speakers to move the tape. No watchlist earnings this week.</p>
-  </div>
+  <h2>4 · On the Calendar Today</h2>
+  <ul>
+    <li><span class="tick">Today (Mon 9/7):</span> <span class="down">No US data, no earnings — markets closed for Labor Day.</span> Watch Asia/Europe and oil for the overnight tape into Tuesday's reopen.</li>
+    <li><span class="tick">This week's main event — Fri 9/11, 8:30am ET:</span> August CPI. Prior (July): headline <span class="stat">+3.4% YoY / +0.1% MoM</span>, core <span class="stat">+2.5% YoY / +0.2% MoM</span>. A hot number all but locks the hike debate.</li>
+    <li><span class="tick">Watchlist earnings:</span> none of SPY/QQQ/DIA/AAPL/NVDA/MSFT report this week.</li>
+  </ul>
 
-  <h2>5 · One Thing to Sound Smart About</h2>
-  <div class="smart">
-    <div class="lead">A Fed hike with the S&P ~1% from all-time highs is genuinely rare.</div>
-    Markets are pricing a coin-flip-to-likely rate <i>increase</i> while equities sit near records — a late-cycle "hawkish surprise" setup under Chair Kevin Warsh, whose Jackson Hole remarks already lifted term premium (a bear-steepener: 10Y ~4.79%, 30Y north of 5%). The tell is that stocks are treating good news as bad news again — a correlation flip that historically precedes higher volatility. The contrarian angle: an Iran-driven oil shock <i>plus</i> a hot CPI could be the catalyst that finally cracks a credit market priced to perfection (HY spreads had compressed toward ~280bp). Watch spreads, not just stocks.
+  <h2>5 · One Thing To Sound Smart About</h2>
+  <div class="card edge">
+    Everyone's anchored on "when does the Fed cut." The tape just repriced to the opposite tail: futures are flirting with a September <b>rate hike</b> — a scenario almost nobody positioned for a month ago. The non-obvious read: with WTI ~$92 from a supply shock and core CPI stuck at 2.5%, the Fed's problem isn't a weak economy — it's an economy that's <i>too hot at the wrong time</i>. Watch the 2s10s: the front end is doing the repricing (2Y at a 20-month high) while the 10Y lags, so the curve is flattening. A flatter/inverting curve here isn't recession-signaling — it's the market saying "hikes now, growth pain later." <span class="why">Source: CNBC / TheStreet, Sep 4 2026.</span>
   </div>
 
   <h2>6 · Learning Nugget</h2>
-  <div class="nugget">
-    <span class="lead">Bear steepener.</span> When long-term yields rise <i>faster</i> than short-term yields, steepening the curve — it usually signals the market pricing in more inflation or term premium rather than growth optimism. It hits long-duration assets hardest, which is why high-multiple tech and long bonds are the first to wobble when it happens.
+  <div class="card nugget">
+    <b>Bear flattener.</b> When short-term yields rise faster than long-term yields — usually because the market expects near-term rate hikes — the yield curve "flattens" from the front end. It's called a <i>bear</i> flattener because rising rates pressure bond prices, and it typically signals tightening financial conditions rather than the growth optimism of a "bull steepener."
   </div>
 
   <footer>
-    <div>Built from live web sources · covers Fri Sep 4, 2026 close · generated Sun Sep 6, 2026 10:08 ET</div>
-    <div class="src">
-      <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026">TheStreet — Sep 4 close</a>
-      <a href="https://tradingeconomics.com/united-states/government-bond-yield">10Y yield</a>
-      <a href="https://www.vantagemarkets.com/market-analysis/brent-wti-crude-oil-price-september-4-2026/">Brent/WTI — Iran</a>
-      <a href="https://finance.yahoo.com/personal-finance/investing/article/gold-price-today-friday-september-4-2026-gold-price-lifts-ahead-of-jobs-report-105540094.html">Gold</a>
-      <a href="https://coinshares.com/corp/insights/research-data/market-update-04-09-2026/">Bitcoin</a>
-      <a href="https://www.roic.ai/news/rate-futures-traders-add-to-bets-on-september-fed-hike-after-bigger-than-expected-august-jobs-gain-09-04-2026">Sep hike odds</a>
-      <a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Econ calendar</a>
-      <a href="https://www.macrumors.com/2026/08/26/apple-iphone-event-2026/">Apple Sep 9 event</a>
-    </div>
+    Sources:
+    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026">TheStreet 9/4</a> ·
+    <a href="https://www.cnbc.com/2026/09/04/treasurys-bonds-nonfarm-payrolls-unemployment-data.html">CNBC Rates</a> ·
+    <a href="https://www.benzinga.com/markets/equities/26/09/61646501/is-stock-market-open-today-labor-day-2026-september-7">Benzinga Holiday</a> ·
+    <a href="https://www.vantagemarkets.com/market-analysis/brent-wti-crude-oil-price-september-4-2026/">Vantage Oil</a> ·
+    <a href="https://tradingeconomics.com/commodity/gold">TE Gold</a> ·
+    <a href="https://sundayguardianlive.com/business/hong-kong-stock-market-today-september-7-hang-seng-index-falls-226-points-to-25428-xiaomi-slides-nearly-4-amid-us-rate-hike-fears-check-why-hong-kong-stocks-are-falling-279031/">HK/Asia 9/7</a> ·
+    <a href="https://www.bls.gov/cpi/">BLS CPI</a>
+    <br>Auto-generated pre-market brief · not investment advice.
   </footer>
 </div>
 </body>
