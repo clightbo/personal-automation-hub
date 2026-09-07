@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-07 16:59 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-07 23:29 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -20,7 +20,6 @@ _Updated 2026-09-07 16:59 UTC. Auto-generated from personal-automation-hub._
 | 2026-09-11 08:30 ET | High | Macro | **CPI y/y** — High impact; forecast 3.4%, prev 3.4% |
 | 2026-09-11 10:00 ET | Medium | Macro | **Prelim UoM Consumer Sentiment** — Medium impact; forecast 51.0, prev 51.0 |
 | 2026-09-11 10:00 ET | Medium | Macro | **Prelim UoM Inflation Expectations** — Medium impact |
-| 2026-09-11 11:00 ET | Low | Fed | **Fed Monetary Policy Report** — Low impact |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
@@ -46,7 +45,6 @@ _Updated 2026-09-07 16:59 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-11 11:00** — Fed Monetary Policy Report
 - **2026-09-16 14:00** — FOMC rate decision + SEP/dot plot
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
