@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-06 22:53 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-07 16:59 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|

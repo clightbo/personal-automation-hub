@@ -6,11 +6,11 @@ tags:
 
 # Interview Idea — This Week
 
-_Updated 2026-09-06 22:53 UTC. Same pitch Mon–Sun so you can rehearse it._
+_Updated 2026-09-07 16:59 UTC. Same pitch Mon–Sun so you can rehearse it._
 
 ## Pitch
 
-LONG AAPL (cash machine + services): Hardware cycle is mature but high-margin Services and buybacks support EPS; Vision/AI features are optional upside. Catalyst: Services growth, capital return. Risk: China demand, App Store regulation, multiple already full.
+MACRO HEDGE: LONG TLT / duration if Fed pivot (or short if sticky inflation): 10Y near 4.5%+ prices in higher-for-longer; either inflation cools and bonds rally, or growth surprises and equities win. Catalyst: CPI/PCE/Fed speak. Risk: fiscal deficits keeping term premium elevated.
 
 ## Rehearsal checklist
 
