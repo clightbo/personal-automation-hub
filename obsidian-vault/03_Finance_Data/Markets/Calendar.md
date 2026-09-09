@@ -7,10 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-08 23:22 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-09 15:43 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
+| 2026-09-09 21:15 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-09-10 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
 | 2026-09-10 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.4%, prev 0.0% |
 | 2026-09-10 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 205K, prev 206K |
@@ -59,6 +60,7 @@ _Updated 2026-09-08 23:22 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
+- **2026-09-09 21:15** — President Trump Speaks
 - **2026-09-10 08:30** — Core PPI m/m
 - **2026-09-10 08:30** — PPI m/m
 - **2026-09-10 08:30** — Unemployment Claims
