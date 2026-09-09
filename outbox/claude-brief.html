@@ -1,156 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Market Brief — Sep 8, 2026</title>
+<title>Clark's Market Brief — Sep 9, 2026</title>
 <style>
-  :root{ color-scheme: dark; }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{
-    background:#0b0f17;
-    color:#e6edf3;
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0b0e14; color:#e6e9ef;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;
-    padding:20px 14px 48px;
-    -webkit-font-smoothing:antialiased;
+    line-height:1.5; -webkit-font-smoothing:antialiased; padding:20px 16px 48px;
   }
-  .wrap{ max-width:720px; margin:0 auto; }
-  header.top{
-    border-bottom:1px solid #1f2937; padding-bottom:14px; margin-bottom:20px;
-  }
-  .eyebrow{ color:#7c8aa5; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
-  h1{ font-size:26px; line-height:1.2; margin-top:4px; color:#fff; }
-  .sub{ color:#93a1b5; font-size:14px; margin-top:6px; }
-  .read{ display:inline-block; margin-top:10px; font-size:12px; color:#6ee7b7; background:#0f2a22; border:1px solid #1c4a3b; padding:3px 9px; border-radius:999px; }
-  section{ margin-top:26px; }
-  h2{
-    font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#8ea2c0;
-    border-left:3px solid #3b82f6; padding-left:10px; margin-bottom:12px; font-weight:700;
-  }
-  table{ width:100%; border-collapse:collapse; font-size:15px; }
-  th,td{ text-align:left; padding:8px 6px; border-bottom:1px solid #182231; }
-  th{ color:#7c8aa5; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
-  td.name{ font-weight:600; color:#fff; white-space:nowrap; }
-  .pos{ color:#4ade80; font-weight:600; }
-  .neg{ color:#f87171; font-weight:600; }
-  .flat{ color:#cbd5e1; font-weight:600; }
-  .row{ padding:10px 0; border-bottom:1px solid #141c28; }
-  .row:last-child{ border-bottom:none; }
-  .row b{ color:#fff; }
-  .why{ color:#93a1b5; font-size:14px; display:block; margin-top:2px; }
-  ol.things{ list-style:none; counter-reset:t; }
-  ol.things li{ counter-increment:t; position:relative; padding:12px 0 12px 40px; border-bottom:1px solid #141c28; }
-  ol.things li:last-child{ border-bottom:none; }
-  ol.things li:before{
-    content:counter(t); position:absolute; left:0; top:11px;
-    width:26px; height:26px; border-radius:50%; background:#132a4a; color:#7cc0ff;
-    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;
-  }
-  .edge, .nugget{
-    background:#111826; border:1px solid #22304a; border-radius:10px; padding:14px 16px; font-size:15px;
-  }
-  .edge{ border-left:3px solid #f59e0b; }
-  .nugget{ border-left:3px solid #a78bfa; }
-  .tag{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
-  .edge .tag{ color:#fbbf24; } .nugget .tag{ color:#c4b5fd; }
-  .cal b{ color:#fff; }
-  .flag{ color:#fbbf24; font-weight:600; }
-  footer{ margin-top:32px; padding-top:16px; border-top:1px solid #1f2937; font-size:12px; color:#6b7a90; }
-  footer a{ color:#7cc0ff; text-decoration:none; word-break:break-word; }
-  footer a:hover{ text-decoration:underline; }
-  .src-list{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:8px; }
-  @media (max-width:480px){
-    h1{ font-size:23px; } body{ font-size:15px; } table{ font-size:14px; }
-  }
+  .wrap { max-width:760px; margin:0 auto; }
+  .hdr { border-bottom:1px solid #1e2430; padding-bottom:16px; margin-bottom:22px; }
+  .kicker { color:#7f8ca3; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; }
+  h1 { font-size:27px; margin:6px 0 4px; letter-spacing:-.4px; }
+  .sync { color:#6b7688; font-size:13px; }
+  .tape { color:#f0b429; font-weight:600; font-size:14.5px; margin-top:12px;
+          background:#14100a; border:1px solid #3a2f12; border-radius:8px; padding:10px 12px; }
+  h2 { font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:#8fa0bd;
+       margin:30px 0 12px; padding-bottom:7px; border-bottom:1px solid #1a202c; }
+  .row { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+         padding:7px 0; border-bottom:1px solid #141922; font-size:15px; }
+  .row:last-child { border-bottom:none; }
+  .nm { color:#cdd4e0; font-weight:600; }
+  .nm small { color:#7f8ca3; font-weight:400; display:block; font-size:12.5px; margin-top:2px; }
+  .val { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .up { color:#3ecf8e; } .dn { color:#ff6b6b; } .fl { color:#c7ced9; }
+  table { width:100%; border-collapse:collapse; font-size:14.5px; margin-top:4px; }
+  th,td { text-align:left; padding:7px 8px; border-bottom:1px solid #141922; font-variant-numeric:tabular-nums; }
+  th { color:#7f8ca3; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  td.r,th.r { text-align:right; }
+  ol { margin:0; padding-left:20px; } ol li { margin-bottom:13px; }
+  .why { color:#8fa0bd; font-size:13.5px; display:block; margin-top:3px; }
+  .card { background:#111722; border:1px solid #1e2635; border-radius:10px; padding:15px 16px; margin-top:4px; }
+  .edge-t { color:#f0b429; font-weight:700; }
+  .learn { background:#0e1520; border-left:3px solid #3a7bd5; border-radius:6px; padding:13px 15px; font-size:14.5px; color:#d3dae6; }
+  b.hl { color:#fff; }
+  .src { margin-top:30px; padding-top:14px; border-top:1px solid #1a202c; font-size:12.5px; color:#6b7688; }
+  .src a { color:#5a8bd6; text-decoration:none; word-break:break-all; }
+  .foot { margin-top:22px; text-align:center; color:#4b5568; font-size:11.5px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <div class="eyebrow">Pre-Market Brief</div>
-    <h1>Oil near $100 meets a hot jobs print — the Fed leans toward hiking</h1>
-    <div class="sub">Tuesday, September 8, 2026 · prices as of ~9:00 a.m. ET · last session Fri Sep 5 (Mon = Labor Day, closed)</div>
-    <span class="read">~3 min read</span>
-  </header>
 
-  <section>
-    <h2>1 · Market Snapshot</h2>
-    <table>
-      <tr><th>Asset</th><th>Level</th><th>Move</th></tr>
-      <tr><td class="name">S&amp;P 500</td><td>7,718.60</td><td class="neg">−0.38%</td></tr>
-      <tr><td class="name">Nasdaq Comp</td><td>26,506.99</td><td class="neg">−0.29%</td></tr>
-      <tr><td class="name">Dow</td><td>53,414.25</td><td class="neg">−0.51% (−272)</td></tr>
-      <tr><td class="name">10Y Treasury</td><td>4.79%</td><td class="neg">▲ highest since Nov ’23</td></tr>
-      <tr><td class="name">Brent crude</td><td>~$98</td><td class="pos">▲ highest since Jul</td></tr>
-      <tr><td class="name">Gold</td><td>~$4,410</td><td class="neg">slightly lower</td></tr>
-      <tr><td class="name">Bitcoin</td><td>~$78,500</td><td class="neg">−1.6%, below $79k</td></tr>
-    </table>
-    <p class="why" style="margin-top:10px;">Overnight: Sep 8 U.S. futures edged lower as Brent pushed toward $100 after attacks halted operations at several Saudi energy facilities (Houthi-claimed) and the Strait of Hormuz stalemate kept ship traffic down. Risk-off tone across Asia/Europe on the oil-and-yields combination.</p>
-  </section>
+  <div class="hdr">
+    <div class="kicker">Pre-Market Brief</div>
+    <h1>Clark's Market Brief</h1>
+    <div class="sync">Wednesday, September 9, 2026 · 8:08 AM EDT</div>
+    <div class="tape">Oil shock, not a growth scare: WTI +3% to ~$94, 10Y tops 4.8% (Oct-'23 high), Dow −600. The Sept 15–16 Fed meeting just became a hold-vs-<em>hike</em> debate — cuts are being priced out.</div>
+  </div>
 
-  <section>
-    <h2>2 · Your Watchlist</h2>
-    <div class="row"><b>SPY</b> — tracks S&amp;P 500, <span class="neg">−0.38%</span> Fri to 7,718.60; futures soft into the open on oil/yields.</div>
-    <div class="row"><b>QQQ</b> — tracks Nasdaq-100; Nasdaq Comp <span class="neg">−0.29%</span> Fri. Megacap tech pressured by the long-end yield backup.</div>
-    <div class="row"><b>DIA</b> — tracks the Dow, <span class="neg">−0.51%</span> Fri (−272 pts), losses led by Apple, Alphabet, Microsoft.</div>
-    <div class="row"><b>AAPL</b> — ~$322 pre-market; fell ~2.55% Fri, the biggest Dow drag.</div>
-    <div class="row"><b>NVDA</b> — ~$231 pre-market <span class="pos">(+0.5%)</span>. Ex-dividend $0.25 on Sep 10; digesting its ~$12.9B Hugging Face acquisition.</div>
-    <div class="row"><b>MSFT</b> — ~$497 pre-market; slipped ~2.05% Fri alongside the megacap-tech pullback.</div>
-  </section>
+  <h2>1 · Market Snapshot</h2>
+  <div class="row"><span class="nm">S&amp;P 500 <small>SPY ≈ $767</small></span><span class="val dn">7,673.52 &nbsp;−0.58%</span></div>
+  <div class="row"><span class="nm">Nasdaq Composite <small>QQQ ≈ −0.3%</small></span><span class="val dn">26,421.41 &nbsp;−0.32%</span></div>
+  <div class="row"><span class="nm">Dow Jones <small>DIA ≈ $528 · −600 pts, day's worst</small></span><span class="val dn">52,786.07 &nbsp;−1.18%</span></div>
+  <div class="row"><span class="nm">10Y Treasury <small>Highest since Oct 2023</small></span><span class="val dn">~4.80% &nbsp;▲</span></div>
+  <div class="row"><span class="nm">WTI Crude <small>Brent ~$97–98, highest since late July</small></span><span class="val up">~$94 &nbsp;+3.0%</span></div>
+  <div class="row"><span class="nm">Gold <small>Haven bid</small></span><span class="val up">~$4,461 &nbsp;+1.8%</span></div>
+  <div class="row"><span class="nm">Bitcoin <small>Lost the $80k handle</small></span><span class="val dn">~$78,400 &nbsp;−0.9%</span></div>
+  <div class="row"><span class="nm">Asia overnight</span><span class="val fl">Nikkei −0.2% · Kospi +1.4% · HSI −0.3%</span></div>
 
-  <section>
-    <h2>3 · Top 3 Things That Matter Today</h2>
-    <ol class="things">
-      <li><b>Oil supply shock is back.</b> Brent near $100 on Saudi facility attacks + Hormuz stalemate.
-        <span class="why">Why it matters: an energy-price spike three days before CPI is exactly the kind of supply shock that muddies the Fed’s call — you can’t fix $100 oil with rate hikes.</span></li>
-      <li><b>Hot August payrolls (+162k vs 53k est).</b> Revisions +55k, unemployment 4.1%, wages +3.1% y/y.
-        <span class="why">Why it matters: it flipped market pricing toward a rare Fed <b>hike</b> — Sept odds jumped to ~60% from 49% the prior day.</span></li>
-      <li><b>Yields at cycle highs.</b> 10Y at 4.79%, the highest since November 2023, led by the short end.
-        <span class="why">Why it matters: rising yields compress equity multiples (especially long-duration megacap tech) and pressure bank capital.</span></li>
-    </ol>
-  </section>
+  <h2>2 · Your Watchlist</h2>
+  <div class="row"><span class="nm">SPY <small>Broad tape sold on oil + rates</small></span><span class="val dn">~$767 &nbsp;−0.6%</span></div>
+  <div class="row"><span class="nm">QQQ <small>Chips heavy; defensive megacaps cushion</small></span><span class="val dn">~−0.3%</span></div>
+  <div class="row"><span class="nm">DIA <small>Energy-cost drag hits industrials hardest</small></span><span class="val dn">~$528 &nbsp;−1.2%</span></div>
+  <div class="row"><span class="nm">AAPL <small>"Surprise &amp; shine" event 1pm ET — iPhone 18 Pro + first foldable (iPhone Ultra); now #1 by market cap</small></span><span class="val dn">$314.19 &nbsp;−1.7%</span></div>
+  <div class="row"><span class="nm">NVDA <small>Week's laggard on AI "circular-financing" fears ($250B OpenAI backstop talk); lost #1 crown to Apple</small></span><span class="val dn">~$228 &nbsp;▼</span></div>
+  <div class="row"><span class="nm">MSFT <small>Caught in the AI-capex ROI scrutiny</small></span><span class="val dn">$510.65 &nbsp;−0.6%</span></div>
 
-  <section>
-    <h2>4 · On the Calendar Today</h2>
-    <div class="cal">
-      <div class="row"><b>Light data day</b> — first session after Labor Day; no tier-1 U.S. releases scheduled. The week is back-loaded.</div>
-      <div class="row"><b>CPI — Thu Sep 11, 8:30 a.m. ET</b> (the week’s main event; last inflation print before the mid-September FOMC). July ran +3.4% y/y headline, +2.5% core.</div>
-      <div class="row"><b>Earnings:</b> no watchlist names report today — the megacaps (<span class="flag">AAPL, NVDA, MSFT</span>) already reported last quarter. NVDA goes ex-dividend Sep 10.</div>
-    </div>
-  </section>
+  <h2>3 · Top 3 Things That Matter Today</h2>
+  <ol>
+    <li><b class="hl">The oil shock is flipping the Fed.</b> Houthi strikes on Saudi energy facilities (Jazan refinery) sent WTI +3% to ~$94; futures now imply only ~one 2026 cut and ~48% odds of <em>none</em>.
+      <span class="why">Why it matters: the Sept 15–16 FOMC is now a hold-vs-hike debate — not a cut — a regime change for every rate-sensitive asset.</span></li>
+    <li><b class="hl">10Y at 4.8%, highest since October 2023.</b> Bonds sold off with stocks — the classic supply-shock signature.
+      <span class="why">Why it matters: a higher discount rate compresses long-duration/growth multiples at the exact moment energy costs squeeze margins — a double hit to tech.</span></li>
+    <li><b class="hl">The AI-capex ROI reckoning.</b> NVDA's circular-financing worries plus scrutiny of megacap spend (GOOGL's raised capex outlook, MSFT/AMZN/META) are repricing AI leadership.
+      <span class="why">Why it matters: the trade that carried the tape all year is being judged on returns, not just growth.</span></li>
+  </ol>
 
-  <section>
-    <h2>5 · One Thing to Sound Smart About</h2>
-    <div class="edge">
-      <span class="tag">The edge</span>
-      <p style="margin-top:6px;">The Treasury curve is un-inverting through a <b>bear steepener</b> — long yields rising on <b>term premium</b>, not growth optimism — and this is now the third oil-driven curve episode of 2026 (April Hormuz, June payrolls, July). The subtle tell: if Thursday’s CPI runs hot, check <b>where</b>. A headline spike from energy is supply-side and shouldn’t, by the textbook, force a hike; <b>core</b> (a tame 2.5% in July) is what should drive policy. A Fed that hikes into an oil supply shock risks a policy error — watch the 5s30s steepening and the long bond as the market’s “policy-mistake” barometer.</p>
-    </div>
-  </section>
+  <h2>4 · On the Calendar Today</h2>
+  <table>
+    <tr><th>When</th><th>Item</th><th class="r">Note / Consensus</th></tr>
+    <tr><td>All day</td><td>US economic data</td><td class="r">Quiet — no major releases</td></tr>
+    <tr><td>Now→Sep 17</td><td>Fed blackout</td><td class="r">Ahead of Sep 15–16 FOMC</td></tr>
+    <tr><td>1:00 pm ET</td><td><b class="hl">AAPL</b> "Surprise &amp; shine" event</td><td class="r">iPhone 18 Pro + foldable</td></tr>
+    <tr><td>Thu, Sep 10 · 8:30am</td><td>PPI (Aug)</td><td class="r">First big inflation print of week</td></tr>
+    <tr><td>Fri, Sep 11 · 8:30am</td><td>CPI (Aug)</td><td class="r">The week's main event pre-FOMC</td></tr>
+  </table>
+  <div class="row" style="margin-top:8px"><span class="nm">Earnings</span><span class="val fl">Light — no watchlist names report today</span></div>
 
-  <section>
-    <h2>6 · Learning Nugget</h2>
-    <div class="nugget">
-      <span class="tag">Bear steepener</span>
-      <p style="margin-top:6px;">A bear steepener is when long-term yields rise faster than short-term ones, steepening the curve in a “bearish” (falling-bond-price) way. It usually signals rising inflation expectations or a fatter term premium — extra compensation for duration and fiscal risk — rather than optimism about growth, and it hits long-duration assets like tech stocks and mortgages hardest.</p>
-    </div>
-  </section>
+  <h2>5 · One Thing to Sound Smart About</h2>
+  <div class="card">
+    <span class="edge-t">Gold ripped while Bitcoin broke $80k — in the same session. That's the tell.</span>
+    <p style="margin-top:9px; color:#c7ced9; font-size:14.5px;">In a genuine energy/geopolitical shock, capital fled <b class="hl">into gold</b> (a real, monetary hedge) and <b class="hl">out of Bitcoin</b>, which traded like a leveraged risk asset — its beta to the Nasdaq, not its "digital gold" narrative, is what's driving it. The "crypto is a crisis hedge" thesis just failed a live test. If oil keeps grinding toward the $120 tail scenario, the real-rate + haven bid favors <b class="hl">gold and short-duration TIPS over long-duration tech and crypto</b> — the opposite of the last two years' playbook.</p>
+  </div>
 
-  <footer>
-    Sources:
-    <div class="src-list">
-      <a href="https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html">CNBC markets</a>
-      <a href="https://www.cnbc.com/2026/09/07/us-treasury-yields-markets-scott-bessent.html">CNBC — Treasury yields</a>
-      <a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-8-133744027.html">Yahoo Finance — Sep 8</a>
-      <a href="https://fortune.com/article/price-of-oil-09-08-2026/">Fortune — oil</a>
-      <a href="https://fortune.com/article/current-price-of-gold-09-08-2026/">Fortune — gold</a>
-      <a href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-tuesday-september-8-2026-crypto-prices-sliding-as-us-iran-fighting-continues-113441984.html">Yahoo — bitcoin</a>
-      <a href="https://www.cnbc.com/2026/09/04/jobs-report-august-2026.html">CNBC — August jobs</a>
-      <a href="https://www.bls.gov/news.release/cpi.nr0.htm">BLS — CPI</a>
-      <a href="https://mariemontcapital.com/treasury-yields-july-2026-oil-bear-flattener/">Mariemont — curve/oil</a>
-    </div>
-    <p style="margin-top:12px;color:#4b5769;">Auto-generated pre-market brief · not investment advice.</p>
-  </footer>
+  <h2>6 · Learning Nugget</h2>
+  <div class="learn"><b class="hl">Supply-shock stagflation.</b> When a negative supply shock (an oil spike) raises prices <em>and</em> cuts growth, the Fed faces a real dilemma: hiking to fight inflation deepens the slowdown, cutting to support growth entrenches inflation. That's why an oil shock can push bond yields <em>up</em> even as stocks fall — breaking the usual "stocks down = bonds up" hedge that most portfolios rely on.</div>
+
+  <div class="src">
+    Sources ·
+    <a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-8-133744027.html">Yahoo Finance — Sep 8 close</a> ·
+    <a href="https://www.cnbc.com/2026/09/08/stock-market-today-live-updates.html">CNBC markets</a> ·
+    <a href="https://tradingeconomics.com/commodity/crude-oil">Trading Economics — WTI/Brent/Gold</a> ·
+    <a href="https://www.riotimesonline.com/crypto-markets-bitcoin-majors-wednesday-september-9-2026/">RioTimes — BTC sub-$80k on oil shock</a> ·
+    <a href="https://www.morningstar.com/economy/fed-holds-steady-oil-spike-has-2026-rate-cut-expectations-shrinking-fast">Morningstar — oil spike &amp; rate-cut odds</a> ·
+    <a href="https://finance.yahoo.com/markets/article/nvidia-drops-nearly-5-leading-chip-stocks-lower-amid-renewed-worries-of-circular-financing-193309793.html">Yahoo — NVDA circular financing</a> ·
+    <a href="https://www.macrumors.com/guide/apple-september-2026-what-to-expect/">MacRumors — Apple Sep 9 event</a>
+  </div>
+  <div class="foot">Auto-generated pre-market brief · figures reflect Sep 8 close &amp; overnight tape · not investment advice</div>
+
 </div>
 </body>
 </html>
