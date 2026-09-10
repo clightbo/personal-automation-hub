@@ -3,115 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clark's Market Brief — Sep 9, 2026</title>
+<title>Pre-Market Brief — Sep 10, 2026</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background:#0b0e14; color:#e6e9ef;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5; -webkit-font-smoothing:antialiased; padding:20px 16px 48px;
+    background: #0b0e14;
+    color: #e6e9ef;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px 16px 48px;
   }
-  .wrap { max-width:760px; margin:0 auto; }
-  .hdr { border-bottom:1px solid #1e2430; padding-bottom:16px; margin-bottom:22px; }
-  .kicker { color:#7f8ca3; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; }
-  h1 { font-size:27px; margin:6px 0 4px; letter-spacing:-.4px; }
-  .sync { color:#6b7688; font-size:13px; }
-  .tape { color:#f0b429; font-weight:600; font-size:14.5px; margin-top:12px;
-          background:#14100a; border:1px solid #3a2f12; border-radius:8px; padding:10px 12px; }
-  h2 { font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:#8fa0bd;
-       margin:30px 0 12px; padding-bottom:7px; border-bottom:1px solid #1a202c; }
-  .row { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
-         padding:7px 0; border-bottom:1px solid #141922; font-size:15px; }
-  .row:last-child { border-bottom:none; }
-  .nm { color:#cdd4e0; font-weight:600; }
-  .nm small { color:#7f8ca3; font-weight:400; display:block; font-size:12.5px; margin-top:2px; }
-  .val { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
-  .up { color:#3ecf8e; } .dn { color:#ff6b6b; } .fl { color:#c7ced9; }
-  table { width:100%; border-collapse:collapse; font-size:14.5px; margin-top:4px; }
-  th,td { text-align:left; padding:7px 8px; border-bottom:1px solid #141922; font-variant-numeric:tabular-nums; }
-  th { color:#7f8ca3; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
-  td.r,th.r { text-align:right; }
-  ol { margin:0; padding-left:20px; } ol li { margin-bottom:13px; }
-  .why { color:#8fa0bd; font-size:13.5px; display:block; margin-top:3px; }
-  .card { background:#111722; border:1px solid #1e2635; border-radius:10px; padding:15px 16px; margin-top:4px; }
-  .edge-t { color:#f0b429; font-weight:700; }
-  .learn { background:#0e1520; border-left:3px solid #3a7bd5; border-radius:6px; padding:13px 15px; font-size:14.5px; color:#d3dae6; }
-  b.hl { color:#fff; }
-  .src { margin-top:30px; padding-top:14px; border-top:1px solid #1a202c; font-size:12.5px; color:#6b7688; }
-  .src a { color:#5a8bd6; text-decoration:none; word-break:break-all; }
-  .foot { margin-top:22px; text-align:center; color:#4b5568; font-size:11.5px; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header { border-bottom: 1px solid #1e2633; padding-bottom: 16px; margin-bottom: 24px; }
+  .kicker { color: #6b7688; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+  h1 { font-size: 26px; margin: 6px 0 4px; letter-spacing: -.01em; }
+  .stamp { color: #7a8699; font-size: 13px; }
+  h2 {
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #8ba3c7;
+    margin: 30px 0 12px; font-weight: 700; display: flex; align-items: center; gap: 8px;
+  }
+  h2::before { content: ""; width: 4px; height: 15px; background: #3b82f6; border-radius: 2px; display: inline-block; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 4px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #161d29; }
+  th { color: #6b7688; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+  td.num { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .up { color: #34d399; }
+  .down { color: #f87171; }
+  .flat { color: #9aa6b8; }
+  .card {
+    background: #111725; border: 1px solid #1c2634; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+  }
+  .card .tick { font-weight: 700; font-size: 15px; }
+  .card .px { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; float: right; font-size: 14px; }
+  .card .note { color: #aeb8c9; font-size: 13.5px; margin-top: 4px; }
+  ol.matters { list-style: none; counter-reset: m; }
+  ol.matters li { counter-increment: m; position: relative; padding: 12px 0 12px 44px; border-bottom: 1px solid #161d29; }
+  ol.matters li::before {
+    content: counter(m); position: absolute; left: 0; top: 12px;
+    width: 28px; height: 28px; background: #1d283b; color: #7ab0ff; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+  }
+  ol.matters .head { font-weight: 600; font-size: 15px; }
+  ol.matters .why { color: #9aa6b8; font-size: 13.5px; margin-top: 3px; }
+  .why b { color: #cdd6e4; font-weight: 600; }
+  .cal { font-size: 14px; }
+  .cal .row { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid #161d29; }
+  .cal .t { color: #7ab0ff; font-family: ui-monospace, monospace; min-width: 74px; font-size: 13px; }
+  .cal .d { color: #dfe5ee; }
+  .cal .c { color: #7a8699; }
+  .edge, .nugget {
+    background: linear-gradient(180deg,#131b2b,#0f1521); border: 1px solid #223049; border-radius: 12px;
+    padding: 16px 18px; font-size: 14.5px; color: #d7deea;
+  }
+  .nugget { border-color: #2a2440; background: linear-gradient(180deg,#1a1630,#12101f); }
+  .edge b, .nugget b { color: #fff; }
+  .tag { display:inline-block; font-size:11px; padding:2px 7px; border-radius:6px; background:#1d283b; color:#7ab0ff; margin-left:6px; vertical-align:middle;}
+  footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid #1e2633; font-size: 12px; color: #6b7688; }
+  footer a { color: #6b8fc7; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .sms { font-family: ui-monospace, monospace; font-size: 12.5px; color:#8ba3c7; background:#0f1521; border:1px dashed #26324a; border-radius:8px; padding:8px 10px; margin-top:10px; }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <header>
+    <div class="kicker">Pre-Market Brief · For Clark</div>
+    <h1>Thursday, September 10, 2026</h1>
+    <div class="stamp">Prepared 6:30am ET · reflects Sep 9 close &amp; overnight · read time ~3 min</div>
+  </header>
 
-  <div class="hdr">
-    <div class="kicker">Pre-Market Brief</div>
-    <h1>Clark's Market Brief</h1>
-    <div class="sync">Wednesday, September 9, 2026 · 8:08 AM EDT</div>
-    <div class="tape">Oil shock, not a growth scare: WTI +3% to ~$94, 10Y tops 4.8% (Oct-'23 high), Dow −600. The Sept 15–16 Fed meeting just became a hold-vs-<em>hike</em> debate — cuts are being priced out.</div>
-  </div>
+  <h2>Market Snapshot</h2>
+  <table>
+    <thead><tr><th>Instrument</th><th>Level</th><th>Move</th></tr></thead>
+    <tbody>
+      <tr><td>S&amp;P 500</td><td class="num">7,636.36</td><td class="num down">-0.48%</td></tr>
+      <tr><td>Nasdaq Comp</td><td class="num">26,253.34</td><td class="num down">-0.64%</td></tr>
+      <tr><td>Dow</td><td class="num">52,380.66</td><td class="num down">-0.77% (-405)</td></tr>
+      <tr><td>10Y Treasury</td><td class="num">~4.86%</td><td class="num down">multi-decade high</td></tr>
+      <tr><td>Brent crude</td><td class="num">$105.20</td><td class="num up">+3.1% (&gt;$100 1st since Jul)</td></tr>
+      <tr><td>Gold</td><td class="num">$4,421</td><td class="num down">-0.40%</td></tr>
+      <tr><td>Bitcoin</td><td class="num">$78,580</td><td class="num down">-0.37%</td></tr>
+      <tr><td>Nikkei 225</td><td class="num">65,271</td><td class="num up">+0.20%</td></tr>
+      <tr><td>Hang Seng</td><td class="num">24,954</td><td class="num down">-1.27%</td></tr>
+    </tbody>
+  </table>
+  <p style="color:#8794a8;font-size:13px;margin-top:8px;">Third straight down day for US equities. The tell: bonds <i>and</i> gold both fell alongside stocks — an inflation/real-rates move, not a growth scare.</p>
 
-  <h2>1 · Market Snapshot</h2>
-  <div class="row"><span class="nm">S&amp;P 500 <small>SPY ≈ $767</small></span><span class="val dn">7,673.52 &nbsp;−0.58%</span></div>
-  <div class="row"><span class="nm">Nasdaq Composite <small>QQQ ≈ −0.3%</small></span><span class="val dn">26,421.41 &nbsp;−0.32%</span></div>
-  <div class="row"><span class="nm">Dow Jones <small>DIA ≈ $528 · −600 pts, day's worst</small></span><span class="val dn">52,786.07 &nbsp;−1.18%</span></div>
-  <div class="row"><span class="nm">10Y Treasury <small>Highest since Oct 2023</small></span><span class="val dn">~4.80% &nbsp;▲</span></div>
-  <div class="row"><span class="nm">WTI Crude <small>Brent ~$97–98, highest since late July</small></span><span class="val up">~$94 &nbsp;+3.0%</span></div>
-  <div class="row"><span class="nm">Gold <small>Haven bid</small></span><span class="val up">~$4,461 &nbsp;+1.8%</span></div>
-  <div class="row"><span class="nm">Bitcoin <small>Lost the $80k handle</small></span><span class="val dn">~$78,400 &nbsp;−0.9%</span></div>
-  <div class="row"><span class="nm">Asia overnight</span><span class="val fl">Nikkei −0.2% · Kospi +1.4% · HSI −0.3%</span></div>
+  <h2>Your Watchlist</h2>
+  <div class="card"><span class="px num flat">~-0.48%</span><span class="tick">SPY</span><div class="note">Tracks the S&amp;P; third down day as the yield/oil combo pressures risk.</div></div>
+  <div class="card"><span class="px num flat">~-0.6%</span><span class="tick">QQQ</span><div class="note">Nasdaq-100 proxy; long-duration tech most exposed to the yield backup.</div></div>
+  <div class="card"><span class="px num flat">~-0.77%</span><span class="tick">DIA</span><div class="note">Dow proxy; -405 pts on the index, the day's laggard.</div></div>
+  <div class="card"><span class="px num up">$316.67 · +0.42%</span><span class="tick">AAPL</span><div class="note">Bucked the tape — bid as a low-beta balance-sheet haven while others sold.</div></div>
+  <div class="card"><span class="px num flat">~$224</span><span class="tick">NVDA</span><div class="note">Ranged $223.51–$226.18; consolidating, no fresh catalyst into CPI.</div></div>
+  <div class="card"><span class="px num down">~$491</span><span class="tick">MSFT</span><div class="note">Slipped from $493.95 prior close; ranged $490.20–$494.55.</div></div>
 
-  <h2>2 · Your Watchlist</h2>
-  <div class="row"><span class="nm">SPY <small>Broad tape sold on oil + rates</small></span><span class="val dn">~$767 &nbsp;−0.6%</span></div>
-  <div class="row"><span class="nm">QQQ <small>Chips heavy; defensive megacaps cushion</small></span><span class="val dn">~−0.3%</span></div>
-  <div class="row"><span class="nm">DIA <small>Energy-cost drag hits industrials hardest</small></span><span class="val dn">~$528 &nbsp;−1.2%</span></div>
-  <div class="row"><span class="nm">AAPL <small>"Surprise &amp; shine" event 1pm ET — iPhone 18 Pro + first foldable (iPhone Ultra); now #1 by market cap</small></span><span class="val dn">$314.19 &nbsp;−1.7%</span></div>
-  <div class="row"><span class="nm">NVDA <small>Week's laggard on AI "circular-financing" fears ($250B OpenAI backstop talk); lost #1 crown to Apple</small></span><span class="val dn">~$228 &nbsp;▼</span></div>
-  <div class="row"><span class="nm">MSFT <small>Caught in the AI-capex ROI scrutiny</small></span><span class="val dn">$510.65 &nbsp;−0.6%</span></div>
-
-  <h2>3 · Top 3 Things That Matter Today</h2>
-  <ol>
-    <li><b class="hl">The oil shock is flipping the Fed.</b> Houthi strikes on Saudi energy facilities (Jazan refinery) sent WTI +3% to ~$94; futures now imply only ~one 2026 cut and ~48% odds of <em>none</em>.
-      <span class="why">Why it matters: the Sept 15–16 FOMC is now a hold-vs-hike debate — not a cut — a regime change for every rate-sensitive asset.</span></li>
-    <li><b class="hl">10Y at 4.8%, highest since October 2023.</b> Bonds sold off with stocks — the classic supply-shock signature.
-      <span class="why">Why it matters: a higher discount rate compresses long-duration/growth multiples at the exact moment energy costs squeeze margins — a double hit to tech.</span></li>
-    <li><b class="hl">The AI-capex ROI reckoning.</b> NVDA's circular-financing worries plus scrutiny of megacap spend (GOOGL's raised capex outlook, MSFT/AMZN/META) are repricing AI leadership.
-      <span class="why">Why it matters: the trade that carried the tape all year is being judged on returns, not just growth.</span></li>
+  <h2>Top 3 Things That Matter Today</h2>
+  <ol class="matters">
+    <li><div class="head">Oil is back above $100 (Brent $105) after Houthi strikes on Saudi energy facilities.</div>
+      <div class="why"><b>Why it matters:</b> A supply-side price shock lands the day before CPI — it feeds straight into inflation expectations and hands the Fed a reason to stay hawkish.</div></li>
+    <li><div class="head">The 10Y is at multi-decade highs (~4.86%) and the market is debating a Fed <i>hike</i>, not a cut, on Sep 16.</div>
+      <div class="why"><b>Why it matters:</b> Odds swung from ~62% hike in early Aug to a coin-flip after a soft jobs print; the US is now one of the few DM central banks where tightening is even on the table.</div></li>
+    <li><div class="head">Risk appetite is fading — three down days, VIX up, defensive rotation.</div>
+      <div class="why"><b>Why it matters:</b> With gold selling too, there's no clean hedge working; cash and short-duration are the crowd's current shelter.</div></li>
   </ol>
 
-  <h2>4 · On the Calendar Today</h2>
-  <table>
-    <tr><th>When</th><th>Item</th><th class="r">Note / Consensus</th></tr>
-    <tr><td>All day</td><td>US economic data</td><td class="r">Quiet — no major releases</td></tr>
-    <tr><td>Now→Sep 17</td><td>Fed blackout</td><td class="r">Ahead of Sep 15–16 FOMC</td></tr>
-    <tr><td>1:00 pm ET</td><td><b class="hl">AAPL</b> "Surprise &amp; shine" event</td><td class="r">iPhone 18 Pro + foldable</td></tr>
-    <tr><td>Thu, Sep 10 · 8:30am</td><td>PPI (Aug)</td><td class="r">First big inflation print of week</td></tr>
-    <tr><td>Fri, Sep 11 · 8:30am</td><td>CPI (Aug)</td><td class="r">The week's main event pre-FOMC</td></tr>
-  </table>
-  <div class="row" style="margin-top:8px"><span class="nm">Earnings</span><span class="val fl">Light — no watchlist names report today</span></div>
-
-  <h2>5 · One Thing to Sound Smart About</h2>
-  <div class="card">
-    <span class="edge-t">Gold ripped while Bitcoin broke $80k — in the same session. That's the tell.</span>
-    <p style="margin-top:9px; color:#c7ced9; font-size:14.5px;">In a genuine energy/geopolitical shock, capital fled <b class="hl">into gold</b> (a real, monetary hedge) and <b class="hl">out of Bitcoin</b>, which traded like a leveraged risk asset — its beta to the Nasdaq, not its "digital gold" narrative, is what's driving it. The "crypto is a crisis hedge" thesis just failed a live test. If oil keeps grinding toward the $120 tail scenario, the real-rate + haven bid favors <b class="hl">gold and short-duration TIPS over long-duration tech and crypto</b> — the opposite of the last two years' playbook.</p>
+  <h2>On The Calendar Today</h2>
+  <div class="cal">
+    <div class="row"><span class="t">8:30am</span><span class="d">PPI (Aug)</span><span class="c">prior +0.4% m/m · watch for oil pass-through</span></div>
+    <div class="row"><span class="t">8:30am</span><span class="d">Initial jobless claims</span><span class="c">recent trend ~230–240k</span></div>
+    <div class="row"><span class="t">Fri 8:30</span><span class="d">CPI (Aug) — the marquee print</span><span class="c">consensus 3.4% headline</span></div>
+    <div class="row"><span class="t">Earnings</span><span class="d">No watchlist mega-caps report today</span><span class="c">AAPL/NVDA/MSFT off-cycle</span></div>
   </div>
 
-  <h2>6 · Learning Nugget</h2>
-  <div class="learn"><b class="hl">Supply-shock stagflation.</b> When a negative supply shock (an oil spike) raises prices <em>and</em> cuts growth, the Fed faces a real dilemma: hiking to fight inflation deepens the slowdown, cutting to support growth entrenches inflation. That's why an oil shock can push bond yields <em>up</em> even as stocks fall — breaking the usual "stocks down = bonds up" hedge that most portfolios rely on.</div>
-
-  <div class="src">
-    Sources ·
-    <a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-8-133744027.html">Yahoo Finance — Sep 8 close</a> ·
-    <a href="https://www.cnbc.com/2026/09/08/stock-market-today-live-updates.html">CNBC markets</a> ·
-    <a href="https://tradingeconomics.com/commodity/crude-oil">Trading Economics — WTI/Brent/Gold</a> ·
-    <a href="https://www.riotimesonline.com/crypto-markets-bitcoin-majors-wednesday-september-9-2026/">RioTimes — BTC sub-$80k on oil shock</a> ·
-    <a href="https://www.morningstar.com/economy/fed-holds-steady-oil-spike-has-2026-rate-cut-expectations-shrinking-fast">Morningstar — oil spike &amp; rate-cut odds</a> ·
-    <a href="https://finance.yahoo.com/markets/article/nvidia-drops-nearly-5-leading-chip-stocks-lower-amid-renewed-worries-of-circular-financing-193309793.html">Yahoo — NVDA circular financing</a> ·
-    <a href="https://www.macrumors.com/guide/apple-september-2026-what-to-expect/">MacRumors — Apple Sep 9 event</a>
+  <h2>One Thing To Sound Smart About</h2>
+  <div class="edge">
+    Everyone will call this "risk-off," but the internals say otherwise. In a true growth scare, Treasuries <b>and</b> gold rally together as money flees to safety. Right now both are <b>falling</b> alongside stocks. That signature — bonds down, gold down, oil up — is an <b>inflation / term-premium shock</b>, not a flight to safety. The market isn't afraid of recession; it's repricing the odds that the Fed can't cut, and may even hike, while an oil-supply shock reheats inflation. Translation: this is stagflation-lite positioning, and the usual "buy the dip because bonds will hedge you" playbook is quietly broken this week.
+    <div class="sms">edge: bonds + gold selling with stocks = inflation shock, not a growth scare — your bond hedge isn't working</div>
   </div>
-  <div class="foot">Auto-generated pre-market brief · figures reflect Sep 8 close &amp; overnight tape · not investment advice</div>
 
+  <h2>Learning Nugget<span class="tag">term premium</span></h2>
+  <div class="nugget">
+    <b>Term premium</b> is the extra yield investors demand to hold a long bond instead of rolling short-term bills — compensation for inflation and supply uncertainty over the years ahead. When it rises (like now), long yields can climb to multi-decade highs <i>even if</i> expected Fed policy barely changes — which is exactly why the 10Y is breaking out while the rate-cut debate rages on.
+  </div>
+
+  <footer>
+    Sources:
+    <a href="https://www.cnbc.com/2026/09/09/stock-market-today-live-updates.html">CNBC markets (Sep 9)</a> ·
+    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-09-2026">TheStreet</a> ·
+    <a href="https://tradingeconomics.com/united-states/government-bond-yield">TradingEconomics 10Y</a> ·
+    <a href="https://fortune.com/article/price-of-oil-09-10-2026/">Fortune oil (Sep 10)</a> ·
+    <a href="https://www.cnbc.com/2026/09/09/oil-prices-today-wti-brent-us-iran-hormuz-attacks.html">CNBC oil</a> ·
+    <a href="https://www.cnn.com/2026/09/01/investing/global-bond-market">CNN global bonds</a> ·
+    <a href="https://nowflation.com/cpi-release-dates">CPI dates</a> ·
+    <a href="https://www.goldmansachs.com/insights/articles/the-outlook-for-fed-rate-cuts-in-2026">GS Fed outlook</a>
+    <br><br>Automated pre-market brief · not investment advice.
+  </footer>
 </div>
 </body>
 </html>
