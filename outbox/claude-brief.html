@@ -1,145 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre-Market Brief — Sep 10, 2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Market Brief — Sep 12, 2026</title>
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0b0e14;
-    color: #e6e9ef;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    padding: 20px 16px 48px;
+  :root{ color-scheme: dark; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:#0b0f17;
+    color:#e6edf3;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    padding:20px 16px 48px;
+    -webkit-font-smoothing:antialiased;
   }
-  .wrap { max-width: 760px; margin: 0 auto; }
-  header { border-bottom: 1px solid #1e2633; padding-bottom: 16px; margin-bottom: 24px; }
-  .kicker { color: #6b7688; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
-  h1 { font-size: 26px; margin: 6px 0 4px; letter-spacing: -.01em; }
-  .stamp { color: #7a8699; font-size: 13px; }
-  h2 {
-    font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #8ba3c7;
-    margin: 30px 0 12px; font-weight: 700; display: flex; align-items: center; gap: 8px;
+  .wrap{ max-width:760px; margin:0 auto; }
+  header{ border-bottom:1px solid #1f2937; padding-bottom:16px; margin-bottom:22px; }
+  .eyebrow{ color:#7dd3fc; font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
+  h1{ font-size:26px; margin-top:6px; letter-spacing:-.01em; }
+  .sub{ color:#9aa7b5; font-size:14px; margin-top:6px; }
+  .tldr{
+    background:linear-gradient(135deg,#111a2b,#0e1420);
+    border:1px solid #24344d; border-left:4px solid #38bdf8;
+    border-radius:10px; padding:14px 16px; margin:20px 0 26px; font-size:15px;
   }
-  h2::before { content: ""; width: 4px; height: 15px; background: #3b82f6; border-radius: 2px; display: inline-block; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 4px; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #161d29; }
-  th { color: #6b7688; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
-  td.num { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .up { color: #34d399; }
-  .down { color: #f87171; }
-  .flat { color: #9aa6b8; }
-  .card {
-    background: #111725; border: 1px solid #1c2634; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+  .tldr b{ color:#7dd3fc; }
+  h2{
+    font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:#facc15;
+    margin:30px 0 12px; padding-bottom:7px; border-bottom:1px solid #1f2937;
   }
-  .card .tick { font-weight: 700; font-size: 15px; }
-  .card .px { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; float: right; font-size: 14px; }
-  .card .note { color: #aeb8c9; font-size: 13.5px; margin-top: 4px; }
-  ol.matters { list-style: none; counter-reset: m; }
-  ol.matters li { counter-increment: m; position: relative; padding: 12px 0 12px 44px; border-bottom: 1px solid #161d29; }
-  ol.matters li::before {
-    content: counter(m); position: absolute; left: 0; top: 12px;
-    width: 28px; height: 28px; background: #1d283b; color: #7ab0ff; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
-  }
-  ol.matters .head { font-weight: 600; font-size: 15px; }
-  ol.matters .why { color: #9aa6b8; font-size: 13.5px; margin-top: 3px; }
-  .why b { color: #cdd6e4; font-weight: 600; }
-  .cal { font-size: 14px; }
-  .cal .row { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid #161d29; }
-  .cal .t { color: #7ab0ff; font-family: ui-monospace, monospace; min-width: 74px; font-size: 13px; }
-  .cal .d { color: #dfe5ee; }
-  .cal .c { color: #7a8699; }
-  .edge, .nugget {
-    background: linear-gradient(180deg,#131b2b,#0f1521); border: 1px solid #223049; border-radius: 12px;
-    padding: 16px 18px; font-size: 14.5px; color: #d7deea;
-  }
-  .nugget { border-color: #2a2440; background: linear-gradient(180deg,#1a1630,#12101f); }
-  .edge b, .nugget b { color: #fff; }
-  .tag { display:inline-block; font-size:11px; padding:2px 7px; border-radius:6px; background:#1d283b; color:#7ab0ff; margin-left:6px; vertical-align:middle;}
-  footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid #1e2633; font-size: 12px; color: #6b7688; }
-  footer a { color: #6b8fc7; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  .sms { font-family: ui-monospace, monospace; font-size: 12.5px; color:#8ba3c7; background:#0f1521; border:1px dashed #26324a; border-radius:8px; padding:8px 10px; margin-top:10px; }
+  table{ width:100%; border-collapse:collapse; font-size:15px; margin:4px 0 8px; }
+  th,td{ text-align:left; padding:8px 10px; border-bottom:1px solid #172131; }
+  th{ color:#9aa7b5; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  td.num{ text-align:right; font-variant-numeric:tabular-nums; }
+  .up{ color:#4ade80; } .down{ color:#f87171; } .flat{ color:#cbd5e1; }
+  ul{ list-style:none; }
+  li{ padding:9px 0; border-bottom:1px solid #141d2b; font-size:15px; }
+  li:last-child{ border-bottom:none; }
+  .tk{ display:inline-block; min-width:52px; font-weight:700; color:#e6edf3; }
+  .why{ color:#9aa7b5; font-size:13.5px; display:block; margin-top:2px; }
+  .num-badge{ display:inline-block; background:#1e293b; color:#38bdf8; font-weight:700;
+    border-radius:6px; width:22px; height:22px; text-align:center; line-height:22px; font-size:13px; margin-right:8px; }
+  .edge{ background:#14110a; border:1px solid #3a2f12; border-left:4px solid #facc15; border-radius:10px; padding:14px 16px; }
+  .nugget{ background:#0d1512; border:1px solid #163024; border-left:4px solid #34d399; border-radius:10px; padding:14px 16px; }
+  .src{ margin-top:32px; padding-top:14px; border-top:1px solid #1f2937; font-size:12.5px; color:#6b7684; }
+  .src a{ color:#7dd3fc; text-decoration:none; word-break:break-word; }
+  .foot{ margin-top:18px; font-size:11.5px; color:#55606e; }
+  strong.k{ color:#e6edf3; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="kicker">Pre-Market Brief · For Clark</div>
-    <h1>Thursday, September 10, 2026</h1>
-    <div class="stamp">Prepared 6:30am ET · reflects Sep 9 close &amp; overnight · read time ~3 min</div>
+    <div class="eyebrow">Clark's Pre-Market Brief</div>
+    <h1>Daily Market Brief</h1>
+    <div class="sub">Saturday, September 12, 2026 · covering Friday Sep 11 close · ~3 min read</div>
   </header>
 
-  <h2>Market Snapshot</h2>
+  <div class="tldr">
+    Stocks snapped a 4-day skid Friday (S&amp;P +0.9%, Dow +1.0%, Nasdaq +1.0%) but still lost ground on the week. The real story: a hot core CPI shoved Fed-funds futures to a <b>~90% chance of a rate HIKE</b> at Wednesday's FOMC — the market is bracing for tightening, not easing. Long yields sit at multi-year highs (10Y 4.97%, 30Y near its 2007 peak) and investors yanked a near-record $40B from large-cap funds.
+  </div>
+
+  <h2>1 · Market Snapshot</h2>
   <table>
-    <thead><tr><th>Instrument</th><th>Level</th><th>Move</th></tr></thead>
-    <tbody>
-      <tr><td>S&amp;P 500</td><td class="num">7,636.36</td><td class="num down">-0.48%</td></tr>
-      <tr><td>Nasdaq Comp</td><td class="num">26,253.34</td><td class="num down">-0.64%</td></tr>
-      <tr><td>Dow</td><td class="num">52,380.66</td><td class="num down">-0.77% (-405)</td></tr>
-      <tr><td>10Y Treasury</td><td class="num">~4.86%</td><td class="num down">multi-decade high</td></tr>
-      <tr><td>Brent crude</td><td class="num">$105.20</td><td class="num up">+3.1% (&gt;$100 1st since Jul)</td></tr>
-      <tr><td>Gold</td><td class="num">$4,421</td><td class="num down">-0.40%</td></tr>
-      <tr><td>Bitcoin</td><td class="num">$78,580</td><td class="num down">-0.37%</td></tr>
-      <tr><td>Nikkei 225</td><td class="num">65,271</td><td class="num up">+0.20%</td></tr>
-      <tr><td>Hang Seng</td><td class="num">24,954</td><td class="num down">-1.27%</td></tr>
-    </tbody>
+    <tr><th>Asset</th><th class="num">Last</th><th class="num">Move</th></tr>
+    <tr><td>S&amp;P 500</td><td class="num">7,656</td><td class="num up">+0.86%</td></tr>
+    <tr><td>Nasdaq Comp.</td><td class="num">26,333</td><td class="num up">+0.96%</td></tr>
+    <tr><td>Dow Jones</td><td class="num">52,657</td><td class="num up">+0.98%</td></tr>
+    <tr><td>Russell 2000</td><td class="num">2,903</td><td class="num up">+0.45%</td></tr>
+    <tr><td>10-Yr Treasury</td><td class="num">4.97%</td><td class="num down">multi-yr high</td></tr>
+    <tr><td>WTI Crude</td><td class="num">$100.05</td><td class="num down">−2.4% (+8% wk)</td></tr>
+    <tr><td>Gold</td><td class="num">$4,409</td><td class="num flat">+$1.60</td></tr>
+    <tr><td>USD/JPY</td><td class="num">153.69</td><td class="num flat">yen 7-mo high</td></tr>
   </table>
-  <p style="color:#8794a8;font-size:13px;margin-top:8px;">Third straight down day for US equities. The tell: bonds <i>and</i> gold both fell alongside stocks — an inflation/real-rates move, not a growth scare.</p>
+  <p style="font-size:13.5px;color:#9aa7b5;margin-top:6px;">Overnight/global: German 10Y above 3.51% (highest since 2009); Japan 10Y at 2.99% (highest since 1996); ECB hiked this week. The global bond sell-off is synchronized, not just a US story.</p>
 
-  <h2>Your Watchlist</h2>
-  <div class="card"><span class="px num flat">~-0.48%</span><span class="tick">SPY</span><div class="note">Tracks the S&amp;P; third down day as the yield/oil combo pressures risk.</div></div>
-  <div class="card"><span class="px num flat">~-0.6%</span><span class="tick">QQQ</span><div class="note">Nasdaq-100 proxy; long-duration tech most exposed to the yield backup.</div></div>
-  <div class="card"><span class="px num flat">~-0.77%</span><span class="tick">DIA</span><div class="note">Dow proxy; -405 pts on the index, the day's laggard.</div></div>
-  <div class="card"><span class="px num up">$316.67 · +0.42%</span><span class="tick">AAPL</span><div class="note">Bucked the tape — bid as a low-beta balance-sheet haven while others sold.</div></div>
-  <div class="card"><span class="px num flat">~$224</span><span class="tick">NVDA</span><div class="note">Ranged $223.51–$226.18; consolidating, no fresh catalyst into CPI.</div></div>
-  <div class="card"><span class="px num down">~$491</span><span class="tick">MSFT</span><div class="note">Slipped from $493.95 prior close; ranged $490.20–$494.55.</div></div>
+  <h2>2 · Your Watchlist</h2>
+  <ul>
+    <li><span class="tk">SPY</span> <span class="up">≈ +0.9%</span> — tracks the S&amp;P; tech (XLK) led 9 of 11 sectors higher.</li>
+    <li><span class="tk">QQQ</span> <span class="up">≈ +1.0%</span> — rode Oracle's blowout cloud print; memory names (MU, WDC) whipsawed.</li>
+    <li><span class="tk">DIA</span> <span class="up">≈ +1.0%</span> — Dow +509 pts, best of the majors on the bounce.</li>
+    <li><span class="tk">AAPL</span> <span class="flat">$332.55 · flat (+0.08%)</span> — quiet session, no fresh catalyst.</li>
+    <li><span class="tk">NVDA</span> <span class="flat">$218.26 · flat</span> — went ex-dividend ($0.25) Sep 10; new Palantir AI partnership in focus.</li>
+    <li><span class="tk">MSFT</span> <span class="up">$495.44 · ≈ +0.8%</span> — bid alongside the broader AI-infrastructure trade after ORCL.</li>
+  </ul>
 
-  <h2>Top 3 Things That Matter Today</h2>
-  <ol class="matters">
-    <li><div class="head">Oil is back above $100 (Brent $105) after Houthi strikes on Saudi energy facilities.</div>
-      <div class="why"><b>Why it matters:</b> A supply-side price shock lands the day before CPI — it feeds straight into inflation expectations and hands the Fed a reason to stay hawkish.</div></li>
-    <li><div class="head">The 10Y is at multi-decade highs (~4.86%) and the market is debating a Fed <i>hike</i>, not a cut, on Sep 16.</div>
-      <div class="why"><b>Why it matters:</b> Odds swung from ~62% hike in early Aug to a coin-flip after a soft jobs print; the US is now one of the few DM central banks where tightening is even on the table.</div></li>
-    <li><div class="head">Risk appetite is fading — three down days, VIX up, defensive rotation.</div>
-      <div class="why"><b>Why it matters:</b> With gold selling too, there's no clean hedge working; cash and short-duration are the crowd's current shelter.</div></li>
-  </ol>
+  <h2>3 · Top 3 Things That Matter Today</h2>
+  <ul>
+    <li><span class="num-badge">1</span><strong class="k">Core CPI ran hot (+0.3% vs +0.2% est.)</strong><span class="why">Flipped rate-hike odds from ~70% to ~90% into Wednesday's FOMC — the market is now pricing tightening into a slowing economy, the classic stagflation squeeze.</span></li>
+    <li><span class="num-badge">2</span><strong class="k">Long-end yields at multi-year highs</strong><span class="why">10Y at 4.97% (highest since Oct 2023), 30Y near 5.38% — within a whisker of the 2007 peak. Higher discount rates pressure long-duration equity valuations even as stocks bounce.</span></li>
+    <li><span class="num-badge">3</span><strong class="k">Record fund outflows</strong><span class="why">$40.4B pulled from large-cap funds — the biggest weekly exit since Dec 2025 — signals institutions de-risking despite Friday's green screen. Rally on thin conviction.</span></li>
+  </ul>
 
-  <h2>On The Calendar Today</h2>
-  <div class="cal">
-    <div class="row"><span class="t">8:30am</span><span class="d">PPI (Aug)</span><span class="c">prior +0.4% m/m · watch for oil pass-through</span></div>
-    <div class="row"><span class="t">8:30am</span><span class="d">Initial jobless claims</span><span class="c">recent trend ~230–240k</span></div>
-    <div class="row"><span class="t">Fri 8:30</span><span class="d">CPI (Aug) — the marquee print</span><span class="c">consensus 3.4% headline</span></div>
-    <div class="row"><span class="t">Earnings</span><span class="d">No watchlist mega-caps report today</span><span class="c">AAPL/NVDA/MSFT off-cycle</span></div>
-  </div>
+  <h2>4 · On the Calendar (Week Ahead)</h2>
+  <p style="font-size:14.5px;color:#cbd5e1;">Markets closed for the weekend. The week that matters:</p>
+  <ul>
+    <li><strong class="k">Wed — FOMC decision</strong> <span class="why">Futures imply ~90% odds of a hike; watch the dot plot and Powell's tone far more than the move itself.</span></li>
+    <li><strong class="k">Mon/Tue — NY &amp; Philly Fed indices, Aug retail sales, industrial production</strong> <span class="why">First read on whether the consumer is cracking under higher fuel + rates.</span></li>
+    <li><strong class="k">Thu — Bank of England · Fri — Bank of Japan</strong> <span class="why">BoJ hike expected; a hawkish global central-bank cluster keeps the yen and JGB yields in play.</span></li>
+    <li><strong class="k">Watchlist earnings:</strong> none of AAPL/NVDA/MSFT report this week.</li>
+  </ul>
 
-  <h2>One Thing To Sound Smart About</h2>
+  <h2>5 · One Thing To Sound Smart About</h2>
   <div class="edge">
-    Everyone will call this "risk-off," but the internals say otherwise. In a true growth scare, Treasuries <b>and</b> gold rally together as money flees to safety. Right now both are <b>falling</b> alongside stocks. That signature — bonds down, gold down, oil up — is an <b>inflation / term-premium shock</b>, not a flight to safety. The market isn't afraid of recession; it's repricing the odds that the Fed can't cut, and may even hike, while an oil-supply shock reheats inflation. Translation: this is stagflation-lite positioning, and the usual "buy the dip because bonds will hedge you" playbook is quietly broken this week.
-    <div class="sms">edge: bonds + gold selling with stocks = inflation shock, not a growth scare — your bond hedge isn't working</div>
+    The 30-year Treasury yield is knocking on <strong class="k">5.38%</strong>, essentially its highest since June 2007, and TLT (the 20+ year bond ETF) just hit its lowest price since <strong class="k">2004</strong>. The contrarian read: this isn't only a Fed story — it's a global term-premium repricing (German Bunds at 2009 highs, JGBs at 1996 highs) driven by war-fueled oil, fiscal deficits, and supply. If you think the hike is a one-and-done, the long end — not equities — is where the asymmetric bet lives. <span class="why">Source: Investrade / Hammerstone daily recap, Sep 11 2026.</span>
   </div>
 
-  <h2>Learning Nugget<span class="tag">term premium</span></h2>
+  <h2>6 · Learning Nugget</h2>
   <div class="nugget">
-    <b>Term premium</b> is the extra yield investors demand to hold a long bond instead of rolling short-term bills — compensation for inflation and supply uncertainty over the years ahead. When it rises (like now), long yields can climb to multi-decade highs <i>even if</i> expected Fed policy barely changes — which is exactly why the 10Y is breaking out while the rate-cut debate rages on.
+    <strong class="k">Term premium</strong> is the extra yield investors demand to hold a long-dated bond instead of rolling short-term bills — compensation for inflation and rate uncertainty over time. When it rises, long yields can climb <em>even if</em> the market expects the Fed to eventually cut, which is exactly the disconnect playing out now.
   </div>
 
-  <footer>
+  <div class="src">
     Sources:
-    <a href="https://www.cnbc.com/2026/09/09/stock-market-today-live-updates.html">CNBC markets (Sep 9)</a> ·
-    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-09-2026">TheStreet</a> ·
-    <a href="https://tradingeconomics.com/united-states/government-bond-yield">TradingEconomics 10Y</a> ·
-    <a href="https://fortune.com/article/price-of-oil-09-10-2026/">Fortune oil (Sep 10)</a> ·
-    <a href="https://www.cnbc.com/2026/09/09/oil-prices-today-wti-brent-us-iran-hormuz-attacks.html">CNBC oil</a> ·
-    <a href="https://www.cnn.com/2026/09/01/investing/global-bond-market">CNN global bonds</a> ·
-    <a href="https://nowflation.com/cpi-release-dates">CPI dates</a> ·
-    <a href="https://www.goldmansachs.com/insights/articles/the-outlook-for-fed-rate-cuts-in-2026">GS Fed outlook</a>
-    <br><br>Automated pre-market brief · not investment advice.
-  </footer>
+    <a href="https://investrade.com/market-review-september-11-2026/">Investrade Market Review, Sep 11 2026</a> ·
+    <a href="https://www.cnbc.com/2026/09/10/stock-market-today-live-updates.html">CNBC Markets</a> ·
+    <a href="https://finance.yahoo.com/quote/NVDA/">Yahoo Finance — NVDA</a> ·
+    <a href="https://stockanalysis.com/stocks/aapl/">StockAnalysis — AAPL</a> ·
+    <a href="https://stockanalysis.com/stocks/msft/history/">StockAnalysis — MSFT</a>
+  </div>
+  <div class="foot">
+    Generated automatically for Clark's daily market brief. Index/ETF percentages are close-based approximations; not investment advice.
+  </div>
 </div>
 </body>
 </html>
