@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-14 17:22 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-14 23:51 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -18,8 +18,8 @@ _Updated 2026-09-14 17:22 UTC. Auto-generated from personal-automation-hub._
 | 2026-09-16 14:00 ET | High | Fed | **FOMC Statement** — High impact |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-09-16 14:30 ET | High | Fed | **FOMC Press Conference** — High impact |
-| 2026-09-17 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 28.9, prev 47.4 |
-| 2026-09-17 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 209K, prev 206K |
+| 2026-09-17 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 31.3, prev 47.4 |
+| 2026-09-17 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 208K, prev 206K |
 | 2026-09-18 09:30 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-09-18 11:45 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
