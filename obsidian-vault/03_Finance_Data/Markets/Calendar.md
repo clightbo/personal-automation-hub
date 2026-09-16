@@ -7,19 +7,17 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-15 23:31 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-16 15:53 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-16 08:30 ET | Medium | Macro | **Core Retail Sales m/m** — Medium impact; forecast 0.5%, prev -0.3% |
-| 2026-09-16 08:30 ET | Medium | Macro | **Retail Sales m/m** — Medium impact; forecast 0.8%, prev -0.6% |
 | 2026-09-16 14:00 ET | High | Macro | **Federal Funds Rate** — High impact; forecast 4.00%, prev 3.75% |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC Economic Projections** — High impact |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC Statement** — High impact |
 | 2026-09-16 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-09-16 14:30 ET | High | Fed | **FOMC Press Conference** — High impact |
 | 2026-09-17 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 31.3, prev 47.4 |
-| 2026-09-17 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 208K, prev 206K |
+| 2026-09-17 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 207K, prev 206K |
 | 2026-09-18 09:30 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-09-18 11:45 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
@@ -66,8 +64,6 @@ _Updated 2026-09-15 23:31 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-16 08:30** — Core Retail Sales m/m
-- **2026-09-16 08:30** — Retail Sales m/m
 - **2026-09-16 14:00** — Federal Funds Rate
 - **2026-09-17 08:30** — Unemployment Claims
 
