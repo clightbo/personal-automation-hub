@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-20 23:13 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-21 17:36 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-21 06:30 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-22 10:05 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
 | 2026-09-22 10:20 ET | Low | Fed | **FOMC Member Jefferson Speaks** — Low impact |
 | 2026-09-22 13:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
@@ -48,7 +47,6 @@ _Updated 2026-09-20 23:13 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-21 06:30** — FOMC Member Goolsbee Speaks
 - **2026-09-22 10:05** — FOMC Member Williams Speaks
 - **2026-09-22 10:20** — FOMC Member Jefferson Speaks
 - **2026-09-22 13:00** — FOMC Member Barkin Speaks
