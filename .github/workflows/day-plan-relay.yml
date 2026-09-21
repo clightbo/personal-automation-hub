@@ -1,0 +1,35 @@
+name: Day Plan Relay
+
+# Relays Clark's daily task/study plan to Telegram via a dedicated bot
+# (@vannanabannanabot) — separate from the market-brief bot and the
+# market_brief.py bot. Triggered by a push that touches
+# outbox/day-plan.txt.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'outbox/day-plan.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install python deps
+        run: pip install requests
+
+      - name: Send day plan to Telegram
+        env:
+          VANNA_TELEGRAM_BOT_TOKEN: ${{ secrets.VANNA_TELEGRAM_BOT_TOKEN }}
+          VANNA_TELEGRAM_CHAT_ID: ${{ secrets.VANNA_TELEGRAM_CHAT_ID }}
+        run: python send_day_plan.py
