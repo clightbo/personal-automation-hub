@@ -5,60 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Open — Sep 21, 2026</title>
 <style>
-  :root { color-scheme: dark; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    background: #0b0f14;
-    color: #e6edf3;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #fff1e5;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 16.5px;
     line-height: 1.55;
   }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 18px 40px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 26px 20px 44px; }
 
-  .eyebrow { color: #8b98a5; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
-  .nameplate { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 700; margin: 4px 0 8px; letter-spacing: -.01em; }
-  .dek { color: #adbac7; font-size: 15px; padding-bottom: 16px; border-bottom: 2px solid #e6edf3; }
+  .eyebrow { color: #b3261e; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+  .nameplate { font-family: Georgia, "Times New Roman", serif; font-size: 38px; font-weight: 700; margin: 6px 0 8px; letter-spacing: -.01em; }
+  .dek { color: #4a433d; font-size: 15px; padding-bottom: 16px; border-bottom: 3px solid #1a1a1a; font-style: italic; font-family: Georgia, serif; }
 
-  .lead { font-size: 17.5px; line-height: 1.65; margin: 20px 0 6px; color: #f0f4f8; }
+  .lead { font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.65; margin: 20px 0 6px; }
+  .lead::first-letter { font-size: 44px; float: left; line-height: .8; padding: 4px 6px 0 0; font-weight: 700; color: #b3261e; }
 
   h2 {
-    font-size: 14px; letter-spacing: .1em; text-transform: uppercase;
-    color: #7ee787; margin: 30px 0 14px; border-left: 3px solid #238636; padding-left: 10px;
+    font-family: Georgia, serif; font-weight: 700;
+    font-size: 15px; letter-spacing: .04em; text-transform: uppercase;
+    color: #1a1a1a; margin: 32px 0 14px; padding-bottom: 6px; border-bottom: 2px solid #1a1a1a;
   }
 
   table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 15px; }
-  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #1a222c; vertical-align: top; }
-  th { color: #8b98a5; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
-  td.tk { font-weight: 700; color: #e6edf3; white-space: nowrap; }
-  td.lv { white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .up { color: #3fb950; font-weight: 700; }
-  .down { color: #f85149; font-weight: 700; }
-  .flat { color: #d29922; font-weight: 700; }
-  .note { color: #adbac7; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid #ddc9ba; vertical-align: top; }
+  th { color: #6b625c; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+  td.tk { font-weight: 700; color: #1a1a1a; white-space: nowrap; font-family: Georgia, serif; }
+  td.lv { white-space: nowrap; }
+  .up { color: #1f7a4a; font-weight: 700; }
+  .down { color: #b3261e; font-weight: 700; }
+  .flat { color: #a3781f; font-weight: 700; }
+  .note { color: #55504b; }
 
-  .event { margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid #1a222c; }
+  .event { margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid #ddc9ba; }
   .event:last-child { border-bottom: none; }
-  .event h3 { font-size: 17px; margin: 0 0 8px; color: #fff; }
+  .event h3 { font-family: Georgia, serif; font-size: 19px; margin: 0 0 8px; color: #1a1a1a; }
   .event p { margin: 6px 0; font-size: 15px; }
-  .tag { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; padding: 1px 7px; border-radius: 4px; margin-right: 8px; vertical-align: 1px; }
-  .tag.why { background: #1f2933; color: #8b98a5; }
-  .tag.watch { background: #24361f; color: #7ee787; }
+  .tag { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; padding: 1px 7px; margin-right: 8px; vertical-align: 1px; }
+  .tag.why { background: #ecd9c9; color: #55504b; }
+  .tag.watch { background: #f3d9d3; color: #b3261e; }
 
   .alsolist { list-style: none; padding: 0; margin: 4px 0; }
-  .alsolist li { padding: 6px 0; font-size: 14.5px; color: #adbac7; border-bottom: 1px solid #1a222c; }
-  .alsolist b { color: #e6edf3; }
+  .alsolist li { padding: 6px 0; font-size: 14.5px; color: #55504b; border-bottom: 1px solid #ddc9ba; }
+  .alsolist b { color: #1a1a1a; }
 
-  .card { background: #10161d; border: 1px solid #1f2933; border-radius: 10px; padding: 4px 16px 12px; margin-top: 6px; }
-  .card h4 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 14px 0 6px; }
-  .card.angle h4 { color: #d29922; }
-  .card.thing h4 { color: #58a6ff; }
+  .card { background: #f7e9dc; border: 1px solid #ddc9ba; padding: 4px 16px 12px; margin-top: 6px; }
+  .card h4 { font-family: Georgia, serif; font-style: italic; font-size: 15px; margin: 14px 0 6px; color: #b3261e; }
+  .card.thing h4 { color: #1a1a1a; }
   .card p { font-size: 14.5px; margin: 0; }
 
-  .src { font-size: 12.5px; color: #8b98a5; margin-top: 6px; }
-  .src a { color: #58a6ff; text-decoration: none; word-break: break-all; }
-  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid #1f2933; color: #6e7681; font-size: 12px; }
+  .src { font-size: 12.5px; color: #6b625c; margin-top: 6px; }
+  .src a { color: #b3261e; text-decoration: none; word-break: break-all; }
+  footer { margin-top: 34px; padding-top: 14px; border-top: 3px solid #1a1a1a; color: #6b625c; font-size: 12px; }
+
+  /* Keep paragraphs, table rows and cards from splitting across a PDF page break */
+  h2 { break-after: avoid; page-break-after: avoid; }
+  .dek, .lead, .event, .card, .card > div, tr, .alsolist li, footer {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  p { orphans: 3; widows: 3; }
+  @page { margin: 0.6in 0.55in; }
 </style>
 </head>
 <body>
@@ -113,7 +121,7 @@
 
   <h2>Worth Noting</h2>
   <div class="card">
-    <div class="card angle">
+    <div>
       <h4>The Angle</h4>
       <p>Futures are rallying into the summit while bonds and gold aren't buying the "all clear" — that split rarely holds. Either yields catch down to the trade-deal story, or stocks catch down to the yield/oil story. Watch which one breaks first after Thursday, not the headline itself.</p>
     </div>
