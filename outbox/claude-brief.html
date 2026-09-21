@@ -17,20 +17,10 @@
   }
   .wrap { max-width: 680px; margin: 0 auto; padding: 24px 18px 40px; }
 
-  /* Masthead */
   .eyebrow { color: #8b98a5; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
   .nameplate { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 700; margin: 4px 0 8px; letter-spacing: -.01em; }
   .dek { color: #adbac7; font-size: 15px; padding-bottom: 16px; border-bottom: 2px solid #e6edf3; }
 
-  /* Ticker strip */
-  .ticker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  .tick { background: #10161d; border: 1px solid #1f2933; border-radius: 8px; padding: 6px 10px; font-size: 13px; white-space: nowrap; }
-  .tsym { color: #8b98a5; margin-right: 6px; font-weight: 600; }
-  .tval { font-weight: 700; margin-right: 6px; }
-  .tchg { font-weight: 700; }
-  .futnote { color: #8b98a5; font-size: 12.5px; margin-top: 8px; }
-
-  /* Lead */
   .lead { font-size: 17.5px; line-height: 1.65; margin: 20px 0 6px; color: #f0f4f8; }
 
   h2 {
@@ -38,7 +28,16 @@
     color: #7ee787; margin: 30px 0 14px; border-left: 3px solid #238636; padding-left: 10px;
   }
 
-  /* Events */
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 15px; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #1a222c; vertical-align: top; }
+  th { color: #8b98a5; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+  td.tk { font-weight: 700; color: #e6edf3; white-space: nowrap; }
+  td.lv { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .up { color: #3fb950; font-weight: 700; }
+  .down { color: #f85149; font-weight: 700; }
+  .flat { color: #d29922; font-weight: 700; }
+  .note { color: #adbac7; }
+
   .event { margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid #1a222c; }
   .event:last-child { border-bottom: none; }
   .event h3 { font-size: 17px; margin: 0 0 8px; color: #fff; }
@@ -50,15 +49,6 @@
   .alsolist { list-style: none; padding: 0; margin: 4px 0; }
   .alsolist li { padding: 6px 0; font-size: 14.5px; color: #adbac7; border-bottom: 1px solid #1a222c; }
   .alsolist b { color: #e6edf3; }
-
-  table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 15px; }
-  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #1a222c; vertical-align: top; }
-  th { color: #8b98a5; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
-  td.tk { font-weight: 700; color: #e6edf3; white-space: nowrap; }
-  .up { color: #3fb950; font-weight: 700; }
-  .down { color: #f85149; font-weight: 700; }
-  .flat { color: #d29922; font-weight: 700; }
-  .note { color: #adbac7; }
 
   .card { background: #10161d; border: 1px solid #1f2933; border-radius: 10px; padding: 4px 16px 12px; margin-top: 6px; }
   .card h4 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 14px 0 6px; }
@@ -78,18 +68,23 @@
   <div class="nameplate">The Open</div>
   <div class="dek">Futures rally into the Trump–Xi summit, yields won't leave 5%, and oil keeps a war-risk floor.</div>
 
-  <div class="ticker">
-    <div class="tick"><span class="tsym">S&amp;P</span><span class="tval">7,650.50</span><span class="tchg up">+0.17%</span></div>
-    <div class="tick"><span class="tsym">NASDAQ</span><span class="tval">26,522.55</span><span class="tchg up">+0.39%</span></div>
-    <div class="tick"><span class="tsym">DOW</span><span class="tval">51,682.64</span><span class="tchg down">-0.18%</span></div>
-    <div class="tick"><span class="tsym">10Y</span><span class="tval">~5.00%</span><span class="tchg down">19-yr high</span></div>
-    <div class="tick"><span class="tsym">WTI</span><span class="tval">~$93.9</span><span class="tchg flat">off spike</span></div>
-    <div class="tick"><span class="tsym">GOLD</span><span class="tval">~$4,380</span><span class="tchg up">+wk</span></div>
-    <div class="tick"><span class="tsym">BTC</span><span class="tval">~$81.1K</span><span class="tchg down">-0.4%</span></div>
-  </div>
-  <div class="futnote">Futures (pre-open): S&amp;P +0.42% · Nasdaq-100 +0.58% · Dow +0.36%</div>
-
   <p class="lead">Futures are green this morning after U.S. and Chinese officials wrapped a weekend of "very successful" pre-summit trade talks, setting up Thursday's Trump–Xi meeting in Washington. But two things keep this a split market: the 10-year Treasury yield is still camped near 5% — the highest since 2007 — even after last week's Fed hike, and a fresh round of Houthi strikes on Saudi Arabia is keeping a war-risk floor under oil. Read on the day: optimism on trade, caution on everything else.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <tr><th>Asset</th><th>Level</th><th>Why it matters</th></tr>
+    <tr><td class="tk">S&amp;P 500</td><td class="lv up">7,650.50 · +0.17%</td><td class="note">3rd straight losing week, bouncing into the summit.</td></tr>
+    <tr><td class="tk">Nasdaq</td><td class="lv up">26,522.55 · +0.39%</td><td class="note">led by NVDA, AMZN, GOOGL strength.</td></tr>
+    <tr><td class="tk">Dow</td><td class="lv down">51,682.64 · -0.18%</td><td class="note">most rate-sensitive of the three.</td></tr>
+    <tr><td class="tk">Futures</td><td class="lv up">S&amp;P +0.42% / Nasdaq +0.58% / Dow +0.36%</td><td class="note">rallying on "very successful" pre-summit trade talks.</td></tr>
+    <tr><td class="tk">10Y Treasury</td><td class="lv down">~5.00%</td><td class="note">highest since 2007 — didn't fall after last week's Fed hike.</td></tr>
+    <tr><td class="tk">WTI Crude</td><td class="lv flat">~$93.9/bbl</td><td class="note">Houthi attacks on Saudi energy sites keep a war-risk floor under oil.</td></tr>
+    <tr><td class="tk">Gold</td><td class="lv up">~$4,380/oz</td><td class="note">best weekly gain in a month — hedging both trade &amp; rate risk.</td></tr>
+    <tr><td class="tk">Bitcoin</td><td class="lv down">~$81,100 · -0.4%</td><td class="note">holding above $80K, tracking risk-on futures.</td></tr>
+    <tr><td class="tk">NVDA</td><td class="lv up">$222.27 · +1.34%</td><td class="note">California's new AI executive order is the regulatory watch item.</td></tr>
+    <tr><td class="tk">AAPL</td><td class="lv up">trending higher</td><td class="note">Evercore raised PT to $380 on a strong iPhone ASP survey.</td></tr>
+    <tr><td class="tk">MSFT</td><td class="lv down">$493.78 · -0.80%</td><td class="note">lagging the AI-hardware trade into the week.</td></tr>
+  </table>
 
   <h2>Events — Why &amp; What's Next</h2>
 
@@ -115,17 +110,6 @@
     <li><b>Also today:</b> Chicago Fed National Activity Index and Treasury bill auctions — routine, no top-tier data.</li>
     <li><b>Earnings:</b> light day; nothing on the watchlist (NVDA/AAPL/MSFT not scheduled).</li>
   </ul>
-
-  <h2>Your Watchlist</h2>
-  <table>
-    <tr><th>Ticker</th><th>Last</th><th>Move &amp; note</th></tr>
-    <tr><td class="tk">SPY</td><td>tracks S&amp;P</td><td><span class="up">futures +0.4%</span> <span class="note">— 3rd straight losing week, bouncing into the summit.</span></td></tr>
-    <tr><td class="tk">QQQ</td><td>Nasdaq-100</td><td><span class="up">futures +0.6%</span> <span class="note">— led by NVDA, AMZN, GOOGL and crypto-adjacent strength.</span></td></tr>
-    <tr><td class="tk">DIA</td><td>Dow</td><td><span class="down">-0.18% Fri</span> <span class="note">— weakest of the three; most rate-sensitive.</span></td></tr>
-    <tr><td class="tk">AAPL</td><td>trending higher</td><td><span class="up">Evercore PT to $380</span> <span class="note">— iPhone survey points to a 28% higher ASP mix.</span></td></tr>
-    <tr><td class="tk">NVDA</td><td>$222.27</td><td><span class="up">+1.34% Fri</span> <span class="note">— routine CFO 10b5-1 sale; CA's AI exec order is the regulatory watch item.</span></td></tr>
-    <tr><td class="tk">MSFT</td><td>$493.78</td><td><span class="down">-0.80% Fri</span> <span class="note">— lagging the AI-hardware names into the week.</span></td></tr>
-  </table>
 
   <h2>Worth Noting</h2>
   <div class="card">
