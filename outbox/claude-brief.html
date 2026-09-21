@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily Market Brief — Sep 21, 2026</title>
+<title>The Open — Sep 21, 2026</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
@@ -12,121 +12,146 @@
     background: #0b0f14;
     color: #e6edf3;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 17px;
+    font-size: 16.5px;
     line-height: 1.55;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 22px 18px 40px; }
-  header { border-bottom: 1px solid #1f2933; padding-bottom: 14px; margin-bottom: 8px; }
-  .kicker { color: #58a6ff; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
-  h1 { font-size: 26px; margin: 6px 0 4px; line-height: 1.2; }
-  .sub { color: #8b98a5; font-size: 14px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 18px 40px; }
+
+  /* Masthead */
+  .eyebrow { color: #8b98a5; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+  .nameplate { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 700; margin: 4px 0 8px; letter-spacing: -.01em; }
+  .dek { color: #adbac7; font-size: 15px; padding-bottom: 16px; border-bottom: 2px solid #e6edf3; }
+
+  /* Ticker strip */
+  .ticker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tick { background: #10161d; border: 1px solid #1f2933; border-radius: 8px; padding: 6px 10px; font-size: 13px; white-space: nowrap; }
+  .tsym { color: #8b98a5; margin-right: 6px; font-weight: 600; }
+  .tval { font-weight: 700; margin-right: 6px; }
+  .tchg { font-weight: 700; }
+  .futnote { color: #8b98a5; font-size: 12.5px; margin-top: 8px; }
+
+  /* Lead */
+  .lead { font-size: 17.5px; line-height: 1.65; margin: 20px 0 6px; color: #f0f4f8; }
+
   h2 {
-    font-size: 15px; letter-spacing: .08em; text-transform: uppercase;
-    color: #7ee787; margin: 30px 0 12px; border-left: 3px solid #238636; padding-left: 10px;
+    font-size: 14px; letter-spacing: .1em; text-transform: uppercase;
+    color: #7ee787; margin: 30px 0 14px; border-left: 3px solid #238636; padding-left: 10px;
   }
-  table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 15.5px; }
-  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid #1a222c; vertical-align: top; }
-  th { color: #8b98a5; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+
+  /* Events */
+  .event { margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid #1a222c; }
+  .event:last-child { border-bottom: none; }
+  .event h3 { font-size: 17px; margin: 0 0 8px; color: #fff; }
+  .event p { margin: 6px 0; font-size: 15px; }
+  .tag { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; padding: 1px 7px; border-radius: 4px; margin-right: 8px; vertical-align: 1px; }
+  .tag.why { background: #1f2933; color: #8b98a5; }
+  .tag.watch { background: #24361f; color: #7ee787; }
+
+  .alsolist { list-style: none; padding: 0; margin: 4px 0; }
+  .alsolist li { padding: 6px 0; font-size: 14.5px; color: #adbac7; border-bottom: 1px solid #1a222c; }
+  .alsolist b { color: #e6edf3; }
+
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 15px; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #1a222c; vertical-align: top; }
+  th { color: #8b98a5; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
   td.tk { font-weight: 700; color: #e6edf3; white-space: nowrap; }
   .up { color: #3fb950; font-weight: 700; }
   .down { color: #f85149; font-weight: 700; }
   .flat { color: #d29922; font-weight: 700; }
   .note { color: #adbac7; }
-  ol.matter { padding-left: 20px; margin: 4px 0; }
-  ol.matter li { margin-bottom: 14px; }
-  ol.matter b { color: #fff; }
-  .why { color: #8b98a5; font-size: 14.5px; display: block; margin-top: 2px; }
-  .card { background: #10161d; border: 1px solid #1f2933; border-radius: 10px; padding: 14px 16px; margin-top: 6px; }
-  .card.edge { border-left: 3px solid #d29922; }
-  .card.learn { border-left: 3px solid #58a6ff; }
-  ul.cal { list-style: none; padding: 0; margin: 4px 0; }
-  ul.cal li { padding: 8px 0; border-bottom: 1px solid #1a222c; }
-  ul.cal .t { color: #58a6ff; font-weight: 700; font-size: 13px; }
-  .src { font-size: 13px; color: #8b98a5; margin-top: 6px; }
+
+  .card { background: #10161d; border: 1px solid #1f2933; border-radius: 10px; padding: 4px 16px 12px; margin-top: 6px; }
+  .card h4 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 14px 0 6px; }
+  .card.angle h4 { color: #d29922; }
+  .card.thing h4 { color: #58a6ff; }
+  .card p { font-size: 14.5px; margin: 0; }
+
+  .src { font-size: 12.5px; color: #8b98a5; margin-top: 6px; }
   .src a { color: #58a6ff; text-decoration: none; word-break: break-all; }
-  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid #1f2933; color: #6e7681; font-size: 12.5px; }
-  .badge { display:inline-block; background:#21262d; color:#adbac7; border:1px solid #30363d; border-radius:999px; padding:2px 10px; font-size:12px; margin-right:6px; }
+  footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid #1f2933; color: #6e7681; font-size: 12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="kicker">Pre-Market Brief · Personalized for Clark</div>
-    <h1>Daily Market Brief</h1>
-    <div class="sub">Monday, September 21, 2026 — before the open · read time ~3 min</div>
-    <div class="sub" style="margin-top:8px;">
-      <span class="badge">Trump–Xi summit Thu</span>
-      <span class="badge">10Y ~5%</span>
-      <span class="badge">Mideast oil risk</span>
-    </div>
-  </header>
 
-  <h2>1 · Market Snapshot</h2>
-  <table>
-    <tr><th>Asset</th><th>Level</th><th>Move</th></tr>
-    <tr><td class="tk">S&amp;P 500</td><td>7,650.50 (Fri close)</td><td class="up">+0.17%</td></tr>
-    <tr><td class="tk">Nasdaq Comp</td><td>26,522.55 (Fri close)</td><td class="up">+0.39%</td></tr>
-    <tr><td class="tk">Dow</td><td>51,682.64 (Fri close)</td><td class="down">-0.18%</td></tr>
-    <tr><td class="tk">10Y Treasury</td><td>~5.0%</td><td class="down">still near highest since 2007</td></tr>
-    <tr><td class="tk">WTI Crude</td><td>~$93.9/bbl</td><td class="note">off the &gt;$100 Houthi-attack spike, still elevated</td></tr>
-    <tr><td class="tk">Gold</td><td>~$4,380/oz</td><td class="up">1-week high, first weekly gain in a month</td></tr>
-    <tr><td class="tk">Bitcoin</td><td>~$81,100</td><td class="flat">-0.44% (24h)</td></tr>
-    <tr><td class="tk">Futures (Mon AM)</td><td colspan="2" class="up">S&amp;P +0.42%, Nasdaq-100 +0.58%, Dow +0.36% — risk-on into the Trump-Xi summit</td></tr>
-  </table>
+  <div class="eyebrow">Clark's Market Brief · Issue for Mon, Sep 21, 2026</div>
+  <div class="nameplate">The Open</div>
+  <div class="dek">Futures rally into the Trump–Xi summit, yields won't leave 5%, and oil keeps a war-risk floor.</div>
 
-  <h2>2 · Your Watchlist</h2>
+  <div class="ticker">
+    <div class="tick"><span class="tsym">S&amp;P</span><span class="tval">7,650.50</span><span class="tchg up">+0.17%</span></div>
+    <div class="tick"><span class="tsym">NASDAQ</span><span class="tval">26,522.55</span><span class="tchg up">+0.39%</span></div>
+    <div class="tick"><span class="tsym">DOW</span><span class="tval">51,682.64</span><span class="tchg down">-0.18%</span></div>
+    <div class="tick"><span class="tsym">10Y</span><span class="tval">~5.00%</span><span class="tchg down">19-yr high</span></div>
+    <div class="tick"><span class="tsym">WTI</span><span class="tval">~$93.9</span><span class="tchg flat">off spike</span></div>
+    <div class="tick"><span class="tsym">GOLD</span><span class="tval">~$4,380</span><span class="tchg up">+wk</span></div>
+    <div class="tick"><span class="tsym">BTC</span><span class="tval">~$81.1K</span><span class="tchg down">-0.4%</span></div>
+  </div>
+  <div class="futnote">Futures (pre-open): S&amp;P +0.42% · Nasdaq-100 +0.58% · Dow +0.36%</div>
+
+  <p class="lead">Futures are green this morning after U.S. and Chinese officials wrapped a weekend of "very successful" pre-summit trade talks, setting up Thursday's Trump–Xi meeting in Washington. But two things keep this a split market: the 10-year Treasury yield is still camped near 5% — the highest since 2007 — even after last week's Fed hike, and a fresh round of Houthi strikes on Saudi Arabia is keeping a war-risk floor under oil. Read on the day: optimism on trade, caution on everything else.</p>
+
+  <h2>Events — Why &amp; What's Next</h2>
+
+  <div class="event">
+    <h3>Trump–Xi summit, Thursday in Washington</h3>
+    <p><span class="tag why">Why now</span>Weekend trade talks in New York ended after ~8 hours, with Treasury Secretary Bessent calling them "very successful." Tariff cuts, a trade-truce extension, and an AI-safety information-sharing arrangement are reportedly on the table — which is exactly why futures are up this morning.</p>
+    <p><span class="tag watch">Watch for</span>The actual signing Thursday. Both sides are deliberately talking down expectations, so a vague or delayed outcome would hit the "risk-on" names hardest — semis and China-exposed industrials, which have already priced in the good version of this week.</p>
+  </div>
+
+  <div class="event">
+    <h3>Yields stuck at a 19-year high</h3>
+    <p><span class="tag why">Why now</span>The Fed hiked last week for the first time since 2023, but instead of falling, the 10-year yield held near 5%. That means the bond market wants more compensation for locking up money long-term (a rising "term premium"), not less — a hike didn't buy the confidence it was supposed to.</p>
+    <p><span class="tag watch">Watch for</span>Chicago Fed President Goolsbee speaks today — the first real Fed commentary since the hike. Any hint the Fed sees itself pausing (or hiking again) moves markets more than the summit will.</p>
+  </div>
+
+  <div class="event">
+    <h3>Middle East keeps a floor under oil</h3>
+    <p><span class="tag why">Why now</span>Houthi forces struck Saudi energy infrastructure again over the weekend, on top of a broader Iran war that has nearly closed the Strait of Hormuz. Crude has eased off its recent spike above $100 but is still elevated near $94.</p>
+    <p><span class="tag watch">Watch for</span>Any disruption to the Bab el-Mandeb strait (the Red Sea route) alongside Hormuz would knock out two chokepoints at once — the scenario that sends oil sharply higher and complicates the Fed's next move.</p>
+  </div>
+
+  <ul class="alsolist">
+    <li><b>Also today:</b> Chicago Fed National Activity Index and Treasury bill auctions — routine, no top-tier data.</li>
+    <li><b>Earnings:</b> light day; nothing on the watchlist (NVDA/AAPL/MSFT not scheduled).</li>
+  </ul>
+
+  <h2>Your Watchlist</h2>
   <table>
     <tr><th>Ticker</th><th>Last</th><th>Move &amp; note</th></tr>
-    <tr><td class="tk">SPY</td><td>tracks S&amp;P</td><td><span class="up">futures +0.4%</span> <span class="note">— logged a 3rd straight losing week, but bouncing into the summit.</span></td></tr>
+    <tr><td class="tk">SPY</td><td>tracks S&amp;P</td><td><span class="up">futures +0.4%</span> <span class="note">— 3rd straight losing week, bouncing into the summit.</span></td></tr>
     <tr><td class="tk">QQQ</td><td>Nasdaq-100</td><td><span class="up">futures +0.6%</span> <span class="note">— led by NVDA, AMZN, GOOGL and crypto-adjacent strength.</span></td></tr>
-    <tr><td class="tk">DIA</td><td>Dow</td><td><span class="down">-0.18% Fri</span> <span class="note">— weakest of the three; most rate-sensitive to the 5% 10Y.</span></td></tr>
-    <tr><td class="tk">AAPL</td><td>trending higher</td><td><span class="up">Evercore PT raised to $380</span> <span class="note">— iPhone channel survey points to a 28% higher ASP mix.</span></td></tr>
-    <tr><td class="tk">NVDA</td><td>$222.27</td><td><span class="up">+1.34% Fri</span> <span class="note">— CFO 10b5-1 stock sale (~$7.65M, routine); still a regulatory watch item after CA's AI executive order.</span></td></tr>
+    <tr><td class="tk">DIA</td><td>Dow</td><td><span class="down">-0.18% Fri</span> <span class="note">— weakest of the three; most rate-sensitive.</span></td></tr>
+    <tr><td class="tk">AAPL</td><td>trending higher</td><td><span class="up">Evercore PT to $380</span> <span class="note">— iPhone survey points to a 28% higher ASP mix.</span></td></tr>
+    <tr><td class="tk">NVDA</td><td>$222.27</td><td><span class="up">+1.34% Fri</span> <span class="note">— routine CFO 10b5-1 sale; CA's AI exec order is the regulatory watch item.</span></td></tr>
     <tr><td class="tk">MSFT</td><td>$493.78</td><td><span class="down">-0.80% Fri</span> <span class="note">— lagging the AI-hardware names into the week.</span></td></tr>
   </table>
 
-  <h2>3 · Top 3 Things That Matter Today</h2>
-  <ol class="matter">
-    <li><b>The Trump-Xi summit lands Thursday in Washington — and pre-summit talks just went unusually well.</b>
-      <span class="why">Treasury Secretary Bessent called the weekend's high-level talks "very successful," with tariff cuts, a trade-truce extension and an AI-safety information-sharing mechanism on the table. That's exactly why futures are green this morning — but expectations are also being deliberately tempered, so a disappointment Thursday is a real air-pocket risk.</span></li>
-    <li><b>The 10-year yield is still parked near 5%, the highest since 2007 — even after last week's Fed hike.</b>
-      <span class="why">A hike that was supposed to signal control of inflation didn't bring long yields down, which means the market still wants extra compensation for duration risk. That keeps a valuation ceiling over the longest-duration, richest-multiple names (mega-cap AI) regardless of what happens in Washington.</span></li>
-    <li><b>Houthi forces hit Saudi Arabia again over the weekend, and the wider Iran war has nearly shut the Strait of Hormuz.</b>
-      <span class="why">With Bab el-Mandeb now also contested, two of the world's key oil chokepoints are impaired at once. That's the floor under crude even as prices ease off their spike highs — and it's a live inflation risk sitting underneath a Fed that just started easing rhetoric.</span></li>
-  </ol>
-
-  <h2>4 · On the Calendar Today</h2>
-  <ul class="cal">
-    <li><span class="t">Fed speaker</span> — Chicago Fed President Austan Goolsbee delivers remarks; watch for any signal on the pace of further cuts/hikes after last week's move.</li>
-    <li><span class="t">Data</span> — Chicago Fed National Activity Index; Treasury bill auctions. No top-tier releases today — a quiet data day ahead of a headline-heavy week.</li>
-    <li><span class="t">This week (heads-up)</span> — Trump-Xi summit Thursday, Sept 24, in Washington. That's the week's real catalyst, not today's tape.</li>
-    <li><span class="t">Earnings</span> — Light day; no watchlist names (NVDA/AAPL/MSFT) scheduled.</li>
-  </ul>
-
-  <h2>5 · One Thing to Sound Smart About</h2>
-  <div class="card edge">
-    <b>Futures are rallying into the summit while the bond market isn't buying the "all clear."</b> Equity futures are up on hopes for a soft landing in trade tensions — but the 10-year has barely budged off its ~5% ceiling since the Fed's hike, and gold just had its best week in a month. Bonds and gold moving together while stocks and oil stay firm is the market hedging two very different outcomes at once: a constructive Trump-Xi outcome AND a durable Mideast/inflation risk. Historically, that split doesn't hold for long — either yields catch down to the "peace dividend" story, or equities catch down to the yield/oil story. Watch which one breaks first after Thursday, not the headline itself.
-    <div class="src">Sources: Bloomberg &amp; Yahoo Finance on futures/summit; NPR/Washington Times on Houthi attacks and oil chokepoints; TradingEconomics on gold's weekly gain.</div>
-  </div>
-
-  <h2>6 · Learning Nugget</h2>
-  <div class="card learn">
-    <b>Chokepoint risk premium.</b> Oil traders price a separate "war risk" premium on top of ordinary supply and demand whenever a shipping chokepoint — like the Strait of Hormuz or the Bab el-Mandeb strait near Yemen — is threatened, because insurers and shippers reroute or halt cargo well before any barrel is actually lost. That's why crude can jump on an attack that hits zero production, and fall back just as fast once shipping routes look safe again — the premium tracks perceived risk, not realized supply.
+  <h2>Worth Noting</h2>
+  <div class="card">
+    <div class="card angle">
+      <h4>The Angle</h4>
+      <p>Futures are rallying into the summit while bonds and gold aren't buying the "all clear" — that split rarely holds. Either yields catch down to the trade-deal story, or stocks catch down to the yield/oil story. Watch which one breaks first after Thursday, not the headline itself.</p>
+    </div>
+    <div class="card thing">
+      <h4>One New Thing</h4>
+      <p><b>Chokepoint risk premium:</b> oil traders price a separate "war risk" premium on top of ordinary supply/demand whenever a shipping chokepoint is threatened, because shippers reroute before a barrel is actually lost. That's why crude jumps on an attack that stops zero production — and falls back just as fast once routes look safe again.</p>
+    </div>
   </div>
 
   <footer>
     <div><b>Sources</b></div>
     <div class="src">
-      <a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-september-18-dow-sp-500-nasdaq-080504071.html">Yahoo Finance — Friday close, weekly losses</a> ·
-      <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-18-2026">TheStreet — Sep 18 close detail</a> ·
-      <a href="https://www.bloomberg.com/news/articles/2026-09-20/us-stock-futures-up-ahead-of-talks-dollar-steady-markets-wrap">Bloomberg — Monday futures, US-China talks</a> ·
-      <a href="https://www.bloomberg.com/news/newsletters/2026-09-20/us-china-kick-off-trade-talks-ahead-of-trump-xi-summit">Bloomberg — pre-summit talks "very successful"</a> ·
-      <a href="https://www.usnews.com/news/world/articles/2026-09-20/xi-rolls-into-trump-summit-with-chinas-trade-engine-roaring">US News — Trump-Xi summit Thursday details</a> ·
-      <a href="https://www.npr.org/2026/09/18/nx-s1-5973810/what-to-know-after-a-week-of-houthi-attacks-that-threaten-saudi-oil/">NPR — Houthi attacks, oil chokepoints</a> ·
-      <a href="https://tradingeconomics.com/commodity/gold">TradingEconomics — gold weekly gain</a> ·
-      <a href="https://www.investing.com/news/stock-market-news/economic-data-releases-and-fed-speech-highlight-mondays-calendar-93CH-4907762">Investing.com — Monday calendar, Goolsbee remarks</a>
+      <a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-september-18-dow-sp-500-nasdaq-080504071.html">Yahoo Finance</a> ·
+      <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-18-2026">TheStreet</a> ·
+      <a href="https://www.bloomberg.com/news/articles/2026-09-20/us-stock-futures-up-ahead-of-talks-dollar-steady-markets-wrap">Bloomberg</a> ·
+      <a href="https://www.bloomberg.com/news/newsletters/2026-09-20/us-china-kick-off-trade-talks-ahead-of-trump-xi-summit">Bloomberg</a> ·
+      <a href="https://www.usnews.com/news/world/articles/2026-09-20/xi-rolls-into-trump-summit-with-chinas-trade-engine-roaring">US News</a> ·
+      <a href="https://www.npr.org/2026/09/18/nx-s1-5973810/what-to-know-after-a-week-of-houthi-attacks-that-threaten-saudi-oil/">NPR</a> ·
+      <a href="https://tradingeconomics.com/commodity/gold">TradingEconomics</a> ·
+      <a href="https://www.investing.com/news/stock-market-news/economic-data-releases-and-fed-speech-highlight-mondays-calendar-93CH-4907762">Investing.com</a>
     </div>
-    <div style="margin-top:10px;">Auto-generated pre-market brief · vault watchlist unreachable from this run, defaults used (SPY, QQQ, DIA, AAPL, NVDA, MSFT). Not investment advice.</div>
+    <div style="margin-top:10px;">Auto-generated pre-market brief · vault watchlist unreachable, defaults used (SPY, QQQ, DIA, AAPL, NVDA, MSFT). Not investment advice.</div>
   </footer>
 </div>
 </body>
