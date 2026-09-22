@@ -1,22 +1,35 @@
-<b>Clark's Day Plan — Mon, Sep 21</b>
+<b>📅 Day Plan — Sunday, Sep 21</b>
 
-<b>🗓 Today's Schedule</b>
-• 12:00–3:00pm — Work
-• 3:00–3:20pm — Zoom: Dave Nica (ArcLight Capital SEO Internship)
-• 4:00–5:15pm — UBS Global Banking Recruiting Kick Off (Zoom) ⚠️ overlaps Career.edYOU below — UBS is live/invite-only, prioritize it
-• 4:00–5:00pm — Career.edYOU Academy Course 101, Session 1 of 5 ⚠️ conflicts with UBS above
-• 7:00–8:30pm — Wall Street Club: Class #4 ⚠️ overlaps your study block below
-• 7:00–8:00pm — Study: New Concept (S&amp;T/Cap Mkts Prep) ⚠️ conflicts with WSC above — consider moving this block
+<b>TODAY'S SCHEDULE</b> (all times CT)
+⚠️ <b>11:00a–12:00p</b> — Career.edYOU Academy Course 101 (Session 1 of 5)
+    <i>Time looks wrong: event is stored in UTC, not Chicago. Almost certainly means 4:00–5:00p CT — which collides with UBS below. Your own UBS note says these overlap.</i>
+<b>12:00–3:00p</b> — Work (availability submitted to Whitnie Hill)
+<b>3:00–3:20p</b> — Dave Nica / ArcLight — SEO Internship Opportunity (Zoom)
+⚠️ <b>4:00–5:15p</b> — UBS Global Banking Recruiting Kick Off (Zoom)
+    <i>Overlaps Course 101 if that's really a 4p event. JPMorgan note says Course 101 sessions are movable — move that one.</i>
+⚠️ <b>7:00–8:00p</b> — Study: New Concept (S&amp;T / Cap Mkts Prep)
+⚠️ <b>7:00–8:30p</b> — Wall Street Club — Class #4 (Teams)
+    <i>These two fully collide. WSC is live and attended; shift the study block to 8:30p or earlier in the afternoon.</i>
+<i>Ongoing:</i> Phase 2 — Capital Markets Deep Dive (Sep 1 → Nov 1)
 
-<b>✅ Tasks</b>
-• 🔴 URGENT: Blackstone pymetrics one-way video interview (5 Qs, ~20 min) — 48-hr window, don't let it lapse
-• Citadel Securities: watch for app opening; prep online assessment (new contact: Doug Carriger, ex-RBC, now Director)
-• Bank of America: watch for HireVue invite (assessment already done)
-• Goldman Sachs: follow up with recruiter Cassie James; ping Eli Owen (GS Dallas)
-• Peak6: thank Niki for the intro
-• Deutsche Bank: reconnect with Diego Alessio (NYC referral)
+<b>TASKS</b>
+🔴 <b>Blackstone</b> — US Future Leaders: pymetrics one-way video (5 Qs, ~20 min). <b>48-hr window from receipt</b> — verify it hasn't lapsed. This is the only hard-expiring item on the board.
+🔴 <b>Citadel Securities</b> — Trading Intern: app not open yet, watch for it + prep the online assessment. Warm contact <b>Doug Carriger</b> (Director, Houston, ex-RBC) — reach out re: assessment prep.
+<b>Bank of America</b> — Campus Insight Forum (Global Markets): assessment + survey done, watch for HireVue invite. Recruiter: Maria Gabriele.
+<b>RBC</b> — S&amp;T Summer Analyst: awaiting selection. If picked, NYC kickoff Mon Nov 2 — <i>check against WSC Trek Oct 26–29</i>.
+<b>Evercore</b> — Markets Advisory (NY): under review, not rolling. Eric Walker reconnect possible on the Oct WSC/Roark NY trek.
+<b>JPMorgan</b> — Career.edYOU Academy: awaiting rolling decision (deadline was Sep 18).
+<b>Networking pings:</b> Cassie James (GS recruiter) · Eli Owen (GS Dallas) · Trevaughn (Peak6 options) · Diego Alessio (DB NYC)
 
-<b>📚 Study &amp; Prep</b>
-• Capital Markets Deep Dive (ongoing through Nov 1): ECM — IPO process, bookrunner, greenshoe, lock-up; DCM — bond anatomy, credit ratings, new issue process, leverage/coverage ratios
-• Wall Street Prep: FSM + DCF modules — target finish before December
-• Prep talking points for tonight's UBS kickoff and Wall Street Club Class #4
+<b>STUDY &amp; PREP</b>
+<b>3:00p ArcLight call</b> — 20 min, Dave Nica + Danielle Maguire. Have the resume open; know your DLR REIT pitch cold as your "tell me about a project" answer.
+<b>4:00p UBS</b> — info session only, 2028 cycle. No prep, just show up and get the name in front of them.
+<b>Tonight</b> — WSC Class #4 at 7p wins over the study block. Push Capital Markets Deep Dive (ECM: IPO process, bookrunner, greenshoe, lock-up) to after 8:30p or tomorrow.
+<b>In progress:</b> Wall Street Prep FSM + DCF modules — target finish before December. Best single lever you have right now.
+<b>Deadline creeping:</b> IMA Stock Pitch "Deposition" Competition sign-up closes <b>Sep 25</b> (4 days).
+
+<b>🎯 LONGER-TERM</b>
+<b>North star:</b> financial independence — this career funds travel, hiking, fly fishing, golf, mountaineering. Buy freedom early; don't sign up to be a 10–20yr IB/PE lifer.
+<b>Open tension:</b> you like the status of high finance now but aren't sold long-term. Worth re-reading that when the recruiting grind starts feeling like the point.
+<b>Credential track:</b> CFA Level I flagged as worth considering (Prof. Ijeh passed it).
+<b>This semester's arc:</b> finish WSP FSM/DCF by Dec · Capital Markets Deep Dive by Nov 1 · keep IB/S&amp;T/buy-side optionality open instead of over-committing early.
