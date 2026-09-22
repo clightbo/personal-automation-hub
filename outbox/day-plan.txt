@@ -1,35 +1,34 @@
-<b>📅 Day Plan — Sunday, Sep 21</b>
+<b>📅 Day Plan — Tuesday, Sep 22</b>
 
 <b>TODAY'S SCHEDULE</b> (all times CT)
-⚠️ <b>11:00a–12:00p</b> — Career.edYOU Academy Course 101 (Session 1 of 5)
-    <i>Time looks wrong: event is stored in UTC, not Chicago. Almost certainly means 4:00–5:00p CT — which collides with UBS below. Your own UBS note says these overlap.</i>
-<b>12:00–3:00p</b> — Work (availability submitted to Whitnie Hill)
-<b>3:00–3:20p</b> — Dave Nica / ArcLight — SEO Internship Opportunity (Zoom)
-⚠️ <b>4:00–5:15p</b> — UBS Global Banking Recruiting Kick Off (Zoom)
-    <i>Overlaps Course 101 if that's really a 4p event. JPMorgan note says Course 101 sessions are movable — move that one.</i>
-⚠️ <b>7:00–8:00p</b> — Study: New Concept (S&amp;T / Cap Mkts Prep)
-⚠️ <b>7:00–8:30p</b> — Wall Street Club — Class #4 (Teams)
-    <i>These two fully collide. WSC is live and attended; shift the study block to 8:30p or earlier in the afternoon.</i>
+<b>9:30a–1:00p</b> — Work
+⚠️ <b>11:30a–12:30p</b> — City Bank Lunch &amp; Learn (City Bank Main Branch)
+    <i>Duplicate of the entry below — same location, same 11:30a start, different end. This one has less detail; recommend deleting it.</i>
+⚠️ <b>11:30a–1:00p</b> — RBA City Bank Lunch &amp; Learn (City Bank Main Branch)
+    <i>Same event as above, re-entered a day later with more detail (RSVP confirmed, unlocks internship application access). Recommend keeping this one, deleting the plain "City Bank Lunch &amp; Learn."</i>
+⚠️ <b>11:57a–12:27p</b> — Meet w/ Jacob Gann (finance stuff)
+    <i>Four things stack in the 11:30a–1:00p window: Work, both City Bank duplicates, and this meeting. Confirm with Jacob whether to reschedule — as-is this triple/quad-books you.</i>
+<b>7:00–7:45p</b> — Practice Problems (S&amp;T/Cap Mkts Prep)
+<i>No stored-timezone issues found today — every timed event reads consistently in America/Chicago.</i>
 <i>Ongoing:</i> Phase 2 — Capital Markets Deep Dive (Sep 1 → Nov 1)
 
 <b>TASKS</b>
-🔴 <b>Blackstone</b> — US Future Leaders: pymetrics one-way video (5 Qs, ~20 min). <b>48-hr window from receipt</b> — verify it hasn't lapsed. This is the only hard-expiring item on the board.
-🔴 <b>Citadel Securities</b> — Trading Intern: app not open yet, watch for it + prep the online assessment. Warm contact <b>Doug Carriger</b> (Director, Houston, ex-RBC) — reach out re: assessment prep.
-<b>Bank of America</b> — Campus Insight Forum (Global Markets): assessment + survey done, watch for HireVue invite. Recruiter: Maria Gabriele.
-<b>RBC</b> — S&amp;T Summer Analyst: awaiting selection. If picked, NYC kickoff Mon Nov 2 — <i>check against WSC Trek Oct 26–29</i>.
-<b>Evercore</b> — Markets Advisory (NY): under review, not rolling. Eric Walker reconnect possible on the Oct WSC/Roark NY trek.
-<b>JPMorgan</b> — Career.edYOU Academy: awaiting rolling decision (deadline was Sep 18).
-<b>Networking pings:</b> Cassie James (GS recruiter) · Eli Owen (GS Dallas) · Trevaughn (Peak6 options) · Diego Alessio (DB NYC)
+🔴 <b>MATH 1331</b> — HW8 (Defn Deriv2) due <b>today, 11:59p</b>.
+🔴 <b>Blackstone</b> — US Future Leaders: pymetrics one-way video interview, <b>48-hr window from receipt</b> — verify it hasn't lapsed, this is still the hardest-expiring item on the board.
+🔴 <b>EY / SHL</b> — skills assessment Part 2 still incomplete per yesterday's reminder; application is on hold until you finish it. No hard deadline stated, but it's blocking — do it today.
+<b>IMA Stock Pitch "Deposition"</b> — sign-up deadline <b>Sep 25</b> (3 days out).
+<b>Citadel Securities</b> — Trading Intern app not open yet; watch for it + prep the online assessment. Warm contact Doug Carriger (Director, Houston, ex-RBC).
+<b>Evercore</b> — Markets Advisory (NY), deadline Nov 15: both apps under review, not rolling. Eric Walker reconnect possible on the Oct WSC/Roark NY trek.
+<b>Bank of America</b> — Campus Insight Forum: assessment + survey done, watch for HireVue invite (recruiter Maria Gabriele).
+<b>Networking pings:</b> Doug Carriger (Citadel) · Eric Walker (Evercore) — the two warm contacts with an actual next step right now.
 
 <b>STUDY &amp; PREP</b>
-<b>3:00p ArcLight call</b> — 20 min, Dave Nica + Danielle Maguire. Have the resume open; know your DLR REIT pitch cold as your "tell me about a project" answer.
-<b>4:00p UBS</b> — info session only, 2028 cycle. No prep, just show up and get the name in front of them.
-<b>Tonight</b> — WSC Class #4 at 7p wins over the study block. Push Capital Markets Deep Dive (ECM: IPO process, bookrunner, greenshoe, lock-up) to after 8:30p or tomorrow.
-<b>In progress:</b> Wall Street Prep FSM + DCF modules — target finish before December. Best single lever you have right now.
-<b>Deadline creeping:</b> IMA Stock Pitch "Deposition" Competition sign-up closes <b>Sep 25</b> (4 days).
+<b>Tonight, 7:00p</b> — Practice Problems (S&amp;T/Cap Mkts Prep), 45 min.
+<b>In progress:</b> Wall Street Prep FSM + DCF modules — target finish before December.
+<b>Market color for today:</b> Fed's Barkin speaks ~12:00p CT (low impact) — good for the daily rates/macro-view habit.
+<b>Ongoing:</b> Capital Markets Deep Dive — ECM: IPO process, bookrunner, greenshoe, lock-up; DCM: bond anatomy, ratings, new issue process, leverage/coverage ratios.
 
 <b>🎯 LONGER-TERM</b>
-<b>North star:</b> financial independence — this career funds travel, hiking, fly fishing, golf, mountaineering. Buy freedom early; don't sign up to be a 10–20yr IB/PE lifer.
-<b>Open tension:</b> you like the status of high finance now but aren't sold long-term. Worth re-reading that when the recruiting grind starts feeling like the point.
-<b>Credential track:</b> CFA Level I flagged as worth considering (Prof. Ijeh passed it).
-<b>This semester's arc:</b> finish WSP FSM/DCF by Dec · Capital Markets Deep Dive by Nov 1 · keep IB/S&amp;T/buy-side optionality open instead of over-committing early.
+<b>North star:</b> financial independence — early-career money funds travel, hiking, fly fishing, golf, mountaineering, not a 10–20yr IB/PE lifer career.
+<b>Credential track:</b> CFA Level I flagged as worth considering (Prof. Ijeh passed it); Wall Street Prep FSM/DCF due before Dec.
+<b>This semester's arc:</b> Fall coursework (FIN 3320, Managerial Accounting, Business Calc, ISQS) alongside recruiting; Mays transfer app targeted for Dec 2026 submission, watching the 60-credit-hour transfer cap.
