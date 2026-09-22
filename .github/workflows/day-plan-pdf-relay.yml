@@ -1,0 +1,42 @@
+name: Day Plan PDF Relay
+
+# Renders outbox/day-plan.html to PDF and relays it to Telegram as a
+# document, via the same day-plan bot (@vannanabannanabot) that
+# day-plan-relay.yml uses for the plain-text version. Triggered by a push
+# that touches outbox/day-plan.html.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'outbox/day-plan.html'
+
+permissions:
+  contents: read
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install system deps for PDF rendering
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
+            libffi-dev libcairo2 shared-mime-info
+
+      - name: Install python deps
+        run: pip install requests weasyprint
+
+      - name: Send PDF day plan to Telegram (Vanna bot)
+        env:
+          VANNA_TELEGRAM_BOT_TOKEN: ${{ secrets.VANNA_TELEGRAM_BOT_TOKEN }}
+          VANNA_TELEGRAM_CHAT_ID: ${{ secrets.VANNA_TELEGRAM_CHAT_ID }}
+        run: python send_day_plan_pdf.py
