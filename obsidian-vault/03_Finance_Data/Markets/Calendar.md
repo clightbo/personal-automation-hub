@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-23 15:53 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-23 23:39 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-23 12:00 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-24 04:10 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
 | 2026-09-24 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 201K, prev 196K |
 | 2026-09-24 08:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
@@ -46,7 +45,6 @@ _Updated 2026-09-23 15:53 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-23 12:00** — FOMC Member Goolsbee Speaks
 - **2026-09-24 04:10** — FOMC Member Williams Speaks
 - **2026-09-24 08:30** — FOMC Member Barkin Speaks
 - **2026-09-24 08:50** — FOMC Member Hammack Speaks
