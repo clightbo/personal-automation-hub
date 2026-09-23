@@ -505,41 +505,48 @@ function enrichAddressFromText(e, blob) {
 function scrapePipeline(blob, e, incoming) {
   const toN = (s) => {
     if (s == null || s === '') return null;
-    const n = Number(String(s).replace(/,/g, ''));
+    const n = Number(String(s).replace(/[,\s]/g, ''));
     return Number.isFinite(n) ? n : null;
   };
   const round1 = (n) => Math.round(n * 10) / 10;
+  const plain = String(blob || '')
+    .replace(/\u00a0/g, ' ')
+    .replace(/[\u2013\u2014]/g, '-')
+    .replace(/\s+/g, ' ');
   let pipelineUnits = null;
   let stockUnits = null;
   let pct = num(incoming.pipeline_pct_of_stock);
   let note = incoming.note || null;
 
   const pctMatch =
-    blob.match(
-      /pipeline[^\n%]{0,60}?(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:submarket\s+)?(?:stock|inventory|existing)/i,
+    plain.match(
+      /pipeline[^%]{0,100}?(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:the\s+)?(?:submarket\s+|CBD\s+|Cherry Creek\s+)?(?:stock|inventory|supply|market|existing)/i,
     ) ||
-    blob.match(
-      /(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:submarket\s+)?(?:stock|inventory)[^\n.]{0,40}pipeline/i,
+    plain.match(
+      /(\d{1,2}(?:\.\d+)?)\s*%\s*(?:of\s+)?(?:the\s+)?(?:submarket\s+|CBD\s+)?(?:stock|inventory)[^.]{0,60}pipeline/i,
     ) ||
-    blob.match(/(\d{1,2}(?:\.\d+)?)\s*%\s*of\s+(?:the\s+)?(?:submarket|CBD|market)\b/i);
+    plain.match(/representing\s+(\d{1,2}(?:\.\d+)?)\s*%/i) ||
+    plain.match(/(\d{1,2}(?:\.\d+)?)\s*%\s*of\s+(?:the\s+)?(?:submarket|CBD|market|inventory|stock)\b/i);
   if (pct == null && pctMatch) {
     pct = Number(pctMatch[1]);
     note = `OM stated pipeline ~${pct}% of stock`;
   }
 
   const vsPatterns = [
-    /\(?\s*([\d,]+)\s+pipeline\s+units?[^\d\n]{0,100}?vs\.?\s+([\d,]+)/i,
-    /([\d,]+)\s+pipeline\s+units?\s+in\s+[A-Za-z .'/-]+?\s+vs\.?\s+([\d,]+)/i,
-    /([\d,]+)\s*units?\s+(?:of\s+)?(?:new\s+)?(?:supply|pipeline|deliveries)[^\d\n]{0,100}?(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)/i,
-    /([\d,]+)\s*units?[^\d\n]{0,40}?(?:vs\.?|versus)\s*([\d,]+)\s*(?:units?)?[^\n.]{0,40}?(?:CBD|submarket|inventory|stock)/i,
+    /\(?\s*([\d,]+)\s+pipeline\s+units?[^0-9]{0,120}?vs\.?\s*([\d,]+)/i,
+    /([\d,]+)\s+pipeline\s+units?\s+in\s+[A-Za-z .'/-]+?\s+vs\.?\s*([\d,]+)/i,
+    /([\d,]+)\s*units?\s+(?:of\s+)?(?:new\s+)?(?:supply|pipeline|deliveries)[^0-9]{0,120}?(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)/i,
+    /([\d,]+)\s*units?[^0-9]{0,60}?(?:vs\.?|versus)\s*([\d,]+)\s*(?:units?)?[^.]{0,60}?(?:CBD|submarket|inventory|stock|Cherry Creek)/i,
     /\(?\s*([\d,]+)\s*units?\s+(?:vs\.?|versus|against|compared to)\s+([\d,]+)/i,
+    /([\d,]+)\s*\/\s*([\d,]+)\s*(?:units?)?/i,
+    /([\d,]+)\s+of\s+([\d,]+)\s*(?:units?)?/i,
   ];
   for (const re of vsPatterns) {
-    const vsMatch = blob.match(re);
+    const vsMatch = plain.match(re);
     if (vsMatch) {
       const a = toN(vsMatch[1]);
       const b = toN(vsMatch[2]);
-      if (a != null && b != null && b > a) {
+      if (a != null && b != null && b > a * 2) {
         pipelineUnits = a;
         stockUnits = b;
         break;
@@ -548,25 +555,27 @@ function scrapePipeline(blob, e, incoming) {
   }
   if (pipelineUnits == null) {
     const pOnly =
-      blob.match(/(?:limited\s+)?pipeline(?:\s+supply)?[^\n\d]{0,30}([\d,]+)\s*units?/i) ||
-      blob.match(/([\d,]+)\s*(?:-|\s)?units?\s+(?:in\s+)?(?:the\s+)?(?:near[- ]term\s+)?pipeline/i) ||
-      blob.match(/([\d,]+)\s*units?\s+under\s+construction/i) ||
-      blob.match(/([\d,]+)\s*units?\s+of\s+(?:new\s+)?(?:supply|deliveries)/i);
+      plain.match(/(?:limited\s+)?pipeline(?:\s+supply)?[^0-9]{0,40}([\d,]+)\s*units?/i) ||
+      plain.match(/([\d,]+)\s*(?:-|\s)?units?\s+(?:in\s+)?(?:the\s+)?(?:near[- ]term\s+)?pipeline/i) ||
+      plain.match(/([\d,]+)\s*units?\s+under\s+construction/i) ||
+      plain.match(/([\d,]+)\s*units?\s+of\s+(?:new\s+)?(?:supply|deliveries)/i) ||
+      plain.match(/new\s+supply[^0-9]{0,40}([\d,]+)\s*units?/i);
     if (pOnly) pipelineUnits = toN(pOnly[1]);
   }
   if (stockUnits == null) {
     const sOnly =
-      blob.match(
+      plain.match(
         /([\d,]+)\s*units?\s+(?:of\s+)?(?:existing\s+)?(?:submarket\s+|CBD\s+|Cherry Creek\s+)?(?:inventory|stock)/i,
       ) ||
-      blob.match(/(?:inventory|stock)\s+of\s+([\d,]+)\s*units?/i) ||
-      blob.match(
-        /(?:submarket|CBD|market)\s+(?:inventory|stock|supply)\s*(?:of|:)?\s*([\d,]+)/i,
+      plain.match(/(?:inventory|stock)\s+of\s+([\d,]+)\s*units?/i) ||
+      plain.match(
+        /(?:submarket|CBD|market|Cherry Creek)\s+(?:inventory|stock|supply)\s*(?:of|:)?\s*([\d,]+)/i,
       ) ||
-      blob.match(/([\d,]+)\s*[-–]?\s*unit\s+(?:submarket|inventory|stock|CBD)/i) ||
-      blob.match(
+      plain.match(/([\d,]+)\s*[-–]?\s*unit\s+(?:submarket|inventory|stock|CBD)/i) ||
+      plain.match(
         /(?:existing|current)\s+(?:inventory|stock|supply)\s*(?:of|:)?\s*([\d,]+)/i,
-      );
+      ) ||
+      plain.match(/([\d,]+)\s*(?:unit\s+)?(?:multifamily\s+)?(?:inventory|stock)\b/i);
     if (sOnly) stockUnits = toN(sOnly[1]);
   }
 
@@ -590,41 +599,55 @@ function scrapePipeline(blob, e, incoming) {
   if (pct == null) pct = toN(e.pipeline_pct_of_stock ?? e.pipeline_pct);
 
   if (stockUnits == null && pipelineUnits != null) {
-    const variants = [pipelineUnits.toLocaleString('en-US'), String(pipelineUnits)];
-    for (const v of variants) {
-      const esc = v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const near =
-        blob.match(
-          new RegExp(
-            esc +
-              String.raw`\s*(?:pipeline\s+)?units?[^\d]{0,120}?(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)`,
-            'i',
-          ),
-        ) ||
-        blob.match(
-          new RegExp(
-            String.raw`(?:vs\.?|versus|compared\s+to|against)\s*([\d,]+)[^\d]{0,80}?` + esc,
-            'i',
-          ),
+    const forms = [pipelineUnits.toLocaleString('en-US'), String(pipelineUnits)];
+    const candidates = [];
+    for (const form of forms) {
+      const esc = form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(esc, 'gi');
+      let m;
+      while ((m = re.exec(plain)) !== null) {
+        const window = plain.slice(
+          Math.max(0, m.index - 500),
+          Math.min(plain.length, m.index + form.length + 500),
         );
-      if (near) {
-        const cand = toN(near[1]);
-        if (cand != null && cand > pipelineUnits * 2) {
-          stockUnits = cand;
-          break;
+        for (const nm of window.matchAll(/([\d,]{4,7})/g)) {
+          const n = toN(nm[1]);
+          if (n != null && n > pipelineUnits * 3 && n < Math.min(200000, pipelineUnits * 40)) {
+            candidates.push(n);
+          }
         }
       }
     }
-  }
-  if (stockUnits == null && pipelineUnits != null) {
-    const idx = blob.search(/pipeline|new\s+supply|under\s+construction|deliveries/i);
-    if (idx >= 0) {
-      const window = blob.slice(Math.max(0, idx - 250), idx + 450);
-      const nums = [...window.matchAll(/([\d,]{3,6})\s*units?/gi)]
-        .map((m) => toN(m[1]))
-        .filter((n) => n != null && n > pipelineUnits * 2 && n < 500000);
-      if (nums.length) stockUnits = Math.min(...nums);
+    for (const m of plain.matchAll(
+      /(?:inventory|stock|existing units?|unit inventory|multifamily units?)[^0-9]{0,48}([\d,]{4,7})/gi,
+    )) {
+      const n = toN(m[1]);
+      if (n != null && n > pipelineUnits * 3 && n < 200000) candidates.push(n);
     }
+    for (const m of plain.matchAll(
+      /([\d,]{4,7})[^0-9]{0,48}(?:unit\s+)?(?:inventory|stock|existing)/gi,
+    )) {
+      const n = toN(m[1]);
+      if (n != null && n > pipelineUnits * 3 && n < 200000) candidates.push(n);
+    }
+    const scored = [...new Set(candidates)].map((s) => ({ s, ratio: pipelineUnits / s }));
+    const inRange = scored.filter((x) => x.ratio >= 0.02 && x.ratio <= 0.25);
+    const pool = (inRange.length ? inRange : scored).sort((a, b) => a.s - b.s);
+    if (pool.length) stockUnits = pool[0].s;
+  }
+
+  if (stockUnits == null && pipelineUnits != null) {
+    const bare = [...plain.matchAll(/\b(19[\d,]{3,5}|1[0-9][\d,]{3,5}|[2-9][\d,]{4,6})\b/g)]
+      .map((m) => toN(m[1]))
+      .filter(
+        (n) =>
+          n != null &&
+          n > pipelineUnits * 4 &&
+          n < Math.min(150000, pipelineUnits * 30) &&
+          pipelineUnits / n >= 0.03 &&
+          pipelineUnits / n <= 0.2,
+      );
+    if (bare.length) stockUnits = Math.min(...bare);
   }
 
   if (pct == null && pipelineUnits != null && stockUnits != null && stockUnits > 0) {
@@ -637,7 +660,7 @@ function scrapePipeline(blob, e, incoming) {
     pct == null &&
     pipelineUnits == null &&
     /limited\s+pipeline|minimal\s+pipeline|no\s+(?:near[- ]term\s+)?pipeline|negligible\s+new\s+supply/i.test(
-      blob,
+      plain,
     )
   ) {
     pct = 0;
