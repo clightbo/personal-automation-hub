@@ -36,9 +36,9 @@ Here's a rundown of what we covered:
 
 ## Related
 
-- [[Ai-carrerpathways]]
-- [[Ai-internshipplanning]]
-- [[AI-Collegetransferoppurtinitys]]
+- [[AI - Career Pathways]]
+- [[AI - Internship Planning]]
+- [[AI - College Transfer Opportunities]]
 - [[01_Projects/Interview Prep/This Week]]
 - [[01_Projects/Trading Bot/Overview]]
 - [[01_Projects/Project Destined/Overview]]

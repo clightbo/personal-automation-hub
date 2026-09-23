@@ -18,10 +18,10 @@ Personal finance / markets / interview vault — structured for Obsidian + Curso
 
 ## Career planning (AI summaries)
 
-- [[00_Inbox/Ai-resume|Resume]]
-- [[00_Inbox/Ai-carrerpathways|Career pathways]]
-- [[00_Inbox/Ai-internshipplanning|Internship planning]]
-- [[00_Inbox/AI-Collegetransferoppurtinitys|College transfer]]
+- [[00_Inbox/AI - Resume|Resume]]
+- [[00_Inbox/AI - Career Pathways|Career pathways]]
+- [[00_Inbox/AI - Internship Planning|Internship planning]]
+- [[00_Inbox/AI - College Transfer Opportunities|College transfer]]
 
 ## Vault map
 

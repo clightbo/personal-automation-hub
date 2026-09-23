@@ -3,7 +3,7 @@ name: Send Telegram message
 # Let Claude (or you) push a custom note to your phone via Telegram.
 # Example (after `gh auth login`):
 #   gh workflow run "Send Telegram message" \
-#     --repo clightbo/Stock-Updates-SMS \
+#     --repo clightbo/personal-automation-hub \
 #     -f message="Hey Clark — markets note from Claude"
 
 on:

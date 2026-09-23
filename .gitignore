@@ -1,3 +1,18 @@
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# Local secrets
+.env
+
+# Generated files (built during GitHub Actions runs)
 markets.ics
+outbox/*.pdf
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

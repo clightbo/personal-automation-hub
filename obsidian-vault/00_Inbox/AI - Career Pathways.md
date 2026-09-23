@@ -33,9 +33,9 @@ Send the Cindy Blackstone email, lock in the Favian coffee chat, follow up on th
 
 ## Related
 
-- [[Ai-resume]]
-- [[Ai-internshipplanning]]
-- [[AI-Collegetransferoppurtinitys]]
+- [[AI - Resume]]
+- [[AI - Internship Planning]]
+- [[AI - College Transfer Opportunities]]
 - [[01_Projects/Interview Prep/This Week]]
 - [[01_Projects/Trading Bot/Overview]]
 - [[Home]]

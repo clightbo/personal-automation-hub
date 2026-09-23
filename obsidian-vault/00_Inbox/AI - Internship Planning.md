@@ -37,9 +37,9 @@ Want me to sketch out a week-by-week plan from now through December to keep this
 
 ## Related
 
-- [[Ai-resume]]
-- [[Ai-carrerpathways]]
-- [[AI-Collegetransferoppurtinitys]]
+- [[AI - Resume]]
+- [[AI - Career Pathways]]
+- [[AI - College Transfer Opportunities]]
 - [[01_Projects/Interview Prep/This Week]]
 - [[01_Projects/Project Destined/Overview]]
 - [[01_Projects/Trading Bot/Overview]]

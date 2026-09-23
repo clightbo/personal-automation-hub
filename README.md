@@ -6,7 +6,41 @@ Personal automation pipelines that run free in the cloud on GitHub Actions and m
 2. **Daily AI agenda** — an AI chief of staff that reads your Outlook inbox and calendar and messages you a morning plan ([setup](#daily-ai-agenda))
 3. **Notion planner sync** — an AI scheduling bot that turns your email and calendar into an organized planner board in Notion ([setup](#notion-planner))
 4. **Finance Command Center** — Obsidian vault (`obsidian-vault/`) with Inbox / Projects / Resources / Finance Data layout, Fed calendar, and weekly interview pitch ([setup](#obsidian-vault))
-4. **Internship tracker** — watches finance job boards and discovery programs for Dallas / NYC **S&T, markets rotations, AM, equity research, and IB** ([setup](#internship-tracker))
+5. **Internship tracker** — watches finance job boards and discovery programs for Dallas / NYC **S&T, markets rotations, AM, equity research, and IB** ([setup](#internship-tracker))
+6. **Claude brief & day plan relays** — push a file into `outbox/` and it is forwarded to Telegram as text or PDF ([details](#outbox-relays))
+
+## Repo layout
+
+```
+personal-automation-hub/
+├── .github/workflows/   GitHub Actions — one workflow per automation (table below)
+├── obsidian-vault/      Finance Command Center vault for Obsidian
+├── outbox/              Drop-box files that trigger the Telegram relays
+├── patches/             Hand-off patches for other repos (see each folder's APPLY.md)
+├── *.py                 The scripts the workflows run (kept at the root so imports and workflow paths stay simple)
+└── requirements.txt     Python dependencies
+```
+
+### Scripts and workflows
+
+| Script | Workflow | What it does |
+|---|---|---|
+| `market_brief.py` | `market-brief.yml` | Weekday morning market brief to Telegram |
+| `daily_agenda.py` | `daily-agenda.yml` | AI morning agenda from Outlook mail + calendar |
+| `planner_sync.py` | `planner-sync.yml` | Syncs email/calendar/market events into the Notion "AI Planner" |
+| `markets_ics.py` | `markets-calendar-feed.yml` | Publishes the `markets.ics` Google Calendar feed |
+| `obsidian_sync.py` | `obsidian-vault-sync.yml` | Regenerates the auto-synced notes in `obsidian-vault/` |
+| `internship_tracker.py` | `internship-tracker.yml` | Internship alerts + Notion "Internship Tracker" |
+| `get_ms_token.py` | `microsoft-signin.yml` | One-time Microsoft device sign-in |
+| `send_telegram_message.py` | `send-telegram.yml` | Send any note via the market bot |
+| `send_telegram_test.py` | `send-telegram.yml`, `telegram-test.yml` | Send via the Campus Coach bot |
+| `send_claude_brief_pdf.py` | `claude-brief-relay.yml` | Relays `outbox/claude-brief.html` as a PDF |
+| `send_day_plan.py` | `day-plan-relay.yml` | Relays `outbox/day-plan.txt` as a text message |
+| `send_day_plan_pdf.py` | `day-plan-pdf-relay.yml` | Relays `outbox/day-plan.html` as a PDF |
+
+Helper modules (imported by the scripts above, not run directly): `notion_client.py`, `financial_calendar.py`, `internship_sources.py`, `networking_coach.py`, `interview_ideas.py`.
+
+Standalone scripts not wired to any workflow: `market_summary.py` (older yfinance + Claude summary pipeline) and `send_claude_brief.py` (text-only version of the Claude brief relay).
 
 <a name="market-summary"></a>
 
@@ -14,7 +48,7 @@ Personal automation pipelines that run free in the cloud on GitHub Actions and m
 
 A fully automated morning market brief, pushed to your phone via Telegram every weekday. **100% free** — it runs on GitHub Actions, pulls prices from Yahoo Finance (Stooq fallback), and needs no API key or LLM.
 
-## How it works
+### How it works
 
 ```
 GitHub Actions (cron, weekdays ~7:00 AM ET)
@@ -29,9 +63,9 @@ market_brief.py
 
 No AI call — the insight is deterministic from the live numbers.
 
-## Setup
+### Setup
 
-### 1. Create your Telegram bot (free, ~5 minutes)
+#### 1. Create your Telegram bot (free, ~5 minutes)
 
 1. Install Telegram on your phone if you don't have it.
 2. Message [@BotFather](https://t.me/botfather), send `/newbot`, and follow the prompts (pick any name, e.g. "Market Brief"). BotFather replies with a **bot token** like `123456789:AAF...` — save it.
@@ -44,7 +78,7 @@ No AI call — the insight is deterministic from the live numbers.
 
    Find `"chat":{"id":123456789,...}` in the response — that number is your chat id.
 
-### 2. Add repository secrets
+#### 2. Add repository secrets
 
 In this repo: **Settings → Secrets and variables → Actions → New repository secret**. Add both:
 
@@ -53,24 +87,24 @@ In this repo: **Settings → Secrets and variables → Actions → New repositor
 | `TELEGRAM_BOT_TOKEN` | The token from BotFather |
 | `TELEGRAM_CHAT_ID` | Your chat id from step 1.4 |
 
-### 3. (Optional) Customize the watchlist
+#### 3. (Optional) Customize the watchlist
 
 Default is `AAPL, NVDA, MSFT`. To change it, go to **Settings → Secrets and variables → Actions → Variables tab → New repository variable**, name it `WATCHLIST`, and set it to a comma-separated list like `AAPL,NVDA,TSLA,AMD`.
 
-### 4. Test it
+#### 4. Test it
 
 Go to the **Actions** tab → **Daily Market Brief to Telegram** → **Run workflow**. You should get a Telegram message within a minute.
 
 After that, it runs automatically every weekday at ~7:00 AM ET — nothing else to do.
 
-## Running locally
+### Running locally
 
 ```bash
 pip install requests
 TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... python market_brief.py
 ```
 
-## Tweaking
+### Tweaking
 
 - **Schedule** — edit the `cron` line in `.github/workflows/market-brief.yml` (times are UTC; `0 11 * * 1-5` ≈ 7:00 AM ET in summer).
 - **Watchlist** — set the `WATCHLIST` repository variable, or edit the default in `market_brief.py`.
@@ -240,7 +274,7 @@ gh auth login
 gh auth status
 ```
 
-**Claude.ai (web):** Settings → Connectors → connect **GitHub** → allow `clightbo/Stock-Updates-SMS`.
+**Claude.ai (web):** Settings → Connectors → connect **GitHub** → allow `clightbo/personal-automation-hub`.
 
 **Cursor:** you’re already linked if this cloud agent can push PRs to your repo.
 
@@ -250,7 +284,7 @@ After [this workflow](#send-telegram) is on `main`, Claude can run:
 
 ```bash
 gh workflow run "Send Telegram message" \
-  --repo clightbo/Stock-Updates-SMS \
+  --repo clightbo/personal-automation-hub \
   -f message="Your note here"
 ```
 
@@ -349,3 +383,15 @@ Your hub page can hold databases side by side:
 - **Dallas:** the filter requires Dallas/DFW/Texas in the posting location, or a national discovery program page that mentions Dallas. Add more cities via `INTERNSHIP_LOCATIONS` if you're also targeting NYC/Houston.
 - **Add firms:** edit `GREENHOUSE_BOARDS`, `WORKDAY_SOURCES`, and `CURATED_PROGRAMS` at the top of `internship_sources.py`.
 - **Schedule:** edit the `cron` lines in `.github/workflows/internship-tracker.yml` (times are UTC; `0 12 * * *` = 8:00 AM ET in summer).
+
+<a name="outbox-relays"></a>
+
+## Outbox relays (Claude brief & day plan)
+
+Files in `outbox/` are a drop-box: pushing a change to one of them triggers a workflow that forwards it to Telegram. Keep these filenames exactly as they are — the workflows watch these paths.
+
+| File | Workflow | Sent as |
+|---|---|---|
+| `outbox/claude-brief.html` | Claude Brief Relay | PDF (rendered from the HTML) |
+| `outbox/day-plan.txt` | Day Plan Relay | Telegram text message |
+| `outbox/day-plan.html` | Day Plan PDF Relay | PDF (rendered from the HTML) |

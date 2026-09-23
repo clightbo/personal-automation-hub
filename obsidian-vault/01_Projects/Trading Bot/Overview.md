@@ -32,5 +32,5 @@ Scripts, backtest notes, and experiment logs for trading automation.
 - [[Home]]
 - [[03_Finance_Data/README|Finance Data]]
 - [[03_Finance_Data/Markets/Watchlist]]
-- [[00_Inbox/Ai-carrerpathways]]
-- [[00_Inbox/Ai-resume]]
+- [[00_Inbox/AI - Career Pathways]]
+- [[00_Inbox/AI - Resume]]

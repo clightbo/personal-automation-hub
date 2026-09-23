@@ -31,7 +31,7 @@ tags:
 
 ## Related
 
-- [[Ai-carrerpathways]]
-- [[Ai-internshipplanning]]
-- [[Ai-resume]]
+- [[AI - Career Pathways]]
+- [[AI - Internship Planning]]
+- [[AI - Resume]]
 - [[Home]]
