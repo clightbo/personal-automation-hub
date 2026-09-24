@@ -7,10 +7,11 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-24 16:16 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-24 23:52 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
+| 2026-09-24 19:55 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-09-25 05:15 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
 | 2026-09-25 09:20 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-09-25 10:00 ET | Medium | Macro | **Revised UoM Consumer Sentiment** — Medium impact; forecast 47.4, prev 47.8 |
@@ -56,6 +57,7 @@ _Updated 2026-09-24 16:16 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
+- **2026-09-24 19:55** — President Trump Speaks
 - **2026-09-25 10:00** — Revised UoM Consumer Sentiment
 - **2026-09-25 10:00** — Revised UoM Inflation Expectations
 
