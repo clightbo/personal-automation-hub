@@ -1,28 +1,28 @@
-<b>📅 Day Plan — Wednesday, Sep 23</b>
+<b>📅 Day Plan — Thursday, Sep 24</b>
 
 <b>TODAY'S SCHEDULE</b> (all times CT)
-<b>11:00a–12:00p</b> — Blackstone Future Leaders Spotlight Webinar (Virtual). Leave right at 12:00p — Work starts immediately after.
-<b>12:00p–3:00p</b> — Work
-⚠️ <b>~1:00p–1:30p</b> — Clark/Danielle: ArcLight SEO Internship call (Zoom)
-    <i>Overlaps with Work for the full 30 min.</i>
-🌐 <i>Timezone note:</i> stored as 2:00–2:30p America/New_York while every other event today uses America/Chicago. ArcLight is a Boston-based firm, so ET is likely the real intended time — meaning 1:00–1:30p CT for you, which still lands squarely inside Work either way you read it.
-<b>4:00p–4:30p</b> — IMA/RCG/IBA leadership meeting (Ijeh, Bowen, Oyin) — you're cc'd, not a confirmed required attendee. Confirm with Michael Ijeh if unsure whether you need to be there.
-<b>6:00p–7:00p</b> — RCG Meeting (BA 019)
-⚠️ <b>7:00p–8:00p</b> — Study: New Concept #2 (S&amp;T/Cap Mkts Prep) <b>vs.</b> Boutique PE Firm Panel (Virtual)
-    <i>Identical 7–8p slot, fully double-booked. Pick one or move the study block.</i>
-<i>No duplicate calendar entries found today.</i>
+<b>9:00a–9:15a</b> — ⚠️ DEADLINE: Reply to Alex Anastakis (RBC Capital Markets) with interview availability — interview must be scheduled by Oct 5
+<b>9:30a–1:00p</b> — Work
+<b>5:30p–6:30p</b> — IMA Meeting — Stock Pitch Competition Overview (NW 112 — <i>location may have moved to Rawls 2nd floor; a confirmation email was expected 9/23, verify before heading over</i>)
+<b>7:00p–7:45p</b> — Practice + Review (S&amp;T/Cap Mkts Prep) — concept #2 problems + Mon/Tue review
+<i>All day</i> — MATH 1331 Exam 1 Review (no mastery) due, 11:59p
+<i>No overlapping events, timezone anomalies, or duplicate entries found today.</i>
 <i>Ongoing:</i> Phase 2 — Capital Markets Deep Dive (Sep 1 → Nov 1)
 
 <b>TASKS</b>
-🔴 <b>Blackstone</b> — US Future Leaders: tracker still flags "URGENT — pymetrics one-way video interview, 48-hr window from receipt," note unchanged since Sep 10 (stored Deadline reads Oct 9, but that's the program deadline, not the interview window). Check the portal/email directly — the window may have already lapsed.
-🟡 <b>IMA Stock Pitch "Deposition"</b> — sign-up deadline <b>Fri Sep 25</b> (2 days out).
+🔴 <b>RBC Capital Markets</b> — send interview availability to Alex Anastakis today; interview itself must land by Oct 5. Survey/selection status: awaiting result — if selected, NYC kickoff Nov 2 (check vs. WSC Trek Oct 26–29).
+🟡 <b>IMA Stock Pitch "Deposition"</b> — sign-up deadline <b>tomorrow, Fri Sep 25</b>. Email Michael Ijeh or Sakura Onozaki with team members (or note you need one assigned) and division choice (Discovery or Conviction).
+🔴 <b>Blackstone</b> — US Future Leaders: tracker still flags "URGENT — pymetrics one-way video interview, 48-hr window from receipt," note unchanged since Sep 10 (stored Deadline reads Oct 9, but that's the program deadline, not the interview window). Verify directly — the window may have already lapsed.
 <b>Networking pings:</b> Eric Walker (Evercore) — reconnect re: Oct WSC/BLK-Roark NY trek · Doug Carriger (Citadel Securities, Houston) — reach out re: online assessment prep. These are the two warm contacts with an open next step right now.
-<b>Awaiting:</b> BofA HireVue invite (recruiter Maria Gabriele) · JPMorgan Career.edYOU rolling decision · RBC selection result.
+<b>Awaiting:</b> BofA HireVue invite (recruiter Maria Gabriele) · JPMorgan Career.edYOU rolling decision (deadline was Sep 18) · Evercore apps under review.
 
 <b>STUDY &amp; PREP</b>
-<b>Tonight, 7:00p</b> — New Concept #2 (S&amp;T/Cap Mkts Prep) — see schedule conflict above.
+<b>5:30p</b> — IMA Meeting: Stock Pitch Competition overview — pick a division.
+<b>7:00p</b> — Practice + Review — concept #2 (S&amp;T/Cap Mkts Prep).
+<b>Due 11:59p</b> — MATH 1331 Exam 1 Review.
 <b>In progress:</b> Wall Street Prep FSM + DCF modules — target finish before December.
 <b>In progress:</b> Managerial Accounting — retention concern carried over from summer Financial Accounting.
+<b>IMA Stock Pitch timeline:</b> sign-up Sep 25 → Valuation Intro Oct 1 → prelims Oct 18 → finalists Oct 27 → finals Nov 12.
 
 <b>🎯 LONGER-TERM</b>
 <b>North star:</b> financial independence — early-career money funds travel, hiking, fly fishing, golf, mountaineering, not a 10–20yr IB/PE lifer career.
