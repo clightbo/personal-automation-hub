@@ -7,15 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-23 23:39 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-24 16:16 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-24 04:10 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
-| 2026-09-24 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 201K, prev 196K |
-| 2026-09-24 08:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
-| 2026-09-24 08:50 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
-| 2026-09-24 10:10 ET | Low | Fed | **FOMC Member Paulson Speaks** — Low impact |
 | 2026-09-25 05:15 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
 | 2026-09-25 09:20 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-09-25 10:00 ET | Medium | Macro | **Revised UoM Consumer Sentiment** — Medium impact; forecast 47.4, prev 47.8 |
@@ -45,10 +40,6 @@ _Updated 2026-09-23 23:39 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-24 04:10** — FOMC Member Williams Speaks
-- **2026-09-24 08:30** — FOMC Member Barkin Speaks
-- **2026-09-24 08:50** — FOMC Member Hammack Speaks
-- **2026-09-24 10:10** — FOMC Member Paulson Speaks
 - **2026-09-25 05:15** — FOMC Member Williams Speaks
 - **2026-09-25 09:20** — FOMC Member Schmid Speaks
 - **2026-09-25 14:00** — FOMC Member Hammack Speaks
@@ -65,7 +56,6 @@ _Updated 2026-09-23 23:39 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-24 08:30** — Unemployment Claims
 - **2026-09-25 10:00** — Revised UoM Consumer Sentiment
 - **2026-09-25 10:00** — Revised UoM Inflation Expectations
 
