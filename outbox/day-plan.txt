@@ -1,30 +1,33 @@
-<b>📅 Day Plan — Thursday, Sep 24</b>
+<b>📅 Day Plan — Friday, Sep 25</b>
 
 <b>TODAY'S SCHEDULE</b> (all times CT)
-<b>9:00a–9:15a</b> — ⚠️ DEADLINE: Reply to Alex Anastakis (RBC Capital Markets) with interview availability — interview must be scheduled by Oct 5
-<b>9:30a–1:00p</b> — Work
-<b>5:30p–6:30p</b> — IMA Meeting — Stock Pitch Competition Overview (NW 112 — <i>location may have moved to Rawls 2nd floor; a confirmation email was expected 9/23, verify before heading over</i>)
-<b>7:00p–7:45p</b> — Practice + Review (S&amp;T/Cap Mkts Prep) — concept #2 problems + Mon/Tue review
-<i>All day</i> — MATH 1331 Exam 1 Review (no mastery) due, 11:59p
+<i>All day</i> — ⚠️ DEADLINE: TTU ScholarshipUniverse application due
+<b>9:00a–9:15a</b> — DEADLINE: Sign up for IMA Stock Pitch "Deposition" Competition
+<b>11:00a–12:00p</b> — JPMorgan Chase Career.EDU — Office Hour Session (Zoom)
+<b>12:00p–3:00p</b> — Work
+<b>7:00p–7:20p</b> — Market Check-in (S&amp;T/Cap Mkts Prep) — Fed funds, 2yr/10yr, one headline
 <i>No overlapping events, timezone anomalies, or duplicate entries found today.</i>
 <i>Ongoing:</i> Phase 2 — Capital Markets Deep Dive (Sep 1 → Nov 1)
 
 <b>TASKS</b>
-🔴 <b>RBC Capital Markets</b> — send interview availability to Alex Anastakis today; interview itself must land by Oct 5. Survey/selection status: awaiting result — if selected, NYC kickoff Nov 2 (check vs. WSC Trek Oct 26–29).
-🟡 <b>IMA Stock Pitch "Deposition"</b> — sign-up deadline <b>tomorrow, Fri Sep 25</b>. Email Michael Ijeh or Sakura Onozaki with team members (or note you need one assigned) and division choice (Discovery or Conviction).
-🔴 <b>Blackstone</b> — US Future Leaders: tracker still flags "URGENT — pymetrics one-way video interview, 48-hr window from receipt," note unchanged since Sep 10 (stored Deadline reads Oct 9, but that's the program deadline, not the interview window). Verify directly — the window may have already lapsed.
-<b>Networking pings:</b> Eric Walker (Evercore) — reconnect re: Oct WSC/BLK-Roark NY trek · Doug Carriger (Citadel Securities, Houston) — reach out re: online assessment prep. These are the two warm contacts with an open next step right now.
-<b>Awaiting:</b> BofA HireVue invite (recruiter Maria Gabriele) · JPMorgan Career.edYOU rolling decision (deadline was Sep 18) · Evercore apps under review.
+🔴 <b>TTU ScholarshipUniverse</b> — application due today. Log in and submit before it closes.
+🟡 <b>Point72 stock pitch (IMA/short SPOT)</b> — red-team session Tue Sep 29, freeze Oct 1, submit early Oct 2.
+🟡 <b>RBC Capital Markets</b> — 1st-round interview w/ Alex Anastakis Thu Oct 1, 2:30p CT. If selected, NYC kickoff Mon Nov 2 (check vs. WSC Trek Oct 26–29).
+🟡 <b>SEO Career (Denise Larkin)</b> — early-insight apps close Sep 30; check her Sep 21 list.
+<b>Networking follow-ups (warm/active, open next step):</b>
+• Cassie James (Goldman recruiter) — no reply since Sep 6 re: ELS application; nudge again.
+• Eli Jacobs (BLK Capital) — sent availability Sep 11, no reply; nudge if still quiet.
+• Cindy Blackstone (Dallas internships) — outreach drafted but never sent; send it.
+• Doug Carriger (Citadel Securities) — reach out re: Citadel prep.
+<b>Awaiting/no action:</b> ArcLight (Danielle/Dave) — 2nd round done, waiting on their update · Bank of America HireVue invite · Evercore apps under review.
 
 <b>STUDY &amp; PREP</b>
-<b>5:30p</b> — IMA Meeting: Stock Pitch Competition overview — pick a division.
-<b>7:00p</b> — Practice + Review — concept #2 (S&amp;T/Cap Mkts Prep).
-<b>Due 11:59p</b> — MATH 1331 Exam 1 Review.
-<b>In progress:</b> Wall Street Prep FSM + DCF modules — target finish before December.
-<b>In progress:</b> Managerial Accounting — retention concern carried over from summer Financial Accounting.
-<b>IMA Stock Pitch timeline:</b> sign-up Sep 25 → Valuation Intro Oct 1 → prelims Oct 18 → finalists Oct 27 → finals Nov 12.
+<b>7:00p</b> — Market Check-in: rates, DXY, credit spreads, oil + one headline.
+<b>Ongoing:</b> Phase 2 Capital Markets Deep Dive — ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, credit ratings, new issue process, leverage/coverage ratios) through Nov 1.
+<b>In progress:</b> Wall Street Prep FSM + DCF modules — finish before December.
+<b>Daily S&amp;T reads:</b> Exec Sum, Wall Street Navigator, Markets Calendar (watch for CPI/NFP/FOMC prints).
 
 <b>🎯 LONGER-TERM</b>
 <b>North star:</b> financial independence — early-career money funds travel, hiking, fly fishing, golf, mountaineering, not a 10–20yr IB/PE lifer career.
-<b>Credential track:</b> CFA Level I flagged as worth considering (Prof. Ijeh passed it); Wall Street Prep FSM/DCF due before Dec; BMC + Akuna Options 101 already done.
-<b>This semester's arc:</b> Fall coursework (FIN 3320, Managerial Accounting, Business Calc, ISQS) alongside recruiting; Mays transfer app targeted for Dec 2026 submission, watching the 60-credit-hour transfer cap.
+<b>Credential track:</b> Wall Street Prep FSM/DCF modules due before December; ongoing capital markets interview-prep curriculum runs through Nov 1.
+<b>This semester's arc:</b> Fall 2026 coursework (endowment review, managerial accounting quizzes, ISQS assignments, IB 400) running alongside recruiting; TAMU Mays BBA transfer track for Fall 2027 — follow up on admissions reply, review Common App, finish prereqs, order transcripts.
