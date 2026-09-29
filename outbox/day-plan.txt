@@ -1,35 +1,37 @@
-<b>📅 Clark's Day Plan — Mon, Sep 28</b>
+<b>📅 Clark's Day Plan — Tue, Sep 29</b>
 
 <b>Today's Schedule</b> (CT)
-12:00–3:15 AM — Bedtime (overnight)
-10:00–10:20 AM — Apartment office: stolen bike follow-up (leasing office)
-10:30–10:45 AM — Wake up
-12:00–3:00 PM — Work
-4:00–5:00 PM — ⚠️ Career.edYOU Academy Course 201 (Zoom) <i>— overlaps next line</i>
-4:00–5:00 PM — ⚠️ Blackstone LaunchPad Info Session (Zoom) <i>— same hour as above, pick one or catch a replay</i>
-5:30–7:00 PM — ⚠️ Career Fair Prep &amp; Pizza (RCOB McCoy/Fireplace)
-6:00–7:00 PM — ⚠️ RCG Meeting, BA 019 <i>— overlaps Career Fair Prep</i>
-~7:00–8:30 PM ET (as stored) — 🕐 Wall Street Club Class #5 (Teams) <i>— timezone looks wrong: tagged America/New_York but keeps a -05:00 (EST) offset instead of -04:00 (EDT). Literal reading = 7:00–8:30 PM CT. Likely-intended reading (7 PM ET meant) = 6:00–7:30 PM CT — which would ALSO clash with RCG Meeting. Worth confirming before 6 PM.</i>
-Due 11:59 PM — ACCT 2301: Ch 6 Dynamic Study Module + Ch 6 Homework Exercises (two separate assignments, not a duplicate)
+12:00–12:15 AM — Bedtime (overnight)
+7:15–7:30 AM — Wake up
+9:30 AM–1:00 PM — Work
+6:00–7:00 PM — IMA Meeting: Texas Capital Fund/ETF Management Speaker (BA 287)
+7:00–7:45 PM — Practice Problems (S&amp;T/Cap Mkts Prep) <i>— starts the minute IMA ends; not an overlap, but no buffer</i>
+11:00 PM–12:00 AM — Workout
+All-day — Phase 2: Capital Markets Deep Dive (Sep 1–Oct 31)
 
-No duplicate calendar entries found today.
+<b>Calendar check:</b> no overlaps, no timezone oddities (all events America/Chicago), no duplicate entries today.
+<i>Heads-up: the Point72 red-team session is due today per Notion but has no calendar event — confirm time/place.</i>
 
 <b>Tasks</b>
-• Both ACCT 2301 Ch 6 assignments due tonight, 11:59 PM
-• Send the drafted-but-unsent outreach to Cindy Blackstone (Dallas internship contact)
+• <b>Point72 short-SPOT pitch red-team session — today</b> (freeze Oct 1, submit early Fri Oct 2)
+• <b>SEO early-insight apps close tomorrow (Wed 9/30)</b> — check Denise Larkin's Sep 21 list today
+• Tomorrow: BRICFAST 8–10 AM (register) + Rawls Career Fair 10 AM–3 PM — note it clashes with Work 9:30 AM–1 PM
 • Send thank-you to Niki Ahlstrand (PEAK6 recruiter)
-• Nudge Eli Jacobs (WSC fellowship) — no reply since Sep 11
-• Denise Larkin (SEO): early-insight apps close Wed 9/30 — check her list
-• Point72 short-SPOT pitch: red-team session tomorrow (Tue 9/29); submit early Fri 10/2
-• RBC 1st-round interview Thu 10/1, 3:30 PM ET / 2:30 PM CT (Alex Anastakis)
+• Coffee chat with Trevaughn Wright-Reynolds (PEAK6)
+• Nudge Eli Jacobs (no reply since Sep 11) and Cassie James at Goldman (no reply since Sep 6)
+• Victory Bank: send Brett times (after 4 PM, cc Chad Hill) if not done; confirm hours + pay
+• Blackstone LaunchPad: register for virtual info session
+• ArcLight: waiting on update after 2nd round (ask about pay + housing when they reply)
 
 <b>Study &amp; Prep</b>
+• <b>RBC 1st-round interview Thu Oct 1, 3:30 PM ET / 2:30 PM CT</b> (Alex Anastakis) — 2 days out
+• Point72 pitch: red-team today, refine before Oct 1 freeze
+• Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up); DCM (bond anatomy, ratings, new-issue process, leverage/coverage ratios)
+• Tonight's 7:00 PM practice problems block
+• Jane Street: practice probability puzzles (decisions by Nov 9)
 • Wall Street Prep: finish FSM + DCF modules before December
-• Phase 2 Capital Markets Deep Dive (self-study, through Nov 1): ECM — IPO process, bookrunner, greenshoe, lock-up; DCM — bond anatomy, credit ratings, new-issue process, leverage/coverage ratios
-• Point72 short-SPOT pitch prep ahead of Fri submission
-• RBC interview prep ahead of Thu 10/1
 
 <b>Longer-Term</b>
-• North star: financial independence — early-career finance income is meant to buy freedom (travel, hiking, fly fishing, mountaineering), not lock into a 10–20yr IB/PE track
-• Credential track: Wall Street Prep FSM + DCF certification; Career.edYOU Academy (JPMorgan, accepted, semester-long program in progress)
-• This semester's arc: heavy recruiting push (RBC, Evercore, Point72 pitch, Blackstone) plus WSC NYC trek Oct 26–29, alongside the TAMU Mays transfer application (fall prereqs due, app submitted Dec 2026)
+• North star: financial independence — early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
+• Credential track: Wall Street Prep FSM + DCF; Career.edYOU Academy (JPMorgan, in progress)
+• Semester arc: Oct 1 RBC interview → Oct 2 Point72 submit → Oct 7–9 Houston industry trip → Oct 9 Blackstone FLP deadline → Oct 18 stock pitch prelims → Oct 26–29 WSC NYC trek → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street decisions → Nov 15 Evercore review; TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
