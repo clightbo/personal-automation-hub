@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-28 19:04 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-29 00:58 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -27,18 +27,18 @@ _Updated 2026-09-28 19:04 UTC. Auto-generated from personal-automation-hub._
 | 2026-09-30 15:25 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
 | 2026-09-30 17:10 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-30 18:00 ET | Low | Fed | **FOMC Member Kashkari Speaks** — Low impact |
-| 2026-10-01 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 199K, prev 197K |
+| 2026-10-01 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 201K, prev 197K |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-10-01 10:00 ET | Medium | Fed | **FOMC Member Waller Speaks** — Medium impact |
-| 2026-10-01 10:00 ET | Medium | Macro | **ISM Manufacturing PMI** — Medium impact; forecast 55.0, prev 54.6 |
+| 2026-10-01 10:00 ET | Medium | Macro | **ISM Manufacturing PMI** — Medium impact; forecast 54.8, prev 54.6 |
 | 2026-10-01 13:30 ET | Low | Fed | **FOMC Member Jefferson Speaks** — Low impact |
 | 2026-10-01 15:00 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-10-01 15:30 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
 | 2026-10-01 18:45 ET | Low | Fed | **FOMC Member Logan Speaks** — Low impact |
 | 2026-10-02 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.3% |
-| 2026-10-02 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 89K, prev 162K |
+| 2026-10-02 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 90K, prev 162K |
 | 2026-10-02 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
 | 2026-10-02 10:00 ET | Low | Fed | **FOMC Member Logan Speaks** — Low impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
