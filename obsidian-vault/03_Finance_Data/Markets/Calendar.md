@@ -7,15 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-29 00:58 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-29 17:25 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-29 10:00 ET | Medium | Macro | **CB Consumer Confidence** — Medium impact; forecast 89.2, prev 89.4 |
-| 2026-09-29 10:00 ET | Medium | Macro | **JOLTS Job Openings** — Medium impact; forecast 7.23M, prev 7.27M |
-| 2026-09-29 11:00 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
-| 2026-09-29 12:40 ET | Low | Fed | **FOMC Member Barr Speaks** — Low impact |
-| 2026-09-29 13:00 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
 | 2026-09-29 13:30 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
 | 2026-09-29 14:00 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
 | 2026-09-29 15:00 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
@@ -65,9 +60,6 @@ _Updated 2026-09-29 00:58 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-29 11:00** — FOMC Member Bowman Speaks
-- **2026-09-29 12:40** — FOMC Member Barr Speaks
-- **2026-09-29 13:00** — FOMC Member Goolsbee Speaks
 - **2026-09-29 13:30** — FOMC Member Musalem Speaks
 - **2026-09-29 14:00** — FOMC Member Williams Speaks
 - **2026-09-29 15:00** — FOMC Member Waller Speaks
@@ -97,8 +89,6 @@ _Updated 2026-09-29 00:58 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-29 10:00** — CB Consumer Confidence
-- **2026-09-29 10:00** — JOLTS Job Openings
 - **2026-09-30 08:15** — ADP Non-Farm Employment Change
 - **2026-09-30 08:30** — Core PCE Price Index m/m
 - **2026-09-30 08:30** — Final GDP q/q
