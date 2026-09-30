@@ -7,13 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-29 17:25 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-30 00:24 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-29 13:30 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
-| 2026-09-29 14:00 ET | Low | Fed | **FOMC Member Williams Speaks** — Low impact |
-| 2026-09-29 15:00 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
 | 2026-09-30 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 73K, prev 38K |
 | 2026-09-30 08:30 ET | High | Macro | **Core PCE Price Index m/m** — High impact; forecast 0.3%, prev 0.2% |
 | 2026-09-30 08:30 ET | High | Macro | **Final GDP q/q** — High impact; forecast 1.5%, prev 1.5% |
@@ -60,9 +57,6 @@ _Updated 2026-09-29 17:25 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-29 13:30** — FOMC Member Musalem Speaks
-- **2026-09-29 14:00** — FOMC Member Williams Speaks
-- **2026-09-29 15:00** — FOMC Member Waller Speaks
 - **2026-09-30 13:30** — FOMC Member Barkin Speaks
 - **2026-09-30 15:25** — FOMC Member Cook Speaks
 - **2026-09-30 17:10** — FOMC Member Goolsbee Speaks
