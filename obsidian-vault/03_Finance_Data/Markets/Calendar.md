@@ -7,18 +7,15 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-30 00:24 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-09-30 17:23 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-30 08:15 ET | Medium | Macro | **ADP Non-Farm Employment Change** — Medium impact; forecast 73K, prev 38K |
-| 2026-09-30 08:30 ET | High | Macro | **Core PCE Price Index m/m** — High impact; forecast 0.3%, prev 0.2% |
-| 2026-09-30 08:30 ET | High | Macro | **Final GDP q/q** — High impact; forecast 1.5%, prev 1.5% |
-| 2026-09-30 08:30 ET | Medium | Macro | **Final GDP Price Index q/q** — Medium impact; forecast 6.4%, prev 6.4% |
 | 2026-09-30 13:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-09-30 15:25 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
+| 2026-09-30 15:30 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
 | 2026-09-30 17:10 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
-| 2026-09-30 18:00 ET | Low | Fed | **FOMC Member Kashkari Speaks** — Low impact |
+| 2026-09-30 18:00 ET | Medium | Fed | **FOMC Member Kashkari Speaks** — Medium impact |
 | 2026-10-01 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 201K, prev 197K |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
@@ -33,7 +30,7 @@ _Updated 2026-09-30 00:24 UTC. Auto-generated from personal-automation-hub._
 | 2026-10-02 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 90K, prev 162K |
 | 2026-10-02 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
 | 2026-10-02 10:00 ET | Low | Fed | **FOMC Member Logan Speaks** — Low impact |
-| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72455 |
+| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72169 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98124 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.47356 |
@@ -83,10 +80,7 @@ _Updated 2026-09-30 00:24 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-30 08:15** — ADP Non-Farm Employment Change
-- **2026-09-30 08:30** — Core PCE Price Index m/m
-- **2026-09-30 08:30** — Final GDP q/q
-- **2026-09-30 08:30** — Final GDP Price Index q/q
+- **2026-09-30 15:30** — President Trump Speaks
 - **2026-10-01 08:30** — Unemployment Claims
 - **2026-10-01 10:00** — ISM Manufacturing PMI
 - **2026-10-02 08:30** — Average Hourly Earnings m/m
