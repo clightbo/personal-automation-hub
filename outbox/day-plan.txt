@@ -1,39 +1,48 @@
-<b>📅 Clark's Day Plan — Wed, Sep 30</b>
+<b>📅 Clark's Day Plan — Thu, Oct 1</b>
 
 <b>Today's Schedule</b> (CT)
-3:00–3:15 AM — Bedtime <i>(3 AM start; yesterday's was 12 AM — confirm intended)</i>
-<b>⚠️ By 8:34 AM — DEADLINE: Blackstone pymetrics digital interview (submit recording)</b> — 48-hr window closes ~8:34 AM CT; late recordings are not reviewed. ~10–15 min, use a laptop (not tablet), register with the invite email.
-8:00–10:00 AM — BRICFAST (Lubbock Memorial Civic Center; registration required)
-10:00 AM–3:00 PM — Rawls Career Fair (Civic Center)
-3:30–4:30 PM — Dell x Finance Association (BA 237)
-5:15–6:45 PM — ACCT 2301 SI Session 1, Ch 1-2 (RCOBA 003)
-All-day — DEADLINE: IMA Stock Pitch sign-up (before free-agent team assignment)
-All-day — Phase 2: Capital Markets Deep Dive (Sep 1–Oct 31)
+9:30 AM–1:00 PM — Work
+2:00–3:30 PM — KraneShares TTUS Student Managed Investment Funds Partnership (Teams / Regents Conf Rm 104A)
+<b>⭐ 2:30–2:50 PM — RBC Capital Markets 1st-round interview (Alex Anastakis, Webex)</b>
+5:30–7:00 PM — Valuation Intro for Stock Pitch Competitions (NW 112)
+6:10–8:00 PM — RCG Meeting (BA 287)
+7:00–7:45 PM — Practice + Review (S&amp;T/Cap Mkts Prep)
+11:00 PM–12:00 AM — Workout
+Fri 3:00 AM — Bedtime <i>(3 AM — confirm intended)</i>
+Due tomorrow (all-day): MATH 1331 HW9; Citation Dismissal via Tickets to Tail Wags; check BLK Wall Street Club clothing stipend gift card
 
 <b>Calendar check:</b>
-(a) Overlaps: none. BRICFAST→Career Fair is back-to-back at the same venue; 30 min gap before Dell (Civic Center to BA 237 — tight).
-(b) Timezones: all timed events are America/Chicago. All-day items are date-only, so no shift issue. The only oddity is Bedtime at 3 AM.
-(c) Duplicates: none.
-<i>Pymetrics: the 8:34 AM cutoff falls during BRICFAST — do it first thing, before you leave.</i>
+(a) Overlaps:
+• <b>RBC interview (2:30–2:50) sits inside KraneShares (2:00–3:30).</b> RBC wins — leave Krane early or skip; tell them ahead of time.
+• <b>Valuation Intro (5:30–7:00) vs RCG (6:10–8:00)</b> overlap 6:10–7:00 PM.
+• <b>Practice + Review (7:00–7:45) falls entirely inside RCG (to 8:00).</b>
+→ Pick one: likely Valuation until ~6:00, then RCG; move Practice to 8:15 PM.
+(b) Timezone: RBC is stored with zone America/New_York while everything else is America/Chicago. Instant = 2:30 PM CT = 3:30 PM ET, which matches your Notion note (3:30 ET / 2:30 CT), so the time is right and only the label is off. If it had really been 2:30 ET it would be 1:30 PM CT, which would clear the Krane conflict. Confirm against the Webex invite.
+(c) Duplicates: none found today.
 
 <b>Tasks</b>
-• <b>Blackstone pymetrics recording — before 8:34 AM</b> (this is the LaunchPad interview, separate from the FLP pymetrics already done)
-• <b>IMA Stock Pitch sign-up — today</b> (Michael Ijeh assigns free agents to teams after today)
-• <b>SEO early-insight apps due today</b> — check Denise Larkin's Sep 21 list
+• <b>Point72 pitch: FREEZE today</b>, submit early tomorrow (Fri Oct 2)
+• Tomorrow: MATH 1331 HW9 due; Citation Dismissal deadline; BLK stipend gift card check (Codie said "this week")
+• SEO early-insight apps were due 9/30 — confirm you submitted from Denise Larkin's list
 • Blackstone LaunchPad: register for the virtual info session
 • Send thank-you to Niki Ahlstrand (PEAK6); set up coffee chat with Trevaughn Wright-Reynolds
 • Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11)
 • Victory Bank: send Brett times (after 4 PM, cc Chad Hill); confirm hours + pay
-• At the fair: recruiters to hit include Goldman, Deutsche, BofA, Texas Capital, Diamondback, Hilltop
-• ArcLight: waiting on update after 2nd round (ask about pay + housing when they reply)
+• Eric Walker (Evercore): follow up on the Capital Markets intro
+• ArcLight: waiting on update after 2nd round (ask about pay + housing)
 
 <b>Study &amp; Prep</b>
-• <b>RBC 1st-round interview tomorrow, Thu Oct 1, 2:30 PM CT / 3:30 PM ET</b> (Alex Anastakis) — main prep today
-• Point72 short-SPOT pitch: freeze Oct 1, submit early Fri Oct 2
-• Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up); DCM (bond anatomy, ratings, new-issue process, leverage/coverage ratios)
-• ACCT 2301 Ch 1-2 via tonight's SI session
-• Jane Street: probability puzzles (decisions by Nov 9)
+• <b>RBC interview at 2:30 PM CT</b> — morning: walk me through resume / tell me about yourself, why capital markets, RBC Risk Solutions (FX &amp; rates derivatives sales for sponsors), questions for Alex. Test Webex + laptop 15 min early.
+• Point72 short-SPOT final read-through before freeze
+• Valuation Intro tonight — bring pitch questions
+• Phase 2 Capital Markets: ECM and DCM fundamentals; S&amp;T practice block
+• Jane Street probability puzzles (decisions by Nov 9)
 • Bank of America: watch for HireVue invite (Oct)
+
+<b>Closing windows</b>
+• Oct 2 — Point72 submission
+• Oct 9 — Blackstone FLP deadline (review begins after)
+• Nov 9 — Jane Street decisions; Nov 15 — Evercore review
 
 <b>Longer-Term</b>
 • North star: financial independence — early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
