@@ -7,15 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-09-30 17:23 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-01 00:32 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-09-30 13:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
-| 2026-09-30 15:25 ET | Low | Fed | **FOMC Member Cook Speaks** — Low impact |
-| 2026-09-30 15:30 ET | Medium | Macro | **President Trump Speaks** — Medium impact |
-| 2026-09-30 17:10 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
-| 2026-09-30 18:00 ET | Medium | Fed | **FOMC Member Kashkari Speaks** — Medium impact |
 | 2026-10-01 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 201K, prev 197K |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-01 09:05 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
@@ -54,10 +49,6 @@ _Updated 2026-09-30 17:23 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-09-30 13:30** — FOMC Member Barkin Speaks
-- **2026-09-30 15:25** — FOMC Member Cook Speaks
-- **2026-09-30 17:10** — FOMC Member Goolsbee Speaks
-- **2026-09-30 18:00** — FOMC Member Kashkari Speaks
 - **2026-10-01 09:05** — FOMC Member Barkin Speaks
 - **2026-10-01 09:05** — FOMC Member Collins Speaks
 - **2026-10-01 09:05** — FOMC Member Schmid Speaks
@@ -80,7 +71,6 @@ _Updated 2026-09-30 17:23 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-09-30 15:30** — President Trump Speaks
 - **2026-10-01 08:30** — Unemployment Claims
 - **2026-10-01 10:00** — ISM Manufacturing PMI
 - **2026-10-02 08:30** — Average Hourly Earnings m/m
