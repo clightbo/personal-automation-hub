@@ -1,50 +1,51 @@
-<b>📅 Clark's Day Plan — Thu, Oct 1</b>
+<b>📅 Clark's Day Plan — Fri, Oct 2</b>
 
 <b>Today's Schedule</b> (CT)
-9:30 AM–1:00 PM — Work
-2:00–3:30 PM — KraneShares TTUS Student Managed Investment Funds Partnership (Teams / Regents Conf Rm 104A)
-<b>⭐ 2:30–2:50 PM — RBC Capital Markets 1st-round interview (Alex Anastakis, Webex)</b>
-5:30–7:00 PM — Valuation Intro for Stock Pitch Competitions (NW 112)
-6:10–8:00 PM — RCG Meeting (BA 287)
-7:00–7:45 PM — Practice + Review (S&amp;T/Cap Mkts Prep)
-11:00 PM–12:00 AM — Workout
-Fri 3:00 AM — Bedtime <i>(3 AM — confirm intended)</i>
-Due tomorrow (all-day): MATH 1331 HW9; Citation Dismissal via Tickets to Tail Wags; check BLK Wall Street Club clothing stipend gift card
+3:00–3:15 AM — Bedtime <i>(already passed; 3 AM bedtime, confirm intended)</i>
+10:30–10:45 AM — Wake up
+12:00–3:00 PM — Work
+7:00–7:20 PM — Market Check-in (S&amp;T/Cap Mkts Prep): Fed funds, 2yr, 10yr + one headline
+All-day deadlines:
+• <b>Point72 stock pitch: submit early today</b>
+• <b>5:30 PM — Citation Dismissal (Tickets to Tail Wags)</b>, SUB Suite 005. Last day. Work starts 12:00, so go before 12 or right after 3:00 PM.
+• <b>11:59 PM — MATH 1331 HW9 (SC Deriv)</b>
+• Check BLK Wall Street Club clothing stipend gift card (Codie said "this week", today is the last day)
 
 <b>Calendar check:</b>
-(a) Overlaps:
-• <b>RBC interview (2:30–2:50) sits inside KraneShares (2:00–3:30).</b> RBC wins — leave Krane early or skip; tell them ahead of time.
-• <b>Valuation Intro (5:30–7:00) vs RCG (6:10–8:00)</b> overlap 6:10–7:00 PM.
-• <b>Practice + Review (7:00–7:45) falls entirely inside RCG (to 8:00).</b>
-→ Pick one: likely Valuation until ~6:00, then RCG; move Practice to 8:15 PM.
-(b) Timezone: RBC is stored with zone America/New_York while everything else is America/Chicago. Instant = 2:30 PM CT = 3:30 PM ET, which matches your Notion note (3:30 ET / 2:30 CT), so the time is right and only the label is off. If it had really been 2:30 ET it would be 1:30 PM CT, which would clear the Krane conflict. Confirm against the Webex invite.
-(c) Duplicates: none found today.
+(a) Overlaps: none.
+(b) Timezone: all timed events are America/Chicago. Nothing looks mis-stored.
+(c) Duplicates: none.
 
 <b>Tasks</b>
-• <b>Point72 pitch: FREEZE today</b>, submit early tomorrow (Fri Oct 2)
-• Tomorrow: MATH 1331 HW9 due; Citation Dismissal deadline; BLK stipend gift card check (Codie said "this week")
+• Submit Point72 pitch (short SPOT, w/ Prof. Ijeh), early
+• Send RBC thank-you to Alex Anastakis (interview was yesterday, alex.anastakis@rbccm.com)
+• Gift card: if Codie's hasn't arrived by tonight, follow up
 • SEO early-insight apps were due 9/30 — confirm you submitted from Denise Larkin's list
 • Blackstone LaunchPad: register for the virtual info session
-• Send thank-you to Niki Ahlstrand (PEAK6); set up coffee chat with Trevaughn Wright-Reynolds
-• Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11)
 • Victory Bank: send Brett times (after 4 PM, cc Chad Hill); confirm hours + pay
-• Eric Walker (Evercore): follow up on the Capital Markets intro
-• ArcLight: waiting on update after 2nd round (ask about pay + housing)
+• Niki Ahlstrand (PEAK6): send thank-you; set up coffee chat with Trevaughn Wright-Reynolds
+• Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11)
+• Eric Walker (Evercore): follow up on the Capital Markets intro, aim to meet on the NYC trek
+• Cindy Blackstone: outreach drafted but never sent. Send it.
+• Waiting: ArcLight update after 2nd round (ask about pay + housing)
 
 <b>Study &amp; Prep</b>
-• <b>RBC interview at 2:30 PM CT</b> — morning: walk me through resume / tell me about yourself, why capital markets, RBC Risk Solutions (FX &amp; rates derivatives sales for sponsors), questions for Alex. Test Webex + laptop 15 min early.
-• Point72 short-SPOT final read-through before freeze
-• Valuation Intro tonight — bring pitch questions
-• Phase 2 Capital Markets: ECM and DCM fundamentals; S&amp;T practice block
-• Jane Street probability puzzles (decisions by Nov 9)
+• Tonight's market check-in (7 PM)
+• Phase 2 Capital Markets (Sep–Oct): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
+• Jane Street probability puzzles (decisions Nov 9)
 • Bank of America: watch for HireVue invite (Oct)
+• Citadel Securities: prep online assessment, watch for app opening
+• PGIM: do the Forage credit simulation (don't withdraw)
+• Oct 7–9 Houston industry trip: start packing and prep
 
 <b>Closing windows</b>
-• Oct 2 — Point72 submission
-• Oct 9 — Blackstone FLP deadline (review begins after)
+• Today — Point72 submission, citation dismissal (5:30 PM), HW9 (11:59 PM)
+• Oct 9 — Blackstone FLP deadline
+• Oct 18 — Stock Pitch prelims due
 • Nov 9 — Jane Street decisions; Nov 15 — Evercore review
+• November — Lazard Summer Analyst apps open
 
 <b>Longer-Term</b>
-• North star: financial independence — early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
+• North star: financial independence. Early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
 • Credential track: Wall Street Prep FSM + DCF (finish before December); Career.edYOU Academy (JPMorgan, in progress)
-• Semester arc: Oct 1 RBC interview → Oct 2 Point72 submit → Oct 7–9 Houston industry trip → Oct 9 Blackstone FLP deadline → Oct 18 stock pitch prelims → Oct 26–29 WSC NYC trek → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street decisions → Nov 15 Evercore review; TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
+• Semester arc: Oct 2 Point72 submit → Oct 7–9 Houston trip → Oct 9 Blackstone FLP → Oct 18 pitch prelims → Oct 26–29 WSC NYC trek (needs class attendance) → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore. TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
