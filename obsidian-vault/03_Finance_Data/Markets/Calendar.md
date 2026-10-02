@@ -7,14 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-02 00:45 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-02 17:12 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-02 08:30 ET | High | Macro | **Average Hourly Earnings m/m** — High impact; forecast 0.3%, prev 0.3% |
-| 2026-10-02 08:30 ET | High | Macro | **Non-Farm Employment Change** — High impact; forecast 89K, prev 162K |
-| 2026-10-02 08:30 ET | High | Macro | **Unemployment Rate** — High impact; forecast 4.1%, prev 4.1% |
-| 2026-10-02 10:00 ET | Low | Fed | **FOMC Member Logan Speaks** — Low impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72156 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-10-29 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98236 |
@@ -39,7 +35,6 @@ _Updated 2026-10-02 00:45 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-02 10:00** — FOMC Member Logan Speaks
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-01-27 14:00** — FOMC rate decision
@@ -50,10 +45,4 @@ _Updated 2026-10-02 00:45 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
-
-### Macro
-
-- **2026-10-02 08:30** — Average Hourly Earnings m/m
-- **2026-10-02 08:30** — Non-Farm Employment Change
-- **2026-10-02 08:30** — Unemployment Rate
 
