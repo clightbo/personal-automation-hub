@@ -1,37 +1,31 @@
-<b>📅 Clark's Day Plan — Fri, Oct 2</b>
+<b>📅 Clark's Day Plan — Sat, Oct 3</b>
 
 <b>Today's Schedule</b> (CT)
-3:00–3:15 AM — Bedtime <i>(already passed; 3 AM bedtime, confirm intended)</i>
-10:30–10:45 AM — Wake up
-12:00–3:00 PM — Work
-7:00–7:20 PM — Market Check-in (S&amp;T/Cap Mkts Prep): Fed funds, 2yr, 10yr + one headline
-All-day deadlines:
-• <b>Point72 stock pitch: submit early today</b>
-• <b>5:30 PM — Citation Dismissal (Tickets to Tail Wags)</b>, SUB Suite 005. Last day. Work starts 12:00, so go before 12 or right after 3:00 PM.
-• <b>11:59 PM — MATH 1331 HW9 (SC Deriv)</b>
-• Check BLK Wall Street Club clothing stipend gift card (Codie said "this week", today is the last day)
+7:00–7:45 PM — Flashcard Review (S&amp;T/Cap Mkts Prep): active recall of this week, no notes
+All-day (spans Sep 1–Oct 31): Phase 2 Capital Markets Deep Dive (Interview Prep)
 
 <b>Calendar check:</b>
-(a) Overlaps: none.
-(b) Timezone: all timed events are America/Chicago. Nothing looks mis-stored.
+(a) Overlaps: none. The all-day Phase 2 block is marked free and doesn't conflict.
+(b) Timezone: the only timed event is America/Chicago. Nothing looks mis-stored.
 (c) Duplicates: none.
+Light day: nothing else is scheduled, so there is room for catch-up.
 
 <b>Tasks</b>
-• Submit Point72 pitch (short SPOT, w/ Prof. Ijeh), early
-• Send RBC thank-you to Alex Anastakis (interview was yesterday, alex.anastakis@rbccm.com)
-• Gift card: if Codie's hasn't arrived by tonight, follow up
-• SEO early-insight apps were due 9/30 — confirm you submitted from Denise Larkin's list
+• Confirm the Oct 2 items actually got done (the calendar shows no record): Point72 pitch submitted, citation dismissal (Oct 2, 5:30 PM, last day), MATH 1331 HW9, BLK gift card
+• Send RBC thank-you to Alex Anastakis (interview was Oct 1; alex.anastakis@rbccm.com). Do it today if not sent.
 • Blackstone LaunchPad: register for the virtual info session
 • Victory Bank: send Brett times (after 4 PM, cc Chad Hill); confirm hours + pay
-• Niki Ahlstrand (PEAK6): send thank-you; set up coffee chat with Trevaughn Wright-Reynolds
+• Niki Ahlstrand (PEAK6): send thank-you, then set up coffee chat with Trevaughn Wright-Reynolds
 • Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11)
-• Eric Walker (Evercore): follow up on the Capital Markets intro, aim to meet on the NYC trek
-• Cindy Blackstone: outreach drafted but never sent. Send it.
+• Eric Walker (Evercore): Capital Markets intro. Aim to meet on the NYC trek.
+• Cindy Blackstone: outreach drafted, never sent. Send it.
+• Dormant, worth reactivating: Clint Huff (TTU Endowment, silent since Jul 7)
+• Reconnect with Diego Alessio (Deutsche Bank), mention Favian
 • Waiting: ArcLight update after 2nd round (ask about pay + housing)
 
 <b>Study &amp; Prep</b>
-• Tonight's market check-in (7 PM)
-• Phase 2 Capital Markets (Sep–Oct): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
+• 7 PM flashcards (above)
+• Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
 • Jane Street probability puzzles (decisions Nov 9)
 • Bank of America: watch for HireVue invite (Oct)
 • Citadel Securities: prep online assessment, watch for app opening
@@ -39,8 +33,7 @@ All-day deadlines:
 • Oct 7–9 Houston industry trip: start packing and prep
 
 <b>Closing windows</b>
-• Today — Point72 submission, citation dismissal (5:30 PM), HW9 (11:59 PM)
-• Oct 9 — Blackstone FLP deadline
+• Oct 9 — Blackstone FLP deadline (Oct 7–9 is also the Houston trip, so finish early)
 • Oct 18 — Stock Pitch prelims due
 • Nov 9 — Jane Street decisions; Nov 15 — Evercore review
 • November — Lazard Summer Analyst apps open
@@ -48,4 +41,6 @@ All-day deadlines:
 <b>Longer-Term</b>
 • North star: financial independence. Early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
 • Credential track: Wall Street Prep FSM + DCF (finish before December); Career.edYOU Academy (JPMorgan, in progress)
-• Semester arc: Oct 2 Point72 submit → Oct 7–9 Houston trip → Oct 9 Blackstone FLP → Oct 18 pitch prelims → Oct 26–29 WSC NYC trek (needs class attendance) → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore. TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
+• Semester arc: Oct 7–9 Houston trip → Oct 9 Blackstone FLP → Oct 18 pitch prelims → Oct 26–29 WSC NYC trek (needs class attendance) → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore. TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
+
+<i>Note: Notion was last edited Sep 25, so tracker items may be stale.</i>
