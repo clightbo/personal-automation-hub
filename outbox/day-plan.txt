@@ -1,33 +1,41 @@
-<b>📅 Clark's Day Plan — Sun, Oct 4</b>
+<b>📅 Clark's Day Plan — Mon, Oct 5</b>
 
 <b>Today's Schedule</b> (CT)
-All-day — <b>DEADLINE: IMA Stock Pitch sign-up closes today</b> (see Tasks)
-11:00–11:15 AM — Wake up
-11:00 PM–12:00 AM — Workout
-All-day (spans Sep 1–Oct 31): Phase 2 Capital Markets Deep Dive (Interview Prep)
+All-day — <b>ACCT 2301 Ch 7 Dynamic Study Module + Ch 7 Homework Exercises, both due 11:59 PM</b>
+9:30–10:00 AM — Capital One Recruiting Office Hours (IBIP), optional drop-in, Zoom 91310598409 / passcode 179456
+10:30–10:45 AM — Wake up
+12:00–2:00 PM — BRIC Engagement (Atrium)
+12:00–3:00 PM — Work
+5:15–6:45 PM — ACCT 2301 SI Session 1, Ch 8 (RCOBA 003)
+6:00–8:00 PM — RCG Meeting (Rawls BA 019)
+Also: Phase 2 Capital Markets Deep Dive (all-day, Sep 1–Oct 31, marked free)
 
-<b>Calendar check:</b>
-(a) Overlaps: none. The all-day Phase 2 block is marked free.
-(b) Timezone: every timed event is America/Chicago. Nothing looks mis-stored.
-(c) Duplicates: none.
-Open day: nothing is booked between 11:15 AM and 11 PM, so there is room for focused work.
+<b>Calendar check</b>
+(a) <b>Overlaps:</b>
+• <b>BRIC Engagement (12–2) overlaps Work (12–3).</b> Full 2 hrs. Confirm with Whitnie Hill, who runs both. Likely BRIC takes priority and you work 2–3 PM, or shift your shift.
+• <b>SI Session (5:15–6:45) overlaps RCG Meeting (6–8).</b> 45 min. Plan: attend SI until about 5:55, then walk to BA 019, or skip SI. SI Session 2 is Wed 10/7, 5:15–6:45 in RCOBA 003, but you are in Houston Oct 7–9.
+• <b>Soft conflict:</b> Capital One office hours at 9:30 AM falls before your 10:30 AM wake-up. Either wake early or skip. It is optional.
+(b) <b>Timezone:</b> every timed event is stored as America/Chicago. Capital One's "10:30 AM ET" correctly equals 9:30 AM CT. The all-day ACCT items are stored as UTC dates, but they land on Oct 5, so there is no problem.
+(c) <b>Duplicates:</b> none. The two ACCT items have different titles and are separate assignments.
 
 <b>Tasks</b>
-• <b>TODAY:</b> IMA Stock Pitch sign-up closes. Add yourself to the "2026 Stock Pitch Deposition Signup List" (team or solo; IMA assigns solo signups). Per Whitnie Hill's 9/29 email.
-• Stock Pitch first submission (4-page PDF) is due Oct 18 midnight.
-• Houston industry trip is Oct 7–9 (3 days out): pack, prep talking points, and clear Oct 7–9 coursework first.
-• Blackstone FLP deadline Oct 9 overlaps the trip, so finish it before you leave.
-• Blackstone LaunchPad: register for the virtual info session (email 9/24).
+• <b>TODAY 11:59 PM:</b> ACCT 2301 Ch 7 Dynamic Study Module and Ch 7 Homework Exercises. Do these in the gap before the 5:15 PM SI session, since the day is booked after noon.
+• Houston industry trip Oct 7–9 (2 days out): pack, prep talking points, and clear Oct 7–9 coursework first.
+• <b>Blackstone FLP deadline Oct 9</b> overlaps the trip, so submit before you leave. Also register for the LaunchPad virtual info session.
+• Stock Pitch first submission (4-page PDF) due Oct 18.
+• Confirm the IMA Stock Pitch "Deposition" sign-up (deadline was Oct 4).
 • Send RBC thank-you to Alex Anastakis (alex.anastakis@rbccm.com) if the Oct 1 interview one is still unsent.
 • Niki Ahlstrand (PEAK6): send thank-you, then set up a coffee chat with Trevaughn Wright-Reynolds.
 • Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11).
 • Diego Alessio (Deutsche Bank): reconnect, mention Favian, ask about the Tech-to-NYC path.
-• Eric Walker (Evercore): Capital Markets intro. Aim to meet on the NYC trek.
-• Victory Bank: send Brett times (after 4 PM, cc Chad Hill).
+• Eric Walker (Evercore): Capital Markets intro. Aim to meet on the Oct 26–29 NYC trek.
+• Victory Bank: send Brett times (after 4 PM, cc Chad Hill), confirm hours and pay.
 • Doug Carriger (Citadel, Houston): reach out. It may fit around the Houston trip.
+• Cindy Blackstone (Dallas internships): outreach drafted but never sent. Send it.
 • Waiting on others: ArcLight update, RBC next round, Point72 result.
 
 <b>Study &amp; Prep</b>
+• ACCT 2301: finish Ch 7 tonight, then Ch 8 at SI
 • Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
 • Jane Street probability puzzles (decisions Nov 9)
 • Bank of America: watch for HireVue invite (Oct)
@@ -36,15 +44,14 @@ Open day: nothing is booked between 11:15 AM and 11 PM, so there is room for foc
 • Walk-me-through-your-resume and tell-me-about-yourself drills
 
 <b>Closing windows</b>
-• Oct 4 — Stock Pitch sign-up (today)
+• Oct 5 — ACCT 2301 Ch 7 (11:59 PM)
 • Oct 9 — Blackstone FLP
-• Oct 18 — Stock Pitch prelims due (finalists Oct 27, deposition Oct 30, finals Nov 12)
-• Nov 9 — Jane Street decisions; Nov 15 — Evercore review
-• November — Lazard Summer Analyst apps open
+• Oct 18 — Stock Pitch prelims (finalists Oct 27, deposition Oct 30, finals Nov 12)
+• Nov 9 — Jane Street; Nov 15 — Evercore review; November — Lazard apps open
 
 <b>Longer-Term</b>
 • North star: financial independence. Early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
 • Credential track: Wall Street Prep FSM + DCF (finish before December); Career.edYOU Academy (JPMorgan, in progress)
 • Semester arc: Oct 7–9 Houston trip → Oct 9 Blackstone FLP → Oct 18 pitch prelims → Oct 26–29 WSC NYC trek (needs class attendance) → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore. TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
 
-<i>Note: Notion was last edited Sep 25, so tracker items may be stale. I could not confirm whether the Oct 1–2 items (RBC interview, Point72 submission) were completed.</i>
+<i>Note: Notion was last edited Sep 25, so tracker items may be stale. I could not confirm the outcomes of the Oct 1–2 items (RBC interview, Point72 submission).</i>
