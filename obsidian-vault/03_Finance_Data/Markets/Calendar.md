@@ -7,12 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-06 01:45 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-06 17:42 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-06 10:45 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
-| 2026-10-06 13:15 ET | Low | Fed | **FOMC Member Schmid Speaks** — Low impact |
 | 2026-10-07 14:00 ET | High | Fed | **FOMC Meeting Minutes** — High impact |
 | 2026-10-08 04:30 ET | Medium | Fed | **FOMC Member Waller Speaks** — Medium impact |
 | 2026-10-08 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 200K, prev 197K |
@@ -44,8 +42,6 @@ _Updated 2026-10-06 01:45 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-06 10:45** — FOMC Member Bowman Speaks
-- **2026-10-06 13:15** — FOMC Member Schmid Speaks
 - **2026-10-07 14:00** — FOMC Meeting Minutes
 - **2026-10-08 04:30** — FOMC Member Waller Speaks
 - **2026-10-08 13:40** — FOMC Member Musalem Speaks
