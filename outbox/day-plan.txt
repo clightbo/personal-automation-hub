@@ -1,50 +1,48 @@
-<b>📅 Clark's Day Plan — Mon, Oct 5</b>
+<b>📅 Clark's Day Plan — Tue, Oct 6</b>
 
 <b>Today's Schedule</b> (CT)
-All-day — <b>ACCT 2301 Ch 7 Dynamic Study Module + Ch 7 Homework Exercises, both due 11:59 PM</b>
-9:30–10:00 AM — Capital One Recruiting Office Hours (IBIP), optional drop-in, Zoom 91310598409 / passcode 179456
-10:30–10:45 AM — Wake up
-12:00–2:00 PM — BRIC Engagement (Atrium)
-12:00–3:00 PM — Work
-5:15–6:45 PM — ACCT 2301 SI Session 1, Ch 8 (RCOBA 003)
-6:00–8:00 PM — RCG Meeting (Rawls BA 019)
+All-day — <b>Due 11:59 PM: MATH 1331 HW10 (Marginal), MATH 1331 HW11 (PRQR), ISQS 2340 Module 4 (Data Visualization: videos, Post-Video Quiz 4, Practice Assignment 3, Assessment 4)</b>
+12:00–12:15 AM — Bedtime
+7:15–7:30 AM — Wake up
+9:30 AM–1:00 PM — Work
+5:00–5:30 PM — IMA Officer Monthly Update Meeting (SMIF Room), RSVP still "needs action"
+11:00 PM–12:00 AM — Workout
 Also: Phase 2 Capital Markets Deep Dive (all-day, Sep 1–Oct 31, marked free)
 
 <b>Calendar check</b>
-(a) <b>Overlaps:</b>
-• <b>BRIC Engagement (12–2) overlaps Work (12–3).</b> Full 2 hrs. Confirm with Whitnie Hill, who runs both. Likely BRIC takes priority and you work 2–3 PM, or shift your shift.
-• <b>SI Session (5:15–6:45) overlaps RCG Meeting (6–8).</b> 45 min. Plan: attend SI until about 5:55, then walk to BA 019, or skip SI. SI Session 2 is Wed 10/7, 5:15–6:45 in RCOBA 003, but you are in Houston Oct 7–9.
-• <b>Soft conflict:</b> Capital One office hours at 9:30 AM falls before your 10:30 AM wake-up. Either wake early or skip. It is optional.
-(b) <b>Timezone:</b> every timed event is stored as America/Chicago. Capital One's "10:30 AM ET" correctly equals 9:30 AM CT. The all-day ACCT items are stored as UTC dates, but they land on Oct 5, so there is no problem.
-(c) <b>Duplicates:</b> none. The two ACCT items have different titles and are separate assignments.
+(a) <b>Overlaps:</b> none. Timed events are back to back at most (Workout ends at midnight, Bedtime follows).
+(b) <b>Timezone:</b> every timed event is stored as America/Chicago. The all-day items are stored as UTC dates but land on Oct 6, so no problem.
+(c) <b>Duplicates:</b> none. HW10, HW11 and ISQS Module 4 are separate assignments.
+<i>Heads-up: the day is open from 1 PM to 5 PM and after 5:30 PM, and three items are due at 11:59 PM. Use those blocks for the work.</i>
 
 <b>Tasks</b>
-• <b>TODAY 11:59 PM:</b> ACCT 2301 Ch 7 Dynamic Study Module and Ch 7 Homework Exercises. Do these in the gap before the 5:15 PM SI session, since the day is booked after noon.
-• Houston industry trip Oct 7–9 (2 days out): pack, prep talking points, and clear Oct 7–9 coursework first.
-• <b>Blackstone FLP deadline Oct 9</b> overlaps the trip, so submit before you leave. Also register for the LaunchPad virtual info session.
-• Stock Pitch first submission (4-page PDF) due Oct 18.
-• Confirm the IMA Stock Pitch "Deposition" sign-up (deadline was Oct 4).
-• Send RBC thank-you to Alex Anastakis (alex.anastakis@rbccm.com) if the Oct 1 interview one is still unsent.
+• <b>TONIGHT 11:59 PM:</b> MATH 1331 HW10 and HW11, ISQS 2340 Module 4. Do ISQS (4 parts) in the 1–5 PM window, MATH after the 5:30 meeting. Move the 11 PM workout if you're still working.
+• <b>Tomorrow Oct 7–9: Houston industry trip.</b> Pack tonight and clear Oct 7–9 coursework first.
+• <b>Blackstone FLP deadline Oct 9</b> falls on the trip. Submit before you leave. Also register for the LaunchPad virtual info session (email 9/24).
+• Respond to the IMA Officer Meeting invite.
+• Stock Pitch prelim submission (4-page PDF) due Oct 18.
+• Send the RBC thank-you to Alex Anastakis (alex.anastakis@rbccm.com) if the Oct 1 interview one is unsent.
 • Niki Ahlstrand (PEAK6): send thank-you, then set up a coffee chat with Trevaughn Wright-Reynolds.
 • Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11).
 • Diego Alessio (Deutsche Bank): reconnect, mention Favian, ask about the Tech-to-NYC path.
 • Eric Walker (Evercore): Capital Markets intro. Aim to meet on the Oct 26–29 NYC trek.
-• Victory Bank: send Brett times (after 4 PM, cc Chad Hill), confirm hours and pay.
 • Doug Carriger (Citadel, Houston): reach out. It may fit around the Houston trip.
+• Victory Bank: send Brett times (after 4 PM, cc Chad Hill), confirm hours and pay.
 • Cindy Blackstone (Dallas internships): outreach drafted but never sent. Send it.
-• Waiting on others: ArcLight update, RBC next round, Point72 result.
+• Clint Huff (TTU Endowment): dormant since July. Reactivate.
+• Waiting on others: ArcLight update (Dave Nica), RBC next round, Point72 result.
 
 <b>Study &amp; Prep</b>
-• ACCT 2301: finish Ch 7 tonight, then Ch 8 at SI
+• Today: ISQS 2340 Module 4 and MATH 1331 HW10/HW11
 • Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
+• Houston trip prep: talking points, walk-me-through-your-resume and tell-me-about-yourself drills
 • Jane Street probability puzzles (decisions Nov 9)
 • Bank of America: watch for HireVue invite (Oct)
 • Citadel Securities: prep online assessment, watch for app opening
 • PGIM: do the Forage credit simulation (don't withdraw)
-• Walk-me-through-your-resume and tell-me-about-yourself drills
 
 <b>Closing windows</b>
-• Oct 5 — ACCT 2301 Ch 7 (11:59 PM)
+• Oct 6 — MATH 1331 HW10/HW11, ISQS Module 4 (11:59 PM)
 • Oct 9 — Blackstone FLP
 • Oct 18 — Stock Pitch prelims (finalists Oct 27, deposition Oct 30, finals Nov 12)
 • Nov 9 — Jane Street; Nov 15 — Evercore review; November — Lazard apps open
