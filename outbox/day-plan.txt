@@ -1,55 +1,49 @@
-<b>📅 Clark's Day Plan — Tue, Oct 6</b>
+<b>📅 Clark's Day Plan — Wed, Oct 7</b>
 
 <b>Today's Schedule</b> (CT)
-All-day — <b>Due 11:59 PM: MATH 1331 HW10 (Marginal), MATH 1331 HW11 (PRQR), ISQS 2340 Module 4 (Data Visualization: videos, Post-Video Quiz 4, Practice Assignment 3, Assessment 4)</b>
-12:00–12:15 AM — Bedtime
-7:15–7:30 AM — Wake up
-9:30 AM–1:00 PM — Work
-5:00–5:30 PM — IMA Officer Monthly Update Meeting (SMIF Room), RSVP still "needs action"
-11:00 PM–12:00 AM — Workout
-Also: Phase 2 Capital Markets Deep Dive (all-day, Sep 1–Oct 31, marked free)
+All day (Oct 7–9) — <b>IMA/RCG Industry Trip, Houston</b>
+3:00–3:15 AM — Bedtime
+10:30–10:45 AM — Wake up
+12:00–3:00 PM — Work
+4:00–5:00 PM — Career.edYOU Academy Course 202, Session 2 of 5 (Zoom 976 5224 1018)
+4:00–6:00 PM — Project Destined Bond Fundamentals Workshop, Session 1 (Zoom, link via Project Destined invite)
+4:30–5:15 PM — SEO FICT Interview Prep (Zoom)
+5:15–6:45 PM — ACCT 2301 SI Session 1, Ch 1-2 (RCOBA 003, in person)
+7:00–8:00 PM — Study: New Concept #2 (S&amp;T/Cap Mkts)
+7:00–8:30 PM — Wall Street Club Class #6 (Teams)
+Also: Phase 2 Capital Markets Deep Dive (all-day, Sep 1–Oct 31)
 
 <b>Calendar check</b>
-(a) <b>Overlaps:</b> none. Timed events are back to back at most (Workout ends at midnight, Bedtime follows).
-(b) <b>Timezone:</b> every timed event is stored as America/Chicago. The all-day items are stored as UTC dates but land on Oct 6, so no problem.
-(c) <b>Duplicates:</b> none. HW10, HW11 and ISQS Module 4 are separate assignments.
-<i>Heads-up: the day is open from 1 PM to 5 PM and after 5:30 PM, and three items are due at 11:59 PM. Use those blocks for the work.</i>
+(a) <b>Overlaps:</b>
+• 4:00–5:00 Career.edYOU = Project Destined (full overlap)
+• 4:30–5:15 SEO prep overlaps both
+• 5:15–6:00 ACCT SI overlaps Project Destined
+• 7:00–8:00 Study overlaps Wall Street Club
+• Houston trip vs Work (12–3) and ACCT SI (RCOBA 003 is on campus). You can't be at both.
+(b) <b>Timezone:</b> Career.edYOU is labeled UTC. Its offset is -05:00, so the real instant is 4:00–5:00 PM CT. Read as UTC wall-clock it would be 11 AM–12 PM CT, so 4 PM CT is almost surely intended (the SEO event's notes say "4:00 PM CT"). Fix the label to America/Chicago. Wall Street Club is labeled America/New_York: the instant is 7:00–8:30 PM CT = 8:00–9:30 PM ET. If class is really 7 PM ET, it's 6 PM CT and hits ACCT SI too. Check the Teams invite.
+(c) <b>Duplicates:</b> none.
 
 <b>Tasks</b>
-• <b>TONIGHT 11:59 PM:</b> MATH 1331 HW10 and HW11, ISQS 2340 Module 4. Do ISQS (4 parts) in the 1–5 PM window, MATH after the 5:30 meeting. Move the 11 PM workout if you're still working.
-• <b>Tomorrow Oct 7–9: Houston industry trip.</b> Pack tonight and clear Oct 7–9 coursework first.
-• <b>Blackstone FLP deadline Oct 9</b> falls on the trip. Submit before you leave. Also register for the LaunchPad virtual info session (email 9/24).
-• Respond to the IMA Officer Meeting invite.
-• Stock Pitch prelim submission (4-page PDF) due Oct 18.
-• Send the RBC thank-you to Alex Anastakis (alex.anastakis@rbccm.com) if the Oct 1 interview one is unsent.
-• Niki Ahlstrand (PEAK6): send thank-you, then set up a coffee chat with Trevaughn Wright-Reynolds.
-• Nudge Cassie James (Goldman, no reply since Sep 6) and Eli Jacobs (no reply since Sep 11).
-• Diego Alessio (Deutsche Bank): reconnect, mention Favian, ask about the Tech-to-NYC path.
-• Eric Walker (Evercore): Capital Markets intro. Aim to meet on the Oct 26–29 NYC trek.
-• Doug Carriger (Citadel, Houston): reach out. It may fit around the Houston trip.
+• <b>Pick one 4–6 PM session.</b> Career.edYOU (JPMorgan program, 1 of 5) vs Project Destined (workshop 1 of 3) vs SEO prep (45 min). Suggestion: SEO prep 4:30–5:15 is the only one-off, so decide whether the other two can be caught by recording.
+• Project Destined contract was due yesterday 5 PM ET. Confirm your spot, no Zoom link yet.
+• Drop or skip ACCT SI (you're in Houston). Cancel Work 12–3 PM or swap the shift (manager Whitnie Hill) if you're traveling.
+• <b>Blackstone FLP deadline Fri Oct 9</b>, during the trip. Confirm submitted. Register for the LaunchPad info session (email 9/24).
+• Stock Pitch prelim (4-page PDF) due Oct 18.
+• Unconfirmed from Notion: RBC 1st round (Oct 1) result and thank-you to Alex Anastakis; Point72 submission (Oct 2).
+• Networking: Niki Ahlstrand (PEAK6) thank-you, then coffee chat with Trevaughn; nudge Cassie James (Goldman, silent since Sep 6) and Eli Jacobs (since Sep 11); Diego Alessio (DB) reconnect, mention Favian; Eric Walker (Evercore) Cap Mkts intro, meet on NYC trek; Doug Carriger (Citadel, Houston) reach out, ideal while you're there.
 • Victory Bank: send Brett times (after 4 PM, cc Chad Hill), confirm hours and pay.
-• Cindy Blackstone (Dallas internships): outreach drafted but never sent. Send it.
-• Clint Huff (TTU Endowment): dormant since July. Reactivate.
-• Waiting on others: ArcLight update (Dave Nica), RBC next round, Point72 result.
+• Waiting on: ArcLight (Dave Nica), RBC next round, Point72, JPM AHL, Susquehanna, AmEx.
 
 <b>Study &amp; Prep</b>
-• Today: ISQS 2340 Module 4 and MATH 1331 HW10/HW11
-• Phase 2 Capital Markets: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
-• Houston trip prep: talking points, walk-me-through-your-resume and tell-me-about-yourself drills
+• 7 PM block: New Concept #2 (S&amp;T/Cap Mkts Prep)
+• Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage)
+• Houston: walk-me-through-resume and tell-me-about-yourself drills
 • Jane Street probability puzzles (decisions Nov 9)
-• Bank of America: watch for HireVue invite (Oct)
-• Citadel Securities: prep online assessment, watch for app opening
-• PGIM: do the Forage credit simulation (don't withdraw)
-
-<b>Closing windows</b>
-• Oct 6 — MATH 1331 HW10/HW11, ISQS Module 4 (11:59 PM)
-• Oct 9 — Blackstone FLP
-• Oct 18 — Stock Pitch prelims (finalists Oct 27, deposition Oct 30, finals Nov 12)
-• Nov 9 — Jane Street; Nov 15 — Evercore review; November — Lazard apps open
+• BofA HireVue (watch for October invite); Citadel Securities OA prep; PGIM Forage credit sim (don't withdraw)
 
 <b>Longer-Term</b>
-• North star: financial independence. Early-career finance income buys freedom, not a locked-in 10–20yr IB/PE track
-• Credential track: Wall Street Prep FSM + DCF (finish before December); Career.edYOU Academy (JPMorgan, in progress)
-• Semester arc: Oct 7–9 Houston trip → Oct 9 Blackstone FLP → Oct 18 pitch prelims → Oct 26–29 WSC NYC trek (needs class attendance) → Nov 2 RBC NYC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore. TAMU Mays transfer app due Dec 2026 (fall prereqs, transcripts)
+• North star: financial independence. Use early-career finance income for freedom, not a locked-in 10–20 yr track.
+• Credential track: Wall Street Prep FSM + DCF before December; Career.edYOU Academy (JPMorgan) in progress; Bond Fundamentals workshop Oct 7/14/21.
+• Semester arc: Oct 7–9 Houston → Oct 9 Blackstone FLP → Oct 18 pitch prelims (finalists Oct 27, finals Nov 12) → Oct 26–29 WSC NYC trek → Nov 2 RBC kickoff (if selected) → Nov 9 Jane Street → Nov 15 Evercore; Lazard opens Nov; TAMU Mays transfer app due Dec.
 
-<i>Note: Notion was last edited Sep 25, so tracker items may be stale. I could not confirm the outcomes of the Oct 1–2 items (RBC interview, Point72 submission).</i>
+<i>Note: Notion tracker was last edited Sep 25, so statuses may be stale.</i>
