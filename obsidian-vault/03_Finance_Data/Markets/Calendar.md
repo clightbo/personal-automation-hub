@@ -7,13 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-08 00:57 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-08 18:16 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-08 04:30 ET | Medium | Fed | **FOMC Member Waller Speaks** — Medium impact |
-| 2026-10-08 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 200K, prev 197K |
-| 2026-10-08 13:40 ET | Low | Fed | **FOMC Member Musalem Speaks** — Low impact |
 | 2026-10-09 10:00 ET | Medium | Macro | **Prelim UoM Consumer Sentiment** — Medium impact; forecast 47.5, prev 47.8 |
 | 2026-10-09 10:00 ET | Medium | Macro | **Prelim UoM Inflation Expectations** — Medium impact |
 | 2026-10-09 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
@@ -41,8 +38,6 @@ _Updated 2026-10-08 00:57 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-08 04:30** — FOMC Member Waller Speaks
-- **2026-10-08 13:40** — FOMC Member Musalem Speaks
 - **2026-10-09 16:00** — FOMC Member Collins Speaks
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
@@ -57,7 +52,6 @@ _Updated 2026-10-08 00:57 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-10-08 08:30** — Unemployment Claims
 - **2026-10-09 10:00** — Prelim UoM Consumer Sentiment
 - **2026-10-09 10:00** — Prelim UoM Inflation Expectations
 
