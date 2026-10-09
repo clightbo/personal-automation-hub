@@ -1,39 +1,39 @@
-<b>📅 Clark's Day Plan — Thu, Oct 8</b>
+<b>📅 Clark's Day Plan — Fri, Oct 9</b>
 
 <b>Today's Schedule</b> (CT)
-All day (Oct 7–9) — <b>IMA/RCG Industry Trip, Houston</b>
+All day — <b>IMA/RCG Industry Trip, Houston</b> (last day, Oct 7–9)
+All day — <b>MATH 1331: HW12 due 11:59 PM</b>
 All day (Sep 1–Oct 31) — Phase 2: Capital Markets Deep Dive
-12:00–12:15 AM — Bedtime
-7:15–7:30 AM — Wake up
-9:30 AM–1:00 PM — Work
-12:30–1:00 PM — Capital One Recruiting Office Hours (IBIP), optional drop-in, Zoom 91310598409, passcode 179456
-5:30–7:30 PM — TechConnect Officer Mixer (SUB Matador Room, Lubbock)
-7:00–7:45 PM — Practice + Review (S&amp;T/Cap Mkts Prep)
-11:00 PM–12:00 AM — Workout
+3:00–3:15 AM — Bedtime
+10:30–10:45 AM — Wake up
+11:00–11:45 AM — <b>Moelis Discovery Series: Capital Markets Overview</b> (Zoom, link from host)
+12:00–3:00 PM — Work
+7:00–7:20 PM — Market Check-in (S&amp;T/Cap Mkts Prep)
 
 <b>Calendar check</b>
 (a) <b>Overlaps:</b>
-• 12:30–1:00 PM Work overlaps Capital One office hours. The Capital One session is an optional drop-in, so join from your break or skip it.
-• 7:00–7:30 PM Practice + Review overlaps the Mixer (it runs 5:30–7:30, come-and-go). Suggest leaving the mixer at ~6:45 or starting practice at 7:30.
-• Houston trip (through Oct 9) vs Work and the Lubbock mixer. If you are really in Houston, both are impossible. The trip event's note says "check against fall syllabus", so confirm whether you are traveling today and cancel or swap whatever doesn't fit (Work manager: Whitnie Hill).
-(b) <b>Timezone:</b> every timed event is stored as America/Chicago. The Capital One note says 1:30 PM ET, which equals 12:30 PM CT and matches the calendar. Nothing looks wrong.
+• None between timed events. Moelis ends 11:45 AM and Work starts at 12:00 PM, so leave the Zoom promptly.
+• Soft conflict: the Houston trip (through today) vs Work. If you are still in Houston, you can't be at your shift. Confirm whether you're back, or tell Whitnie Hill.
+(b) <b>Timezone:</b> every timed event is stored as America/Chicago. The Moelis note says 12:00–12:45 PM ET, which equals 11:00–11:45 AM CT and matches the calendar. Nothing looks wrong.
 (c) <b>Duplicates:</b> none.
 
 <b>Tasks</b>
-• <b>Blackstone FLP deadline is tomorrow, Fri Oct 9.</b> Confirm it is submitted (Pymetrics already done) and register for the LaunchPad info session (email 9/24).
-• Confirm you are registered for the Officer Mixer. Sign-up closed Oct 5.
-• Stock Pitch prelim (4-page PDF) due Oct 18.
-• Unconfirmed in Notion: RBC 1st round (Oct 1) result, Point72 submission (Oct 2), SEO early-insights apps (due 9/30). Update the tracker.
+• <b>Blackstone FLP deadline is TODAY (Oct 9).</b> Pymetrics is done, so confirm the application is fully submitted. Also register for the LaunchPad info session (email 9/24).
+• <b>MATH 1331 HW12 due 11:59 PM.</b>
+• Moelis Zoom link: check your email before 11:00 AM.
+• Stock Pitch prelim submissions due Oct 18.
+• Update the Notion tracker. Unconfirmed there: RBC 1st round (Oct 1) result, Point72 submission (Oct 2), SEO early-insights apps (due 9/30).
 • Victory Bank: send Brett (bmcdowell@victory.bank) times after 4 PM, cc Chad Hill; confirm hours and pay.
-• Networking, warm with an open next step: Niki Ahlstrand (PEAK6) thank-you, then Trevaughn coffee chat; nudge Cassie James (Goldman, silent since Sep 6) and Eli Jacobs (since Sep 11); Diego Alessio (DB) reconnect, mention Favian; Eric Walker (Evercore) Cap Mkts intro, meet on NYC trek; Doug Carriger (Citadel, Houston) reach out, ideal while you're there; Cindy Blackstone outreach is drafted but NOT sent; Clint Huff dormant since July.
+• Networking, open next steps: Niki Ahlstrand (PEAK6) thank-you, then Trevaughn coffee chat; nudge Cassie James (Goldman, silent since Sep 6) and Eli Jacobs (since Sep 11); Diego Alessio (DB) reconnect, mention Favian; Eric Walker (Evercore) Cap Mkts intro, meet on NYC trek; Doug Carriger (Citadel, Houston) reach out, ideal while you're in Houston; Cindy Blackstone outreach is drafted but NOT sent; Clint Huff dormant since July.
 • Waiting on: ArcLight (Dave Nica), RBC next round, JPM AHL, Susquehanna, AmEx, CBRE, Hilltop.
 
 <b>Study &amp; Prep</b>
-• 7:00 PM block: practice problems on concept #2 + review Mon/Tue material
-• Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage)
-• Finance Hub in progress: Wall Street Prep FSM + DCF modules (finish before December), Career.edYOU Academy (JPMorgan)
-• Walk-me-through-resume and tell-me-about-yourself drills
-• Jane Street probability puzzles (decisions Nov 9); BofA HireVue (watch for October invite); Citadel Securities OA prep; PGIM Forage credit sim (don't withdraw)
+• Moelis session at 11:00: take notes for the ECM/DCM prep.
+• Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage).
+• 7:00 PM market check: Fed funds, 2yr, 10yr yields plus one headline.
+• Finance Hub in progress: Wall Street Prep FSM + DCF modules (finish before December), Career.edYOU Academy (JPMorgan).
+• Walk-me-through-resume and tell-me-about-yourself drills.
+• Jane Street probability puzzles (decisions Nov 9); BofA HireVue (watch for October invite); Citadel Securities OA prep; PGIM Forage credit sim (don't withdraw).
 
 <b>Longer-Term</b>
 • North star: financial independence. Use early-career finance income for freedom, not a locked-in 10–20 yr track.
