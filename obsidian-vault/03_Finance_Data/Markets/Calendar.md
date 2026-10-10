@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-09 17:49 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-10 00:47 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-09 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72336 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.9822 |
@@ -36,7 +35,6 @@ _Updated 2026-10-09 17:49 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-09 16:00** — FOMC Member Collins Speaks
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-01-27 14:00** — FOMC rate decision
