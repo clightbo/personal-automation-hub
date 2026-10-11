@@ -1,41 +1,39 @@
-<b>📅 Clark's Day Plan — Sat, Oct 10</b>
+<b>Day Plan - Sun Oct 11, 2026</b>
 
-<b>Today's Schedule</b> (CT)
-All day (Sep 1–Oct 31) — Phase 2: Capital Markets Deep Dive (ECM/DCM)
-7:00–7:45 PM — <b>Flashcard Review (S&amp;T/Cap Mkts Prep)</b>, active recall, no notes
+<b>Today's Schedule</b> (America/Chicago)
+11:00-11:15 AM - Wake up
+4:00-5:30 PM - Raider Reviews w/ Polina (Holden Hall 104)
+10:00-10:59 PM - <b>DEADLINE: Wall Street Club final resume</b> (Roark Capital, due 11:59 PM ET = 10:59 PM CT)
+11:00 PM-12:00 AM - Workout
+All-day block: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
 
 <b>Calendar check</b>
-(a) <b>Overlaps:</b> none. Only one timed event today.
-(b) <b>Timezone:</b> the timed event is stored as America/Chicago. Nothing looks wrong.
-(c) <b>Duplicates:</b> none.
-The day is otherwise open. Nothing else is on the calendar, so no Work shift or Market Check-in today.
+(a) Overlaps: none. 
+(b) Timezone: none suspicious. The resume deadline matches 11:59 PM ET.
+(c) Duplicates: none.
 
 <b>Tasks</b>
-• <b>Blackstone FLP deadline was yesterday (Oct 9).</b> Confirm it was submitted. Still open: register for the LaunchPad info session (email 9/24).
-• Stock Pitch prelim submissions due <b>Oct 18</b> (8 days). Block time this weekend.
-• Update the Notion tracker. Unconfirmed there: RBC 1st-round result (Oct 1), Point72 submission (Oct 2), SEO early-insights apps (due 9/30). Notion was last edited Sep 25, so statuses are stale.
-• Victory Bank: send Brett (bmcdowell@victory.bank) times after 4 PM, cc Chad Hill; confirm hours and pay.
-• Outreach to send:
-  – Niki Ahlstrand (PEAK6) thank-you, then Trevaughn coffee chat
-  – Cindy Blackstone: draft is written but NOT sent
-  – Nudge Cassie James (Goldman, silent since Sep 6) and Eli Jacobs (since Sep 11)
-  – Diego Alessio (DB): reconnect, mention Favian
-  – Eric Walker (Evercore): Cap Mkts intro, meet on the NYC trek
-  – Doug Carriger (Citadel, Houston): reach out
-• Transfer: follow up on TAMU admissions reply (emailed Sep 9); order transcripts (Texas Tech + North Central Texas College).
-• Waiting on: ArcLight (Dave Nica), RBC next round, JPM AHL, Susquehanna, AmEx, CBRE, Hilltop, Atalan.
+- <b>Tonight:</b> submit final WSC resume via the Roark ShareFile link in the event. Incorporate Codie Metzger's edits. Aim to finish before the 11 PM workout.
+- Update resume REIT bullet with the DLR buy thesis
+- Prep for Raider Reviews before 4 PM
+- Follow-ups: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Eli Jacobs (nudge re: WSC fellowship call), Victory Bank (send Brett times after 4 PM, cc Chad)
 
 <b>Study &amp; Prep</b>
-• Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage).
-• 7:00 PM flashcards: recall everything from this week without notes.
-• Wall Street Prep FSM + DCF modules (finish before December); Career.edYOU Academy (JPMorgan) in progress.
-• Walk-me-through-resume and tell-me-about-yourself drills.
-• Jane Street probability puzzles (decisions Nov 9); BofA HireVue (watch for October invite); Citadel Securities OA prep; PGIM Forage credit sim (don't withdraw).
-• Bond Fundamentals workshop Oct 14 and 21.
+- Phase 2 focus: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
+- Wall Street Prep FSM + DCF modules (finish before December)
+- BofA: watch for HireVue invite (Oct)
+- PGIM: Forage credit simulation; Jane Street: probability puzzles (decisions Nov 9)
+- Practice "walk me through your resume"
 
-<b>Longer-Term</b>
-• North star: financial independence. Use early-career finance income for freedom, not a locked-in 10–20 yr track.
-• Credential track: Wall Street Prep FSM + DCF before December; Career.edYOU Academy (JPMorgan) in progress; Bond Fundamentals workshop Oct 14/21.
-• Semester arc: Oct 18 pitch prelims (finalists Oct 27, deposition Oct 30, finals Nov 12) → Oct 26–29 WSC NYC trek → Nov 2 RBC kickoff (if selected) → Nov 5 Finance Alumni Meet &amp; Greet → Nov 9 Jane Street → Nov 15 Evercore; Lazard opens Nov; TAMU Mays transfer app due Dec.
+<b>Recruiting Watch</b>
+- Open and waiting: ArcLight (interview stage), RBC (1st round was Oct 1; NYC kickoff Nov 2 if selected), Evercore (Nov 15), Blackstone FLP (deadline passed Oct 9)
+- Lazard Summer Analyst opens in November
+- Stock pitch prelims due <b>Oct 18</b>
+- WSC NYC Networking Trek Oct 26-29: check against exams, and try to meet Eric Walker (Evercore)
 
 <i>Note: Notion trackers were last edited Sep 25, so statuses may be stale.</i>
+
+<b>Longer-Term</b>
+- North star: financial independence. Break into high finance early, then stay flexible about the long-term path.
+- Credential track: WSP modules, JPM Career.edYOU Academy (in progress), SEO Level Up, WSC fellowship.
+- Semester arc: TAMU Mays BBA transfer app (Fall 2027) due December. Prereqs all A's, order transcripts, Common App. Then stock pitch finals (Nov 12), and Phase 2 interview prep through Oct 31.
