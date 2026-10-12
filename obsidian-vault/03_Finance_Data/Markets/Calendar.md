@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-12 00:30 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-12 20:41 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-12 12:10 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-10-13 03:45 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
 | 2026-10-13 13:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-13 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
@@ -53,7 +52,6 @@ _Updated 2026-10-12 00:30 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-12 12:10** — FOMC Member Hammack Speaks
 - **2026-10-13 03:45** — FOMC Member Waller Speaks
 - **2026-10-13 13:00** — FOMC Member Barkin Speaks
 - **2026-10-13 16:00** — FOMC Member Collins Speaks
