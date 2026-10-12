@@ -7,13 +7,31 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-11 00:13 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-12 00:30 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
+| 2026-10-12 12:10 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
+| 2026-10-13 03:45 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
+| 2026-10-13 13:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
+| 2026-10-13 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
+| 2026-10-14 05:40 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
+| 2026-10-14 08:30 ET | High | Macro | **Core CPI m/m** — High impact; forecast 0.2%, prev 0.3% |
+| 2026-10-14 08:30 ET | High | Macro | **Core CPI y/y** — High impact; forecast 2.5%, prev 2.4% |
+| 2026-10-14 08:30 ET | High | Macro | **CPI m/m** — High impact; forecast 0.6%, prev 0.4% |
+| 2026-10-14 08:30 ET | High | Macro | **CPI y/y** — High impact; forecast 3.6%, prev 3.4% |
+| 2026-10-14 13:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
+| 2026-10-15 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
+| 2026-10-15 08:30 ET | High | Macro | **Core Retail Sales m/m** — High impact; forecast 0.5%, prev 1.4% |
+| 2026-10-15 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.5%, prev 0.4% |
+| 2026-10-15 08:30 ET | High | Macro | **Retail Sales m/m** — High impact; forecast 0.3%, prev 1.2% |
+| 2026-10-15 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 26.5, prev 37.8 |
+| 2026-10-15 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 195K, prev 197K |
+| 2026-10-15 16:30 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
+| 2026-10-15 23:30 ET | High | Fed | **Fed Chairman Warsh Speaks** — High impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72336 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98236 |
+| 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.9822 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.47325 |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-01-27 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
@@ -35,6 +53,15 @@ _Updated 2026-10-11 00:13 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
+- **2026-10-12 12:10** — FOMC Member Hammack Speaks
+- **2026-10-13 03:45** — FOMC Member Waller Speaks
+- **2026-10-13 13:00** — FOMC Member Barkin Speaks
+- **2026-10-13 16:00** — FOMC Member Collins Speaks
+- **2026-10-14 05:40** — FOMC Member Bowman Speaks
+- **2026-10-14 13:30** — FOMC Member Barkin Speaks
+- **2026-10-15 08:30** — Philly Fed Manufacturing Index
+- **2026-10-15 16:30** — FOMC Member Hammack Speaks
+- **2026-10-15 23:30** — Fed Chairman Warsh Speaks
 - **2026-10-28 14:00** — FOMC rate decision
 - **2026-12-09 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-01-27 14:00** — FOMC rate decision
@@ -45,4 +72,16 @@ _Updated 2026-10-11 00:13 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
+
+### Macro
+
+- **2026-10-14 08:30** — Core CPI m/m
+- **2026-10-14 08:30** — Core CPI y/y
+- **2026-10-14 08:30** — CPI m/m
+- **2026-10-14 08:30** — CPI y/y
+- **2026-10-15 08:30** — Core PPI m/m
+- **2026-10-15 08:30** — Core Retail Sales m/m
+- **2026-10-15 08:30** — PPI m/m
+- **2026-10-15 08:30** — Retail Sales m/m
+- **2026-10-15 08:30** — Unemployment Claims
 
