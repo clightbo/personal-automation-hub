@@ -1,38 +1,35 @@
-<b>Day Plan - Mon Oct 12, 2026</b>
+<b>Day Plan - Tue Oct 13, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
-10:30-10:45 AM - Wake up
-12:00-3:00 PM - Work
-4:30-5:00 PM - <b>DEADLINE: Texas Tech FCU Spring Internship apps close 5 PM</b> (HR Intern / Event Mgmt Intern, texastechfcu.org/internships)
-5:15-6:45 PM - Raider Reviews w/ Polina (RCOBA 003)
-7:00-8:30 PM - Wall Street Club Class #7 (Teams; Roark Capital)
-11:59 PM - <b>ACCT 2301</b>: Ch 8 Dynamic Study Module + Ch 8 Homework Exercises both due
+7:15-7:30 AM - Wake up
+9:30 AM-1:00 PM - Work
+7:00-7:45 PM - Practice Problems (S&amp;T/Cap Mkts Prep)
+11:00 PM-12:00 AM - Workout
+11:59 PM - <b>DEADLINE: MATH 1331 HW13 (exp - ln)</b>
 All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-(Bedtime block 3:00-3:15 AM already passed)
+(Bedtime block 12:00-12:15 AM already passed)
 
 <b>Calendar check</b>
-(a) Overlaps: none as stored. Tight turnaround: Raider Reviews ends 6:45, class starts 7:00.
-(b) Timezone: the WSC Class #7 event is tagged America/New_York while everything else is Central. As stored it is 7:00-8:30 PM CT (= 8:00-9:30 PM ET). If it was actually meant as 7:00 PM ET (6:00 PM CT), it would overlap Raider Reviews by 45 min. Roark sent the invite and Google converts invites exactly, so the stored 7 PM CT is probably right. Confirm the start time in the Teams invite.
-(c) Duplicates: none. The two ACCT items are different assignments.
+(a) Overlaps: none between timed events. One soft conflict: the MATH HW13 11:59 PM deadline lands inside the 11 PM Workout, so finish it before 11.
+(b) Timezone: all timed events are stored as America/Chicago. Nothing looks off.
+(c) Duplicates: none. No event needs deleting.
 
 <b>Tasks</b>
-- <b>Before 5 PM:</b> apply to Texas Tech FCU Spring internships (before your 4:30 block, since Work ends at 3)
-- <b>By 11:59 PM:</b> finish both ACCT 2301 Ch 8 items
-- Prep for Raider Reviews
-- Follow-ups: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Eli Jacobs (WSC fellowship call nudge), Victory Bank (send Brett times after 4 PM, cc Chad Hill), Cindy Blackstone (Dallas outreach drafted, not sent)
+- <b>By 11 PM (before Workout):</b> submit MATH 1331 HW13 (exp - ln)
+- Follow-ups: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Eli Jacobs (WSC fellowship call nudge), Victory Bank (send Brett times after 4 PM, cc Chad Hill), Cindy Blackstone (Dallas outreach drafted, not sent), Trevaughn (PEAK6 coffee chat)
 - Update resume REIT bullet with the DLR buy thesis
 
 <b>Study &amp; Prep</b>
-- Phase 2 focus: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
+- 7:00 PM Practice Problems: apply Monday's concept
+- Phase 2 focus: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios). Ends Oct 31.
+- Stock pitch prelims due <b>Oct 18</b> (5 days). Finalists Oct 27, deposition Oct 30, finals Nov 12.
 - Wall Street Prep FSM + DCF modules (finish before December)
-- BofA: watch for HireVue invite (Oct)
-- PGIM: Forage credit simulation; Jane Street: probability puzzles (decisions Nov 9)
+- BofA: watch for HireVue invite. PGIM: Forage credit simulation. Jane Street: probability puzzles (decisions Nov 9).
 - Practice "walk me through your resume"
 
 <b>Recruiting Watch</b>
-- Waiting on: ArcLight (interview stage, Dave Nica said they will update), RBC (1st round was Oct 1; NYC kickoff Nov 2 if selected), Evercore (Nov 15), Blackstone FLP (closed Oct 9, under review)
-- Stock pitch prelims due <b>Oct 18</b> (6 days)
-- WSC NYC Networking Trek Oct 26-29: class attendance required for eligibility. Try to meet Eric Walker (Evercore)
+- Waiting on: ArcLight (interview stage, Dave Nica said they will update), RBC (1st round was Oct 1; NYC kickoff Nov 2 if selected), Blackstone FLP (closed Oct 9, under review), Evercore (Nov 15)
+- WSC NYC Networking Trek Oct 26-29: class attendance required for eligibility. Try to meet Eric Walker (Evercore).
 - Lazard Summer Analyst opens in November
 - Reactivate dormant contact Clint Huff (TTU Endowment)
 
@@ -41,4 +38,4 @@ All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
 <b>Longer-Term</b>
 - North star: financial independence. Break into high finance early, then stay flexible about the long-term path.
 - Credential track: WSP modules, JPM Career.edYOU Academy (in progress), SEO Level Up, WSC fellowship.
-- Semester arc: TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App). Then stock pitch finalists Oct 27, finals Nov 12, and Phase 2 interview prep through Oct 31.
+- Semester arc: stock pitch prelims Oct 18, then finalists Oct 27, Phase 2 prep through Oct 31, finals Nov 12, and the TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
