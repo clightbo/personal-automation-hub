@@ -7,12 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-13 02:33 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-13 18:44 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-13 03:45 ET | Low | Fed | **FOMC Member Waller Speaks** — Low impact |
-| 2026-10-13 13:00 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-13 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
 | 2026-10-14 05:40 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-10-14 08:30 ET | High | Macro | **Core CPI m/m** — High impact; forecast 0.2%, prev 0.3% |
@@ -30,7 +28,7 @@ _Updated 2026-10-13 02:33 UTC. Auto-generated from personal-automation-hub._
 | 2026-10-15 23:30 ET | High | Fed | **Fed Chairman Warsh Speaks** — High impact |
 | 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71805 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
-| 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.9822 |
+| 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98212 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.47325 |
 | 2026-12-09 14:00 ET | High | Fed | **FOMC rate decision + SEP/dot plot** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2027-01-27 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
@@ -52,8 +50,6 @@ _Updated 2026-10-13 02:33 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-13 03:45** — FOMC Member Waller Speaks
-- **2026-10-13 13:00** — FOMC Member Barkin Speaks
 - **2026-10-13 16:00** — FOMC Member Collins Speaks
 - **2026-10-14 05:40** — FOMC Member Bowman Speaks
 - **2026-10-14 13:30** — FOMC Member Barkin Speaks
