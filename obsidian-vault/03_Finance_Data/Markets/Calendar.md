@@ -7,7 +7,7 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-12 20:41 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-13 02:33 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
@@ -21,14 +21,14 @@ _Updated 2026-10-12 20:41 UTC. Auto-generated from personal-automation-hub._
 | 2026-10-14 08:30 ET | High | Macro | **CPI y/y** — High impact; forecast 3.6%, prev 3.4% |
 | 2026-10-14 13:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
 | 2026-10-15 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
-| 2026-10-15 08:30 ET | High | Macro | **Core Retail Sales m/m** — High impact; forecast 0.5%, prev 1.4% |
-| 2026-10-15 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.5%, prev 0.4% |
+| 2026-10-15 08:30 ET | High | Macro | **Core Retail Sales m/m** — High impact; forecast 0.6%, prev 1.4% |
+| 2026-10-15 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.6%, prev 0.4% |
 | 2026-10-15 08:30 ET | High | Macro | **Retail Sales m/m** — High impact; forecast 0.3%, prev 1.2% |
-| 2026-10-15 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 26.5, prev 37.8 |
-| 2026-10-15 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 195K, prev 197K |
+| 2026-10-15 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 28.2, prev 37.8 |
+| 2026-10-15 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 199K, prev 197K |
 | 2026-10-15 16:30 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-10-15 23:30 ET | High | Fed | **Fed Chairman Warsh Speaks** — High impact |
-| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.72336 |
+| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71805 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.9822 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.47325 |
