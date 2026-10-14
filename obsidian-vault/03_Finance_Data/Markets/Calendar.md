@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-13 18:44 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-14 00:16 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-13 16:00 ET | Low | Fed | **FOMC Member Collins Speaks** — Low impact |
 | 2026-10-14 05:40 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-10-14 08:30 ET | High | Macro | **Core CPI m/m** — High impact; forecast 0.2%, prev 0.3% |
 | 2026-10-14 08:30 ET | High | Macro | **Core CPI y/y** — High impact; forecast 2.5%, prev 2.4% |
@@ -50,7 +49,6 @@ _Updated 2026-10-13 18:44 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-13 16:00** — FOMC Member Collins Speaks
 - **2026-10-14 05:40** — FOMC Member Bowman Speaks
 - **2026-10-14 13:30** — FOMC Member Barkin Speaks
 - **2026-10-15 08:30** — Philly Fed Manufacturing Index
