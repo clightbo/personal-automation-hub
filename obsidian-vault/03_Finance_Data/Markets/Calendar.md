@@ -7,16 +7,13 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-14 00:16 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-14 16:17 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-14 05:40 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
-| 2026-10-14 08:30 ET | High | Macro | **Core CPI m/m** — High impact; forecast 0.2%, prev 0.3% |
-| 2026-10-14 08:30 ET | High | Macro | **Core CPI y/y** — High impact; forecast 2.5%, prev 2.4% |
-| 2026-10-14 08:30 ET | High | Macro | **CPI m/m** — High impact; forecast 0.6%, prev 0.4% |
-| 2026-10-14 08:30 ET | High | Macro | **CPI y/y** — High impact; forecast 3.6%, prev 3.4% |
 | 2026-10-14 13:30 ET | Low | Fed | **FOMC Member Barkin Speaks** — Low impact |
+| 2026-10-14 15:00 ET | Low | Fed | **FOMC Member Goolsbee Speaks** — Low impact |
+| 2026-10-14 22:55 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
 | 2026-10-15 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
 | 2026-10-15 08:30 ET | High | Macro | **Core Retail Sales m/m** — High impact; forecast 0.6%, prev 1.4% |
 | 2026-10-15 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.6%, prev 0.4% |
@@ -49,8 +46,9 @@ _Updated 2026-10-14 00:16 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-14 05:40** — FOMC Member Bowman Speaks
 - **2026-10-14 13:30** — FOMC Member Barkin Speaks
+- **2026-10-14 15:00** — FOMC Member Goolsbee Speaks
+- **2026-10-14 22:55** — FOMC Member Bowman Speaks
 - **2026-10-15 08:30** — Philly Fed Manufacturing Index
 - **2026-10-15 16:30** — FOMC Member Hammack Speaks
 - **2026-10-15 23:30** — Fed Chairman Warsh Speaks
@@ -67,10 +65,6 @@ _Updated 2026-10-14 00:16 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-10-14 08:30** — Core CPI m/m
-- **2026-10-14 08:30** — Core CPI y/y
-- **2026-10-14 08:30** — CPI m/m
-- **2026-10-14 08:30** — CPI y/y
 - **2026-10-15 08:30** — Core PPI m/m
 - **2026-10-15 08:30** — Core Retail Sales m/m
 - **2026-10-15 08:30** — PPI m/m
