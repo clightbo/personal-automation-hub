@@ -1,41 +1,44 @@
-<b>Day Plan - Tue Oct 13, 2026</b>
+<b>Day Plan - Wed Oct 14, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
-7:15-7:30 AM - Wake up
-9:30 AM-1:00 PM - Work
-7:00-7:45 PM - Practice Problems (S&amp;T/Cap Mkts Prep)
-11:00 PM-12:00 AM - Workout
-11:59 PM - <b>DEADLINE: MATH 1331 HW13 (exp - ln)</b>
 All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-(Bedtime block 12:00-12:15 AM already passed)
+10:30-10:45 AM - Wake up
+12:00-3:00 PM - Work
+4:00-5:00 PM - Career.edYOU Academy Course 301, Session 1 of 5 (Zoom 944 8557 9086) <i>see timezone flag</i>
+5:00-6:00 PM - MLA Servant Leadership Panel (Rawls Fireplace Room, RM 115)
+6:00-7:00 PM - RCG Meeting (BA 019)
+7:00-8:30 PM - Wall Street Club Technical Q&amp;A (time assumed, confirm on Teams invite)
+(Bedtime block 3:00-3:15 AM already passed)
 
 <b>Calendar check</b>
-(a) Overlaps: none between timed events. One soft conflict: the MATH HW13 11:59 PM deadline lands inside the 11 PM Workout, so finish it before 11.
-(b) Timezone: all timed events are stored as America/Chicago. Nothing looks off.
+(a) Overlaps: none strictly, but 4 PM to 8:30 PM is one unbroken back-to-back chain with no meal or travel gap. The Zoom class ends at 5:00 and the in-person panel starts at 5:00 in Rawls, so plan to join the panel a few minutes late or step out of the class early. Eat before 4.
+(b) Timezone: <b>Career.edYOU Course 301</b> is stored with timezone UTC while everything else is America/Chicago. Reading 1: 4:00-5:00 PM Central (the -05:00 offset on the time suggests this was typed as 4 PM local). Reading 2: 16:00 UTC = 11:00 AM-12:00 PM Central, right before Work. Likely intended: 4-5 PM Central, but confirm against the invite email. If it is actually 11 AM, you are 5 hours off from where it shows.
 (c) Duplicates: none. No event needs deleting.
 
 <b>Tasks</b>
-- <b>By 11 PM (before Workout):</b> submit MATH 1331 HW13 (exp - ln)
-- Follow-ups: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Eli Jacobs (WSC fellowship call nudge), Victory Bank (send Brett times after 4 PM, cc Chad Hill), Cindy Blackstone (Dallas outreach drafted, not sent), Trevaughn (PEAK6 coffee chat)
+- Read the WSC technical guides (Accounting, EV &amp; Equity, Valuation, DCF, LBO) and bring questions for tonight's Q&amp;A
+- Confirm the Q&amp;A start time when the Teams invite arrives
+- Stock pitch prelim submission due <b>Sun Oct 18</b> (4 days): freeze the draft this week
+- Follow-ups still open in Notion: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Eli Jacobs (WSC fellowship call, nudge), Victory Bank (send Brett times after 4 PM, cc Chad Hill), Cindy Blackstone (Dallas outreach drafted, never sent), Trevaughn (PEAK6 coffee chat)
 - Update resume REIT bullet with the DLR buy thesis
 
 <b>Study &amp; Prep</b>
-- 7:00 PM Practice Problems: apply Monday's concept
-- Phase 2 focus: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios). Ends Oct 31.
-- Stock pitch prelims due <b>Oct 18</b> (5 days). Finalists Oct 27, deposition Oct 30, finals Nov 12.
+- Phase 2 focus: ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, credit ratings, new issue process, leverage/coverage ratios). Ends Oct 31.
+- Technical Q&amp;A tonight: skim DCF and LBO guides first, those come up most in interviews
 - Wall Street Prep FSM + DCF modules (finish before December)
-- BofA: watch for HireVue invite. PGIM: Forage credit simulation. Jane Street: probability puzzles (decisions Nov 9).
+- Jane Street: practice probability puzzles (decisions Nov 9)
+- PGIM: Forage credit simulation (do not withdraw)
+- BofA: watch for HireVue invite
 - Practice "walk me through your resume"
 
-<b>Recruiting Watch</b>
-- Waiting on: ArcLight (interview stage, Dave Nica said they will update), RBC (1st round was Oct 1; NYC kickoff Nov 2 if selected), Blackstone FLP (closed Oct 9, under review), Evercore (Nov 15)
-- WSC NYC Networking Trek Oct 26-29: class attendance required for eligibility. Try to meet Eric Walker (Evercore).
+<b>Recruiting Watch</b> (Notion last edited Sep 25, so statuses may be stale)
+- Waiting on: ArcLight (interview stage, Dave Nica said they would update), RBC (1st round Oct 1, NYC kickoff Nov 2 if selected), Blackstone FLP (closed Oct 9, under review), Evercore (decision window around Nov 15)
+- WSC NYC Networking Trek <b>Oct 26-29</b> (12 days out): class attendance required for eligibility. Try to meet Eric Walker (Evercore).
 - Lazard Summer Analyst opens in November
 - Reactivate dormant contact Clint Huff (TTU Endowment)
-
-<i>Note: Notion trackers were last edited Sep 25, so statuses may be stale.</i>
+- Later dates: Nov 5 Finance Alumni Meet &amp; Greet (2:30-4:30 PM, BA 09), Nov 6 RCG candidate interview with Justin Sabu (6:00 PM)
 
 <b>Longer-Term</b>
 - North star: financial independence. Break into high finance early, then stay flexible about the long-term path.
-- Credential track: WSP modules, JPM Career.edYOU Academy (in progress), SEO Level Up, WSC fellowship.
-- Semester arc: stock pitch prelims Oct 18, then finalists Oct 27, Phase 2 prep through Oct 31, finals Nov 12, and the TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
+- Credential track: WSP modules, JPM Career.edYOU Academy (Course 301 starts today), SEO Level Up, WSC fellowship.
+- Semester arc: stock pitch prelims Oct 18, finalists Oct 27, deposition Oct 30, Phase 2 prep through Oct 31, finals Nov 12, and the TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
