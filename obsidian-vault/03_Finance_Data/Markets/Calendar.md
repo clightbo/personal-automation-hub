@@ -7,20 +7,13 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-14 23:54 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-15 16:05 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-14 22:55 ET | Low | Fed | **FOMC Member Bowman Speaks** — Low impact |
-| 2026-10-15 08:30 ET | High | Macro | **Core PPI m/m** — High impact; forecast 0.3%, prev 0.2% |
-| 2026-10-15 08:30 ET | High | Macro | **Core Retail Sales m/m** — High impact; forecast 0.6%, prev 1.4% |
-| 2026-10-15 08:30 ET | High | Macro | **PPI m/m** — High impact; forecast 0.6%, prev 0.4% |
-| 2026-10-15 08:30 ET | High | Macro | **Retail Sales m/m** — High impact; forecast 0.3%, prev 1.2% |
-| 2026-10-15 08:30 ET | Medium | Fed | **Philly Fed Manufacturing Index** — Medium impact; forecast 28.2, prev 37.8 |
-| 2026-10-15 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 199K, prev 197K |
 | 2026-10-15 16:30 ET | Low | Fed | **FOMC Member Hammack Speaks** — Low impact |
 | 2026-10-15 23:30 ET | High | Fed | **Fed Chairman Warsh Speaks** — High impact |
-| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71854 |
+| 2026-10-28 08:00 ET | High | Earnings | **MSFT earnings** — Earnings report; est EPS 4.71876 |
 | 2026-10-28 14:00 ET | High | Fed | **FOMC rate decision** — Rate decision typically 2:00 PM ET; Chair press conference usually ~2:30 PM ET. Source: Federal Reserve FOMC calendar. |
 | 2026-11-02 08:00 ET | High | Earnings | **AAPL earnings** — Earnings report; est EPS 1.98212 |
 | 2026-11-17 08:00 ET | High | Earnings | **NVDA earnings** — Earnings report; est EPS 2.47325 |
@@ -44,8 +37,6 @@ _Updated 2026-10-14 23:54 UTC. Auto-generated from personal-automation-hub._
 
 ### Fed
 
-- **2026-10-14 22:55** — FOMC Member Bowman Speaks
-- **2026-10-15 08:30** — Philly Fed Manufacturing Index
 - **2026-10-15 16:30** — FOMC Member Hammack Speaks
 - **2026-10-15 23:30** — Fed Chairman Warsh Speaks
 - **2026-10-28 14:00** — FOMC rate decision
@@ -58,12 +49,4 @@ _Updated 2026-10-14 23:54 UTC. Auto-generated from personal-automation-hub._
 - **2027-09-15 14:00** — FOMC rate decision + SEP/dot plot
 - **2027-10-27 14:00** — FOMC rate decision
 - **2027-12-08 14:00** — FOMC rate decision + SEP/dot plot
-
-### Macro
-
-- **2026-10-15 08:30** — Core PPI m/m
-- **2026-10-15 08:30** — Core Retail Sales m/m
-- **2026-10-15 08:30** — PPI m/m
-- **2026-10-15 08:30** — Retail Sales m/m
-- **2026-10-15 08:30** — Unemployment Claims
 
