@@ -1,40 +1,34 @@
-<b>Day Plan - Thu Oct 15, 2026</b>
+<b>Day Plan - Fri Oct 16, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
+All-day: TTU Real Estate &amp; Banking Conference, Overton Hotel &amp; Conference Center
 All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-<b>Due today:</b> ACCT 2301 Module 5 + Module 6 quizzes (11:59 PM), TTU Payroll timesheet (10/1-10/15), KKR "See Yourself Here" registration closes
-7:15-7:30 AM - Wake up
-9:30 AM-1:00 PM - Work
-11:00 AM-12:00 PM - BRIC Networking: Ryan Smith, Baldwin Group (TTU alum), University Library TLPDC 151, free lunch <i>overlaps Work</i>
-3:00-4:00 PM - KKR Public vs Private Credit webinar (Zoom) <i>overlaps next</i>
-3:00-4:00 PM - Wells Fargo CIB Info Session (virtual, registration required)
-5:30-6:30 PM - Thoma Bravo Fireside Chat (virtual, SEO)
-7:00 PM - Buyout Panel (virtual, time unconfirmed, stored as all-day)
-7:00-7:45 PM - Practice + Review (S&amp;T/Cap Mkts Prep) <i>overlaps Buyout Panel</i>
-11:00 PM-12:00 AM - Workout
+<b>Due 11:59 PM:</b> MATH 1331 HW14 (Max-Min) and HW15 (Concavity)
+10:00 AM-1:00 PM - Stifel "2026 Emerging Leaders" (Zoom) <i>timezone issue, overlaps Wake up and Work</i>
+10:30-10:45 AM - Wake up <i>overlaps Stifel</i>
+12:00-3:00 PM - Work <i>overlaps Stifel and the conference</i>
+7:00-7:20 PM - Market Check-in (S&amp;T/Cap Mkts Prep): Fed funds, 2yr, 10yr + one headline
+(Bedtime 3:00-3:15 AM already passed)
 
 <b>Calendar check</b>
 (a) Overlaps:
-- <b>KKR webinar and Wells Fargo session both 3-4 PM.</b> Pick one. KKR is credit (fits PGIM and your credit track); Wells Fargo is a general CIB intro and may have a recording. Delete or decline the other.
-- <b>Work (9:30-1:00) vs BRIC (11:00-12:00).</b> Ryan Smith's event is hosted by Whitnie Hill, your work manager, so ask her today if you can leave 11-12.
-- <b>Buyout Panel vs Practice block at 7:00 PM</b> if the panel is 7 PM Central. Verify in Absorb; move Practice to 8:00 if needed.
+- <b>Stifel Emerging Leaders vs Wake up (10:30) vs Work (12:00).</b> As stored, the Zoom runs 10-1 CT, so you would wake up mid-session and be late to Work. See (b); the likely-intended time (9 AM-12 PM CT) clears Work but is still before your 10:30 wake-up.
+- <b>Conference (all-day) vs Work 12-3 PM</b> and vs the Stifel Zoom. Decide today which block you attend. Ask Whitnie Hill about the shift if the conference matters more.
 (b) Timezone:
-- <b>KKR webinar</b> is labeled America/New_York but carries a -05:00 (Central) offset, and October NY time is -04:00. Reading 1: 3-4 PM Central (offset as stored; same as a 4 PM ET Zoom invite). Reading 2: 3 PM ET = 2-3 PM Central, which would avoid the Wells Fargo clash. Likely intended: Reading 1. Check the Zoom confirmation email.
-- <b>Thoma Bravo</b> is also labeled New York: 5:30-6:30 PM Central = 6:30 PM ET, matches the email. OK.
-- <b>Buyout Panel</b> has no timezone at all; "7:00 PM" could be 7 PM Central or 7 PM ET (6 PM Central, which would also collide with Thoma Bravo 5:30-6:30).
-(c) Duplicates: none. The two ACCT quizzes and the KKR registration deadline vs the webinar are different events, nothing to delete.
+- <b>Stifel Emerging Leaders</b> is labeled America/New_York but carries a -05:00 (Central) offset. October NY time is -04:00, so the entry is internally inconsistent. Reading 1: 10 AM-1 PM CT, as stored. Reading 2: 10 AM-1 PM ET = 9 AM-12 PM CT. Likely intended: Reading 2, since the organizer and the label are both New York. That puts the start about an hour after this message. Check the Zoom registration email.
+(c) Duplicates: none found.
 
 <b>Tasks</b>
-- <b>Today:</b> ACCT Module 5 and 6 quizzes, submit TTU timesheet, register for Wells Fargo and Thoma Bravo if you have not (links by email)
-- Stock Pitch prelim submission due <b>Sun Oct 18</b> (3 days): freeze draft
-- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill
-- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (WSC fellowship call, nudge), Cindy Blackstone (Dallas outreach drafted, never sent), Diego Alessio (DB, reconnect), Eric Walker (Evercore, meet on NYC trek), Clint Huff (dormant)
-- Add Ryan Smith (Baldwin Group) to People after lunch and send a thank-you
+- <b>Today:</b> finish and submit MATH HW14 + HW15 before 11:59 PM
+- Conference: if you did not register by the 10/2 deadline, general rate is $100. Confirm your registration status. Per the invite, 2 of 3 "Developing Your Story" sessions make $10/$50 registrants eligible for the Student Networking Drawing.
+- Stock Pitch prelim submission due <b>Sun Oct 18</b> (2 days): freeze the draft this weekend
+- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill, if not already done; confirm hours + pay
+- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (WSC fellowship call, nudge), Diego Alessio (DB, reconnect, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep)
 - Update resume REIT bullet with the DLR buy thesis
 
 <b>Study &amp; Prep</b>
 - Phase 2 (ends Oct 31): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
-- 7:00 PM block: practice problems on concept #2 + review Mon/Tue material
+- 7:00 PM: market check-in, then practice problems
 - Wall Street Prep FSM + DCF modules (finish before December)
 - Jane Street: probability puzzles (decisions Nov 9)
 - PGIM: Forage credit simulation (do not withdraw)
@@ -42,8 +36,9 @@ All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
 - Practice "walk me through your resume"
 
 <b>Recruiting Watch</b> (Notion last edited Sep 25, statuses may be stale)
-- Waiting on: ArcLight (interview stage), RBC (1st round was Oct 1, update the tracker; NYC kickoff Nov 2 if selected), Blackstone FLP (closed Oct 9), Evercore (~Nov 15), Jane Street (Nov 9)
-- Blackstone LaunchPad: register for the virtual info session
+- Waiting on: ArcLight (interview stage), RBC (1st round was Oct 1, update the tracker; NYC kickoff Nov 2 if selected), Jane Street (Nov 9), Evercore (Nov 15)
+- Blackstone FLP deadline was Oct 9: update the tracker
+- Blackstone LaunchPad: register for the virtual info session if you have not
 - WSC NYC Networking Trek <b>Oct 26-29</b>: class attendance required for eligibility
 - Lazard Summer Analyst opens in November
 
