@@ -1,34 +1,31 @@
-<b>Day Plan - Fri Oct 16, 2026</b>
+<b>Day Plan - Sat Oct 17, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
-All-day: TTU Real Estate &amp; Banking Conference, Overton Hotel &amp; Conference Center
 All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-<b>Due 11:59 PM:</b> MATH 1331 HW14 (Max-Min) and HW15 (Concavity)
-10:00 AM-1:00 PM - Stifel "2026 Emerging Leaders" (Zoom) <i>timezone issue, overlaps Wake up and Work</i>
-10:30-10:45 AM - Wake up <i>overlaps Stifel</i>
-12:00-3:00 PM - Work <i>overlaps Stifel and the conference</i>
-7:00-7:20 PM - Market Check-in (S&amp;T/Cap Mkts Prep): Fed funds, 2yr, 10yr + one headline
-(Bedtime 3:00-3:15 AM already passed)
+All-day: <b>Due 11:59 PM</b> - ACCT 2301 Project 2, all three parts (Excel VLOOKUP, Regression, CVP Relationships)
+10:00-11:45 AM - Clark&amp;Kevin WSC Prep call (Zoom) <i>timezone issue, see below</i>
+10:00-10:15 AM - Send Pantoya the HE+ project email <i>overlaps the call</i>
+2:30-6:00 PM - Texas Tech Football vs Arizona State, Jones AT&amp;T Stadium (end time is an estimate)
+7:00-7:45 PM - Flashcard Review (S&amp;T/Cap Mkts Prep)
 
 <b>Calendar check</b>
 (a) Overlaps:
-- <b>Stifel Emerging Leaders vs Wake up (10:30) vs Work (12:00).</b> As stored, the Zoom runs 10-1 CT, so you would wake up mid-session and be late to Work. See (b); the likely-intended time (9 AM-12 PM CT) clears Work but is still before your 10:30 wake-up.
-- <b>Conference (all-day) vs Work 12-3 PM</b> and vs the Stifel Zoom. Decide today which block you attend. Ask Whitnie Hill about the shift if the conference matters more.
+- <b>WSC Prep call vs Pantoya email (10:00).</b> They overlap under either reading of the call. Send the email before the call or right after it. It must go from Canvas or clightbo@ttu.edu, NOT Gmail.
 (b) Timezone:
-- <b>Stifel Emerging Leaders</b> is labeled America/New_York but carries a -05:00 (Central) offset. October NY time is -04:00, so the entry is internally inconsistent. Reading 1: 10 AM-1 PM CT, as stored. Reading 2: 10 AM-1 PM ET = 9 AM-12 PM CT. Likely intended: Reading 2, since the organizer and the label are both New York. That puts the start about an hour after this message. Check the Zoom registration email.
+- <b>WSC Prep call</b> is labeled America/New_York but carries a -05:00 (Central) offset. Oct 17 New York time is -04:00, so the entry is inconsistent. Reading 1: 10:00-11:45 AM CT, as stored. Reading 2: 10:00-11:45 AM ET = 9:00-10:45 AM CT. Likely intended: Reading 2, since the label is New York and Kevin is at Swarthmore (Eastern). That would put the call 1 hour earlier than the calendar shows. Confirm the time with Kevin.
 (c) Duplicates: none found.
 
 <b>Tasks</b>
-- <b>Today:</b> finish and submit MATH HW14 + HW15 before 11:59 PM
-- Conference: if you did not register by the 10/2 deadline, general rate is $100. Confirm your registration status. Per the invite, 2 of 3 "Developing Your Story" sessions make $10/$50 registrants eligible for the Student Networking Drawing.
-- Stock Pitch prelim submission due <b>Sun Oct 18</b> (2 days): freeze the draft this weekend
-- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill, if not already done; confirm hours + pay
-- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (WSC fellowship call, nudge), Diego Alessio (DB, reconnect, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep)
+- <b>Today:</b> submit all three ACCT 2301 Project 2 parts by 11:59 PM. Finish before the 2:30 kickoff so the evening is clear.
+- Send Pantoya the HE+ email (topic ideas ahead of Monday office hours)
+- <b>Stock Pitch prelim submission due tomorrow, Sun Oct 18</b>: freeze the draft today
+- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill, if not done; confirm hours + pay
+- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (WSC fellowship call, nudge), Diego Alessio (DB, reconnect, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep), Cindy Blackstone (Dallas outreach drafted, NOT sent), Clint Huff (dormant, reactivate)
 - Update resume REIT bullet with the DLR buy thesis
 
 <b>Study &amp; Prep</b>
 - Phase 2 (ends Oct 31): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
-- 7:00 PM: market check-in, then practice problems
+- 7:00 PM: flashcard active recall, no notes
 - Wall Street Prep FSM + DCF modules (finish before December)
 - Jane Street: probability puzzles (decisions Nov 9)
 - PGIM: Forage credit simulation (do not withdraw)
@@ -39,7 +36,7 @@ All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
 - Waiting on: ArcLight (interview stage), RBC (1st round was Oct 1, update the tracker; NYC kickoff Nov 2 if selected), Jane Street (Nov 9), Evercore (Nov 15)
 - Blackstone FLP deadline was Oct 9: update the tracker
 - Blackstone LaunchPad: register for the virtual info session if you have not
-- WSC NYC Networking Trek <b>Oct 26-29</b>: class attendance required for eligibility
+- WSC NYC Networking Trek <b>Oct 26-29</b> (9 days): class attendance required for eligibility
 - Lazard Summer Analyst opens in November
 
 <b>Longer-Term</b>
