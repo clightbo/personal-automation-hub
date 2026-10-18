@@ -1,31 +1,29 @@
-<b>Day Plan - Sat Oct 17, 2026</b>
+<b>Day Plan - Sun Oct 18, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
 All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-All-day: <b>Due 11:59 PM</b> - ACCT 2301 Project 2, all three parts (Excel VLOOKUP, Regression, CVP Relationships)
-10:00-11:45 AM - Clark&amp;Kevin WSC Prep call (Zoom) <i>timezone issue, see below</i>
-10:00-10:15 AM - Send Pantoya the HE+ project email <i>overlaps the call</i>
-2:30-6:00 PM - Texas Tech Football vs Arizona State, Jones AT&amp;T Stadium (end time is an estimate)
-7:00-7:45 PM - Flashcard Review (S&amp;T/Cap Mkts Prep)
+All-day: SAB Nightmare on 19th Street (haunted houses, free w/ TTU ID, first 300 students; time not stated)
+9:00-9:15 AM - <b>DEADLINE: Stock Pitch Preliminary Submissions Due</b>
+11:00-11:15 AM - Wake up
+11:00 PM-11:59 PM - <b>ISQS 2340: Practice Assignment 4 &amp; Assessment 5 due</b> (extended by Dr. Appan; upload all screenshots to Canvas)
+11:00 PM-12:00 AM - Workout <i>overlaps the ISQS deadline</i>
 
 <b>Calendar check</b>
 (a) Overlaps:
-- <b>WSC Prep call vs Pantoya email (10:00).</b> They overlap under either reading of the call. Send the email before the call or right after it. It must go from Canvas or clightbo@ttu.edu, NOT Gmail.
-(b) Timezone:
-- <b>WSC Prep call</b> is labeled America/New_York but carries a -05:00 (Central) offset. Oct 17 New York time is -04:00, so the entry is inconsistent. Reading 1: 10:00-11:45 AM CT, as stored. Reading 2: 10:00-11:45 AM ET = 9:00-10:45 AM CT. Likely intended: Reading 2, since the label is New York and Kevin is at Swarthmore (Eastern). That would put the call 1 hour earlier than the calendar shows. Confirm the time with Kevin.
+- <b>ISQS 2340 due block (11:00-11:59 PM) vs Workout (11:00 PM-12:00 AM).</b> Submit ISQS earlier in the evening and keep the workout, or move the workout.
+- Also odd: "Wake up" is 11:00 AM but the Stock Pitch deadline is 9:00 AM. If you are not already submitted, do it first thing.
+(b) Timezone: no suspect entries. All timed events are America/Chicago. The all-day items are date-only.
 (c) Duplicates: none found.
 
 <b>Tasks</b>
-- <b>Today:</b> submit all three ACCT 2301 Project 2 parts by 11:59 PM. Finish before the 2:30 kickoff so the evening is clear.
-- Send Pantoya the HE+ email (topic ideas ahead of Monday office hours)
-- <b>Stock Pitch prelim submission due tomorrow, Sun Oct 18</b>: freeze the draft today
+- <b>Stock Pitch prelim submission is due 9:00 AM today.</b> Confirm it is submitted. Next: finalists Oct 27, deposition Oct 30, finals Nov 12.
+- <b>ISQS 2340 Practice Assignment 4 + Assessment 5 by 11:59 PM</b> (Canvas, screenshots). Finish before the workout.
 - Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill, if not done; confirm hours + pay
-- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (WSC fellowship call, nudge), Diego Alessio (DB, reconnect, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep), Cindy Blackstone (Dallas outreach drafted, NOT sent), Clint Huff (dormant, reactivate)
+- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (nudge re: WSC fellowship call), Diego Alessio (DB, reconnect, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep), Cindy Blackstone (Dallas outreach drafted, NOT sent), Clint Huff (dormant, reactivate)
 - Update resume REIT bullet with the DLR buy thesis
 
 <b>Study &amp; Prep</b>
 - Phase 2 (ends Oct 31): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
-- 7:00 PM: flashcard active recall, no notes
 - Wall Street Prep FSM + DCF modules (finish before December)
 - Jane Street: probability puzzles (decisions Nov 9)
 - PGIM: Forage credit simulation (do not withdraw)
@@ -35,11 +33,10 @@ All-day: <b>Due 11:59 PM</b> - ACCT 2301 Project 2, all three parts (Excel VLOOK
 <b>Recruiting Watch</b> (Notion last edited Sep 25, statuses may be stale)
 - Waiting on: ArcLight (interview stage), RBC (1st round was Oct 1, update the tracker; NYC kickoff Nov 2 if selected), Jane Street (Nov 9), Evercore (Nov 15)
 - Blackstone FLP deadline was Oct 9: update the tracker
-- Blackstone LaunchPad: register for the virtual info session if you have not
-- WSC NYC Networking Trek <b>Oct 26-29</b> (9 days): class attendance required for eligibility
+- WSC NYC Networking Trek <b>Oct 26-29</b> (8 days): class attendance required for eligibility
 - Lazard Summer Analyst opens in November
 
 <b>Longer-Term</b>
 - North star: financial independence. Break into high finance early, then stay flexible on the long-term path.
 - Credential track: WSP modules, JPM Career.edYOU Academy, SEO Level Up, WSC fellowship.
-- Semester arc: stock pitch prelims Oct 18, finalists Oct 27, deposition Oct 30, Phase 2 prep through Oct 31, Nov 5 Finance Alumni Meet &amp; Greet, Nov 6 RCG interview, finals Nov 12, TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
+- Semester arc: stock pitch finalists Oct 27, deposition Oct 30, Phase 2 prep through Oct 31, Nov 5 Finance Alumni Meet &amp; Greet, Nov 6 RCG interview, finals Nov 12, TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
