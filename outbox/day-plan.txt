@@ -1,55 +1,48 @@
-<b>Day Plan - Tue Oct 20, 2026</b>
+<b>Day Plan - Wed Oct 21, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
-All-day: Phase 2 Capital Markets Deep Dive (Sep 1 - Oct 31)
-All-day: NFLX earnings after close (estimated date, verify on Netflix IR)
-7:15-7:30 AM - Wake up
-9:30 AM-1:00 PM - Work
-1:30-2:00 PM - <b>HE+ Honors Project, Meeting 1 w/ Pantoya</b> (walk-in, E375 Rawls). His window is 1:30-3:30 PM (also 10:30-11:30 AM). Fallback: open office hours Mon/Wed 3-4 PM.
-1:50-2:00 PM - TechAlert emergency notification test (acknowledge in the AtHoc app, org code TTU)
-3:00-3:30 PM - Capital One IB Deep Dive Series: Financing (register via Codie Frank's email)
-6:00-7:00 PM - IMA Meeting, Lubbock Angel Network internship (Fireplace Room)
-6:00-8:00 PM - RCG IB Night (Holden Hall rm 129, business casual; Jefferies, Moelis speakers)
-7:00-7:45 PM - Practice Problems (S&amp;T/Cap Mkts Prep)
-11:00 PM-12:00 AM - Workout
+All-day: Phase 2 Capital Markets (thru Oct 31)
+All-day: Apt maintenance may enter 10-5 (air filters, thru Oct 23)
+All-day: Meta + Tesla earnings after close (Tesla Q&amp;A 4:30 CT; verify Meta on IR)
+10:30 AM - Wake up
+12:00-3:00 PM - Work
+12:30-1:15 PM - Rawls CMC Lunch &amp; Learn: LinkedIn (RCOB Fireplace/McCoy)
+3:30-4:00 PM - <b>DEADLINE block: Bond Workshop forms, due 4 PM CT</b>
+3:55-6:00 PM - Bond Fundamentals Workshop (Zoom)
+5:00-7:00 PM - WSP Session 1: Breaking Down the LBO (Zoom)
+5:15-6:45 PM - ACCT 2301 SI (RCOBA 003)
+5:30-6:30 PM - Resume Essentials workshop (virtual)
+6:00-7:00 PM - RCG Meeting (BA 019)
+7:00-8:00 PM - Study: New Concept #2
+7:00-8:30 PM - WSC Trek Prep (time assumed, confirm Teams invite)
 
 <b>Calendar check</b>
 (a) Overlaps:
-- <b>IMA 6-7 PM vs RCG IB Night 6-8 PM.</b> Full 1-hr overlap. IB Night has the Jefferies and Moelis speakers; IMA is the Lubbock Angel Network internship. Pick one, or do IMA first and slip into IB Night at 7 if both are close (Fireplace Room to Holden Hall).
-- <b>Practice Problems 7:00-7:45 PM vs RCG IB Night 7-8 PM.</b> If you stay at IB Night, move practice problems to after 8 PM.
-- Minor: TechAlert 1:50-2:00 PM falls inside the Honors walk-in. Acknowledge it on your phone.
-- Tight: Work ends 1:00, Honors window opens 1:30. Capital One Financing starts 3:00 and Pantoya's window runs to 3:30, so go early.
-(b) Timezone: no suspect entries. All timed events are stored as America/Chicago. The all-day events show as UTC dates, which is normal for all-day.
-(c) Duplicates: none found.
+- Lunch &amp; Learn 12:30-1:15 sits inside Work 12-3. Get the break or skip it.
+- <b>5-7 PM pile-up:</b> Bond Workshop (to 6), LBO (5-7), SI (5:15-6:45), Resume (5:30-6:30), RCG (6-7). Suggest: Bond Workshop, then RCG at 6. Catch LBO/Resume by recording, skip SI unless you need it.
+- Forms block 3:30-4:00 touches Bond Workshop start (3:55). Do the forms 3:00-3:55 right after Work.
+- Study 7-8 overlaps Trek Prep 7-8:30. Trek Prep first, then a short study block.
+(b) Timezone: Bond Workshop and LBO are labeled America/New_York but carry Central offsets. Bond: stored 3:55-6:00 PM CT (4:55-7:00 ET), matches the "5 PM ET" deadline note, so it is probably right. LBO: stored 5-7 PM CT (6-8 ET). If it was meant as 5 PM ET it is 4 PM CT, colliding with the forms and the workshop. Check the Zoom invite.
+(c) Duplicate: ACCT 2301 SI Session 1 (Ch 1-2) and Session 2 (Ch 9/10), same room, 5:15-6:45. <b>Delete Session 1</b> for today (Session 2 is newer; its note says Session 1 may be outdated).
 
 <b>Tasks</b>
-- <b>Honors Meeting 1 with Pantoya (walk-in today).</b> Topic: DLR data center development as a capital investment decision. Human leg is DLR's own disclosed development economics (yield on cost, capex, pre-leasing), NOT the AI-built IMA pitchbook. Your build is an Excel model (NPV, IRR, payback, fixed/variable power and cooling). Ask: deadlines for Meetings 2 and 3 and the final deliverables, whether HONS-0001-H02 carries its own grade, whether the NYC trek counts as university-sponsored, where the bonus points are, whether a formula sheet is allowed at the Rawls Testing Center.
-- <b>NYC Networking Trek Oct 26-29 is 6 days out.</b> Class attendance is required for eligibility.
-- Stock pitch: prelims were due Oct 18, finalists Oct 27, deposition Oct 30, finals Nov 12. Check whether prelim results are out.
-- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill, if not done. Confirm hours + pay.
-- Cindy Blackstone (Dallas): outreach drafted, NOT sent. Send it.
-- Warm contacts with an open next step: Cassie James (GS, no reply since Sep 6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (PEAK6 coffee chat), Eli Jacobs (nudge, WSC fellowship call), Diego Alessio (DB, mention Favian), Eric Walker (Evercore, meet on NYC trek), Eli Owen (GS S&amp;T ping), Doug Carriger (Citadel prep), Clint Huff (dormant, reactivate)
-- Update resume REIT bullet with the DLR buy thesis (time with LinkedIn post)
-- TAMU transfer: follow up on admissions reply, review Common App, order TTU + NCTC transcripts
+- <b>By 4 PM CT: Project Destined Quiz #1, Quiz #2, Week 1 and Week 2 TF surveys</b> (links + passcodes in the calendar event). Miss it = no certificate, possible removal.
+- Unit access for maintenance 10-5. NYC trek leaves 10/26.
+- Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill; confirm hours + pay
+- Cindy Blackstone (Dallas): outreach drafted, NOT sent
+- Warm contacts, open step: Cassie James (GS, silent since 9/6), Niki Ahlstrand (thank-you), Trevaughn (coffee chat), Eli Jacobs (nudge), Diego Alessio (mention Favian), Eric Walker (meet on trek), Eli Owen, Doug Carriger, Clint Huff (dormant)
+- Resume REIT bullet (DLR thesis); TAMU admissions follow-up, Common App, transcripts (TTU + NCTC)
+- Recruiting (Notion last edited Sep 25, may be stale): update Blackstone FLP (deadline passed 10/9) and RBC; Jane Street decisions Nov 9; Evercore Nov 15; Lazard opens Nov; BofA HireVue; Lincoln shadow Nov 20
 
 <b>Study &amp; Prep</b>
-- Phase 2 (ends Oct 31): ECM (IPO process, bookrunner, greenshoe, lock-up) and DCM (bond anatomy, ratings, new issue process, leverage/coverage ratios)
-- Tonight: Practice Problems block (Monday's concept)
-- Prep for IB Night: research the speakers (Ian Reeves and Austin Phillips of Jefferies, William Zuckerman of Moelis)
-- Capital One Financing session at 3 PM: have 2 questions ready
-- Wall Street Prep FSM + DCF modules (finish before December)
-- Jane Street: probability puzzles (decisions Nov 9)
-- PGIM: Forage credit simulation (do not withdraw)
-- BofA: watch for HireVue invite. Citadel Securities: prep online assessment
-- Practice "walk me through your resume"
-
-<b>Recruiting Watch</b> (Notion last edited Sep 25, statuses may be stale)
-- Waiting on: ArcLight (interview stage, ask about pay + housing), RBC (1st round was Oct 1; update tracker; NYC kickoff Nov 2 if selected), Jane Street (Nov 9), Evercore (Nov 15)
-- Blackstone FLP deadline passed Oct 9: update the tracker
-- Lazard Summer Analyst opens in November
-- Lincoln International job shadow Nov 20 (Chicago), under review
+- Bond Fundamentals Workshop 4-6 PM: tie to DCM bond anatomy, ratings, leverage/coverage
+- 7 PM Study: New Concept #2 (S&amp;T/Cap Mkts)
+- Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up), DCM
+- LBO session: take notes for WSP FSM + DCF modules (finish before Dec)
+- Jane Street probability puzzles; Citadel OA; PGIM Forage credit sim (do not withdraw)
+- Stock pitch finalists Oct 27: check prelim results
 
 <b>Longer-Term</b>
-- North star: financial independence. Break into high finance early, then stay flexible on the long-term path.
-- Credential track: WSP modules, JPM Career.edYOU Academy, SEO Level Up, WSC fellowship.
-- Semester arc: NYC trek Oct 26-29, stock pitch finalists Oct 27, deposition Oct 30, Phase 2 through Oct 31, Nov 5 Finance Alumni Meet &amp; Greet, Nov 6 RCG interview, finals Nov 12, TAMU Mays BBA transfer app (Fall 2027) due December (prereqs all A's, order transcripts, Common App).
+- North star: financial independence. Break into high finance early, stay flexible after.
+- Credential track: WSP modules, JPM Career.edYOU, SEO Level Up, WSC fellowship, Project Destined bond cert.
+- Semester arc: NYC trek Oct 26-29, finalists Oct 27, deposition Oct 30, Phase 2 ends Oct 31, Alumni Meet &amp; Greet Nov 5, RCG interview Nov 6, finals Nov 12, TAMU Mays transfer app due December.
