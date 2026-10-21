@@ -6,7 +6,7 @@ tags:
 
 # Watchlist
 
-_Updated 2026-10-21 16:24 UTC._
+_Updated 2026-10-21 23:59 UTC._
 
 Tickers from `WATCHLIST` (or defaults):
 
