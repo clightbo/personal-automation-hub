@@ -7,11 +7,10 @@ tags:
 
 # Markets Calendar
 
-_Updated 2026-10-21 23:59 UTC. Auto-generated from personal-automation-hub._
+_Updated 2026-10-22 16:25 UTC. Auto-generated from personal-automation-hub._
 
 | When (ET) | Impact | Type | Event |
 |---|---|---|---|
-| 2026-10-22 08:30 ET | Medium | Macro | **Unemployment Claims** — Medium impact; forecast 200K, prev 199K |
 | 2026-10-23 09:45 ET | Medium | Macro | **Flash Manufacturing PMI** — Medium impact; forecast 55.4, prev 57.0 |
 | 2026-10-23 09:45 ET | Medium | Macro | **Flash Services PMI** — Medium impact; forecast 57.9, prev 58.7 |
 | 2026-10-23 10:00 ET | Medium | Macro | **Revised UoM Consumer Sentiment** — Medium impact; forecast 46.3, prev 46.3 |
@@ -53,7 +52,6 @@ _Updated 2026-10-21 23:59 UTC. Auto-generated from personal-automation-hub._
 
 ### Macro
 
-- **2026-10-22 08:30** — Unemployment Claims
 - **2026-10-23 09:45** — Flash Manufacturing PMI
 - **2026-10-23 09:45** — Flash Services PMI
 - **2026-10-23 10:00** — Revised UoM Consumer Sentiment
