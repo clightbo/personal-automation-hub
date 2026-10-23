@@ -1,44 +1,45 @@
-<b>Day Plan - Thu Oct 22, 2026</b>
+<b>Day Plan - Fri Oct 23, 2026</b>
 
 <b>Today's Schedule</b> (America/Chicago)
-All-day: <b>DEADLINE today: Coach Bob Knight Scholarship</b> (only if studying abroad Spring 2027; skip if you applied to other Honors study abroad scholarships)
+All-day: <b>DEADLINE: IMA Stock Pitch first submission</b> (4-page memo, Conviction team)
+All-day: <b>DEADLINE: HPS Investment Partners Summer Intern</b> (NYC, sophomores, apply via SEO Level Up)
+All-day: TTU All-House Halloween Party (Honors College, time not stated; RSVP for Haunted Tour)
+All-day: Apt maintenance may enter 10-5 (last day, air filters)
 All-day: Phase 2 Capital Markets (thru Oct 31)
-All-day: Apt maintenance may enter 10-5 (air filters, thru Oct 23)
-7:15-7:30 AM - Wake up
-9:30 AM-1:00 PM - Work
-3:30-4:00 PM - Capital One IB Deep Dive: Coffee Chats (Zoom)
-3:30-4:00 PM - Capital One All Teams Coffee Chat
-3:30-4:00 PM - Resume Essentials Workshop (RCOB 015)
-5:30-6:30 PM - IMA Meeting: Lubbock Angel Network internships (Rawls 287, pizza)
-7:00-7:45 PM - Practice + Review (S&amp;T/Cap Mkts Prep)
-11:00 PM-12:00 AM - Workout
+10:30-10:45 AM - Wake up
+10:00-11:00 AM CT (stored as 11 AM-12 PM ET) - SEO "Breaking Into Markets: Recruiting, Networking &amp; Finding Your Fit" (Zoom)
+12:00-3:00 PM - Work
+4:00-5:00 PM - <b>DEADLINE: Dress for Success Scholarship</b> (due 5:00 PM, Handshake)
+4:00-4:30 PM - <b>DEADLINE: Bond Fundamentals Week #3 Quiz</b> (Project Destined; due 4 PM CT / 5 PM ET)
+7:00-7:20 PM - Market Check-in (S&amp;T/Cap Mkts Prep)
 
 <b>Calendar check</b>
-(a) Overlaps: <b>3:30-4:00 triple-booking</b> (Capital One x2 + Resume workshop). Pick Capital One: it is the only chance to meet all four IB business lines. The Resume workshop repeats the Oct 21 virtual session ("attend once"), so skip it if you went yesterday. Nothing else overlaps. Work ends 1 PM, so there is a long open gap 1-3:30 PM for study or errands.
-(b) Timezone: nothing looks off. Every timed event is stored in America/Chicago with Central offsets. The all-day items just carry UTC date stamps, which is normal.
-(c) Duplicate: the two Capital One coffee chats are the same session (same 3:30-4:00 slot). <b>Delete "Capital One All Teams Coffee Chat"</b>. Keep "IB Deep Dive: Coffee Chats", which has the Zoom registration link. Check your inbox for the registration QR code / Codie Frank's email before 3:30.
+(a) Overlaps: the two deadline blocks (Dress for Success 4-5 PM and Bond quiz 4-4:30 PM) overlap. Do the Bond quiz FIRST (hard 4 PM CT cutoff), then the scholarship by 5 PM. Better: submit the scholarship before work, since you start at noon. If the SEO Zoom really is 10-11 CT it also overlaps your 10:30 wake-up block (see b).
+(b) Timezone: <b>SEO Zoom is stored in America/New_York</b> while everything else is America/Chicago. Reading as ET: 10-11 AM CT (overlaps Wake up 10:30-10:45). Reading as CT: 11 AM-12 PM, which fits cleanly before Work at noon. SEO is NYC-based and the Zoom is hosted by SEO, so ET (10-11 AM CT) is most likely intended. Confirm in the invite. If so, move wake-up earlier. All-day items carry UTC date stamps, which is normal.
+(c) Duplicates: none found today.
 
 <b>Tasks</b>
-- <b>Today: Knight Scholarship reapply</b> if you plan to study abroad Spring 2027 (honors.scholarships@ttu.edu, Stacy Poteet)
-- Capital One: find the registration email/QR code before 3:30
-- Unit access for maintenance 10-5 (you leave for NYC trek 10/26)
+- <b>DUE TODAY: IMA Stock Pitch memo</b> first submission (4 pages). Finalists announced Oct 27, deposition Oct 30, finals Nov 12
+- <b>DUE TODAY: HPS Investment Partners Summer Intern</b> app. Mention you are an SEO Career Level Up: Alt Invest participant
+- <b>DUE 5 PM: Dress for Success Scholarship</b> (Rawls CMC / Handshake)
+- <b>DUE 4 PM CT: Bond Fundamentals Week #3 quiz</b> + Week #3 Teaching Fellow Survey (Project Destined monday.com board)
+- Unit access for maintenance 10-5; you leave for NYC trek Monday
+- NYC trek Oct 26-29: class attendance required for eligibility. Check exams/quizzes and RBC NYC kickoff (Nov 2)
 - Victory Bank: send Brett McDowell times after 4 PM, cc Chad Hill; confirm hours + pay
-- Cindy Blackstone (Dallas): outreach drafted, NOT sent. Send it
-- Warm contacts, open next step: Cassie James (GS, silent since 9/6), Niki Ahlstrand (thank-you), Trevaughn (coffee chat), Eli Jacobs (nudge, last contact 9/11), Diego Alessio (mention Favian), Eric Walker (meet on NYC trek), Eli Owen (GS S&amp;T), Doug Carriger (Citadel prep), Clint Huff (dormant)
-- ArcLight (IR, Boston): no update since 9/24. Send a polite check-in; ask about pay + housing
-- NYC trek prep (Oct 26-29): class attendance required for eligibility
-- Recruiting Tracker last edited Sep 25 and is stale. Update RBC (interview was Oct 1) and Blackstone FLP (deadline passed 10/9)
+- ArcLight (IR, Boston): 2nd round was 9/23, no update logged. Send polite check-in; ask about pay + housing
+- Warm contacts with open next step: Cassie James (GS recruiter, silent since 9/6), Niki Ahlstrand (PEAK6 thank-you), Trevaughn (coffee chat), Eli Jacobs (nudge, last contact 9/11), Diego Alessio (mention Favian), Eric Walker (Evercore; meet on NYC trek), Eli Owen (GS S&amp;T), Doug Carriger (Citadel prep)
+- Notion Recruiting Tracker last edited Sep 25 and is stale: update RBC (interview was Oct 1), Blackstone FLP (deadline passed 10/9), Point72 pitch. Deadline column is mostly empty
 - Resume REIT bullet (DLR thesis); TAMU admissions follow-up, Common App, transcripts (TTU + NCTC)
 
 <b>Study &amp; Prep</b>
-- 7:00 PM Practice + Review: concept #2 problems + Mon/Tue material
-- Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up), DCM (bond anatomy, ratings, leverage/coverage)
-- Free window 1-3:30 PM: one Phase 2 block, or WSP FSM/DCF module
-- Prep 2-3 questions for the Capital One chat (IB lines: KippsDeSanto, TripleTree, Financing, Derivatives)
-- Jane Street probability puzzles; Citadel OA; PGIM Forage credit sim (do not withdraw); BofA HireVue invite expected (Oct)
-- Stock pitch finalists announced Oct 27: check prelim results
+- Bond quiz before 4 PM CT (review Week #3 bond fundamentals)
+- Phase 2: ECM (IPO process, bookrunner, greenshoe, lock-up), DCM (bond anatomy, ratings, new issue process, leverage/coverage)
+- Before NYC trek: prep 2-3 questions for coffee chats; walk-me-through-resume / tell-me-about-yourself
+- Jane Street probability puzzles (decisions Nov 9); Citadel OA prep; PGIM Forage credit sim (do not withdraw); BofA HireVue invite expected (Oct)
+- WSP FSM + DCF modules (finish before December)
+- 7:00 PM Market Check-in: Fed funds, 2yr, 10yr + one headline
 
 <b>Longer-Term</b>
 - North star: financial independence. Break into high finance early, stay flexible after.
-- Credential track: WSP FSM + DCF modules (finish before Dec), JPM Career.edYOU, SEO Level Up, WSC fellowship, Project Destined bond cert.
-- Semester arc: NYC trek Oct 26-29, finalists Oct 27, deposition Oct 30, Phase 2 ends Oct 31, RBC NYC kickoff Nov 2 (if selected), Alumni Meet &amp; Greet Nov 5, RCG interview Nov 6, Jane Street decisions Nov 9, finals Nov 12, Evercore Nov 15, Lincoln shadow Nov 20, Lazard opens Nov, TAMU Mays transfer app due December.
+- Credential track: WSP FSM + DCF (before Dec), JPM Career.edYOU, SEO Level Up, WSC fellowship, Project Destined bond cert.
+- Semester arc: NYC trek Oct 26-29, stock pitch finalists Oct 27, deposition Oct 30, Phase 2 ends Oct 31, RBC NYC kickoff Nov 2 (if selected), Alumni Meet &amp; Greet Nov 5, RCG interview Nov 6, Jane Street decisions Nov 9, finals Nov 12, Evercore Nov 15, Lincoln shadow Nov 20, Lazard opens Nov, TAMU Mays transfer app due December.
